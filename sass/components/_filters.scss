@@ -1,0 +1,15 @@
+.dash-filters {
+    flex: 1;
+    .item {
+        font-size: 14px;
+        display: inline-block;
+        &:not(:last-child) {
+            margin-right: 15px;
+            padding-right: 15px;
+            border-right: 1px solid var(--text-color);
+        }
+        @media ( max-width: $sm ) {
+            margin-bottom: 10px;
+        }
+    }
+}

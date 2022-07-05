@@ -1,0 +1,21 @@
+#product-tags {
+    
+    .select2-selection__choice {
+        display: none;
+    }
+
+    .tags-list {
+        list-style: none;
+        padding: 0;
+        .tag-item {
+            display: inline-block;
+            background-color: var(--body-background);
+            font-size: 12px;
+            padding: 5px 10px;
+            border-radius: 50px;
+            .icon {
+                cursor: pointer;
+            }
+        }
+    }
+}

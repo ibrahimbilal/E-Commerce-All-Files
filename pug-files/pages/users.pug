@@ -1,0 +1,215 @@
+extends ../bases/_base
+block mainContent
+	- var flexClasses = ['d-flex', 'align-items-sm-center']
+	.page-header
+		.row
+			.col-12(class=flexClasses).justify-content-sm-between.flex-column.flex-sm-row
+				.page-title.text-capitalize users
+					a.add-btn.btn.text-capitalize(href='./add-user.html')
+						span.icon
+							+getRIcon("add")
+						| add new
+
+				.page-breadcrumbs(class=flexClasses).justify-content-start.justify-content-sm-end
+					- var breadCrumbsItems = ['users']
+					include ./../components/_breadcrumbs
+
+	.row
+		.col-12(class=flexClasses).justify-content-between.flex-column.flex-sm-row.mb-2
+			.dash-filters
+				- var filters = ['All (10)', 'Administrator (1)', 'Store Managers (4)', 'Accountant (1)']
+				each val, index in filters
+					a.item.text-capitalize(href="#")= val
+
+			.bulk-action.align-self-end
+				include ./../components/_bulk-action
+
+		.col-12
+			.main-box.box-spaces.mb-0
+				.table-holder.mt-0
+					.table-responsive
+						table(id="users" class="table table-striped")
+							thead
+								tr
+									th
+									th.text-uppercase image
+									th.text-uppercase name
+									th.text-uppercase email
+									th.text-uppercase role
+									th.text-uppercase registered date
+									th.text-uppercase action
+							tbody
+								tr
+									td
+									td.customer-img
+										.img-holder
+											img(src="./assets/images/customers/image-1.png" width="70")
+									td.prod-title Jayson Hinrichsen
+									td example@email.com
+									td Administrator
+									td 14:58 26/03/2022
+									td
+										.btn-group
+											a.btn.btn-primary.btn-rounded.me-2.py-1(href="./view-user.html")
+												span.icon
+													+getRIcon("eye")
+												| view
+											a.btn.btn-warning.btn-rounded.me-2.py-1
+												span.icon
+													+getRIcon("edit")
+												| edit
+											a.btn.btn-danger.btn-rounded.me-2.py-1
+												span.icon
+													+getRIcon("trash")
+												| trash
+								tr
+									td
+									td.customer-img
+										.img-holder
+											img(src="./assets/images/customers/image-2.png" width="70")
+									td.prod-title Jayson Hinrichsen
+									td example@email.com
+									td Accountant
+									td 14:58 26/03/2022
+									td
+										.btn-group
+											a.btn.btn-primary.btn-rounded.me-2.py-1(href="./view-user.html")
+												span.icon
+													+getRIcon("eye")
+												| view
+											a.btn.btn-warning.btn-rounded.me-2.py-1
+												span.icon
+													+getRIcon("edit")
+												| edit
+											a.btn.btn-danger.btn-rounded.me-2.py-1
+												span.icon
+													+getRIcon("trash")
+												| trash
+								tr
+									td
+									td.customer-img
+										.img-holder
+											img(src="./assets/images/customers/image-3.png" width="70")
+									td.prod-title Jayson Hinrichsen
+									td example@email.com
+									td Store Manager
+									td 14:58 26/03/2022
+									td
+										.btn-group
+											a.btn.btn-primary.btn-rounded.me-2.py-1(href="./view-user.html")
+												span.icon
+													+getRIcon("eye")
+												| view
+											a.btn.btn-warning.btn-rounded.me-2.py-1
+												span.icon
+													+getRIcon("edit")
+												| edit
+											a.btn.btn-danger.btn-rounded.me-2.py-1
+												span.icon
+													+getRIcon("trash")
+												| trash
+
+							tfoot
+								tr
+									th
+									th.text-uppercase image
+									th.text-uppercase name
+									th.text-uppercase email
+									th.text-uppercase role
+									th.text-uppercase registered date
+									th.text-uppercase action
+
+block footer_script
+	script.
+		// Data Tables
+		let customer_table = $('#users').DataTable({
+			dom: 'Bfrtip',
+			columnDefs: [
+				{
+					orderable: false,
+					className: 'select-checkbox',
+					targets: 0
+				},
+				{ 
+					bSortable: false, 
+					aTargets: [0, 1, 3, 4, 6] 
+				},
+				{ 
+					bSearchable: false, 
+					aTargets: [0, 1, 6] 
+				}
+			],
+			select: {
+				style: 'os',
+				selector: 'td:first-child'
+			},
+			order: [
+				[5, 'desc']
+			],
+			language: {
+				info: "Show _START_ To _END_ Of _TOTAL_ users",
+				buttons: {
+					pageLength: 'Show %d',
+					colvis: 'Columns'
+				}
+			},
+			stateSave: true,
+			paging: true,
+			searching: true,
+			lengthMenu: [[ 10, 25, 50, 75, 100 ], ['10 users', '25 users', '50 users', '75 users', '100 users']],
+			buttons: ($(window).width() > 578) ? ['pageLength', 'print', {
+				extend: 'collection',
+				text: 'Export',
+				className: 'btn btn-group',
+				buttons: [
+					{
+						extend: 'excelHtml5',
+						className: 'dropdown-item'
+					},
+					{
+						extend: 'csvHtml5',
+						className: 'dropdown-item'
+					},
+					{
+						extend: 'pdfHtml5',
+						className: 'dropdown-item'
+					}
+				]
+			}, 'colvis'] : ['pageLength', {
+				extend: 'collection',
+				text: 'Export',
+				className: 'btn btn-group',
+				buttons: [
+					{
+						extend: 'excelHtml5',
+						className: 'dropdown-item'
+					},
+					{
+						extend: 'csvHtml5',
+						className: 'dropdown-item'
+					},
+					{
+						extend: 'pdfHtml5',
+						className: 'dropdown-item'
+					}
+				]
+			}, 'colvis']
+		});
+		customer_table.on("click", "th.select-checkbox", function() {
+			if ($("th.select-checkbox").hasClass("selected")) {
+				customer_table.rows().deselect();
+				$("th.select-checkbox").removeClass("selected");
+			} else {
+				customer_table.rows().select();
+				$("th.select-checkbox").addClass("selected");
+			}
+		}).on("select deselect", function() {
+			("Some selection or deselection going on")
+			if (customer_table.rows({
+					selected: true
+				}).count() !== customer_table.rows().count()) {
+				$("th.select-checkbox").removeClass("selected");
+			} else {
+				$("th.select-checkbox").addClass("selected");
+			}
+		});

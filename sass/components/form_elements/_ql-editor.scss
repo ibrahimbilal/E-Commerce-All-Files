@@ -1,0 +1,31 @@
+.ql-snow {
+    .ql-picker {
+        &.ql-size {
+            width: 60px;
+            .ql-picker-label,
+            .ql-picker-item {
+                &::before {
+                    content: attr(data-value) !important;
+                }
+            }
+        }
+    }
+}
+
+.ql-toolbar.ql-snow .ql-formats {
+    margin-right: 10px;
+}
+
+.ql-editor {
+    font-size: .9rem;
+    &.ql-blank {
+        &::before {
+            color: var(--text-color);
+            opacity: .5;
+        }
+    }
+}
+
+.editor-container.ql-snow {
+    height: 350px;
+}

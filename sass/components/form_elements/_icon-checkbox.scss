@@ -1,0 +1,67 @@
+.icon-checkbox {
+	width: 30px;
+	height: 30px;
+	font-size: 20px;
+	@extend .flex-box;
+	@extend .center-items;
+	cursor: pointer;
+	&:not(:last-of-type) {
+		margin-right: 10px;
+	}
+	input {
+		opacity: 0;
+		width: 0;
+		height: 0;
+
+		&:checked + .icon {
+			color: #FFF;
+			&.facebook {
+				background-color: #1877F2;
+				border-color: #1877F2;
+			}
+			&.twitter {
+				background-color: #1DA1F2;
+				border-color: #1DA1F2;
+			}
+			&.instagram {
+				background-color: #c32aa3;
+				border-color: #c32aa3;
+			}
+			&.whatsapp {
+				background-color: #25D366;
+				border-color: #25D366;
+			}
+			&.envelope {
+				background-color: #8383EE;
+				border-color: #8383EE;
+			}
+		}
+
+	}
+	.icon {
+		@extend .flex-box;
+		@extend .center-items;
+		color: #B9B9B9;
+		border: 1px solid #B9B9B9;
+		border-radius: 5px;
+		width: 100%;
+		height: 100%;
+
+		// &.facebook {
+		// 	color: #1877F2;
+		// }
+		// &.twitter {
+		// 	color: #1DA1F2;
+		// }
+		// &.instagram {
+		// 	color: #c32aa3;
+		// }
+		// &.whatsapp {
+		// 	color: #25D366;
+		// }
+		// &.envelope {
+		// 	color: #8383EE;
+		// }
+	}
+
+}

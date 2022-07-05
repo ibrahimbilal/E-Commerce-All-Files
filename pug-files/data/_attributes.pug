@@ -1,0 +1,31 @@
+.table-responsive
+	table(id="attributes" class="table table-striped")
+		thead
+			tr
+				th
+				th.text-uppercase the title
+				th.text-uppercase slug
+				th.text-uppercase term
+				th.text-uppercase action
+		tbody
+			- var rows = [{title: "Sizes", slug: "sizes", term: "XS, S, M, L, XL, XXL"}, {title: "Weight", slug: "weight", term: "G, KG, TN"}, {title: "Colors", slug: "colors", term: "Red, Black, Blue, White, Pink"}]
+				each row in rows
+					tr
+						td
+						td.prod-title= row.title
+						td= row.slug
+						td= row.term
+						td
+							.btn-group
+								a.btn.btn-primary.btn-rounded.me-2.py-1
+									span.icon
+										+getRIcon("eye")
+									| view
+								a.btn.btn-warning.btn-rounded.me-2.py-1
+									span.icon
+										+getRIcon("edit")
+									| edit
+								a.btn.btn-danger.btn-rounded.me-2.py-1
+									span.icon
+										+getRIcon("trash")
+									| trash

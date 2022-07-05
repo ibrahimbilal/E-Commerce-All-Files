@@ -1,0 +1,38 @@
+.table-responsive
+	table(id="categories" class="table table-striped")
+		thead
+			tr
+				th
+				th.text-uppercase the title
+				th.text-uppercase description
+				th.text-uppercase slug
+				th.text-uppercase count
+				th.text-uppercase.text-center active
+				th.text-uppercase action
+		tbody
+			- var rows = [{title: "Clothes", desc: "The Parent Category Of Clothes", slug: "clothes", count: "245"},{title: "- Men", desc: "The Child Category Of Clothes", slug: "men", count: "245"},{title: "-- T-Shirts", desc: "The Child Category Of Child Category Men", slug: "t-shirts", count: "245"},{title: "- Women", desc: "The Child Category Of Clothes", slug: "women", count: "245"},{title: "-- T-Shirts", desc: "The Child Category Of Child Category Women", slug: "w-t-shirts", count: "245"},{title: "Clothes", desc: "The Parent Category Of Clothes", slug: "clothes", count: "245"},{title: "- Men", desc: "The Child Category Of Clothes", slug: "men", count: "245"},{title: "-- T-Shirts", desc: "The Child Category Of Child Category Men", slug: "t-shirts", count: "245"},{title: "- Women", desc: "The Child Category Of Clothes", slug: "women", count: "245"},{title: "-- T-Shirts", desc: "The Child Category Of Child Category Women", slug: "w-t-shirts", count: "245"},{title: "Clothes", desc: "The Parent Category Of Clothes", slug: "clothes", count: "245"},{title: "- Men", desc: "The Child Category Of Clothes", slug: "men", count: "245"},{title: "-- T-Shirts", desc: "The Child Category Of Child Category Men", slug: "t-shirts", count: "245"},{title: "- Women", desc: "The Child Category Of Clothes", slug: "women", count: "245"},{title: "-- T-Shirts", desc: "The Child Category Of Child Category Women", slug: "w-t-shirts", count: "245"},{title: "Clothes", desc: "The Parent Category Of Clothes", slug: "clothes", count: "245"},{title: "- Men", desc: "The Child Category Of Clothes", slug: "men", count: "245"},{title: "-- T-Shirts", desc: "The Child Category Of Child Category Men", slug: "t-shirts", count: "245"},{title: "- Women", desc: "The Child Category Of Clothes", slug: "women", count: "245"},{title: "-- T-Shirts", desc: "The Child Category Of Child Category Women", slug: "w-t-shirts", count: "245"},{title: "Clothes", desc: "The Parent Category Of Clothes", slug: "clothes", count: "245"},{title: "- Men", desc: "The Child Category Of Clothes", slug: "men", count: "245"},{title: "-- T-Shirts", desc: "The Child Category Of Child Category Men", slug: "t-shirts", count: "245"},{title: "- Women", desc: "The Child Category Of Clothes", slug: "women", count: "245"},{title: "-- T-Shirts", desc: "The Child Category Of Child Category Women", slug: "w-t-shirts", count: "245"},{title: "Clothes", desc: "The Parent Category Of Clothes", slug: "clothes", count: "245"},{title: "- Men", desc: "The Child Category Of Clothes", slug: "men", count: "245"},{title: "-- T-Shirts", desc: "The Child Category Of Child Category Men", slug: "t-shirts", count: "245"},{title: "- Women", desc: "The Child Category Of Clothes", slug: "women", count: "245"},{title: "-- T-Shirts", desc: "The Child Category Of Child Category Women", slug: "w-t-shirts", count: "245"},{title: "Clothes", desc: "The Parent Category Of Clothes", slug: "clothes", count: "245"},{title: "- Men", desc: "The Child Category Of Clothes", slug: "men", count: "245"},{title: "-- T-Shirts", desc: "The Child Category Of Child Category Men", slug: "t-shirts", count: "245"},{title: "- Women", desc: "The Child Category Of Clothes", slug: "women", count: "245"},{title: "-- T-Shirts", desc: "The Child Category Of Child Category Women", slug: "w-t-shirts", count: "245"},{title: "Clothes", desc: "The Parent Category Of Clothes", slug: "clothes", count: "245"},{title: "- Men", desc: "The Child Category Of Clothes", slug: "men", count: "245"},{title: "-- T-Shirts", desc: "The Child Category Of Child Category Men", slug: "t-shirts", count: "245"},{title: "- Women", desc: "The Child Category Of Clothes", slug: "women", count: "245"},{title: "-- T-Shirts", desc: "The Child Category Of Child Category Women", slug: "w-t-shirts", count: "245"}]
+				each row in rows
+					tr
+						td
+						td.prod-title= row.title
+						td.text-capitalize= row.desc
+						td= row.slug
+						td.text-center= row.count
+						td.text-center
+							label.switch
+								input(type="checkbox" class="switch" name="active" data-product-id="1" checked)
+								span.slider
+						td
+							.btn-group
+								a.btn.btn-primary.btn-rounded.me-2.py-1
+									span.icon
+										+getRIcon("eye")
+									| view
+								a.btn.btn-warning.btn-rounded.me-2.py-1
+									span.icon
+										+getRIcon("edit")
+									| edit
+								a.btn.btn-danger.btn-rounded.me-2.py-1
+									span.icon
+										+getRIcon("trash")
+									| trash

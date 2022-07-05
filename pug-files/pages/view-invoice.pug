@@ -1,0 +1,172 @@
+extends ../bases/_base
+block mainContent
+	- var flexClasses = ['d-flex', 'align-items-sm-center']
+	.page-header
+		.row
+			.col-12(class=flexClasses).justify-content-sm-between.flex-column.flex-sm-row
+				.page-title.text-capitalize invoice #34245
+
+				.page-breadcrumbs(class=flexClasses).justify-content-start.justify-content-sm-end
+					- var breadCrumbsItems = ['invoices', 'view']
+					include ./../components/_breadcrumbs
+
+	.row
+		.col-lg-9.float-start.post-box.mb-3.mb-lg-0
+			.invoice
+				.invoice-header.box-spaces.mb-0
+					span invoice
+				.invoice-body.box-spaces.mb-0
+					.row
+						.col-sm-4.col-lg-3.order-sm-2.d-flex.justify-content-center.align-items-center
+								.logo-holder.text-center
+									img(src="./assets/images/logo.png")
+									p.name.mb-0.mt-2 Company Name
+						.col-sm-8.col-lg-9.order-sm-1
+							.text-start
+								p.title.title-1.mb-2 Bill From:
+								table
+									tbody
+										tr 
+											td
+												p.title.title-2.mb-0 Company:
+											td Company Name
+										tr 
+											td
+												p.title.title-2.mb-0 Address:
+											td 1881  Rosewood Lane
+										tr 
+											td
+												p.title.title-2.mb-0 City:
+											td New York City
+										tr 
+											td
+												p.title.title-2.mb-0 Country:
+											td United State Of America
+										tr 
+											td
+												p.title.title-2.mb-0 Email Address:
+											td company@email.com
+					hr
+					.row
+						.col-sm-8.col-lg-9
+							.table-holder.mt-0
+								.table-responsive
+									table.table.w-100
+										thead.table-light
+											th
+											th Billing to:
+											th Shipping to:
+										tbody
+											tr
+												td 
+													p.title.title-2.mb-0 Customer:
+												td Jayson Hinrichsen
+												td Jayson Hinrichsen
+											tr
+												td 
+													p.title.title-2.mb-0 Address 1:
+												td 1881  Rosewood Lane
+												td 1881  Rosewood Lane
+											tr
+												td 
+													p.title.title-2.mb-0 Address 2:
+												td 
+												td 
+											tr
+												td 
+													p.title.title-2.mb-0 City:
+												td New York City
+												td New York City
+											tr
+												td 
+													p.title.title-2.mb-0 Country:
+												td United State Of America
+												td United State Of America
+											tr
+												td 
+													p.title.title-2.mb-0 Postal:
+												td 10011
+												td 10011
+											tr
+												td 
+													p.title.title-2.mb-0 Mobile:
+												td 516-913-8323
+												td 516-913-8323
+						.col-sm-4.col-lg-3
+							.invoice-detail.text-sm-end
+								p.title.title-2 Invoice No
+								p.title-2 23234
+								p.title.title-2 Date
+								p.title-2 26/03/2021
+								p.title.title-2 Amount
+								p.title-2 11990$
+
+					.row
+						.col-sm-12
+							.table-holder.mt-0
+								.table-responsive
+									table.table.w-100
+										thead.table-light
+											th Item
+											th.text-center Quantity
+											th.text-center Unit Cost
+											th.text-end Total Cost
+										tbody
+											tr 
+												td Apple Watch Series 4 GPS
+												td.text-center 3
+												td.text-center 100$
+												td.text-end 300$
+											tr 
+												td Apple Watch Series 4 GPS
+												td.text-center 3
+												td.text-center 100$
+												td.text-end 300$
+											tr 
+												td Apple Watch Series 4 GPS
+												td.text-center 3
+												td.text-center 100$
+												td.text-end 300$
+				.invoice-body.box-spaces.mb-0.pt-0
+					.row
+						.col-sm-4.col-lg-3.order-sm-2.mb-3
+							.total-holder
+								.item.form-item.second.d-flex.justify-content-between
+									.item-title.meta-title subtotal:
+									span.ms-2 900$
+								.item.form-item.second.d-flex.justify-content-between
+									.item-title.meta-title shiiping:
+									span.ms-2 10$
+								.item.form-item.second.d-flex.justify-content-between
+									.item-title.meta-title Tax (10%):
+									span.ms-2 90$
+								.item.form-item.second.d-flex.justify-content-between.total
+									.item-title.meta-title Total:
+									span.ms-2 1000$
+						.col-sm-8.col-lg-9.order-sm-1
+							.note
+								p.title.title-1.mb-1 Notes:
+								p Lorem ipsum dolor sit amet, consetetur sadipscing <br> elitr, sed diam nonumy eirmod tempor invidunt ut <br> labore et dolore magna aliquyam erat, sed diam 
+
+
+				.invoice-footer.box-spaces.mb-0.pt-0
+					hr
+					.text-center
+						img(src="./assets/images/logo.png")
+						p.name.mb-0.mt-2 Company Name
+
+		.col-sm-6.col-lg-3.float-end.meta-box.ms-auto
+			.main-box.box-spaces
+				.btns-holder
+					button#download.btn.solid-btn.w-100.mb-2 Download (.Pdf)
+					button#print.btn.regular-btn.w-100.mb-2 send as email
+					button#print.btn.regular-btn.w-100.mb-2 print
+					button#trash.btn.trans-btn.w-100
+						span.icon.me-1
+							+getRIcon("trash")
+							| move to trash
+			
+
+block footer_script
+	script.
+		

@@ -1,0 +1,162 @@
+.gallery {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0; 
+    width: 100%;
+    height: 100%;
+    z-index: 11;
+    display: none;
+}
+
+.gallery-page {
+    @extend .flex-box;
+    flex-direction: column;
+}
+
+.page-content {
+    @include responsive-property(height, 100vh, 100vh, 100vh);
+    @media ( min-width: $xl ) {
+        height: 145vh;
+    }
+    @media ( min-width: $xxl ) {
+        height: 100vh;
+    }
+
+    .meta-box {
+        &.hide {
+            display: none;
+        }
+    }
+    .post-box {
+        &.open {
+            width: 100%;
+            max-width: 100%;
+        }
+    }
+}
+
+.g-holder {
+    background-color: var(--box-bg-color);
+    width: 100%;
+    height: 100%;
+    // @include responsive-property(height, '100vh', '100vh', '100vh');
+
+    .icon {
+        cursor: pointer;
+        width: 30px;
+        text-align: center;
+    }
+    @media ( max-width: $sm ) {
+        .bulk-action {
+            .bulk-form {
+				display: -webkit-box; 
+				display: -moz-box;
+				display: -ms-flexbox;
+				display: -webkit-flex; 
+				display: flex;
+                .bulk-select {
+                    flex: 1;
+                    margin-right: .5rem;
+                }
+            }
+        }
+    }
+
+    .images {
+        position: relative;
+        flex: 1 1 100%;
+        .images-list {
+            display: grid;
+            @include responsive-property(grid-template-columns, repeat(auto-fit, minmax(80px, 1fr)), repeat(auto-fit, minmax(90px, 1fr)), repeat(auto-fit, minmax(100px, 1fr)));
+            @include responsive-property(grid-template-rows, repeat(auto-fit, 90px), repeat(auto-fit, 85px), repeat(auto-fit, 100px));
+            @include responsive-property(grid-gap, 2% 3%, 3% 2%, 2% 1%);
+            @media ( min-width: $xxl ) {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                grid-template-rows: repeat(auto-fit, 150px);
+            }
+            align-items: flex-start;
+            overflow-x: hidden;
+            overflow-y: auto;
+            padding-right: 5px;
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0; 
+            // width: 100%;
+            // height: 100%;
+            @extend .scrollbar;
+            .img-item {
+                position: relative;
+                display: inline-block;
+                @include responsive-property(width, 90px, 100px, 100px);
+                @include responsive-property(height, 90px, 100px, 100px);
+                @media ( min-width: $xxl ) {
+                    width: 150px;
+                    height: 150px;
+                }
+                border: 1px solid var(--text-color);
+                background-color: var(--body-background);
+                label {
+                    cursor: pointer;
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                    img {
+                        object-fit: cover;
+                    }
+                    input {
+                        display: none;
+                    }
+                }
+                &.selected {
+                    box-shadow: 0 0 5px 0 var(--main-color);
+                    border-color: var(--main-color);
+                    border-radius: 5px;
+                    label {
+                        border-radius: 5px;
+                    }
+                    &::after {
+                        content: "\f144";
+                        font-family: uicons-solid-rounded !important;
+                        font-style: normal;
+                        font-weight: normal !important;
+                        font-variant: normal;
+                        text-transform: none;
+                        line-height: 0;
+                        -webkit-font-smoothing: antialiased;
+                        -moz-osx-font-smoothing: grayscale;
+                        position: absolute;
+                        right: -7px;
+                        bottom: 0;
+                        color: var(--main-color);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.img-view {
+    img {
+        max-width: 200px;
+        border: 1px solid var(--text-color);
+    }
+}
+
+.filepond--root {
+    min-height: 7rem;
+    margin: 0;
+    .filepond--drop-label {
+        min-height: 7rem;
+        color: var(--text-color);
+        font-family: 'Montserrat', sans-serif;
+    }
+    .filepond--panel-root {
+        background-color: var(--box-bg-color);
+    }
+
+    .filepond--credits {
+        display: none;
+    }
+}
+
+.filepond--item {
+    @include responsive-property(width, calc(100% - .5em), calc(50% - .5em), calc(20% - .5em))
+}

@@ -1,0 +1,47 @@
+doctype html
+html(dir="ltr" lang="en")
+	head
+		//- Meta Tags
+		meta(charset='UTF-8')
+		meta(name='viewport', content='width=device-width, initial-scale=1.0')
+		meta(http-equiv='X-UA-Compatible' content='ie=edge')
+		//- CSS Files
+		link(href='assets/css/uicons-regular-rounded.css' rel='stylesheet')
+		link(href='assets/css/uicons-solid-rounded.css' rel='stylesheet')
+		link(href='assets/css/uicons-brands.css' rel='stylesheet')
+		link(href='assets/css/bs.css' rel='stylesheet')
+		link(href='assets/css/select2.min.css' rel='stylesheet')
+		link(href='assets/css/swiper-bundle.min.css' rel='stylesheet')
+		link(href='assets/css/apexcharts.css' rel='stylesheet')
+		link(href='assets/css/datatables.min.css' rel='stylesheet')
+		link(href='assets/css/quill.snow.min.css' rel='stylesheet')
+		link(href='assets/css/sweetalert2.min.css' rel='stylesheet')
+		link(href='assets/css/pickadate.css' rel='stylesheet')
+		link(href='assets/css/dropzone.min.css' rel='stylesheet')
+		link(href='assets/css/daterangepicker.css' rel='stylesheet')
+		link(href='assets/css/filepond/filepond.min.css' rel='stylesheet')
+		link(href='assets/css/filepond/filepond-plugin-image-preview.min.css' rel='stylesheet')
+		link(href='assets/css/style.css' rel='stylesheet')
+		
+		//- Fonts
+		link(href='https://fonts.gstatic.com' rel='preconnect')
+		link(href='https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap' rel='stylesheet')
+
+		title E-Commerce Project
+
+		//- async scripts
+		script(src="assets/js/async.js" type="text/javascript" async)
+
+	body(class='body-class')
+
+		include ./_mixins
+		aside
+			include ../includes/_menu
+			
+		main
+			include ../includes/_header
+			block mainContent
+
+		include ../includes/_footer
+		include ../includes/_scripts
+		block footer_script

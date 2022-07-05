@@ -1,0 +1,130 @@
+* {
+    outline: none;
+}
+
+html {
+    overflow-x: hidden;
+    @extend .scrollbar;
+    @include responsive-property(font-size, 14px, 16px, 16px);
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    @include responsive-property(padding, 15px, 20px, 30px);
+    background-color: var(--body-background);
+    color: var(--text-color);
+    @media ( min-width: $lg ) {
+        display: grid;
+        grid-template-columns: min-content 1fr;
+        grid-gap: 30px;
+        grid-template-areas:
+		"side main"
+		"foot foot";
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+    color: var(--main-color);
+    &:hover {
+        color: var(--main-color-hover);
+    }
+}
+
+input, textarea {
+    background-color: transparent;
+}
+
+i {
+    color: currentColor;
+    line-height: 0;
+    vertical-align: middle;
+}
+
+main {
+    @media ( min-width: $lg ) {
+        grid-area: main;
+        grid-column: 2/4;
+    }
+}
+
+small {
+    font-size: 12px;
+    white-space: break-spaces;
+    font-weight: 400;
+}
+
+hr {
+	background-color: var(--line-color);
+	opacity: 1;
+}
+
+.apexcharts-tooltip {
+    background-color: var(--body-background);
+    color: var(--text-color);
+}
+
+.apexcharts-menu-item, .apexcharts-menu {
+    background: var(--body-background) !important;
+}
+
+.apexcharts-canvas .apexcharts-element-hidden {
+    display: none;
+}
+
+// The Label In To Do List Editor
+.todo-list__label {
+    display: inline-block !important;
+}
+
+.ck-editor__editable_inline {
+    min-height: 300px;
+    max-height: 600px;
+}
+
+// Select 2 
+#product-lang,
+.select2-container .select2-selection--single,
+.select2-dropdown {
+    border: none;
+}
+
+.select2-dropdown {
+    box-shadow: 0px 3px 6px 0px var(--box-shadow-color);
+}
+
+.select2-container .select2-selection--single {
+    height: 32px;
+}
+
+.select2-container .select2-selection--single .select2-selection__rendered {
+    padding-right: 10px;
+}
+
+.select2-selection__rendered,
+.select2-results__option {
+    text-transform: capitalize;
+    font-size: 14px;
+}
+
+.swal2-popup {
+    background-color: var(--box-bg-color) !important;
+}
+
+.swal2-title,
+.swal2-content {
+    color: var(--text-color) !important;
+}
+
+.form-select {
+    text-transform: capitalize;
+}
+
+tr.bg-active:not(:last-child) {
+    border-bottom: 1rem solid var(--box-bg-color);
+}

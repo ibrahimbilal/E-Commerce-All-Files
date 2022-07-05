@@ -1,0 +1,259 @@
+.main-box {
+    background-color: var(--box-bg-color);
+    color: var(--text-color);
+    border-radius: 15px;
+	@include prefix(box-shadow, 3px 3px 6px 0px var(--box-shadow-color));
+}
+
+.menu-padding {
+    @include responsive-property(padding, 15px 0 3px, 20px 0 3px, 30px 0 3px);
+}
+.box-spaces {
+    @include responsive-property(padding, 15px, 20px, 30px);
+    @include responsive-property(margin-bottom, 15px, 20px, 30px);
+}
+
+.box-header {
+    border-bottom: 1px solid var(--line-color);
+    padding-bottom: 1rem;
+    .select {
+        border: 0;
+        background-color: transparent;
+        color: var(--text-color);
+        option {
+            color: #333;
+        }
+    }
+}
+
+.box-title {
+    font-size: 20px;
+}
+
+.list-holder {
+    .list-item {
+        &:not(:last-child) {
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--line-color);
+        }
+        &:last-child {
+            padding-top: 1rem;
+        }
+        .percent {
+            &.good {
+                i {
+                    color: #28C76F;
+                    vertical-align: middle;
+                    font-size: 18px;
+                }
+            }
+            &.bad {
+                i {
+                    color: #EA5455;
+                    vertical-align: middle;
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}
+
+.scrollbar {
+    scrollbar-color: var(--scroll-bar-color) var(--scroll-bar-bg);
+    scrollbar-width: thin;
+    &::-webkit-scrollbar-track {
+        background-color: var(--scroll-bar-bg);
+        border-radius: 10px;
+    }
+    &::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+        background-color: var(--scroll-bar-bg);
+    }
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: var(--scroll-bar-color);
+        border: 2px solid var(--scroll-bar-bg);
+    }
+}
+
+.float-window {
+    position: absolute;
+    width: 300px;
+    max-height: 370px;
+    top: calc( 100% + 10px );
+    right: 0;
+    z-index: 100;
+    padding: 20px;
+    display: none;
+    overflow-y: hidden;
+    @media ( min-width: $xxl ) {
+        width: 350px;
+        max-height: 470px;
+    }
+    .win-head {
+        padding-bottom: 15px;
+        border-bottom: 1px solid var(--line-color);
+        margin-bottom: 15px;
+        .head-title {
+            font-weight: 600;
+            @media ( min-width: $xxl ) {
+                font-size: 18px;
+            }
+        }
+    }
+    .win-body {
+        overflow: auto;
+        max-height: 275px;
+        @media ( min-width: $xxl ) {
+            max-height: 375px;
+        }
+        .notify-list {
+            .notify-item {
+                &:not(:last-child) {
+                    margin-bottom: 10px;
+                }
+                .img {
+                    position: relative;
+                    &.doted {
+                        &::after {
+                            content: '';
+                            width: 7px;
+                            height: 7px;
+                            border-radius: 50%;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            background-color: var(--main-color);
+                        }
+                    }
+                    img {
+                        @media ( min-width: $xxl ) {
+                            width: 64px;
+                        }
+                    }
+                }
+                .content {
+                    font-size: 12px;
+                    @media ( min-width: $xxl ) {
+                        font-size: 14px;
+                    }
+                    p {
+                        margin-bottom: 5px;
+                    }
+                    .name {
+                        font-weight: 700;
+                    }
+                    .msg {
+                        width: 196px;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                    }
+                    .date {
+                        font-size: 10px;
+                        @media ( min-width: $xxl ) {
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.user-window {
+        width: 200px;
+        @include responsive-property(right, 1rem, 4rem, 4.5rem);
+        @media ( min-width: $xl ) {
+            right: 11rem;
+        }
+
+        a {
+            color: var(--text-color);
+        }
+    }
+}
+
+.page-header {
+    @include responsive-property(padding, 15px 0, 20px 0, 20px 0);
+}
+
+.page-title {
+    @include responsive-property(font-size, 1.85rem, 1.5rem, 1.5rem);
+    @media ( min-width: $xl ) {
+        font-size: 2rem;
+    }
+    @media ( max-width: $sm ) {
+        margin-bottom: 10px;
+    }
+}
+
+.add-btn {
+    background-color: var(--main-color);
+    color: #FFF;
+    padding: 7px 15px;
+    border-radius: 7px;
+    @include responsive-property(margin-left, 15px, 20px, 20px);
+    .icon {
+        margin-right: 10px;
+        i {
+            color: #FFF;
+        }
+    }
+    &:hover {
+        background-color: var(--main-color-hover);
+        color: #FFF;
+    }
+}
+
+.divider {
+    @include responsive-property(margin-bottom, 15px, 20px, 20px);
+}
+
+.overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba($color: #000, $alpha: .6);
+    z-index: 10;
+}
+
+.list-unstyled {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.rotate {
+    animation: rotate 1s linear infinite;
+    transform-origin: center;
+}
+
+@keyframes rotate {
+    from {
+        @include prefix(transform, rotate(0));
+    }
+    to {
+        @include prefix(transform, rotate(360deg));
+    }
+}
+
+.border-none {
+    border: none !important;
+}
+
+.bg-active {
+    background-color: var(--menu-active-bg);
+}
+
+.flex-box {
+	display: -webkit-box; 
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex; 
+	display: flex;
+}
+
+.center-items {
+	justify-content: center;
+	align-items: center;
+}

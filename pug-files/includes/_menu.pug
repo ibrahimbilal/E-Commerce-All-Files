@@ -1,0 +1,113 @@
+- var current_url = filename.split("\\").pop().split('.').slice(0, -1).join('.')
+.dashbord-menu.main-box.menu-padding
+	.menu-header
+		a(href="./index.html")
+			+getRIcon("shop")
+			span.title Admin Panel
+
+	.menu-links.d-flex.flex-column
+		ul.menu-list-group
+			li.list-item(class={active: current_url === 'index'} )
+				a(href="./index.html")
+					+getRIcon("apps")
+					span.title dashboard
+		ul.menu-list-group
+			li.list-item.has-submenu(class={active: current_url === 'products' || current_url === 'add-product' || current_url === 'attributes' || current_url === 'add-attribute' } )
+				a(href="./products.html")
+					+getRIcon("shopping-bag")
+					span.title products
+					span.icon
+						+getRIcon("angle-small-down")
+				ul.submenu
+					li.list-item(class={active: current_url === 'attributes' || current_url === 'add-attribute'} )
+						a(href="./attributes.html")
+							+getRIcon("circle")
+							span.title attributes
+			li.list-item(class={active: current_url === 'categories' || current_url === 'add-category'} )
+				a(href="./categories.html")
+					+getRIcon("folder")
+					span.title categories
+
+			li.list-item(class={active: current_url === 'tags' || current_url === 'add-tag'} )
+				a(href="./tags.html")
+					+getRIcon("label")
+					span.title tags
+
+			li.list-item(class={active: current_url === 'discounts' || current_url === 'add-discount'} )
+				a(href="./discounts.html")
+					+getRIcon("badge-percent")
+					span.title discounts
+
+		ul.menu-list-group
+			li.list-item(class={active: current_url === 'customers' || current_url === 'add-customer' || current_url === 'view-customer' } )
+				a(href="./customers.html")
+					+getRIcon("users")
+					span.title customers
+			li.list-item(class={active: current_url === 'orders' || current_url === 'add-order' || current_url === 'view-order' } )
+				a(href="./orders.html")
+					+getRIcon("box")
+					span.title order
+					span.title.badge 35
+			li.list-item(class={active: current_url === 'invoices' || current_url === 'view-invoice' } )
+				a(href="./invoices.html")
+					+getRIcon("document")
+					span.title invoices
+
+		ul.menu-list-group
+			li.list-item
+				a(href="javascript:void(0)")
+					+getRIcon("stats")
+					span.title analytics
+			li.list-item(class={active: current_url === 'marketing' } )
+				a(href="./marketing.html")
+					+getRIcon("megaphone")
+					span.title marketing
+
+		ul.menu-list-group
+			li.list-item(class={active: current_url === 'users' || current_url === 'add-user' || current_url === 'view-user' } )
+				a(href="./users.html")
+					+getRIcon("user")
+					span.title users
+			li.list-item(class={active: current_url === 'roles' || current_url === 'add-role'} )
+				a(href="./roles.html")
+					+getRIcon("key")
+					span.title permissions
+
+		ul.menu-list-group
+			li.list-item(class={active: current_url === 'gallery'})
+				a(href="./gallery.html")
+					+getRIcon("picture")
+					span.title gallery
+			li.list-item(class={active: current_url === 'languages'})
+				a(href="./languages.html")
+					+getRIcon("world")
+					span.title languages
+			li.list-item.has-submenu(class={active: current_url === 'general-settings' || current_url === 'theme-settings'|| current_url === 'store-settings' || current_url === 'currencies-settings'} )
+				a(href="javascript:void(0)")
+					+getRIcon("settings")
+					span.title settings
+					span.icon
+						+getRIcon("angle-small-down")
+				ul.submenu
+					li.list-item(class={active: current_url === 'general-settings'} )
+						a(href="./general-settings.html")
+							+getRIcon("circle")
+							span.title general
+					li.list-item(class={active: current_url === 'theme-settings'} )
+						a(href="./theme-settings.html")
+							+getRIcon("circle")
+							span.title theme
+					li.list-item(class={active: current_url === 'store-settings'} )
+						a(href="./store-settings.html")
+							+getRIcon("circle")
+							span.title store
+					li.list-item(class={active: current_url === 'currencies-settings'} )
+						a(href="./currencies-settings.html")
+							+getRIcon("circle")
+							span.title currencies
+
+		ul.menu-list-group
+			li#collaps.list-item
+				a(href="javascript:void(0)")
+					+getRIcon("list")
+					span.title collaps

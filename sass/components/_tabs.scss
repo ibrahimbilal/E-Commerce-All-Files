@@ -1,0 +1,41 @@
+.tabs-holder {
+    .tabs-buttons {
+        @extend .flex-box;
+        @include responsive-property(flex-wrap, wrap, nowrap, nowrap);
+        .tab-btn {
+            text-transform: capitalize;
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            @include responsive-property(flex, 1 1 50%, 1 1 25%, 1 1 25%);
+            padding: 10px 20px;
+            transition: flex-basis 200ms ease-in-out;
+            &.active {
+                @include responsive-property(flex, 1 1 50%, 1 1 100%, 1 1 100%);
+                border: none;
+                border-bottom: 3px solid var(--main-color);
+                background-color: var(--menu-active-bg);
+            }
+            @media ( max-width: $sm ) {
+                &:nth-of-type(n+3) {
+                    border-top-left-radius: 0;
+                    border-top-right-radius: 0;
+                }
+            }
+        }
+    }
+    .tabs-boxs {
+        border: 1px solid var(--border-color);
+        border-top: none;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        .tab-box {
+            display: none;
+            &.active {
+                display: block;
+            }
+        }
+    }
+
+}

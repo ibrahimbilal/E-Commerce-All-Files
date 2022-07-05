@@ -1,0 +1,52 @@
+
+.regular-btn {
+    background-color: var(--box-bg-color);
+    border-color: var(--main-color);
+    color: var(--main-color);
+    &:hover {
+        background-color: var(--main-color);
+        border-color: var(--main-color);
+        color: #FFF;
+        box-shadow: 2px 2px 6px 0 var(--main-color);
+    }
+}
+
+.solid-btn {
+    background-color: var(--main-color);
+    color: #FFF;
+    &:hover {
+        background-color: var(--main-color-hover);
+        border-color: var(--main-color-hover);
+        color: #FFF;
+        box-shadow: 2px 2px 6px 0 var(--main-color);
+    }
+}
+
+.trans-btn {
+    background-color: var(--box-bg-color);
+    border-color: var(--box-bg-color);
+    color: var(--danger-color);
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+}
+
+.regular-btn,
+.solid-btn {
+    @include prefix(transition, 'background-color .1s ease-in-out, border-color .1s ease-in-out, color .1s ease-in-out, box-shadow .1s ease-in-out');
+}
+
+.regular-btn,
+.solid-btn,
+.trans-btn {
+    font-size: 14px;
+    min-width: 130px;
+    padding: 5px 15px;
+    text-transform: capitalize;
+    border-radius: 5px;
+}
+
+.generate-password {
+    min-width: auto;
+    padding-top: .4rem;
+    padding-bottom: .4rem;
+}

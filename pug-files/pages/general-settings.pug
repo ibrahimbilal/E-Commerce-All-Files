@@ -1,0 +1,112 @@
+extends ../bases/_base
+block mainContent
+	- var flexClasses = ['d-flex', 'align-items-sm-center']
+	.page-header
+		.row
+			.col-12(class=flexClasses).justify-content-sm-between.flex-column.flex-sm-row
+				.page-title.text-capitalize settings
+
+				.page-breadcrumbs(class=flexClasses).justify-content-start.justify-content-sm-end
+					- var breadCrumbsItems = ['settings']
+					include ./../components/_breadcrumbs
+
+	form#settings-form.row.d-block.clearfix(data-post-type="settings")
+		.col-sm-12.col-lg-9.float-start.post-box
+			.main-box.box-spaces.mb-0
+				.form-item.primary.mb-3
+					.item-title General Settings 
+
+				.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap
+					label.item-title(for="site-title") site title:
+					input#site-title.form-control(name="site_title" type="text")
+				
+				.form-item.second.d-flex.flex-wrap.flex-sm-nowrap.mt-3
+					label.item-title.mt-1(for="tagline") tagline:
+					.input-holder.w-100
+						input#tagline.form-control(name="tagline" type="text")
+						small In A Few Words, Explain What This Site Is About.
+				
+				.form-item.second.d-flex.flex-wrap.flex-sm-nowrap.mt-3
+					label.item-title.mt-1(for="site-desc") Site Description:
+					textarea#site-desc.form-control(name="site_desc" rows="4" style="resize:none")
+
+				hr
+
+				.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap
+					label.item-title(for="site-url") site URL:
+					input#site-url.form-control(name="site_url" type="url" placeholder="https://example.com/")
+
+				.form-item.second.d-flex.mt-3.flex-wrap
+					.item-title.d-block.mb-2
+						label.item-title.d-block Favicon:
+						small Site Icons Should Be Square And At Least 512 × 512 Pixels.
+					.item-content
+						a.btn.regular-btn.gallery-btn(href="javascript:void(0)" style="width: 150px") Change Image
+						.selected-img
+							.img-holder.mt-3
+								img.preview.p-1(src="./assets/images/logo.png" width="70")
+								span.overlay
+									+getRIcon("trash")
+									span remove
+
+				hr
+
+				.form-item.second.d-flex.flex-wrap.flex-sm-nowrap.mt-3
+					label.item-title.mt-2(for="timezone") Timezone:
+					.input-holder.w-100
+						select#timezone.form-select(name="timezone")
+							- for(var x = 0; x <= 12; x++)
+								option UTC +#{x}
+						- var today = new Date()
+						small UTC Time Is: #{today.getFullYear()}-#{today.getMonth() + 1}-#{today.getDate()} #{today.getHours()}:#{today.getMinutes()}:#{today.getSeconds()}
+
+				.form-item.second.d-flex.flex-wrap.flex-sm-nowrap.mt-3
+					label.item-title Date Formate:
+					.input-holder.w-100
+						label.radio-label.w-100.mb-3
+							input.input-radio(type="radio" name="date_formate" value="F j, Y" checked)
+							| December 10, 2022
+						label.radio-label.w-100.mb-3
+							input.input-radio( type="radio" name="date_formate" value="Y-m-d")
+							| 2022/12/10
+						label.radio-label.w-100.mb-3
+							input.input-radio(type="radio" name="date_formate" value="m/d/Y")
+							| 12/10/2022
+						label.radio-label.w-100.mb-3
+							input.input-radio(type="radio" name="date_formate" value="d/m/Y")
+							| 10/12/2022
+						label.radio-label.w-100.mb-3
+							input.input-radio(type="radio" name="date_formate" value="custom")
+							| Custom:
+							input.text-center.me-2(type="text" name="date_formate_custom" placeholder="d-M-Y" style="width: 70px" disabled)
+							| 10-Dec-2022
+
+				.form-item.second.d-flex.flex-wrap.flex-sm-nowrap.mt-3
+					label.item-title Time Formate:
+					.input-holder.w-100
+						label.radio-label.w-100.mb-3
+							input.input-radio(type="radio" name="time_formate" value="g:i a" checked)
+							| 9:23 pm
+						label.radio-label.w-100.mb-3
+							input.input-radio(type="radio" name="time_formate" value="g:i A")
+							| 9:23 PM
+						label.radio-label.w-100.mb-3
+							input.input-radio(type="radio" name="time_formate" value="H:i")
+							| 21:23
+						label.radio-label.w-100
+							input.input-radio(type="radio" name="time_formate" value="custom")
+							| Custom:
+							input.text-center.me-2(type="text" name="time_formate_custom" placeholder="g:i a" style="width: 70px" disabled)
+							| 9:23 pm
+
+				.form-item.second.d-flex.flex-wrap.flex-sm-nowrap.mt-3
+					label.item-title
+					.input-holder.w-100
+						a(href="javascript:void(0)") Documentation on date and time formatting.
+
+		.col-sm-6.col-lg-3.float-end.meta-box
+			.main-box.box-spaces.mb-0.mt-3.mt-lg-0
+				.btns-holder.d-flex.justify-content-between
+					button.btn.solid-btn.w-100(type="submit") Save Changes 
+block footer_script
+	include ./../components/_gallery

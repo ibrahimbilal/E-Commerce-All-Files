@@ -1,0 +1,149 @@
+extends ../bases/_base
+block mainContent
+	- var flexClasses = ['d-flex', 'align-items-sm-center']
+	.page-header
+		.row
+			.col-12(class=flexClasses).justify-content-sm-between.flex-column.flex-sm-row
+				.page-title.text-capitalize marketing
+					a.add-btn.btn.text-capitalize(href='#')
+						span.icon
+							+getRIcon("add")
+						| add new
+
+				.page-breadcrumbs(class=flexClasses).justify-content-start.justify-content-sm-end
+					- var breadCrumbsItems = ['marketing']
+					include ./../components/_breadcrumbs
+
+	.row
+		.col-12(class=flexClasses).flex-column.flex-sm-row.mb-2
+			.dash-filters
+				- var filters = ['All (110)', 'Subscribers (90)', 'Not Subscribers (20)']
+				each val, index in filters
+					a.item.text-capitalize(href="#")= val
+
+			.bulk-action.align-self-end
+				include ./../components/_bulk-action
+
+		.col-12
+			.main-box.box-spaces
+				.table-holder.mt-0
+					.table-responsive
+						include ./../data/_subscribers
+
+		.col-12
+			.main-box.box-spaces.mb-0
+				.row
+					.col-sm-6
+						.range-filters.input-group.form-item.mb-3
+							label.input-group-text(for="from") From:
+							input#from.form-control(type="text" name="from" placeholder="Select Date" data-toggle="datepicker")
+							label.input-group-text(for="to") To:
+							input#to.form-control(type="text" name="to" placeholder="Select Date" data-toggle="datepicker")
+							button.btn.solid-btn.generate-password(type="button") Filter
+					//- <div class="input-group mb-3">
+					//- 	<span class="input-group-text">From:</span>
+					//- 	<input type="text" class="form-control" placeholder="Username" aria-label="Username">
+					//- 	<span class="input-group-text">To:</span>
+					//- 	<input type="text" class="form-control" placeholder="Server" aria-label="Server">
+					//- </div>
+					//- .form-item.d-flex.align-items-center
+					//- 	label.me-2(for="from") Select Range:
+					//- 	input#from.form-control.w-auto(type="text" name="range" placeholder="06/06/2021 - 06/12/2021" data-toggle="daterangepicker")
+				
+				#chart_1.mt-3
+
+
+block footer_script
+	script.
+		// Data Tables
+		let product_table = $('#subscribers').DataTable({
+			dom: 'Bfrtip',
+			columnDefs: [
+				{
+					orderable: false,
+					className: 'select-checkbox',
+					targets: 0
+				},
+				{ 
+					bSortable: false, 
+					aTargets: [ 0, 5] 
+				},
+				{ 
+					bSearchable: false, 
+					aTargets: [ 0, 5] 
+				}
+			],
+			select: {
+				style: 'os',
+				selector: 'td:first-child'
+			},
+			order: [
+				[1, 'desc']
+			],
+			language: {
+				info: "Show _START_ To _END_ Of _TOTAL_ subscribers",
+				buttons: {
+					pageLength: 'Show %d',
+					colvis: 'Columns'
+				}
+			},
+			stateSave: true,
+			paging: true,
+			searching: true,
+			lengthMenu: [[ 10, 15, 25, 50, 75, 100 ], ['10 subscribers', '15 subscribers', '25 subscribers', '50 subscribers', '75 subscribers', '100 subscribers']],
+			buttons: ($(window).width() > 578) ? ['pageLength', 'print', {
+				extend: 'collection',
+				text: 'Export',
+				className: 'btn btn-group',
+				buttons: [
+					{
+						extend: 'excelHtml5',
+						className: 'dropdown-item'
+					},
+					{
+						extend: 'csvHtml5',
+						className: 'dropdown-item'
+					},
+					{
+						extend: 'pdfHtml5',
+						className: 'dropdown-item'
+					}
+				]
+			}, 'colvis'] : ['pageLength', {
+				extend: 'collection',
+				text: 'Export',
+				className: 'btn btn-group',
+				buttons: [
+					{
+						extend: 'excelHtml5',
+						className: 'dropdown-item'
+					},
+					{
+						extend: 'csvHtml5',
+						className: 'dropdown-item'
+					},
+					{
+						extend: 'pdfHtml5',
+						className: 'dropdown-item'
+					}
+				]
+			}, 'colvis']
+		});
+		product_table.on("click", "th.select-checkbox", function() {
+			if ($("th.select-checkbox").hasClass("selected")) {
+				product_table.rows().deselect();
+				$("th.select-checkbox").removeClass("selected");
+			} else {
+				product_table.rows().select();
+				$("th.select-checkbox").addClass("selected");
+			}
+		}).on("select deselect", function() {
+			("Some selection or deselection going on")
+			if (product_table.rows({
+					selected: true
+				}).count() !== product_table.rows().count()) {
+				$("th.select-checkbox").removeClass("selected");
+			} else {
+				$("th.select-checkbox").addClass("selected");
+			}
+		});

@@ -1,0 +1,38 @@
+.table-responsive
+	table(id="discounts" class="table table-striped")
+		thead
+			tr
+				th
+				th.text-uppercase discount title
+				th.text-uppercase discount
+				th.text-uppercase start date
+				th.text-uppercase end date
+				th.text-uppercase.text-center active
+				th.text-uppercase action
+		tbody
+			- var rows = [{title: "New Year Discount", discount: "50%"},{title: "New Year Discount", discount: "50%"},{title: "New Year Discount", discount: "50%"},{title: "New Year Discount", discount: "50%"},{title: "New Year Discount", discount: "50%"},{title: "New Year Discount", discount: "50%"},{title: "New Year Discount", discount: "50%"},{title: "New Year Discount", discount: "50%"},{title: "New Year Discount", discount: "50%"},{title: "New Year Discount", discount: "50%"},{title: "New Year Discount", discount: "50%"},{title: "New Year Discount", discount: "50%"},{title: "New Year Discount", discount: "50%"},{title: "New Year Discount", discount: "50%"},{title: "New Year Discount", discount: "50%"},{title: "New Year Discount", discount: "50%"},{title: "New Year Discount", discount: "50%"},{title: "New Year Discount", discount: "50%"},{title: "New Year Discount", discount: "50%"},{title: "New Year Discount", discount: "50%"},{title: "New Year Discount", discount: "50%"},{title: "New Year Discount", discount: "50%"},{title: "New Year Discount", discount: "50%"},{title: "New Year Discount", discount: "50%"},{title: "New Year Discount", discount: "50%"},{title: "New Year Discount", discount: "50%"},{title: "New Year Discount", discount: "50%"}]
+				each row in rows
+					tr
+						td
+						td.prod-title= row.title
+						td.text-capitalize= row.discount 
+						td 14:58 26/03/2021
+						td 14:58 26/03/2021
+						td.text-center
+							label.switch
+								input(type="checkbox" class="switch" name="active" data-product-id="1" checked)
+								span.slider
+						td
+							.btn-group
+								a.btn.btn-primary.btn-rounded.me-2.py-1
+									span.icon
+										+getRIcon("eye")
+									| view
+								a.btn.btn-warning.btn-rounded.me-2.py-1
+									span.icon
+										+getRIcon("edit")
+									| edit
+								a.btn.btn-danger.btn-rounded.me-2.py-1
+									span.icon
+										+getRIcon("trash")
+									| trash

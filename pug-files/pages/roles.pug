@@ -1,0 +1,135 @@
+extends ../bases/_base
+block mainContent
+	- var flexClasses = ['d-flex', 'align-items-sm-center']
+	.page-header
+		.row
+			.col-12(class=flexClasses).justify-content-sm-between.flex-column.flex-sm-row
+				.page-title.text-capitalize permissions
+					a.add-btn.btn.text-capitalize(href='./add-role.html')
+						span.icon
+							+getRIcon("add")
+						| add new
+
+				.page-breadcrumbs(class=flexClasses).justify-content-start.justify-content-sm-end
+					- var breadCrumbsItems = ['roles']
+					include ./../components/_breadcrumbs
+
+	.row
+		.col-12
+			.main-box.box-spaces.mb-0
+				.table-holder.mt-0
+					.table-responsive
+						table(id="roles" class="table table-striped")
+							thead
+								tr
+									th.text-uppercase Role title
+									th.text-uppercase action
+							tbody
+								tr
+									td.prod-title Administrator
+									td
+										.btn-group
+											a.btn.btn-warning.btn-rounded.me-2.py-1
+												span.icon
+													+getRIcon("edit")
+												| edit
+											a.btn.btn-danger.btn-rounded.me-2.py-1
+												span.icon
+													+getRIcon("trash")
+												| trash
+								tr
+									td.prod-title Store Manager
+									td
+										.btn-group
+											a.btn.btn-warning.btn-rounded.me-2.py-1
+												span.icon
+													+getRIcon("edit")
+												| edit
+											a.btn.btn-danger.btn-rounded.me-2.py-1
+												span.icon
+													+getRIcon("trash")
+												| trash
+								tr
+									td.prod-title Accountment
+									td
+										.btn-group
+											a.btn.btn-warning.btn-rounded.me-2.py-1
+												span.icon
+													+getRIcon("edit")
+												| edit
+											a.btn.btn-danger.btn-rounded.me-2.py-1
+												span.icon
+													+getRIcon("trash")
+												| trash
+							tfoot
+								tr
+									th.text-uppercase.w-100 Role title
+									th.text-uppercase.w-100 action
+
+block footer_script
+	script.
+		// Data Tables
+		let product_table = $('#roles').DataTable({
+			dom: 'Bfrtip',
+			columnDefs: [
+				{ 
+					bSortable: false, 
+					aTargets: [ 1] 
+				},
+				{ 
+					bSearchable: false, 
+					aTargets: [ 1] 
+				}
+			],
+			order: [
+				[0, 'asc']
+			],
+			language: {
+				info: "Show _START_ To _END_ Of _TOTAL_ Roles",
+				buttons: {
+					pageLength: 'Show %d',
+					colvis: 'Columns'
+				}
+			},
+			stateSave: true,
+			paging: true,
+			searching: true,
+			lengthMenu: [[ 10, 15, 25, 50, 75, 100 ], ['10 Roles', '15 Roles', '25 Roles', '50 Roles', '75 Roles', '100 Roles']],
+			buttons: ($(window).width() > 578) ? ['pageLength', 'print', {
+				extend: 'collection',
+				text: 'Export',
+				className: 'btn btn-group',
+				buttons: [
+					{
+						extend: 'excelHtml5',
+						className: 'dropdown-item'
+					},
+					{
+						extend: 'csvHtml5',
+						className: 'dropdown-item'
+					},
+					{
+						extend: 'pdfHtml5',
+						className: 'dropdown-item'
+					}
+				]
+			}, 'colvis'] : ['pageLength', {
+				extend: 'collection',
+				text: 'Export',
+				className: 'btn btn-group',
+				buttons: [
+					{
+						extend: 'excelHtml5',
+						className: 'dropdown-item'
+					},
+					{
+						extend: 'csvHtml5',
+						className: 'dropdown-item'
+					},
+					{
+						extend: 'pdfHtml5',
+						className: 'dropdown-item'
+					}
+				]
+			}, 'colvis']
+		});

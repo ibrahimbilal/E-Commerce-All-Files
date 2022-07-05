@@ -1,0 +1,31 @@
+@import './form-item';
+@import './switch';
+@import './ql-editor';
+@import './select-2';
+@import "./buttons";
+@import "./categories_list";
+@import "./tags_list";
+@import "./repeater";
+@import "./icon-checkbox";
+
+input:not([type=range]):focus {
+    box-shadow: 0 0 10px -4px var(--main-color) !important;
+    border: 1px solid var(--main-color) !important;
+}
+
+#product-slug {
+    font-size: 12px;
+    padding: 5px 7px;
+}
+
+.range-filters {
+    .input-group-text {
+        background-color: var(--body-background);
+        border-color: var(--border-color);
+        color: var(--text-color);
+    }
+}
+
+select {
+	@extend .scrollbar;
+}

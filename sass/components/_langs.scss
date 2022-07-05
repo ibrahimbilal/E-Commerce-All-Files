@@ -1,0 +1,21 @@
+.lang-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-gap: 1rem;
+    .my-item {
+        min-width: 220px;
+        border: 1px solid var(--text-color);
+        border-radius: 10px;
+        overflow: hidden;
+        .my-checkbox {
+            width: 100%;
+            height: 50px;
+            &--active {
+                border-color: var(--main-color);
+                &::after {
+                    opacity: 0.2 !important;
+                }
+            }
+        }
+    }
+}

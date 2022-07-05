@@ -1,0 +1,97 @@
+.alerts {
+	position: relative;
+	@extend .flex-box;
+	border-radius: 7px;
+	overflow: hidden;
+	@include prefix(box-shadow, 3px 3px 6px 0px var(--box-shadow-color));
+	margin: 20px 0;
+	&::before {
+		content: "";
+		font-family: uicons-regular-rounded !important;
+		font-style: normal;
+		font-weight: normal !important;
+		font-variant: normal;
+		text-transform: none;
+		line-height: 0;
+		-webkit-font-smoothing: antialiased;
+		@extend .flex-box;
+		@extend .center-items;
+		color: #FFF;
+		flex: 0 0 50px;
+		width: 50px;
+		height: 50px;
+		font-size: 20px;
+
+	}
+	.content {
+		margin: 0;
+		padding: 13px;
+	}
+
+	&.success {
+		background-color: #C4FFCD;
+		.content {
+			color: #218D32;
+		}
+
+		&::before {
+			content: "\f16a";
+			background-color: #45CC5B;
+		}
+	}
+	&.warning {
+		background-color: #FFEEAC;
+		.content {
+			color: #C47602;
+		}
+
+		&::before {
+			content: "\f327";
+			background-color: #FFA620;
+		}
+	}
+	&.danger {
+		background-color: #FFC5C5;
+		.content {
+			color: #AE1111;
+		}
+
+		&::before {
+			content: "\f257";;
+			background-color: #FE2B2B;
+		}
+	}
+	&.primary {
+		background-color: #D5D5FF;
+		.content {
+			color: #3939A5;
+		}
+
+		&::before {
+			content: "\f327";
+			background-color: #8383EE;
+		}
+	}
+	&.light {
+		background-color: #fefefe;
+		.content {
+			color: #818182;
+		}
+
+		&::before {
+			content: "\f327";
+			background-color: #e5e5e5;
+		}
+	}
+	&.dark {
+		background-color: #d6d8d9;
+		.content {
+			color: #1b1e21;
+		}
+
+		&::before {
+			content: "\f327";
+			background-color: #777;
+		}
+	}
+}

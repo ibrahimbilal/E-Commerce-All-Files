@@ -1,0 +1,163 @@
+extends ../bases/_base
+block mainContent
+	- var flexClasses = ['d-flex', 'align-items-sm-center']
+	.page-header
+		.row
+			.col-12(class=flexClasses).justify-content-sm-between.flex-column.flex-sm-row
+				.page-title.text-capitalize add customer
+
+				.page-breadcrumbs(class=flexClasses).justify-content-start.justify-content-sm-end
+					- var breadCrumbsItems = ['customers', 'add']
+					include ./../components/_breadcrumbs
+
+	form#add-newitem-form.row.clearfix(data-post-type="customer")
+		.col-sm-12.post-box.order-sm-1
+			.main-box.box-spaces
+				.form-item.primary.mb-3
+					.item-title Required Informations
+
+				.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap
+					label.item-title(for="first-name") first name:
+					input#first-name.form-control(name="first_name" type="text")
+
+				.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap.mt-3
+					label.item-title(for="last-name") last name:
+					input#last-name.form-control(name="last_name" type="text")
+
+				.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap.mt-3
+					label.item-title(for="email") email address:
+					input#email.form-control(name="email" type="email")
+
+				.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap.mt-3
+					label.item-title(for="password") password:
+					.with-icon
+						input#password.form-control(name="password" type="password")
+						span.show-pass
+							+getRIcon("eye")
+					button.btn.regular-btn.ms-sm-3.mt-2.mt-sm-0.text-nowrap.generate-password(type="button") Suggest Password
+
+				.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap.mt-3
+					label.item-title(for="mobile") mobile:
+					input#mobile.form-control(name="mobile" type="tel")
+
+				.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap.mt-3
+					label.item-title(for="birth-date") Birth Of Date:
+					.position-relative.w-100
+						input#birth-date.form-control(name="birth_date" type="text" data-toggle="datepicker")
+
+				.form-item.second.d-flex.flex-wrap.flex-sm-nowrap.mt-3
+					label.item-title gender:
+					label.radio-label(for="male")
+						input#male.input-radio(name="customer_type" type="radio" value="Male" checked)
+						| Male
+
+					label.radio-label(for="female")
+						input#female.input-radio(name="customer_type" type="radio" value="Female")
+						| Female
+
+				.form-item.second.d-flex.mt-3.flex-wrap.flex-sm-nowrap
+					.item-title
+						label.item-title.mb-2(for="profile-picture") Profile Picture:
+					.item-content
+						a.btn.regular-btn.gallery-btn(href="javascript:void(0)" style="width: 150px") Change Image
+						.selected-img
+							.img-holder.mt-3
+								img.preview(src="./assets/images/customers/image-1.png" width="70")
+								span.overlay
+									+getRIcon("trash")
+									span remove
+
+		.col-sm-12.post-box.order-sm-3
+			.main-box.box-spaces
+				.form-item.primary.mb-3
+					.item-title Addresses
+
+				.repeater-holder
+					.repeater.mb-3
+						.repeater-title.p-3.mb-3.d-flex.justify-content-between.align-items-center
+							h5.mb-0 Address Title
+							.icons.d-flex.align-items-center
+								span.icon.active
+									+getRIcon("angle-small-down")
+								span.remove(tooltip="Remove This Item" flow="up")
+									+getRIcon("trash")
+
+						.repeater-inputs.px-3.active
+							.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap
+								label.item-title(for="title") title:
+								input#title.form-control(name="title" type="text")
+
+							.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap.mt-3
+								label.item-title(for="country") Country:
+								include ./../data/_countries
+
+							.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap.mt-3
+								label.item-title(for="state") State:
+								input#state.form-control(name="state" type="text")
+
+							.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap.mt-3
+								label.item-title(for="city") City:
+								input#city.form-control(name="city" type="text")
+
+							.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap.mt-3
+								label.item-title(for="address-1") Address 1:
+								input#address-1.form-control(name="address_1" type="text")
+
+							.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap.mt-3
+								label.item-title(for="address-2") Address 2:
+								input#address-2.form-control(name="address_2" type="text")
+
+							.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap.mt-3
+								label.item-title(for="postal") Postal Code:
+								input#postal.form-control(name="postal" type="text")
+
+							.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap.mt-3
+								label.item-title(for="ad-mobile") Mobile:
+								input#ad-mobile.form-control(name="mobile" type="tel")
+				.add-repeater-item
+					a.btn Add New Address
+
+		.col-sm-6.col-lg-3.meta-box.order-2
+			.main-box.box-spaces.mb-0
+
+				.form-item.second.justify-content-between.mt-2(class=flexClasses)
+					label.item-title.meta-title Registered At:
+					span.ms-2 26/03/2021 14:58
+
+				.form-item.second.justify-content-between.mt-2(class=flexClasses)
+					label.item-title.meta-title updated at:
+					span.ms-2 26/03/2021 14:58
+
+				.form-item.second.justify-content-between.mt-2(class=flexClasses)
+					label.item-title.meta-title ip address:
+					span.ms-2 216.58.217.164
+
+				.form-item.second.justify-content-between.mt-2(class=flexClasses)
+					label.item-title.meta-title ip country:
+					span.ms-2 United State of America
+
+				.form-item.second.justify-content-between.mt-2(class=flexClasses)
+					label.item-title.meta-title iP City:
+					span.ms-2 New York
+
+				.form-item.second.justify-content-between.mt-2(class=flexClasses)
+					label.item-title.meta-title Device:
+					span.ms-2 Samsung Galaxy S20
+
+				.form-item.second.justify-content-between.mt-2(class=flexClasses)
+					label.item-title.meta-title Registered At:
+					span.ms-2 26/03/2021 14:58
+
+				.form-item.second.justify-content-between.mt-2(class=flexClasses)
+					label.item-title.meta-title Last Logged In:
+					span.ms-2 26/03/2021 14:58
+
+				.btns-holder.d-flex.justify-content-between.mt-4
+					button.btn.trans-btn.w-100.text-start.delete(data-post-type="customer")
+						span.icon.me-1
+							+getRIcon("trash")
+						| delete account
+					button.btn.solid-btn(type="submit") create 
+
+block footer_script
+	include ./../components/_gallery

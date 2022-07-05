@@ -1,0 +1,109 @@
+.cat-list-holder {
+    max-height: 420px;
+    overflow: auto;
+    @extend .scrollbar;
+}
+
+.my-list {
+    list-style: none;
+    padding: 0;
+    .my-item {
+        text-transform: capitalize;
+
+        .my-checkbox,
+        .my-radiobox {
+            display: inline-flex;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+            position: relative;
+            padding: .3rem 1rem;
+            z-index: 1;
+
+            &__input {
+                display: none;
+                position: absolute;
+                opacity: 0;
+                width: 1px;
+                top: 0;
+                left: 0;
+            }
+
+            &__icon {
+                margin-right: 10px;
+            }
+
+            &--active {
+                opacity: 0.5;
+                .my-checkbox__icon,
+                .my-radiobox__icon {
+                    animation: iconAnimate 300ms ease forwards;
+                    i {
+                        color: var(--main-color);
+                    }
+                }
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                opacity: 0;
+                z-index: 0;
+                background: var(--main-color);
+                border-radius: .3rem;
+                @include prefix(transition, 'all 120ms ease-out 0s')
+            }
+
+            &:hover,
+            &:focus {
+                &::after {
+                    opacity: 0.15;
+                }
+            }
+        }
+
+        .my-list {
+            padding-left: 1.5rem;
+            position: relative;
+            &:before {
+                content: '';
+                position: absolute;
+                left: 1.45rem;;
+                top:0;
+                bottom: 0;
+                width: 2px;
+                background: var(--text-color);
+                opacity: .2;
+            }
+        }
+    }
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+}
+
+@keyframes iconAnimate {
+    0% {
+        transform: scale(0);
+    }
+
+    25% {
+        transform: scale(1.2);
+    }
+
+    50% {
+        transform: scale(0.9);
+    }
+
+    75% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}

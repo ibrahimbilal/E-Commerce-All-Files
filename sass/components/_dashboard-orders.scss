@@ -1,0 +1,41 @@
+.order-holder {
+    .order {
+        font-weight: 600;
+        font-size: 1.5rem;
+        color: var(--main-color);
+        .title {
+            color: var(--text-color);
+        }
+        &.success {
+            color: var(--success-color);
+        }
+        &.danger {
+            color: var(--danger-color);
+        }
+        &.warning {
+            color: var(--warning-color);
+        }
+        &.primary {
+            color: var(--main-color);
+        }
+        &.dark {
+            color: var(--text-color);
+        }
+    }
+}
+
+.order-footer {
+    .total-holder {
+        border: 1px solid var(--text-color);
+        border-radius: .5rem;
+        padding: 10px 15px;
+        @media ( min-width: $sm ) {
+            min-width: 280px;
+            max-width: 400px;
+        }
+    }
+
+    .buttons {
+        align-self: flex-end;
+    }
+}

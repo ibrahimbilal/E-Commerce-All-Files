@@ -1,0 +1,13 @@
+footer {
+    grid-area: foot;
+    grid-column: 1/4;
+    font-size: 12px;
+    @media ( max-width: $lg ) {
+        @include responsive-property(margin-top, 15px, 20px, 30px);
+    }
+    .developer {
+        i {
+            color: red;
+        }
+    }
+}

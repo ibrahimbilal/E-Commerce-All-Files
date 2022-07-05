@@ -1,0 +1,53 @@
+- var flexClasses = ['d-flex', 'justify-content-between', 'align-items-center']
+
+header.main-box(class=flexClasses)
+	.search-area(class=flexClasses)
+
+		.action-item(class=flexClasses).me-4.d-lg-none
+			span#menu-btn.icon
+				+getRIcon("menu-burger")
+
+		.action-item(class=flexClasses).me-4.d-sm-none
+			span#search-btn.icon
+				+getRIcon("search")
+
+		form.search-form.d-none.d-sm-block
+			input(class="search-input" type="text" name="s" placeholder="Search Here..." autocomplete="off")
+			button(class="submit" type="submit")
+				+getRIcon("search")
+
+	.mobile.search-area.align-items-center
+		span.close
+			+getRIcon("cross")
+		form.search-form.d-flex
+			input(class="search-input" type="text" name="s" placeholder="Search Here..." autocomplete="off")
+			button(class="submit" type="submit")
+				+getRIcon("search")
+
+	.action-area.flex-row-reverse(class=flexClasses)
+
+		.action-item(class=flexClasses).d-none.d-sm-flex
+			span(id="expand" class="icon" tooltip="Full Screen" main-tooltip="Full Screen" alt-tooltip="Exit Full Screen" flow="left")
+				+getRIcon("expand")
+
+		.action-item(class=flexClasses)
+			span(id="theme-mode" class="icon" tooltip="Dark Mode" main-tooltip="Dark Mode" alt-tooltip="Light Mode" flow="left")
+				+getRIcon("opacity")
+
+		.action-item(class=flexClasses).relative
+			span(id="notify" class="icon header-btn" data-window="#notify-window")
+				+getRIcon("bell")
+				span.dot
+
+		.action-item(class=flexClasses)
+			span(id="messages" class="icon header-btn" data-window="#messages-window")
+				+getRIcon("envelope")
+				span.dot
+
+		#user.header-btn.action-item.user-area.flex-row-reverse(class=flexClasses data-window="#user-window")
+			span.icon
+				+getRIcon("angle-small-down")
+			.user-name.d-none.d-xl-block.me-2 Jayson Hinrichsen
+			img(class="avatar me-2" src="./assets/images/avatars/image-01.png")
+
+	include ./../components/_header-menus

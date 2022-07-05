@@ -1,0 +1,37 @@
+.table-responsive
+	table(id="customers" class="table table-striped")
+		thead
+			tr
+				th
+				th.text-uppercase image
+				th.text-uppercase customer name
+				th.text-uppercase email
+				th.text-uppercase mobile
+				th.text-uppercase registered date
+				th.text-uppercase action
+		tbody
+			- var rows = [{img: "1", name: "Jayson Hinrichsen", email: "example1@email.com"},{img: "2", name: "Arezou Firouzeh", email: "example2@email.com"},{img: "3", name: "Hossein Roghayeh", email: "example3@email.com"},{img: "4", name: "Soraya Siavash", email: "example4@email.com"},{img: "5", name: "Gemma Chua-Tran", email: "example5@email.com"},{img: "1", name: "Jayson Hinrichsen", email: "example1@email.com"},{img: "2", name: "Arezou Firouzeh", email: "example2@email.com"},{img: "3", name: "Hossein Roghayeh", email: "example3@email.com"},{img: "4", name: "Soraya Siavash", email: "example4@email.com"},{img: "5", name: "Gemma Chua-Tran", email: "example5@email.com"},{img: "1", name: "Jayson Hinrichsen", email: "example1@email.com"},{img: "2", name: "Arezou Firouzeh", email: "example2@email.com"},{img: "3", name: "Hossein Roghayeh", email: "example3@email.com"},{img: "4", name: "Soraya Siavash", email: "example4@email.com"},{img: "5", name: "Gemma Chua-Tran", email: "example5@email.com"}]
+				each row in rows
+					tr
+						td
+						td.customer-img
+							.img-holder
+								img(src="./assets/images/customers/image-"+ row.img +".png" width="70")
+						td.prod-title= row.name
+						td= row.email
+						td 09212 34 343455
+						td 14:58 26/03/2022
+						td
+							.btn-group
+								a.btn.btn-primary.btn-rounded.me-2.py-1(href="./view-customer.html")
+									span.icon
+										+getRIcon("eye")
+									| view
+								a.btn.btn-warning.btn-rounded.me-2.py-1
+									span.icon
+										+getRIcon("edit")
+									| edit
+								a.btn.btn-danger.btn-rounded.me-2.py-1
+									span.icon
+										+getRIcon("trash")
+									| trash

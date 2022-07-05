@@ -1,0 +1,162 @@
+extends ../bases/_base
+block mainContent
+	- var flexClasses = ['d-flex', 'align-items-sm-center']
+	.page-header
+		.row
+			.col-12(class=flexClasses).justify-content-sm-between.flex-column.flex-sm-row
+				.page-title.text-capitalize view customer
+					a.add-btn.btn.text-capitalize(href='./add-customer.html')
+						span.icon
+							+getRIcon("edit")
+						| edit <span class="page">customer<span>
+
+				.page-breadcrumbs(class=flexClasses).justify-content-start.justify-content-sm-end
+					- var breadCrumbsItems = ['customers', 'view']
+					include ./../components/_breadcrumbs
+
+	.row
+		.col-12
+			.main-box.box-spaces
+				.row
+					.col-sm-12.col-lg-3.d-flex.align-items-center.justify-content-center.user-holder
+						.profile-image.text-center
+							img(src="./assets/images/customers/image-1.png")
+					.col-sm-12.col-lg-9
+						.profile-details.row.mt-3.mt-lg-0
+							.col-sm-6
+								.item.form-item.second.mb-4
+									.item-title First Name:
+									span.ms-2 Mildred
+								.item.form-item.second.mb-4
+									.item-title Last Name:
+									span.ms-2 Stoddard
+								.item.form-item.second.mb-4
+									.item-title Email Address:
+									span.ms-2 m.stoddard@gmail.com
+								.item.form-item.second.mb-4
+									.item-title Registered At:
+									span.ms-2 26/03/2021 14:58
+								.item.form-item.second.mb-4
+									.item-title Updated At:
+									span.ms-2 26/03/2021 14:58
+								.item.form-item.second.mb-4
+									.item-title Last Logged In:
+									span.ms-2 26/03/2021 14:58
+								.item.form-item.second
+									.item-title Device:
+									span.ms-2 Samsung Galaxy S20
+							.col-sm-6
+								.item.form-item.second.mb-4.mt-4.mt-sm-0
+									.item-title Birth Of Date:
+									span.ms-2 26/03/2021
+								.item.form-item.second.mb-4
+									.item-title Mobile:
+									span.ms-2 516-913-8323
+								.item.form-item.second.mb-4
+									.item-title Gender:
+									span.ms-2 Male
+								.item.form-item.second.mb-4
+									.item-title iP Address:
+									span.ms-2 216.58.217.164
+								.item.form-item.second.mb-4
+									.item-title iP Country:
+									span.ms-2 United State of America
+								.item.form-item.second
+									.item-title iP City:
+									span.ms-2 New York
+
+		.col-12.col-lg-5
+			.main-box.box-spaces
+				.box-header(class=flexClasses)
+					.box-title Addresses
+				.address-holder
+					.address
+						.address-title.p-3.d-flex.justify-content-between.align-items-center
+							h6.mb-0 First Address Title
+							span.icon.active
+								+getRIcon("angle-small-down")
+						.address-inputs.active
+							table.table.mb-0
+								tbody
+									tr
+										td.text-capitalize Country:
+										td.text-capitalize United State Of America
+									tr
+										td.text-capitalize State:
+										td.text-capitalize New York
+									tr
+										td.text-capitalize City:
+										td.text-capitalize New York City
+									tr
+										td.text-capitalize Address 1:
+										td.text-capitalize 1881  Rosewood Lane
+									tr
+										td.text-capitalize Address 2:
+										td.text-capitalize
+									tr
+										td.text-capitalize Postal Code:
+										td.text-capitalize 10011
+									tr
+										td.text-capitalize Mobile:
+										td.text-capitalize 212-915-2541
+
+		.col-12.col-lg-7
+			.main-box.box-spaces.mb-0
+				.box-title.text-capitalize Orders 
+				.table-holder
+					include ./../data/_c_orders
+
+block footer_script
+	script.
+		// Data Tables.
+		$('#example').DataTable({
+			dom: 'Bfrtip',
+			language: {
+				info: "Show _START_ To _END_ Of _TOTAL_ Orders",
+				buttons: {
+					pageLength: 'Show %d',
+					colvis: 'Columns'
+				}
+			},
+			stateSave: true,
+			paging: true,
+			searching: true,
+			lengthMenu: [[ 5, 10, 15, 20 ], ['5 Orders', '10 Orders', '15 Orders', '20 Orders']],
+			buttons: ($(window).width() > 578) ? ['pageLength', 'print', {
+				extend: 'collection',
+				text: 'Export',
+				className: 'btn btn-group',
+				buttons: [
+					{
+						extend: 'excelHtml5',
+						className: 'dropdown-item'
+					},
+					{
+						extend: 'csvHtml5',
+						className: 'dropdown-item'
+					},
+					{
+						extend: 'pdfHtml5',
+						className: 'dropdown-item'
+					}
+				]
+			}, 'colvis'] : ['pageLength', {
+				extend: 'collection',
+				text: 'Export',
+				className: 'btn btn-group',
+				buttons: [
+					{
+						extend: 'excelHtml5',
+						className: 'dropdown-item'
+					},
+					{
+						extend: 'csvHtml5',
+						className: 'dropdown-item'
+					},
+					{
+						extend: 'pdfHtml5',
+						className: 'dropdown-item'
+					}
+				]
+			}, 'colvis']
+		});

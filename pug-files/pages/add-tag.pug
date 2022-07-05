@@ -1,0 +1,134 @@
+extends ../bases/_base
+block mainContent
+	- var flexClasses = ['d-flex', 'align-items-sm-center']
+	.page-header
+		.row
+			.col-12(class=flexClasses).justify-content-sm-between.flex-column.flex-sm-row
+				.page-title.text-capitalize add tag
+
+				.page-breadcrumbs(class=flexClasses).justify-content-start.justify-content-sm-end
+					- var breadCrumbsItems = ['tags', 'add']
+					include ./../components/_breadcrumbs
+
+	form#add-newitem-form.row.clearfix(data-post-type="tag")
+		.col-sm-12.col-lg-9.post-box
+			.main-box.box-spaces
+				.form-item.primary
+					label.item-title(for="tag-name") tag title
+					input#tag-name.form-control(name="tag_name" type="text")
+
+				.divider
+
+				.form-item.primary
+					label.item-title(for="tag-desc") tag description
+					#tag-desc
+						.editor-container
+
+		.col-sm-12.col-lg-3.meta-box
+			.row.d-block.clearfix
+				.col-sm-6.col-lg-12.float-end.float-lg-none
+					.main-box.box-spaces
+						.form-item.second.justify-content-between.mb-2(class=flexClasses)
+							label.item-title.meta-title(for="newitem-lang") tag Lang:
+							select#newitem-lang.form-select.dropdown(name="langs")
+								option(data-flag="./assets/images/flags/us.png" value="en") english
+								option(data-flag="./assets/images/flags/sa.png" value="ar") arabic
+								option(data-flag="./assets/images/flags/fr.png" value="fr") french
+
+						.form-item.second
+							label.item-title.meta-title(for="newitem") tag slug:
+								span(class="icon info ms-2" tooltip="slug is the bit of text that appears after your domain name in the URL of a page" flow="up")
+									+getRIcon("info")
+							input#newitem.form-control.mt-2(name="tag_slug" type="text")
+
+						.form-item.second.justify-content-between.mt-2(class=flexClasses)
+							label.item-title.meta-title created at: 
+							span.ms-2 26/03/2021 14:58
+
+						.form-item.second.justify-content-between.mt-2(class=flexClasses)
+							label.item-title.meta-title updated at:
+							span.ms-2 26/03/2021 14:58
+
+						.btns-holder.d-flex.justify-content-between.mt-4
+							button.btn.regular-btn.draft(data-post-type="tag") save as draft
+							button.btn.solid-btn(type="submit") publish 
+
+						.btns-holder.d-flex.justify-content-between.mt-2
+							button.btn.trans-btn.w-100.text-start.delete(data-post-type="tag")
+								span.icon.me-1
+									+getRIcon("trash")
+								| move to trash
+
+		.col-sm-12.col-lg-9.post-box
+			.main-box.box-spaces.mb-0
+				.form-item.primary
+					.item-title tag details
+				.tabs-holder
+					.tabs-buttons
+						a.btn.tab-btn.active(href="javascript:void(0)" data-tab-id="#general") general
+						a.btn.tab-btn(href="javascript:void(0)" data-tab-id="#seo") seo
+					.tabs-boxs.box-spaces.mb-0
+						#general.tab-box.active
+
+							.form-item.second.d-flex.align-items-center.mt-3
+								label.item-title(for="product-new") Active This tag?
+									span(class="icon info ms-2" tooltip="check this if you want active this tag." flow="up")
+										+getRIcon("info")
+								label.switch.text-start
+									input#product-new(type="checkbox" class="switch" name="new")
+									span.slider
+
+						#seo.tab-box
+							.form-item.second.d-flex.flex-wrap.flex-sm-nowrap
+								label.item-title(for="meta-title") meta title:
+									span(class="icon info ms-2" tooltip="the title which be shown in search engines." flow="up")
+										+getRIcon("info")
+								input#meta-title.form-control(name="meta_title" type="text")
+
+							.form-item.second.d-flex.flex-wrap.flex-sm-nowrap.mt-3
+								label.item-title(for="meta-desc") meta description:
+									span(class="icon info ms-2" tooltip="the description which will be shown under the title in search engines." flow="up")
+										+getRIcon("info")
+								textarea#meta-desc.form-control(name="meta_description" rows="3" style="resize:none")
+
+							.form-item.second.d-flex.flex-wrap.flex-sm-nowrap.mt-3
+								label.item-title(for="meta-keyword") meta keywords:
+									span(class="icon info ms-2" tooltip="The keyword or key phrase is the search term that you want a page or post to rank for most. When people search for that phrase, they should find you.\nseparate keywords with comma (,)." flow="up")
+										+getRIcon("info")
+								textarea#meta-keyword.form-control(name="meta_keywords" rows="3" style="resize:none")
+
+block footer_script
+	script.
+		// Data Tables
+		console.log('add product');
+
+		const fontSizeArr = ['10px','12px','14px','16px','20px','24px','32px','36px','42px','54px'];
+		var Size = Quill.import('attributors/style/size');
+		Size.whitelist = fontSizeArr;
+		Quill.register(Size, true);
+		const toolbarOptions = [
+			[{ header: [1, 2, 3, 4, 5, 6, false] }],              // custom button values
+			['bold', 'italic', 'underline', 'strike'],        // toggled buttons
+			[{ color: [] }],          // dropdown with defaults from theme
+			[{ align: '' }, { align: 'center' }, { align: 'right' }, { align: 'justify' }],
+
+			[{ list: 'bullet' }, { list: 'ordered' }],
+			[{ indent: '-1' }, { indent: '+1' }],          // outdent/indent
+			[{ direction: 'rtl' }],                         // text direction
+			[{ size: fontSizeArr }],  // custom dropdown
+			['blockquote'],
+			['clean']                                         // remove formatting button
+		];
+		var setting = {
+			bounds: '.editor-container',
+			modules: {
+				toolbar: toolbarOptions,
+			},
+			placeholder: 'Write The Description Here...',
+			theme: 'snow'   // Specify theme in configuration
+		};
+		var quill = new Quill('.editor-container', setting);
+
+		// ===========================================================
+		// fire tag checkbox function 
+		checkboxFunctions();

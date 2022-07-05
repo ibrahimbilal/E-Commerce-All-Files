@@ -1,0 +1,186 @@
+aside {
+    grid-area: side;
+    z-index: 2;
+
+    @media (max-width: $lg) {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        overflow-y: auto;
+        height: 100vh;
+        background-color: rgba($color: #000000, $alpha: .5);
+        z-index: 100;
+        display: none;
+
+        .dashbord-menu {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            @include prefix(transform, translateX(-300px));
+
+            &.show {
+                @include prefix(transform, translateX(0px));
+            }
+        }
+    }
+}
+
+.dashbord-menu {
+    width: 240px;
+    overflow: hidden;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 36px 1fr;
+    @include prefix(transition, "transform .3s ease-in-out, width .3s ease-out");
+
+    .menu-header {
+        a {
+            color: var(--text-color);
+            display: -webkit-box; 
+			display: -moz-box;
+			display: -ms-flexbox;
+			display: -webkit-flex; 
+			display: flex;
+            align-items: center;
+            font-size: 20px;
+            @include responsive-property(padding, 0 15px, 0 20px, 0 30px);
+
+            span {
+                font-size: 22px;
+            }
+        }
+    }
+
+    .menu-links {
+        height: 100%;
+        overflow-y: auto;
+        overflow-x: hidden;
+        @extend .scrollbar;
+
+        .menu-list-group {
+            list-style: none;
+            border-top: 1px solid var(--line-color);
+            @include responsive-property(padding, 15px 15px 0, 20px 20px 0, 18px 30px 0);
+            @include responsive-property(margin, 15px 0 0, 20px 0 0, 18px 0 0);
+
+            .list-item {
+                padding: 12px 0;
+                position: relative;
+                font-size: 16px;
+
+                &.has-submenu {
+                    .icon {
+                        z-index: 1;
+                        margin-left: auto;
+                        margin-right: 1rem;
+                        width: 24px;
+                        height: 24px;
+                    }
+                    .submenu {
+                        margin-top: 12px;
+                        list-style: none;
+                        padding-left: 0;
+                        display: none;
+                        .list-item {
+                            padding-left: 1rem;
+                        }
+                    }
+                }
+                
+                &.active {
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        height: 46px;
+                        background-color: var(--menu-active-bg);
+                        border-left: 5px solid var(--menu-active-border-color);
+                        z-index: 0;
+                        border-radius: 0 50px 50px 0;
+                        @include responsive-property(width, calc(100% + 15px), calc(100% + 20px), calc(100% + 30px));
+                        @include responsive-property(left, -15px, -20px, -30px);
+                    }
+
+                    .submenu {
+                        display: block;
+                    }
+                }
+
+                a {
+                    z-index: 1;
+					display: -webkit-box; 
+					display: -moz-box;
+					display: -ms-flexbox;
+					display: -webkit-flex; 
+					display: flex;
+                    align-items: center;
+                    color: var(--text-color);
+                    width: 100%;
+
+                    i {
+                        font-size: 22px;
+                    }
+
+                    .badge {
+                        background-color: var(--menu-badge-bg);
+                        color: var(--box-bg-color);
+                        border-radius: 50%;
+                        width: 24px;
+                        height: 24px;
+                        text-align: center;
+                        line-height: 24px;
+                        font-size: 12px;
+                        margin-left: auto;
+                        margin-right: 1rem;
+                    }
+                }
+            }
+
+            &:last-child {
+                padding-bottom: 0;
+                padding-top: 3px;
+                margin-top: auto;
+            }
+        }
+    }
+
+    .title {
+        margin-left: 15px;
+        z-index: 1;
+        text-transform: capitalize;
+        white-space: nowrap;
+    }
+
+    i {
+        z-index: 1;
+        line-height: 0;
+    }
+}
+
+.collapsed {
+    .dashbord-menu {
+        @include responsive-property(width, 52px, 62px, 85px);
+
+        span {
+            white-space: nowrap;
+            opacity: 0;
+        }
+
+        .menu-links {
+    
+            .menu-list-group {
+    
+                .list-item {
+                    &.has-submenu {
+                        .submenu {
+                            .list-item {
+                                padding-left: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}

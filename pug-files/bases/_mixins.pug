@@ -1,0 +1,22 @@
+mixin getRIcon(name)
+	i(class='fi-rr-' + name) 
+
+mixin getSIcon(name)
+	i(class='fi-sr-' + name) 
+
+mixin getBIcon(name)
+	i(class='fi-brands-' + name) 
+
+mixin checkbox(title)
+	label.my-checkbox
+		input.my-checkbox__input(type="checkbox")
+		.my-checkbox__icon
+			+getRIcon('square')
+		span.my-checkbox__label= title
+
+mixin radiobox(title)
+	label.my-radiobox
+		input.my-radiobox__input(type="radio" name="same" value=title)
+		.my-radiobox__icon
+			+getRIcon('circle')
+		span.my-radiobox__label= title

@@ -1,0 +1,87 @@
+header {
+    grid-area: head;
+    position: relative;
+    @include responsive-property(padding, 15px, 10px 20px, 15px 30px);
+    span.icon {
+        line-height: 0;
+        cursor: pointer;
+        i {
+            vertical-align: text-bottom;
+            font-size: 20px;
+        }
+    }
+    .search-area {
+        .search-form {
+            border-bottom: 1px solid var(--text-color);
+            .search-input {
+                border: none;
+                font-size: 14px;
+                min-width: 200px;
+                color: var(--text-color);
+                &:focus {
+                    border: none !important;
+                    box-shadow: none !important;
+                }
+            }
+            .submit {
+                background-color: transparent;
+                border: none;
+                vertical-align: middle;
+                padding: 0;
+                color: var(--text-color);
+            }
+        }
+    }
+    .action-area {
+        .action-item {
+            position: relative;
+            &:not(:last-child) {
+                margin-left: 20px;
+            }
+            .dot {
+                background-color: red;
+                border-radius: 50px;
+                width: 10px;
+                height: 10px;
+                display: inline-block;
+                position: absolute;
+                bottom: -4px;
+                right: -5px;
+            }
+            &.user-area {
+                cursor: pointer;
+                user-select: none;
+                .user-name {
+                    display: inline-block;
+                }
+                .avatar {
+                    width: 52px;
+                }
+            }
+        }
+    }
+
+    .mobile {
+        display: none;
+        position: absolute;
+        z-index: 10;
+        width: calc(100% - 30px);
+        top: 50%;
+        right: 15px;
+        @include prefix(transform, translateY(-50%));
+        .close {
+            line-height: 0;
+        }
+        .search-form {
+            flex: 1;
+            margin-left: 15px;
+            .search-input {
+                flex: 1;
+            }
+        }
+    }
+    @media ( max-width: $sm ) {
+        height: 80px;
+    }
+
+}

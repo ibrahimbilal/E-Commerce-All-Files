@@ -1,0 +1,86 @@
+extends ../bases/_base
+block mainContent
+	- var flexClasses = ['d-flex', 'align-items-sm-center']
+	.page-header
+		.row
+			.col-12(class=flexClasses).justify-content-sm-between.flex-column.flex-sm-row
+				.page-title.text-capitalize add discount
+
+				.page-breadcrumbs(class=flexClasses).justify-content-start.justify-content-sm-end
+					- var breadCrumbsItems = ['discounts', 'add']
+					include ./../components/_breadcrumbs
+
+	form#add-newitem-form.row.clearfix(data-post-type="discount")
+		.col-sm-12
+			.main-box.box-spaces
+				.form-item.primary
+					label.item-title(for="discount-name") discount title
+					input#discount-name.form-control(name="discount_name" type="text")
+
+		.col-sm-12.col-lg-9.post-box
+			.main-box.box-spaces
+				.form-item.primary
+					.item-title discount details
+
+				.form-item.second.d-flex.flex-wrap.flex-sm-nowrap
+					label.item-title(for="the-discount") the discount:
+						span(class="icon info ms-2" tooltip="write the number of the discount only." flow="up")
+							+getRIcon("info")
+					input#the-discount.form-control(name="the_discount" type="text")
+
+				.form-item.second.d-flex.flex-wrap.flex-sm-nowrap.mt-3
+					label.item-title(for="discount-type") discount type:
+						span(class="icon info ms-2" tooltip="write the number of the discount only." flow="up")
+							+getRIcon("info")
+					select#discount-type.form-select(name="discount_type")
+						option percentage
+						option Static
+
+				.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap.mt-3
+					label.item-title(for="discount-start-date") Discount Start Date:
+						span(class="icon info ms-2" tooltip="the date which sale will be end." flow="up")
+							+getRIcon("info")
+					.position-relative.w-100
+						input#discount-start-date.form-control(name="discount_start_date" type="text" data-toggle="datepicker")
+
+				.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap.mt-3
+					label.item-title(for="discount-end-date") Discount End Date:
+						span(class="icon info ms-2" tooltip="the date which sale will be end." flow="up")
+							+getRIcon("info")
+					.position-relative.w-100
+						input#discount-end-date.form-control(name="discount_end_date" type="text" data-toggle="datepicker")
+
+				.form-item.second.d-flex.flex-wrap.flex-sm-nowrap.mt-3
+					label.item-title(for="discount-type") Apply Discount To:
+						span(class="icon info ms-2" tooltip="write the number of the discount only." flow="up")
+							+getRIcon("info")
+					select#discount-type.form-select(name="discount_type")
+						option all products
+						option specific category
+
+				.form-item.second.d-flex.align-items-center.mt-3
+					label.item-title(for="product-new") Active This discount?
+						span(class="icon info ms-2" tooltip="check this if you want active this discount." flow="up")
+							+getRIcon("info")
+					label.switch.text-start
+						input#product-new(type="checkbox" class="switch" name="new")
+						span.slider
+
+		.col-sm-12.col-lg-3.meta-box
+			.row.d-block.clearfix
+				.col-sm-6.col-lg-12.float-end.float-lg-none
+					.main-box.box-spaces
+						.form-item.second.justify-content-between.mt-2(class=flexClasses)
+							label.item-title.meta-title created at: 
+							span.ms-2 26/03/2021 14:58
+
+						.form-item.second.justify-content-between.mt-2(class=flexClasses)
+							label.item-title.meta-title updated at:
+							span.ms-2 26/03/2021 14:58
+
+						.btns-holder.d-flex.justify-content-between.mt-4
+							button.btn.trans-btn.w-100.text-start.delete(data-post-type="discount")
+								span.icon.me-1
+									+getRIcon("trash")
+								| move to trash
+							button.btn.solid-btn(type="submit") publish 

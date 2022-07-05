@@ -1,0 +1,78 @@
+extends ../bases/_base
+block mainContent
+	- var flexClasses = ['d-flex', 'align-items-sm-center']
+	.page-header
+		.row
+			.col-12(class=flexClasses).justify-content-sm-between.flex-column.flex-sm-row
+				.page-title.text-capitalize settings
+
+				.page-breadcrumbs(class=flexClasses).justify-content-start.justify-content-sm-end
+					- var breadCrumbsItems = ['settings']
+					include ./../components/_breadcrumbs
+
+	form#settings-form.row.d-block.clearfix(data-post-type="settings")
+		.col-sm-12.col-lg-9.float-start.post-box
+			.main-box.box-spaces
+				.form-item.primary.mb-3
+					.item-title Currencies Settings
+
+				.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap
+					label.item-title(for="main-currency") Currency:
+						span(class="icon info ms-2" tooltip="This will be the default currency of your store." flow="up")
+							+getRIcon("info")
+					- var sel_curreny = "EUR"
+					include ./../data/_currencies
+
+				.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap.mt-3
+					label.item-title(for="currency-position") Currency Position:
+					select#currency-position.form-select(name="currency_position")
+						option(value='left') Left
+						option(value='right') Right
+						option(value='left_space') Left With Space
+						option(value='right_space') Right With Space
+
+				.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap.mt-3
+					label.item-title(for="thousand-sep") Thousand Separator:
+					input#thousand-sep.form-control(name="thousand_sep" type="text" placeholder="," value=",")
+
+				.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap.mt-3
+					label.item-title(for="decimal-sep") Decimal Separator:
+					input#decimal-sep.form-control(name="decimal_sep" type="text" placeholder="." value=".")
+
+				.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap.mt-3
+					label.item-title(for="num-decimals") Number of decimals:
+					input#num-decimals.form-control(name="num_decimals" min="0" type="number" placeholder="2" value="2")
+					
+				hr
+
+				.form-item.primary.mb-3
+					.item-title Multi Currencies
+
+				.form-item.second.d-flex.mt-3
+					label.item-title.mt-1(for="multi-currencies") Choose Currencies:
+						span(class="icon info ms-2" tooltip="Choose the currencies you want your store to support." flow="up")
+							+getRIcon("info")
+					.input-holder.w-100
+						.repeater-holder
+							.repeater.d-flex.mb-3
+								- var sel_curreny = "USD"
+								include ./../data/_currencies
+								.icons.d-flex.align-items-center.ms-2
+									span.remove(tooltip="Remove This Item" flow="up")
+										+getRIcon("trash")
+
+							.repeater.d-flex.mb-3
+								- var sel_curreny = "GBP"
+								include ./../data/_currencies
+								.icons.d-flex.align-items-center.ms-2
+									span.remove(tooltip="Remove This Item" flow="up")
+										+getRIcon("trash")
+
+						.add-repeater-item
+							a.btn Add New Currency
+
+
+		.col-sm-6.col-lg-3.float-end.meta-box
+			.main-box.box-spaces.mb-0.mt-3.mt-lg-0
+				.btns-holder.d-flex.justify-content-between
+					button.btn.solid-btn.w-100(type="submit") Save Changes 

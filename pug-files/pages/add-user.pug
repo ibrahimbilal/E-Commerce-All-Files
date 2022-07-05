@@ -1,0 +1,115 @@
+extends ../bases/_base
+block mainContent
+	- var flexClasses = ['d-flex', 'align-items-sm-center']
+	.page-header
+		.row
+			.col-12(class=flexClasses).justify-content-sm-between.flex-column.flex-sm-row
+				.page-title.text-capitalize add user
+
+				.page-breadcrumbs(class=flexClasses).justify-content-start.justify-content-sm-end
+					- var breadCrumbsItems = ['users', 'add']
+					include ./../components/_breadcrumbs
+
+	form#add-newitem-form.row.d-block.clearfix(data-post-type="user")
+		.col-sm-12.col-lg-9.float-start.post-box
+			.main-box.box-spaces
+				.form-item.primary.mb-3
+					.item-title Required Informations
+
+				.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap
+					label.item-title(for="first-name") first name:
+					input#first-name.form-control(name="first_name" type="text")
+				
+				.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap.mt-3
+					label.item-title(for="last-name") last name:
+					input#last-name.form-control(name="last_name" type="text")
+				
+				.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap.mt-3
+					label.item-title(for="email") email address:
+					input#email.form-control(name="email" type="email")
+
+				.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap.mt-3
+					label.item-title(for="password") password:
+					.with-icon
+						input#password.form-control(name="password" type="password")
+						span.show-pass
+							+getRIcon("eye")
+					button.btn.regular-btn.ms-sm-3.mt-2.mt-sm-0.text-nowrap.generate-password(type="button") Suggest Password
+
+				.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap.mt-3
+					label.item-title(for="mobile") mobile:
+					input#mobile.form-control(name="mobile" type="tel")
+				
+				.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap.mt-3
+					label.item-title(for="birth-date") Birth Of Date:
+					.position-relative.w-100
+						input#birth-date.form-control(name="birth_date" type="text" data-toggle="datepicker")
+
+				.form-item.second.d-flex.flex-wrap.flex-sm-nowrap.mt-3
+					label.item-title gender:
+					label.radio-label(for="male")
+						input#male.input-radio(name="customer_type" type="radio" value="Male" checked)
+						| Male
+
+					label.radio-label(for="female")
+						input#female.input-radio(name="customer_type" type="radio" value="Female")
+						| Female
+
+				.form-item.second.d-flex.flex-wrap.flex-sm-nowrap.mt-3
+					label.item-title(for="user-type") role:
+					select#user-type.form-select(name="user_type")
+						option administrator
+						option store manager
+						option accountant
+
+				.form-item.second.d-flex.mt-3.flex-wrap.flex-sm-nowrap
+					.item-title
+						label.item-title.mb-2(for="profile-picture") Profile Picture:
+					.item-content
+						a.btn.regular-btn.gallery-btn(href="javascript:void(0)" style="width: 150px") Change Image
+						.selected-img
+							.img-holder.mt-3
+								img.preview(src="./assets/images/customers/image-1.png" width="70")
+								span.overlay
+									+getRIcon("trash")
+									span remove
+
+		.col-sm-6.col-lg-3.float-end.meta-box
+			.main-box.box-spaces.mb-0
+
+				.form-item.second.justify-content-between.mt-2(class=flexClasses)
+					label.item-title.meta-title Registered At:
+					span.ms-2 26/03/2021 14:58
+
+				.form-item.second.justify-content-between.mt-2(class=flexClasses)
+					label.item-title.meta-title updated at:
+					span.ms-2 26/03/2021 14:58
+
+				.form-item.second.justify-content-between.mt-2(class=flexClasses)
+					label.item-title.meta-title iP Address:
+					span.ms-2 216.58.217.164
+
+				.form-item.second.justify-content-between.mt-2(class=flexClasses)
+					label.item-title.meta-title iP Country:
+					span.ms-2 United State of America
+
+				.form-item.second.justify-content-between.mt-2(class=flexClasses)
+					label.item-title.meta-title iP City:
+					span.ms-2 New York
+
+				.form-item.second.justify-content-between.mt-2(class=flexClasses)
+					label.item-title.meta-title Device:
+					span.ms-2 Samsung Galaxy S20
+
+				.form-item.second.justify-content-between.mt-2(class=flexClasses)
+					label.item-title.meta-title Last Logged In:
+					span.ms-2 26/03/2021 14:58
+
+				.btns-holder.d-flex.justify-content-between.mt-4
+					button.btn.trans-btn.w-100.text-start.delete(data-post-type="user")
+						span.icon.me-1
+							+getRIcon("trash")
+						| move to trash
+					button.btn.solid-btn(type="submit") publish 
+block footer_script
+	include ./../components/_gallery

@@ -1,0 +1,51 @@
+
+.add-repeater-item {
+    .btn {
+        width: 100%;
+        border: 1px dashed var(--text-color);
+		border-radius: 5px;
+        background-color: var(--body-background);
+        color: var(--text-color);
+    }
+}
+
+.repeater-holder {
+    .repeater {
+        .repeater-title {
+            background-color: var(--body-background);
+			border-radius: 5px;
+			h5 {
+				cursor: pointer;
+				flex: 1 1 auto;
+			}
+			.icons {
+				gap: 1rem;
+				.icon {
+					cursor: pointer;
+					background-color: var(--text-color);
+					color: var(--box-bg-color);
+					width: 20px;
+					height: 20px;
+					line-height: 20px;
+					border-radius: 50%;
+					text-align: center;
+					@include prefix(transition, 'transform .2s ease-in-out');
+					&.active {
+						transform: rotate(180deg);
+					}
+				}
+			}
+        }
+        .repeater-inputs {
+            display: none;
+            &.active {
+                display: block;
+            }
+        }
+    }
+}
+
+.remove {
+	cursor: pointer;
+	color: var(--danger-color);
+}

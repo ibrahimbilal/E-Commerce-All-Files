@@ -1,0 +1,153 @@
+extends ../bases/_base
+block mainContent
+	- var flexClasses = ['d-flex', 'align-items-sm-center']
+	.page-header
+		.row
+			.col-12(class=flexClasses).justify-content-sm-between.flex-column.flex-sm-row
+				.page-title.text-capitalize add order
+
+				.page-breadcrumbs(class=flexClasses).justify-content-start.justify-content-sm-end
+					- var breadCrumbsItems = ['orders', 'add']
+					include ./../components/_breadcrumbs
+
+	form#add-newitem-form.row.clearfix(data-post-type="order")
+		.col-sm-12.float-start.post-box.order-sm-1
+			.main-box.box-spaces
+				.form-item.primary.mb-3
+					.item-title Order Details
+
+				.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap
+					label.item-title(for="customer") Customer:
+					select#customer.form-select(name="customer")
+						option Select Customer
+						option Jayson Hinrichsen
+						option Mildred Stoddard
+				.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap.mt-3
+					label.item-title(for="order-status") Order Status:
+					select#order-status.form-select(name="order_status")
+						option Pending
+						option Processing
+						option On Hold
+						option Canceled
+						option Completed
+						option Refunded
+
+				.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap.mt-3
+					label.item-title(for="coupon") Coupon:
+					select#coupon.form-select(name="coupon")
+						option Select Coupon
+						option New Year Coupon
+						option Childern Day Coupon 
+						option Mother Day Coupon 
+
+		.col-sm-12.float-start.post-box.order-sm-3
+			.main-box.box-spaces
+				.form-item.primary.mb-3
+					.item-title Order Addresses
+				
+				.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap.mt-3
+					label.item-title(for="country") Country:
+					include ./../data/_countries
+				
+				.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap.mt-3
+					label.item-title(for="state") State:
+					input#state.form-control(name="state" type="text" autocomplete="on")
+				
+				.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap.mt-3
+					label.item-title(for="city") City:
+					input#city.form-control(name="city" type="text" autocomplete="on")
+				
+				.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap.mt-3
+					label.item-title(for="address-1") Address 1:
+					input#address-1.form-control(name="address_1" type="text" autocomplete="on" placeholder="Street name and house number")
+				
+				.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap.mt-3
+					label.item-title(for="address-2") Address 2:
+					input#address-2.form-control(name="address_2" type="text" autocomplete="on" placeholder="Apartment, suite, unit, etc. (optional)")
+				
+				.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap.mt-3
+					label.item-title(for="postcode") Postcode:
+					input#postcode.form-control(name="postcode" type="text" autocomplete="on")
+				
+				.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap.mt-3
+					label.item-title(for="mobile") Mobile:
+					input#mobile.form-control(name="mobile" type="tel" autocomplete="on")
+				
+				.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap.mt-3
+					label.item-title(for="email") Email Address:
+					input#email.form-control(name="email" type="email" autocomplete="on")
+
+		.col-sm-12.float-start.post-box.order-sm-4
+			.main-box.box-spaces
+				.form-item.primary.mb-3
+					.item-title Order Items
+
+				.repeater-holder
+					.repeater.mb-3
+						.repeater-title.p-3.mb-3.d-flex.justify-content-between.align-items-center
+							h5.mb-0 Item Title
+							.icons.d-flex.align-items-center
+								span.icon.active
+									+getRIcon("angle-small-down")
+								span.remove(tooltip="Remove This Item" flow="up")
+									+getRIcon("trash")
+
+						.repeater-inputs.px-3.active
+							.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap
+								label.item-title(for="product") Product:
+								select#product.form-select(name="product")
+									option Select Product
+									option Product 1
+									option Product 2
+									option Product 3
+									option Product 4
+									
+							.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap.mt-3
+								label.item-title(for="product-color") Product Color:
+								select#product-color.form-select(name="product_color")
+									option Select Product Color
+									option Red
+									option Green
+									option Blue
+									option Black
+									option White
+									
+							.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap.mt-3
+								label.item-title(for="product-size") Product Size:
+								select#product-size.form-select(name="product_size")
+									option Select Product Size
+									option XS
+									option S
+									option M
+									option L
+									option XL
+									option XXL
+
+							.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap.mt-3
+								label.item-title(for="quantity") Quantity:
+								input#quantity.form-control(name="quantity" type="text")
+							
+				.add-repeater-item
+					a.btn Add New Item
+
+		.col-sm-6.col-lg-3.float-end.meta-box.order-sm-2
+			.main-box.box-spaces.mb-0
+
+				.form-item.second.justify-content-between(class=flexClasses)
+					label.item-title.meta-title Created At:
+					span.text-end.ms-2 26/03/2021 14:58
+
+				.form-item.second.justify-content-between.mt-3(class=flexClasses)
+					label.item-title.meta-title updated at:
+					span.text-end.ms-2 26/03/2021 14:58
+
+				.form-item.second.justify-content-between.mt-3(class=flexClasses)
+					label.item-title.meta-title updated By:
+					span.text-end.ms-2 Jayson Hinrichsen
+
+				.btns-holder.d-flex.justify-content-between.mt-4
+					button.btn.trans-btn.w-100.text-start.delete(data-post-type="order")
+						span.icon.me-1
+							+getRIcon("trash")
+						| move to trash
+					button.btn.solid-btn(type="submit") publish 

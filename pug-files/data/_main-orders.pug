@@ -1,0 +1,37 @@
+.table-responsive
+	table(id="orders" class="table table-striped")
+		thead
+			tr
+				th
+				th.text-uppercase Order
+				th.text-uppercase status
+				th.text-uppercase customer
+				th.text-uppercase total price
+				th.text-uppercase destination
+				th.text-uppercase updated date
+				th.text-uppercase action
+		tbody
+			- var rows = [{id: "#23234", color: "success", status: "Completed", customer: "Jayson Hinrichsen", price: "$398", destination: "anniston, alabama"},{id: "#23236", color: "warning", status: "On Hold", customer: "Jayson Hinrichsen", price: "$400", destination: "anniston, alabama"},{id: "#23235", color: "danger", status: "Canceled", customer: "Jayson Hinrichsen", price: "$100", destination: "anniston, alabama"},{id: "#23232", color: "dark", status: "Refunded", customer: "Jayson Hinrichsen", price: "$200", destination: "anniston, alabama"},{id: "#23233", color: "primary", status: "Processing", customer: "Jayson Hinrichsen", price: "$250", destination: "anniston, alabama"},{id: "#23237", color: "success", status: "Completed", customer: "Jayson Hinrichsen", price: "$225", destination: "anniston, alabama"}]
+				each row in rows
+					tr
+						td
+						td.text-uppercase= row.id
+						td(class=`status text-capitalize ${row.color}`)= row.status
+						td.text-capitalize= row.customer
+						td.text-uppercase.text-center= row.price
+						td.text-capitalize= row.destination
+						td.text-uppercase 14:58 26/03/2021
+						td
+							.btn-group
+								a.btn.btn-primary.btn-rounded.me-2.py-1(href="./view-order.html")
+									span.icon
+										+getRIcon("eye")
+									| view
+								a.btn.btn-warning.btn-rounded.me-2.py-1
+									span.icon
+										+getRIcon("edit")
+									| edit
+								a.btn.btn-danger.btn-rounded.me-2.py-1
+									span.icon
+										+getRIcon("trash")
+									| trash

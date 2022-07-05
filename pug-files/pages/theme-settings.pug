@@ -1,0 +1,161 @@
+extends ../bases/_base
+block mainContent
+	- var flexClasses = ['d-flex', 'align-items-sm-center']
+	.page-header
+		.row
+			.col-12(class=flexClasses).justify-content-sm-between.flex-column.flex-sm-row
+				.page-title.text-capitalize settings
+
+				.page-breadcrumbs(class=flexClasses).justify-content-start.justify-content-sm-end
+					- var breadCrumbsItems = ['settings']
+					include ./../components/_breadcrumbs
+
+	form#settings-form.row.d-block.clearfix(data-post-type="settings")
+		.col-sm-12.col-lg-9.float-start.post-box
+			.main-box.box-spaces.mb-0
+				.form-item.primary.mb-3
+					.item-title Theme Settings 
+
+				.form-item.second.d-flex.flex-wrap
+					.item-title.mb-2
+						label.item-title Logo:
+					.item-content
+						a.btn.regular-btn.gallery-btn(href="javascript:void(0)" style="width: 150px") Change Image
+						.selected-img
+							.img-holder.mt-3
+								img.preview.p-1(src="./assets/images/full-logo.png" width="70")
+								span.overlay
+									+getRIcon("trash")
+									span remove
+
+				.form-item.second.d-flex.flex-wrap.mt-3
+					.item-title.mb-2
+						label.item-title Logo (Dark):
+					.item-content
+						a.btn.regular-btn.gallery-btn(href="javascript:void(0)" style="width: 150px") Change Image
+						.selected-img
+							.img-holder.mt-3
+								img.preview.p-1(src="./assets/images/full-logo.png" width="70")
+								span.overlay
+									+getRIcon("trash")
+									span remove
+
+				.form-item.second.d-flex.flex-wrap.mt-3
+					label.item-title Logo Width:
+					.rang-wrapper.d-flex.align-items-center
+						output#rangevalue.text-center.me-2 150
+						input.form-range(type="range" min="0" max="300" step="10" value="150" oninput="rangevalue.value=value")
+
+				hr
+				
+				.form-item.second.d-flex.flex-wrap.mt-3
+					.item-title.mb-2
+						label.item-title Mobile Logo:
+					.item-content
+						a.btn.regular-btn.gallery-btn(href="javascript:void(0)" style="width: 150px") Change Image
+						.selected-img
+							.img-holder.mt-3
+								img.preview.p-1(src="./assets/images/full-logo.png" width="70")
+								span.overlay
+									+getRIcon("trash")
+									span remove
+
+				.form-item.second.d-flex.flex-wrap.mt-3
+					.item-title.mb-2
+						label.item-title Mobile Logo (Dark):
+					.item-content
+						a.btn.regular-btn.gallery-btn(href="javascript:void(0)" style="width: 150px") Change Image
+						.selected-img
+							.img-holder.mt-3
+								img.preview.p-1(src="./assets/images/full-logo.png" width="70")
+								span.overlay
+									+getRIcon("trash")
+									span remove
+
+				.form-item.second.d-flex.flex-wrap.mt-3
+					label.item-title Mobile Logo Width:
+					.rang-wrapper.d-flex.align-items-center
+						output#rangevalue_1.text-center.me-2 150
+						input.form-range(type="range" min="0" max="300" step="10" value="150" oninput="rangevalue_1.value=value")
+				hr
+
+				.row 
+					.col-sm-6
+						.form-item.second.d-flex.flex-wrap.align-items-center
+							label.item-title.mb-2 Main Color:
+							input.form-control-color(type="color" name="--main-color" value="#2C2CCC" title="Choose your color")
+
+					.col-sm-6
+						.form-item.second.d-flex.flex-wrap.align-items-center
+							label.item-title.mb-2 Main Color Hover:
+							input.form-control-color(type="color" name="--main-color-hover" value="#2323a2" title="Choose your color")
+
+					.col-sm-6
+						.form-item.second.d-flex.flex-wrap.align-items-center.mt-3
+							label.item-title.mb-2 Boxs Color:
+							input.form-control-color(type="color" name="--box-bg-color" value="#FFFFFF" title="Choose your color")
+
+					.col-sm-6
+						.form-item.second.d-flex.flex-wrap.align-items-center.mt-3
+							label.item-title.mb-2 Background Color:
+							input.form-control-color(type="color" name="--body-background" value="#F5F5F5" title="Choose your color")
+
+					.col-sm-6
+						.form-item.second.d-flex.flex-wrap.align-items-center.mt-3
+							label.item-title.mb-2 Badge Color:
+							input.form-control-color(type="color" name="--menu-badge-bg" value="#FFA620" title="Choose your color")
+
+					.col-sm-6
+						.form-item.second.d-flex.flex-wrap.align-items-center.mt-3
+							label.item-title.mb-2 Active BG Color:
+							input.form-control-color(type="color" name="--menu-active-bg" value="#F3F3FF" title="Choose your color")
+
+					.col-sm-6
+						.form-item.second.d-flex.flex-wrap.align-items-center.mt-3
+							label.item-title.mb-2 Text Color:
+							input.form-control-color(type="color" name="--text-color" value="#333333" title="Choose your color")
+
+				hr
+
+				.row 
+					.col-sm-6
+						.form-item.second.d-flex.flex-wrap.align-items-center
+							label.item-title.mb-2 Main Color (Dark):
+							input.form-control-color.dark(type="color" name="--main-color" value="#675ad0" title="Choose your color")
+
+					.col-sm-6
+						.form-item.second.d-flex.flex-wrap.align-items-center
+							label.item-title.mb-2 Main Color Hover (Dark):
+							input.form-control-color.dark(type="color" name="--main-color-hover" value="#877be6" title="Choose your color")
+
+					.col-sm-6
+						.form-item.second.d-flex.flex-wrap.align-items-center.mt-3
+							label.item-title.mb-2 Boxs Color (Dark):
+							input.form-control-color.dark(type="color" name="--box-bg-color" value="#1D1D1D" title="Choose your color")
+
+					.col-sm-6
+						.form-item.second.d-flex.flex-wrap.align-items-center.mt-3
+							label.item-title.mb-2 Background Color (Dark):
+							input.form-control-color.dark(type="color" name="--body-background" value="#121212" title="Choose your color")
+
+					.col-sm-6
+						.form-item.second.d-flex.flex-wrap.align-items-center.mt-3
+							label.item-title.mb-2 Badge Color (Dark):
+							input.form-control-color.dark(type="color" name="--menu-badge-bg" value="#FFA620" title="Choose your color")
+
+					.col-sm-6
+						.form-item.second.d-flex.flex-wrap.align-items-center.mt-3
+							label.item-title.mb-2 Active BG Color (Dark):
+							input.form-control-color.dark(type="color" name="--menu-active-bg" value="#3c3c3c" title="Choose your color")
+
+					.col-sm-6
+						.form-item.second.d-flex.flex-wrap.align-items-center.mt-3
+							label.item-title.mb-2 Text Color (Dark):
+							input.form-control-color.dark(type="color" name="--text-color" value="#E1E1E1" title="Choose your color")
+
+		.col-sm-6.col-lg-3.float-end.meta-box
+			.main-box.box-spaces.mb-0.mt-3.mt-lg-0
+				.btns-holder.d-flex.justify-content-between
+					button.btn.solid-btn.w-100(type="submit") Save Changes 
+block footer_script
+	include ./../components/_gallery

@@ -1,0 +1,143 @@
+extends ../bases/_base
+block mainContent
+	- var flexClasses = ['d-flex', 'align-items-sm-center']
+	.page-header
+		.row
+			.col-12(class=flexClasses).justify-content-sm-between.flex-column.flex-sm-row
+				.page-title.text-capitalize settings
+
+				.page-breadcrumbs(class=flexClasses).justify-content-start.justify-content-sm-end
+					- var breadCrumbsItems = ['settings']
+					include ./../components/_breadcrumbs
+
+	form#settings-form.row.d-block.clearfix(data-post-type="settings")
+		.col-sm-12.col-lg-9.float-start.post-box
+			.main-box.box-spaces
+				.form-item.primary.mb-3
+					.item-title Store Address
+
+				.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap
+					label.item-title(for="site-title") country:
+					include ./../data/_countries
+				
+				.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap.mt-3
+					label.item-title(for="state") State:
+					input#state.form-control(name="state" type="text" autocomplete="on")
+				
+				.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap.mt-3
+					label.item-title(for="city") City:
+					input#city.form-control(name="city" type="text" autocomplete="on")
+				
+				.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap.mt-3
+					label.item-title(for="address-1") Address 1:
+					input#address-1.form-control(name="address_1" type="text" autocomplete="on" placeholder="Street name and house number")
+				
+				.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap.mt-3
+					label.item-title(for="address-2") Address 2:
+					input#address-2.form-control(name="address_2" type="text" autocomplete="on" placeholder="Apartment, suite, unit, etc. (optional)")
+				
+				.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap.mt-3
+					label.item-title(for="postcode") Postcode:
+					input#postcode.form-control(name="postcode" type="text" autocomplete="on")
+
+			.main-box.box-spaces
+				.form-item.primary.mb-3
+					.item-title Store Settings
+
+				.form-item.second.d-flex.align-items-center.mt-3
+					label.item-title(for="allow-reviews") Allow Reviews?
+						span(class="icon info ms-2" tooltip="check this if you want allow reviews on your store." flow="up")
+							+getRIcon("info")
+					label.switch.text-start
+						input#allow-reviews(type="checkbox" class="switch" name="reviews" checked)
+						span.slider
+
+				.form-item.second.d-flex.align-items-center.mt-3
+					label.item-title(for="allow-guest-reviews") Allow Guest Review:
+					label.switch.text-start
+						input#allow-guest-reviews(type="checkbox" class="switch" name="guest_reviews" checked)
+						span.slider
+
+				.form-item.second.d-flex.align-items-center.mt-3
+					label.item-title(for="allow-checkout") Allow Guest Checkout:
+						span(class="icon info ms-2" tooltip="check this if you want guest visitors checkout without create account." flow="up")
+							+getRIcon("info")
+					label.switch.text-start
+						input#allow-checkout(type="checkbox" class="switch" name="guest_checkout" checked)
+						span.slider
+
+				.form-item.second.d-flex.align-items-center.mt-3
+					label.item-title(for="active-wishlist") Active Wishlist:
+					label.switch.text-start
+						input#active-wishlist(type="checkbox" class="switch" name="wishlist" checked)
+						span.slider
+
+				.form-item.second.d-flex.align-items-center.mt-3
+					label.item-title(for="active-compare") Active Compare:
+					label.switch.text-start
+						input#active-compare(type="checkbox" class="switch" name="compare" checked)
+						span.slider
+
+				.form-item.second.d-flex.align-items-center.mt-3
+					label.item-title(for="out-of-stock-products") Allow Out Of Stock products:
+						span(class="icon info ms-2" tooltip="check this if you want keep showing out of stock products." flow="up")
+							+getRIcon("info")
+					label.switch.text-start
+						input#out-of-stock-products(type="checkbox" class="switch" name="out_of_stock_products" checked)
+						span.slider
+
+				.form-item.second.d-flex.align-items-center.mt-3
+					label.item-title(for="social-share") Enable Social Share?
+					label.switch.text-start
+						input#social-share(type="checkbox" class="switch" name="social_share" checked)
+						span.slider
+
+				#social-share-items.form-item.second.d-flex.align-items-center.mt-3
+					label.item-title Enable Share On:
+					label.icon-checkbox
+						input(type="checkbox" name="social_share[]" value="facebook" checked)
+						span.icon.facebook
+							+getBIcon("facebook")
+					label.icon-checkbox
+						input(type="checkbox" name="social_share[]" value="twitter" checked)
+						span.icon.twitter
+							+getBIcon("twitter")
+					label.icon-checkbox
+						input(type="checkbox" name="social_share[]" value="instagram")
+						span.icon.instagram
+							+getBIcon("instagram")
+					label.icon-checkbox
+						input(type="checkbox" name="social_share[]" value="whatsapp" checked)
+						span.icon.whatsapp
+							+getBIcon("whatsapp")
+					label.icon-checkbox
+						input(type="checkbox" name="social_share[]" value="mail")
+						span.icon.envelope
+							+getRIcon("envelope")
+
+			.main-box.box-spaces.mb-0
+				.form-item.primary.mb-3
+					.item-title Store Sections Settings 
+
+				.form-item.second.d-flex.align-items-center.mt-3
+					label.item-title(for="recently-viewed") Active Recently Viewed:
+						span(class="icon info ms-2" tooltip="check this if you want show Recently Viewed Section." flow="up")
+							+getRIcon("info")
+					label.switch.text-start
+						input#recently-viewed(type="checkbox" class="switch" name="recently_viewed" checked)
+						span.slider
+
+				.form-item.second.d-flex.align-items-center.mt-3
+					label.item-title(for="recommend") Active Recommendations?
+						span(class="icon info ms-2" tooltip="check this if you want show Recommendations Section On Thank You Page." flow="up")
+							+getRIcon("info")
+					label.switch.text-start
+						input#recommend(type="checkbox" class="switch" name="recommend" checked)
+						span.slider
+
+		.col-sm-6.col-lg-3.float-end.meta-box
+			.main-box.box-spaces.mb-0.mt-3.mt-lg-0
+				.btns-holder.d-flex.justify-content-between
+					button.btn.solid-btn.w-100(type="submit") Save Changes 
+block footer_script
+	include ./../components/_gallery

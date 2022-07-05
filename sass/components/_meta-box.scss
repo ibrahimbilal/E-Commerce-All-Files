@@ -1,0 +1,11 @@
+.meta-box {
+    @media ( min-width: $lg ) {
+        width: 365px;
+    }
+}
+
+.post-box {
+    @media ( min-width: $lg ) {
+        max-width: calc( 100% - 365px );
+    }
+}

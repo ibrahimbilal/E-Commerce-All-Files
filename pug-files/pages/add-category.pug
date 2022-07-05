@@ -1,0 +1,181 @@
+extends ../bases/_base
+block mainContent
+	- var flexClasses = ['d-flex', 'align-items-sm-center']
+	.page-header
+		.row
+			.col-12(class=flexClasses).justify-content-sm-between.flex-column.flex-sm-row
+				.page-title.text-capitalize add category
+
+				.page-breadcrumbs(class=flexClasses).justify-content-start.justify-content-sm-end
+					- var breadCrumbsItems = ['categories', 'add']
+					include ./../components/_breadcrumbs
+
+	form#add-newitem-form.row.d-block.clearfix(data-post-type="Category")
+		.col-sm-12.col-lg-9.float-start.post-box
+			.main-box.box-spaces
+				.form-item.primary
+					label.item-title(for="category-name") category title
+					input#category-name.form-control(name="category_name" type="text")
+
+				.divider
+
+				.form-item.primary
+					label.item-title(for="category-desc") category description
+					#category-desc
+						.editor-container
+
+		.col-sm-12.col-lg-3.float-end.meta-box
+			.row.d-block.clearfix
+				.col-sm-6.col-lg-12.float-end.float-lg-none
+					.main-box.box-spaces
+						.form-item.second.justify-content-between.mb-2(class=flexClasses)
+							label.item-title.meta-title(for="newitem-lang") category Lang:
+							select#newitem-lang.form-select.dropdown(name="langs")
+								option(data-flag="./assets/images/flags/us.png" value="en") english
+								option(data-flag="./assets/images/flags/sa.png" value="ar") arabic
+								option(data-flag="./assets/images/flags/fr.png" value="fr") french
+
+						.form-item.second
+							label.item-title.meta-title(for="newitem") category slug:
+								span(class="icon info ms-2" tooltip="slug is the bit of text that appears after your domain name in the URL of a page" flow="up")
+									+getRIcon("info")
+							input#newitem.form-control.mt-2(name="category_slug" type="text")
+
+						.form-item.second.justify-content-between.mt-2(class=flexClasses)
+							label.item-title.meta-title created at: 
+							span.ms-2 26/03/2021 14:58
+
+						.form-item.second.justify-content-between.mt-2(class=flexClasses)
+							label.item-title.meta-title updated at:
+							span.ms-2 26/03/2021 14:58
+
+						.btns-holder.d-flex.justify-content-between.mt-4
+							button.btn.regular-btn.draft(data-post-type="Category") save as draft
+							button.btn.solid-btn(type="submit") publish 
+
+						.btns-holder.d-flex.justify-content-between.mt-2
+							button.btn.trans-btn.w-100.text-start.delete(data-post-type="Category")
+								span.icon.me-1
+									+getRIcon("trash")
+								| move to trash
+
+				.col-sm-6.col-lg-12.float-start.float-lg-none
+					#parent-cat.main-box.box-spaces.form-item
+						h3.box-title.item-title parent category
+						.cat-list-holder
+							ul.my-list.main-list
+								li.my-item
+									+radiobox('clothes')
+									ul.my-list.child-cat
+										li.my-item
+											+radiobox('men')
+											ul.my-list.child-cat
+												- var filters = ['T-shirts','Jackets','Coast','Sport']
+												each val, index in filters
+													li.my-item
+														+radiobox(val)
+										li.my-item
+											+radiobox('women')
+											ul.my-list.child-cat
+												- var filters = ['T-shirts','Jackets','Coast','Sport']
+												each val, index in filters
+													li.my-item
+														+radiobox(val)
+								li.my-item
+									+radiobox('shoeses')
+									ul.my-list.child-cat
+										li.my-item
+											+radiobox('men')
+										li.my-item
+											+radiobox('women')
+										li.my-item
+											+radiobox('childrens')
+
+		.col-sm-12.col-lg-9.float-start.post-box
+			.main-box.box-spaces.mb-0
+				.form-item.primary
+					.item-title category details
+				.tabs-holder
+					.tabs-buttons
+						a.btn.tab-btn.active(href="javascript:void(0)" data-tab-id="#general") general
+						a.btn.tab-btn(href="javascript:void(0)" data-tab-id="#seo") seo
+					.tabs-boxs.box-spaces.mb-0
+						#general.tab-box.active
+
+							.form-item.second.d-flex.align-items-center.mt-3
+								label.item-title(for="product-new") Active This Category?
+									span(class="icon info ms-2" tooltip="check this if you want active this category." flow="up")
+										+getRIcon("info")
+								label.switch.text-start
+									input#product-new(type="checkbox" class="switch" name="new")
+									span.slider
+
+							.form-item.second.d-flex.mt-3.flex-wrap.flex-sm-nowrap
+								.item-title
+									label.item-title.mb-2(for="product-image") category image:
+										span(class="icon info ms-2" tooltip="the image of the category." flow="up")
+											+getRIcon("info")
+								.item-content
+									a.btn.regular-btn.gallery-btn(href="javascript:void(0)" style="width: 150px") Change Image
+									.selected-img
+										.img-holder.mt-3
+											img.preview(src="./assets/images/products/image-10.png" width="70")
+											span.overlay
+												+getRIcon("trash")
+												span remove
+
+						#seo.tab-box
+							.form-item.second.d-flex.flex-wrap.flex-sm-nowrap
+								label.item-title(for="meta-title") meta title:
+									span(class="icon info ms-2" tooltip="the title which be shown in search engines." flow="up")
+										+getRIcon("info")
+								input#meta-title.form-control(name="meta_title" type="text")
+
+							.form-item.second.d-flex.flex-wrap.flex-sm-nowrap.mt-3
+								label.item-title(for="meta-desc") meta description:
+									span(class="icon info ms-2" tooltip="the description which will be shown under the title in search engines." flow="up")
+										+getRIcon("info")
+								textarea#meta-desc.form-control(name="meta_description" rows="3" style="resize:none")
+
+							.form-item.second.d-flex.flex-wrap.flex-sm-nowrap.mt-3
+								label.item-title(for="meta-keyword") meta keywords:
+									span(class="icon info ms-2" tooltip="The keyword or key phrase is the search term that you want a page or post to rank for most. When people search for that phrase, they should find you.\nseparate keywords with comma (,)." flow="up")
+										+getRIcon("info")
+								textarea#meta-keyword.form-control(name="meta_keywords" rows="3" style="resize:none")
+
+block footer_script
+	include ./../components/_gallery
+	script.
+		// Data Tables
+		console.log('add product');
+
+		const fontSizeArr = ['10px','12px','14px','16px','20px','24px','32px','36px','42px','54px'];
+		var Size = Quill.import('attributors/style/size');
+		Size.whitelist = fontSizeArr;
+		Quill.register(Size, true);
+		const toolbarOptions = [
+			[{ header: [1, 2, 3, 4, 5, 6, false] }],              // custom button values
+			['bold', 'italic', 'underline', 'strike'],        // toggled buttons
+			[{ color: [] }],          // dropdown with defaults from theme
+			[{ align: '' }, { align: 'center' }, { align: 'right' }, { align: 'justify' }],
+
+			[{ list: 'bullet' }, { list: 'ordered' }],
+			[{ indent: '-1' }, { indent: '+1' }],          // outdent/indent
+			[{ direction: 'rtl' }],                         // text direction
+			[{ size: fontSizeArr }],  // custom dropdown
+			['blockquote'],
+			['clean']                                         // remove formatting button
+		];
+		var setting = {
+			bounds: '.editor-container',
+			modules: {
+				toolbar: toolbarOptions,
+			},
+			placeholder: 'Write The Description Here...',
+			theme: 'snow'   // Specify theme in configuration
+		};
+		var quill = new Quill('.editor-container', setting);
+
+		// ===========================================================
+		// fire category checkbox function 
+		radioBoxFunctions();

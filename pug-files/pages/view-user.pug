@@ -1,0 +1,73 @@
+extends ../bases/_base
+block mainContent
+	- var flexClasses = ['d-flex', 'align-items-sm-center']
+	.page-header
+		.row
+			.col-12(class=flexClasses).justify-content-sm-between.flex-column.flex-sm-row
+				.page-title.text-capitalize view user
+					a.add-btn.btn.text-capitalize(href='./add-user.html')
+						span.icon
+							+getRIcon("edit")
+						| edit <span class="page">user<span>
+
+				.page-breadcrumbs(class=flexClasses).justify-content-start.justify-content-sm-end
+					- var breadCrumbsItems = ['users', 'view']
+					include ./../components/_breadcrumbs
+
+	.row
+		.col-12
+			.main-box.box-spaces
+				.row
+					.col-sm-12.col-lg-3.d-flex.align-items-center.justify-content-center.user-holder
+						.profile-image.text-center
+							img(src="./assets/images/customers/image-1.png")
+					.col-sm-12.col-lg-9
+						.profile-details.row.mt-3.mt-lg-0
+							.col-sm-6
+								.item.form-item.second.mb-4
+									.item-title First Name:
+									span.ms-2 Mildred
+								.item.form-item.second.mb-4
+									.item-title Last Name:
+									span.ms-2 Stoddard
+								.item.form-item.second.mb-4
+									.item-title Email Address:
+									span.ms-2 m.stoddard@gmail.com
+								.item.form-item.second.mb-4
+									.item-title Registered At:
+									span.ms-2 26/03/2021 14:58
+								.item.form-item.second.mb-4
+									.item-title Updated At:
+									span.ms-2 26/03/2021 14:58
+								.item.form-item.second.mb-4
+									.item-title Last Logged In:
+									span.ms-2 26/03/2021 14:58
+								.item.form-item.second
+									.item-title Device:
+									span.ms-2 Samsung Galaxy S20
+							.col-sm-6
+								.item.form-item.second.mb-4.mt-4.mt-sm-0
+									.item-title Birth Of Date:
+									span.ms-2 26/03/2021
+								.item.form-item.second.mb-4
+									.item-title Mobile:
+									span.ms-2 516-913-8323
+								.item.form-item.second.mb-4
+									.item-title Gender:
+									span.ms-2 Female
+								.item.form-item.second.mb-4
+									.item-title iP Address:
+									span.ms-2 216.58.217.164
+								.item.form-item.second.mb-4
+									.item-title iP Country:
+									span.ms-2 United State of America
+								.item.form-item.second.mb-4
+									.item-title iP City:
+									span.ms-2 New York
+								.item.form-item.second
+									.item-title role:
+									span.ms-2 Administrator
+
+block footer_script
+	script.
+		

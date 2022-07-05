@@ -1,0 +1,65 @@
+.invoice {
+    background-color: var(--box-bg-color);
+    max-width: 870px;
+    margin: auto;
+    &-header {
+        background-color: var(--main-color);
+        color: #FFF;
+        font-size: 2.4rem;
+        font-weight: 600;
+        text-align: center;
+        padding: .5rem;
+    }
+    &-body {
+        table {
+            margin-top: 0 !important;
+            th {
+                font-weight: 600;
+                background-color: var(--body-background);
+                color: var(--text-color);
+            }
+            tr {
+                td {
+                    padding-bottom: 10px;
+                }
+            }
+        }
+        .title {
+            font-weight: 600;
+            width: 140px;
+            &-1 {
+                font-size: 20px;
+            }
+            &-2 {
+                font-size: 16px;
+            }
+        }
+        .invoice-detail {
+            p {
+                width: 100%;
+                margin-bottom: 2px;
+                background-color: var(--body-background);
+                padding: 5px 10px;
+            }
+        }
+        .note {
+            p:not(.title) {
+                font-size: 14px;
+            }
+        }
+        .total-holder {
+            .item {
+                padding: 5px 15px;
+                &.total {
+                    background-color: var(--body-background);
+                }
+            }
+        }
+    }
+    &-footer {
+        .name {
+            font-weight: 600;
+            font-size: 1.3rem;
+        }
+    }
+}
