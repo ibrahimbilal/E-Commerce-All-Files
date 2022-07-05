@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="assets/css/uicons-regular-rounded.css" rel="stylesheet">
+    <link href="assets/css/uicons-solid-rounded.css" rel="stylesheet">
+    <link href="assets/css/uicons-brands.css" rel="stylesheet">
+    <link href="assets/css/bs.css" rel="stylesheet">
+    <link href="assets/css/select2.min.css" rel="stylesheet">
+    <link href="assets/css/swiper-bundle.min.css" rel="stylesheet">
+    <link href="assets/css/apexcharts.css" rel="stylesheet">
+    <link href="assets/css/datatables.min.css" rel="stylesheet">
+    <link href="assets/css/quill.snow.min.css" rel="stylesheet">
+    <link href="assets/css/sweetalert2.min.css" rel="stylesheet">
+    <link href="assets/css/pickadate.css" rel="stylesheet">
+    <link href="assets/css/dropzone.min.css" rel="stylesheet">
+    <link href="assets/css/daterangepicker.css" rel="stylesheet">
+    <link href="assets/css/filepond/filepond.min.css" rel="stylesheet">
+    <link href="assets/css/filepond/filepond-plugin-image-preview.min.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;display=swap" rel="stylesheet">
+    <title>E-Commerce Project</title>
+    <script src="assets/js/async.js" type="text/javascript" async></script>
+  </head>
+  <body class="body-class">
+    <aside>
+      <div class="dashbord-menu main-box menu-padding">
+        <div class="menu-header"><a href="./index.html"><i class="fi-rr-shop"> </i><span class="title">Admin Panel</span></a></div>
+        <div class="menu-links d-flex flex-column">
+          <ul class="menu-list-group">
+            <li class="list-item"><a href="./index.html"><i class="fi-rr-apps"> </i><span class="title">dashboard</span></a></li>
+          </ul>
+          <ul class="menu-list-group">
+            <li class="list-item has-submenu"><a href="./products.html"><i class="fi-rr-shopping-bag"> </i><span class="title">products</span><span class="icon"><i class="fi-rr-angle-small-down"> </i></span></a>
+              <ul class="submenu">
+                <li class="list-item"><a href="./attributes.html"><i class="fi-rr-circle"> </i><span class="title">attributes</span></a></li>
+              </ul>
+            </li>
+            <li class="list-item"><a href="./categories.html"><i class="fi-rr-folder"> </i><span class="title">categories</span></a></li>
+            <li class="list-item"><a href="./tags.html"><i class="fi-rr-label"> </i><span class="title">tags</span></a></li>
+            <li class="list-item"><a href="./discounts.html"><i class="fi-rr-badge-percent"> </i><span class="title">discounts</span></a></li>
+          </ul>
+          <ul class="menu-list-group">
+            <li class="list-item"><a href="./customers.html"><i class="fi-rr-users"> </i><span class="title">customers</span></a></li>
+            <li class="list-item"><a href="./orders.html"><i class="fi-rr-box"> </i><span class="title">order</span><span class="title badge">35</span></a></li>
+            <li class="list-item"><a href="./invoices.html"><i class="fi-rr-document"> </i><span class="title">invoices</span></a></li>
+          </ul>
+          <ul class="menu-list-group">
+            <li class="list-item"><a href="javascript:void(0)"><i class="fi-rr-stats"> </i><span class="title">analytics</span></a></li>
+            <li class="list-item"><a href="./marketing.html"><i class="fi-rr-megaphone"> </i><span class="title">marketing</span></a></li>
+          </ul>
+          <ul class="menu-list-group">
+            <li class="list-item active"><a href="./users.html"><i class="fi-rr-user"> </i><span class="title">users</span></a></li>
+            <li class="list-item"><a href="./roles.html"><i class="fi-rr-key"> </i><span class="title">permissions</span></a></li>
+          </ul>
+          <ul class="menu-list-group">
+            <li class="list-item"><a href="./gallery.html"><i class="fi-rr-picture"> </i><span class="title">gallery</span></a></li>
+            <li class="list-item"><a href="./languages.html"><i class="fi-rr-world"> </i><span class="title">languages</span></a></li>
+            <li class="list-item has-submenu"><a href="javascript:void(0)"><i class="fi-rr-settings"> </i><span class="title">settings</span><span class="icon"><i class="fi-rr-angle-small-down"> </i></span></a>
+              <ul class="submenu">
+                <li class="list-item"><a href="./general-settings.html"><i class="fi-rr-circle"> </i><span class="title">general</span></a></li>
+                <li class="list-item"><a href="./theme-settings.html"><i class="fi-rr-circle"> </i><span class="title">theme</span></a></li>
+                <li class="list-item"><a href="./store-settings.html"><i class="fi-rr-circle"> </i><span class="title">store</span></a></li>
+                <li class="list-item"><a href="./currencies-settings.html"><i class="fi-rr-circle"> </i><span class="title">currencies</span></a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="menu-list-group">
+            <li class="list-item" id="collaps"><a href="javascript:void(0)"><i class="fi-rr-list"> </i><span class="title">collaps</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+    <main>
+      <header class="main-box d-flex justify-content-between align-items-center">
+        <div class="search-area d-flex justify-content-between align-items-center">
+          <div class="action-item d-flex justify-content-between align-items-center me-4 d-lg-none"><span class="icon" id="menu-btn"><i class="fi-rr-menu-burger"> </i></span></div>
+          <div class="action-item d-flex justify-content-between align-items-center me-4 d-sm-none"><span class="icon" id="search-btn"><i class="fi-rr-search"> </i></span></div>
+          <form class="search-form d-none d-sm-block">
+            <input class="search-input" type="text" name="s" placeholder="Search Here..." autocomplete="off">
+            <button class="submit" type="submit"><i class="fi-rr-search"> </i>
+            </button>
+          </form>
+        </div>
+        <div class="mobile search-area align-items-center"><span class="close"><i class="fi-rr-cross"> </i></span>
+          <form class="search-form d-flex">
+            <input class="search-input" type="text" name="s" placeholder="Search Here..." autocomplete="off">
+            <button class="submit" type="submit"><i class="fi-rr-search"> </i>
+            </button>
+          </form>
+        </div>
+        <div class="action-area flex-row-reverse d-flex justify-content-between align-items-center">
+          <div class="action-item d-flex justify-content-between align-items-center d-none d-sm-flex"><span class="icon" id="expand" tooltip="Full Screen" main-tooltip="Full Screen" alt-tooltip="Exit Full Screen" flow="left"><i class="fi-rr-expand"> </i></span></div>
+          <div class="action-item d-flex justify-content-between align-items-center"><span class="icon" id="theme-mode" tooltip="Dark Mode" main-tooltip="Dark Mode" alt-tooltip="Light Mode" flow="left"><i class="fi-rr-opacity"> </i></span></div>
+          <div class="action-item d-flex justify-content-between align-items-center relative"><span class="icon header-btn" id="notify" data-window="#notify-window"><i class="fi-rr-bell"> </i><span class="dot"></span></span></div>
+          <div class="action-item d-flex justify-content-between align-items-center"><span class="icon header-btn" id="messages" data-window="#messages-window"><i class="fi-rr-envelope"> </i><span class="dot"></span></span></div>
+          <div class="header-btn action-item user-area flex-row-reverse d-flex justify-content-between align-items-center" id="user" data-window="#user-window"><span class="icon"><i class="fi-rr-angle-small-down"> </i></span>
+            <div class="user-name d-none d-xl-block me-2">Jayson Hinrichsen</div><img class="avatar me-2" src="./assets/images/avatars/image-01.png">
+          </div>
+        </div>
+        <div class="float-window main-box" id="notify-window">
+          <div class="win-head d-flex justify-content-between align-items-center">
+            <p class="head-title mb-0">Notifications</p><span class="icon mark-as-read"><i class="fi-rr-list-check"> </i></span>
+          </div>
+          <div class="win-body scrollbar">
+            <ul class="notify-list p-0 m-0">
+              <li class="notify-item d-flex align-items-center">
+                <div class="img me-2 doted"><img class="avatar" width="56" src="./assets/images/avatars/image-02.png"></div>
+                <div class="content">
+                  <p><b>Vince Fleming</b> has Changed <b>"Austin Wade"</b> Order Status</p><span class="date">5 min ago</span>
+                </div>
+              </li>
+              <li class="notify-item d-flex align-items-center">
+                <div class="img me-2 doted"><img class="avatar" width="56" src="./assets/images/products/image-4.png"></div>
+                <div class="content">
+                  <p><b>Austin Wade</b> has requested a new order </p><span class="date">15 min ago</span>
+                </div>
+              </li>
+              <li class="notify-item d-flex align-items-center">
+                <div class="img me-2"><img class="avatar" width="56" src="./assets/images/avatars/image-03.png"></div>
+                <div class="content">
+                  <p><b>Daniil Lobachev</b> has Published a new product</p><span class="date">25 min ago</span>
+                </div>
+              </li>
+              <li class="notify-item d-flex align-items-center">
+                <div class="img me-2 doted"><img class="avatar" width="56" src="./assets/images/avatars/image-02.png"></div>
+                <div class="content">
+                  <p><b>Vince Fleming</b> has Changed <b>"Austin Wade"</b> Order Status</p><span class="date">5 min ago</span>
+                </div>
+              </li>
+              <li class="notify-item d-flex align-items-center">
+                <div class="img me-2 doted"><img class="avatar" width="56" src="./assets/images/products/image-4.png"></div>
+                <div class="content">
+                  <p><b>Austin Wade</b> has requested a new order </p><span class="date">15 min ago</span>
+                </div>
+              </li>
+              <li class="notify-item d-flex align-items-center">
+                <div class="img me-2"><img class="avatar" width="56" src="./assets/images/avatars/image-03.png"></div>
+                <div class="content">
+                  <p><b>Daniil Lobachev</b> has Published a new product</p><span class="date">25 min ago</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="float-window main-box" id="messages-window">
+          <div class="win-head d-flex justify-content-between align-items-center">
+            <p class="head-title mb-0">Messages</p><span class="icon mark-as-read"><i class="fi-rr-eye"> </i></span>
+          </div>
+          <div class="win-body scrollbar">
+            <ul class="notify-list p-0 m-0">
+              <li class="notify-item d-flex align-items-center">
+                <div class="img me-2 doted"><img class="avatar" width="56" src="./assets/images/avatars/image-02.png"></div>
+                <div class="content">
+                  <div class="name">Vince Fleming</div>
+                  <div class="msg">please talk to me</div><span class="date">5 min ago</span>
+                </div>
+              </li>
+              <li class="notify-item d-flex align-items-center">
+                <div class="img me-2"><img class="avatar" width="56" src="./assets/images/avatars/image-03.png"></div>
+                <div class="content">
+                  <div class="name">Daniil Lobachev</div>
+                  <div class="msg">I published the product on the product</div><span class="date">25 min ago</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="float-window main-box user-window" id="user-window">
+          <div class="win-body">
+            <ul class="notify-list p-0 m-0">
+              <li class="notify-item d-flex align-items-center"><a class="link" href="#">My Account</a></li>
+              <li class="notify-item d-flex align-items-center"><a class="link" href="#">Logout</a></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="page-header">
+        <div class="row">
+          <div class="col-12 d-flex align-items-sm-center justify-content-sm-between flex-column flex-sm-row">
+            <div class="page-title text-capitalize">add user</div>
+            <div class="page-breadcrumbs d-flex align-items-sm-center justify-content-start justify-content-sm-end">
+              <div class="breadcrumbs d-flex justify-content-between align-items-center"><a class="item text-capitalize d-flex justify-content-between align-items-center" href="./index.html"><span class="icon"><i class="fi-rr-apps"> </i></span>dashboard</a><span class="angle"><span class="icon"><i class="fi-rr-angle-double-right"> </i></span></span><a class="item text-capitalize d-flex justify-content-between align-items-center">users</a><span class="angle"><span class="icon"><i class="fi-rr-angle-double-right"> </i></span></span><span class="item text-capitalize d-flex justify-content-between align-items-center">add</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <form class="row d-block clearfix" id="add-newitem-form" data-post-type="user">
+        <div class="col-sm-12 col-lg-9 float-start post-box">
+          <div class="main-box box-spaces">
+            <div class="form-item primary mb-3">
+              <div class="item-title">Required Informations</div>
+            </div>
+            <div class="form-item second d-flex align-items-center flex-wrap flex-sm-nowrap">
+              <label class="item-title" for="first-name">first name:</label>
+              <input class="form-control" id="first-name" name="first_name" type="text">
+            </div>
+            <div class="form-item second d-flex align-items-center flex-wrap flex-sm-nowrap mt-3">
+              <label class="item-title" for="last-name">last name:</label>
+              <input class="form-control" id="last-name" name="last_name" type="text">
+            </div>
+            <div class="form-item second d-flex align-items-center flex-wrap flex-sm-nowrap mt-3">
+              <label class="item-title" for="email">email address:</label>
+              <input class="form-control" id="email" name="email" type="email">
+            </div>
+            <div class="form-item second d-flex align-items-center flex-wrap flex-sm-nowrap mt-3">
+              <label class="item-title" for="password">password:</label>
+              <div class="with-icon">
+                <input class="form-control" id="password" name="password" type="password"><span class="show-pass"><i class="fi-rr-eye"> </i></span>
+              </div>
+              <button class="btn regular-btn ms-sm-3 mt-2 mt-sm-0 text-nowrap generate-password" type="button">Suggest Password</button>
+            </div>
+            <div class="form-item second d-flex align-items-center flex-wrap flex-sm-nowrap mt-3">
+              <label class="item-title" for="mobile">mobile:</label>
+              <input class="form-control" id="mobile" name="mobile" type="tel">
+            </div>
+            <div class="form-item second d-flex align-items-center flex-wrap flex-sm-nowrap mt-3">
+              <label class="item-title" for="birth-date">Birth Of Date:</label>
+              <div class="position-relative w-100">
+                <input class="form-control" id="birth-date" name="birth_date" type="text" data-toggle="datepicker">
+              </div>
+            </div>
+            <div class="form-item second d-flex flex-wrap flex-sm-nowrap mt-3">
+              <label class="item-title">gender:</label>
+              <label class="radio-label" for="male">
+                <input class="input-radio" id="male" name="customer_type" type="radio" value="Male" checked>Male
+              </label>
+              <label class="radio-label" for="female">
+                <input class="input-radio" id="female" name="customer_type" type="radio" value="Female">Female
+              </label>
+            </div>
+            <div class="form-item second d-flex flex-wrap flex-sm-nowrap mt-3">
+              <label class="item-title" for="user-type">role:</label>
+              <select class="form-select" id="user-type" name="user_type">
+                <option>administrator</option>
+                <option>store manager</option>
+                <option>accountant</option>
+              </select>
+            </div>
+            <div class="form-item second d-flex mt-3 flex-wrap flex-sm-nowrap">
+              <div class="item-title">
+                <label class="item-title mb-2" for="profile-picture">Profile Picture:</label>
+              </div>
+              <div class="item-content"><a class="btn regular-btn gallery-btn" href="javascript:void(0)" style="width: 150px">Change Image</a>
+                <div class="selected-img">
+                  <div class="img-holder mt-3"><img class="preview" src="./assets/images/customers/image-1.png" width="70"><span class="overlay"><i class="fi-rr-trash"> </i><span>remove</span></span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 float-end meta-box">
+          <div class="main-box box-spaces mb-0">
+            <div class="form-item second justify-content-between mt-2 d-flex justify-content-between align-items-center">
+              <label class="item-title meta-title">Registered At:</label><span class="ms-2">26/03/2021 14:58</span>
+            </div>
+            <div class="form-item second justify-content-between mt-2 d-flex justify-content-between align-items-center">
+              <label class="item-title meta-title">updated at:</label><span class="ms-2">26/03/2021 14:58</span>
+            </div>
+            <div class="form-item second justify-content-between mt-2 d-flex justify-content-between align-items-center">
+              <label class="item-title meta-title">iP Address:</label><span class="ms-2">216.58.217.164</span>
+            </div>
+            <div class="form-item second justify-content-between mt-2 d-flex justify-content-between align-items-center">
+              <label class="item-title meta-title">iP Country:</label><span class="ms-2">United State of America</span>
+            </div>
+            <div class="form-item second justify-content-between mt-2 d-flex justify-content-between align-items-center">
+              <label class="item-title meta-title">iP City:</label><span class="ms-2">New York</span>
+            </div>
+            <div class="form-item second justify-content-between mt-2 d-flex justify-content-between align-items-center">
+              <label class="item-title meta-title">Device:</label><span class="ms-2">Samsung Galaxy S20</span>
+            </div>
+            <div class="form-item second justify-content-between mt-2 d-flex justify-content-between align-items-center">
+              <label class="item-title meta-title">Last Logged In:</label><span class="ms-2">26/03/2021 14:58</span>
+            </div>
+            <div class="btns-holder d-flex justify-content-between mt-4">
+              <button class="btn trans-btn w-100 text-start delete" data-post-type="user"><span class="icon me-1"><i class="fi-rr-trash"> </i></span>move to trash</button>
+              <button class="btn solid-btn" type="submit">publish </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </main>
+    <footer>
+      <div class="d-flex justify-content-between align-items-center flex-column flex-sm-row">
+        <div class="developer">Made With Love <i class="fi-sr-heart"> </i>By <a class="link" target="_blank" href="https://ibrahimbilal.tk/">Ibrahim Bilal</a>
+        </div>
+        <div class="copyright">Copyright &copy; 2022</div>
+      </div>
+    </footer>
+    <script src="assets/js/jquery.min.js" type="text/javascript"></script>
+    <script src="assets/js/select2.min.js" type="text/javascript"></script>
+    <script src="assets/js/select2_args.js" type="text/javascript"></script>
+    <script src="assets/js/speakingurl.min.js" type="text/javascript"></script>
+    <script src="assets/js/jquery.stringtoslug.min.js" type="text/javascript"></script>
+    <script src="assets/js/apexcharts.min.js" type="text/javascript"></script>
+    <script src="assets/js/charts.js" type="text/javascript"></script>
+    <script src="assets/js/swiper-bundle.min.js" type="text/javascript"></script>
+    <script src="assets/js/datatables.min.js" type="text/javascript"></script>
+    <script src="assets/js/quill.min.js" type="text/javascript"></script>
+    <script src="assets/js/sweetalert2.all.min.js" type="text/javascript"></script>
+    <script src="assets/js/pickadate/picker.js" type="text/javascript"></script>
+    <script src="assets/js/pickadate/picker.date.js" type="text/javascript"></script>
+    <script src="assets/js/dropzone.min.js" type="text/javascript"></script>
+    <script src="assets/js/moment.min.js" type="text/javascript"></script>
+    <script src="assets/js/daterangepicker.js" type="text/javascript"></script>
+    <script src="assets/js/filepond/filepond.min.js" type="text/javascript"></script>
+    <script src="assets/js/filepond/filepond-plugin-image-preview.min.js" type="text/javascript"></script>
+    <script src="assets/js/filepond/filepond-plugin-file-validate-size.min.js" type="text/javascript"></script>
+    <script src="assets/js/filepond/filepond-plugin-file-validate-type.min.js" type="text/javascript"></script>
+    <script src="assets/js/filepond/filepond.jquery.js" type="text/javascript"></script>
+    <script src="assets/js/script.js" type="text/javascript"></script>
+    <div class="gallery">
+      <div class="overlay p-3 p-sm-4">
+        <div class="g-holder main-box box-spaces d-flex flex-column">
+          <div class="d-flex justify-content-between align-items-center">
+            <h3 class="m-0">Select Image</h3><span class="icon" id="close-overlay" tooltip="Close" flow="left"><i class="fi-rr-cross"> </i></span>
+          </div>
+          <hr>
+          <div class="d-flex justify-content-between align-items-sm-center flex-column-reverse flex-sm-row mb-2">
+            <div class="bulk-action align-self-end mt-2 mt-sm-0 w-100">
+              <form class="bulk-form">
+                <select class="bulk-select text-capitalize">
+                  <option value="">bulk action</option>
+                  <option value="edit">edit</option>
+                  <option value="delete">delete</option>
+                </select>
+                <button class="btn bulk-submit text-capitalize" type="submit">apply</button>
+              </form>
+            </div>
+            <div class="search-holder">
+              <form class="search-form">
+                <div class="form-item second d-flex align-items-center">
+                  <label class="item-title meta-title me-2" for="gal-search">Search:</label>
+                  <input class="form-control d-inline-block" id="gal-search" type="text" name="s">
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="images mt-3">
+            <ul class="list-unstyled images-list">
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-1-0"><img src="./assets/images/products/image-1.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-2-0"><img src="./assets/images/products/image-2.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-3-0"><img src="./assets/images/products/image-3.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-4-0"><img src="./assets/images/products/image-4.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-5-0"><img src="./assets/images/products/image-5.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-6-0"><img src="./assets/images/products/image-6.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-7-0"><img src="./assets/images/products/image-7.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-8-0"><img src="./assets/images/products/image-8.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-9-0"><img src="./assets/images/products/image-9.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-10-0"><img src="./assets/images/products/image-10.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-11-0"><img src="./assets/images/products/image-11.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-12-0"><img src="./assets/images/products/image-12.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-13-0"><img src="./assets/images/products/image-13.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-1-1"><img src="./assets/images/products/image-1.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-2-1"><img src="./assets/images/products/image-2.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-3-1"><img src="./assets/images/products/image-3.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-4-1"><img src="./assets/images/products/image-4.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-5-1"><img src="./assets/images/products/image-5.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-6-1"><img src="./assets/images/products/image-6.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-7-1"><img src="./assets/images/products/image-7.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-8-1"><img src="./assets/images/products/image-8.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-9-1"><img src="./assets/images/products/image-9.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-10-1"><img src="./assets/images/products/image-10.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-11-1"><img src="./assets/images/products/image-11.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-12-1"><img src="./assets/images/products/image-12.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-13-1"><img src="./assets/images/products/image-13.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-1-2"><img src="./assets/images/products/image-1.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-2-2"><img src="./assets/images/products/image-2.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-3-2"><img src="./assets/images/products/image-3.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-4-2"><img src="./assets/images/products/image-4.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-5-2"><img src="./assets/images/products/image-5.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-6-2"><img src="./assets/images/products/image-6.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-7-2"><img src="./assets/images/products/image-7.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-8-2"><img src="./assets/images/products/image-8.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-9-2"><img src="./assets/images/products/image-9.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-10-2"><img src="./assets/images/products/image-10.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-11-2"><img src="./assets/images/products/image-11.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-12-2"><img src="./assets/images/products/image-12.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-13-2"><img src="./assets/images/products/image-13.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-1-3"><img src="./assets/images/products/image-1.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-2-3"><img src="./assets/images/products/image-2.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-3-3"><img src="./assets/images/products/image-3.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-4-3"><img src="./assets/images/products/image-4.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-5-3"><img src="./assets/images/products/image-5.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-6-3"><img src="./assets/images/products/image-6.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-7-3"><img src="./assets/images/products/image-7.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-8-3"><img src="./assets/images/products/image-8.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-9-3"><img src="./assets/images/products/image-9.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-10-3"><img src="./assets/images/products/image-10.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-11-3"><img src="./assets/images/products/image-11.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-12-3"><img src="./assets/images/products/image-12.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-13-3"><img src="./assets/images/products/image-13.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-1-4"><img src="./assets/images/products/image-1.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-2-4"><img src="./assets/images/products/image-2.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-3-4"><img src="./assets/images/products/image-3.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-4-4"><img src="./assets/images/products/image-4.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-5-4"><img src="./assets/images/products/image-5.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-6-4"><img src="./assets/images/products/image-6.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-7-4"><img src="./assets/images/products/image-7.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-8-4"><img src="./assets/images/products/image-8.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-9-4"><img src="./assets/images/products/image-9.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-10-4"><img src="./assets/images/products/image-10.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-11-4"><img src="./assets/images/products/image-11.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-12-4"><img src="./assets/images/products/image-12.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-13-4"><img src="./assets/images/products/image-13.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-1-5"><img src="./assets/images/products/image-1.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-2-5"><img src="./assets/images/products/image-2.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-3-5"><img src="./assets/images/products/image-3.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-4-5"><img src="./assets/images/products/image-4.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-5-5"><img src="./assets/images/products/image-5.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-6-5"><img src="./assets/images/products/image-6.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-7-5"><img src="./assets/images/products/image-7.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-8-5"><img src="./assets/images/products/image-8.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-9-5"><img src="./assets/images/products/image-9.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-10-5"><img src="./assets/images/products/image-10.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-11-5"><img src="./assets/images/products/image-11.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-12-5"><img src="./assets/images/products/image-12.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-13-5"><img src="./assets/images/products/image-13.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-1-6"><img src="./assets/images/products/image-1.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-2-6"><img src="./assets/images/products/image-2.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-3-6"><img src="./assets/images/products/image-3.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-4-6"><img src="./assets/images/products/image-4.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-5-6"><img src="./assets/images/products/image-5.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-6-6"><img src="./assets/images/products/image-6.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-7-6"><img src="./assets/images/products/image-7.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-8-6"><img src="./assets/images/products/image-8.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-9-6"><img src="./assets/images/products/image-9.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-10-6"><img src="./assets/images/products/image-10.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-11-6"><img src="./assets/images/products/image-11.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-12-6"><img src="./assets/images/products/image-12.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-13-6"><img src="./assets/images/products/image-13.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-1-7"><img src="./assets/images/products/image-1.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-2-7"><img src="./assets/images/products/image-2.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-3-7"><img src="./assets/images/products/image-3.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-4-7"><img src="./assets/images/products/image-4.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-5-7"><img src="./assets/images/products/image-5.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-6-7"><img src="./assets/images/products/image-6.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-7-7"><img src="./assets/images/products/image-7.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-8-7"><img src="./assets/images/products/image-8.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-9-7"><img src="./assets/images/products/image-9.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-10-7"><img src="./assets/images/products/image-10.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-11-7"><img src="./assets/images/products/image-11.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-12-7"><img src="./assets/images/products/image-12.png">
+                </label>
+              </li>
+              <li class="img-item"> 
+                <label class="d-flex justify-content-center align-items-center">
+                  <input type="checkbox" name="img-13-7"><img src="./assets/images/products/image-13.png">
+                </label>
+              </li>
+            </ul>
+          </div>
+          <div class="row mt-2">
+            <div class="col-6 offset-6 text-end"><a class="btn solid-btn select-btn" href="javascript:void(0)">Select</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
