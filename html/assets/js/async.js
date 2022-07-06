@@ -8,6 +8,8 @@ if (localStorage.getItem("theme_mode") != null) {
 
     root.classList.add("dark");
     tooltip.setAttribute("tooltip", LightTooltip);
+	document.querySelector('#theme-mode i').classList.remove('fi-rr-moon-stars');
+	document.querySelector('#theme-mode i').classList.add('fi-rr-sun');
 
     setTimeout(() => {
         let table = document.getElementsByTagName("table");

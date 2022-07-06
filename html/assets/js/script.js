@@ -85,11 +85,13 @@ jQuery(() => {
             $('#theme-mode').attr('tooltip', DarkTooltip);
             $('html').removeClass('dark');
             $('table').removeClass('table-dark');
+            $(this).find('.fi-rr-sun').removeClass('fi-rr-sun').addClass('fi-rr-moon-stars');
             localStorage.removeItem('theme_mode');
         } else {
-            $('#theme-mode').attr('tooltip', LightTooltip);
+			$('#theme-mode').attr('tooltip', LightTooltip);
             $('html').addClass('dark');
             $('table').addClass('table-dark');
+			$(this).find('.fi-rr-moon-stars').removeClass('fi-rr-moon-stars').addClass('fi-rr-sun');
             localStorage.setItem('theme_mode', 'dark');
         }
     });
