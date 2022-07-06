@@ -69,10 +69,10 @@ jQuery(() => {
             templateResult: function (data) {
                 if ( data._resultId !== undefined ) {
                     if ( data._resultId.indexOf('colors') > 0 ) {
-                        console.log(data)
-                        var $span = $('<span class="tag-name" style="background-color:'+ data.id +';width: 17px;height: 17px;display: inline-block;border-radius: 50%;position: relative;left: -5px;vertical-align: middle;margin-left:5px"></span style="margin-left:5px"><span>'  + data.text + '</span>');
-                        return $span;
-                    }
+                        return $('<span class="tag-name" style="background-color:'+ data.id +';width: 17px;height: 17px;display: inline-block;border-radius: 50%;position: relative;left: -5px;vertical-align: middle;margin-left:5px"></span style="margin-left:5px"><span>'  + data.text + '</span>');
+                    } else {
+						return data.text;
+					}
                 }
             },
             templateSelection: function (data, container) {

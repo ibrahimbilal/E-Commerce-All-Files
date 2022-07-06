@@ -410,7 +410,6 @@ jQuery(() => {
     });
 
     // Date Range Picker
-    // $('selector').daterangepicker({options}, callback);
     $('[data-toggle="daterangepicker"]').daterangepicker({
         "autoApply": true,
         ranges: {
