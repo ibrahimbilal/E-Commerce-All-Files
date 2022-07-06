@@ -409,22 +409,6 @@ jQuery(() => {
         }
     });
 
-    // Date Range Picker
-    $('[data-toggle="daterangepicker"]').daterangepicker({
-        "autoApply": true,
-        ranges: {
-            'Today': [moment(), moment()],
-            'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-            'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-            'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-            'This Month': [moment().startOf('month'), moment().endOf('month')],
-            'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-        },
-        "drops": "auto"
-    }, function (start, end, label) {
-        console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
-    });
-
 	// Detect Custom Date/Time Format
 	$('[name="time_formate"], [name="date_formate"]').on('change', function() {
 		let inputName = $(this).attr('name');
@@ -451,6 +435,33 @@ jQuery(() => {
 		}
 	});
 
+	// Download Invoice
+	$('#download.btn').on('click', function() {
+		var element = document.querySelector('.invoice');
+		var fileName = 'invoice-no-' + $(this).data('invoice');
+		var opt = {
+			margin:       0.1,
+			filename:     fileName + '.pdf',
+			image:        { type: 'jpeg', quality: 1 },
+			html2canvas:  { scale: 2 },
+			jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
+		};
+
+		// New Promise-based usage:
+		var worker = html2pdf().set(opt).from(element).save();
+		// var worker = html2pdf(element);
+	});
+
+	// Print Invoice
+	$('#print.btn').on('click', function() {
+		var restorepage = $('body').html();
+		var printcontent = $('.invoice').clone();
+		$('body').empty().html(printcontent);
+		window.print();
+		$('body').html(restorepage);
+	});
+
+	// Prevent Leave Page When User Make Changes on Form
     function preventLeavePage() {
         var isSubmitting = false,
             forms = $('form').not(".search-form, .bulk-form");
@@ -463,8 +474,6 @@ jQuery(() => {
     
         $('form').not(".search-form, .bulk-form").on('change', function () {
             $(window).on('beforeunload', function () {
-                // console.log(forms.data('initial-state'))
-                // console.log(forms.serialize())
                 if (!isSubmitting && forms.serialize() != forms.data('initial-state')) {
                     return 'Changes you made may not be saved.';
                 }

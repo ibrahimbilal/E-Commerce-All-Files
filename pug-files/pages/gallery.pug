@@ -155,25 +155,3 @@ block footer_script
 		$('#upload-form').on('FilePond:init', function(e) {
 			console.log('file added event', e);
 		});
-		//- $("div").dropzone({
-		//- 	parallelUploads: 2,
-		//- 	thumbnailHeight: 120,
-		//- 	thumbnailWidth: 120,
-		//- 	maxFilesize: 3,
-		//- 	filesizeBase: 1000,
-		//- 	url: "./upload",
-		//- 	addRemoveLinks: true,
-		//- 	dictRemoveFile: " Trash",
-		//- 	thumbnail: function(file, dataUrl) {
-		//- 		if (file.previewElement) {
-		//- 		file.previewElement.classList.remove("dz-file-preview");
-		//- 		var images = file.previewElement.querySelectorAll("[data-dz-thumbnail]");
-		//- 		for (var i = 0; i < images.length; i++) {
-		//- 			var thumbnailElement = images[i];
-		//- 			thumbnailElement.alt = file.name;
-		//- 			thumbnailElement.src = dataUrl;
-		//- 		}
-		//- 		setTimeout(function() { file.previewElement.classList.add("dz-image-preview"); }, 1);
-		//- 		}
-		//- 	}
-		//- });

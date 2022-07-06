@@ -19,12 +19,12 @@ block mainContent
 					.row
 						.col-sm-4.col-lg-3.order-sm-2.d-flex.justify-content-center.align-items-center
 								.logo-holder.text-center
-									img(src="./assets/images/logo.png")
+									img.invoice-logo(src="./assets/images/logo.png")
 									p.name.mb-0.mt-2 Company Name
 						.col-sm-8.col-lg-9.order-sm-1
-							.text-start
+							.table-holder.text-start
 								p.title.title-1.mb-2 Bill From:
-								table
+								table.border-0
 									tbody
 										tr 
 											td
@@ -64,14 +64,9 @@ block mainContent
 												td Jayson Hinrichsen
 											tr
 												td 
-													p.title.title-2.mb-0 Address 1:
+													p.title.title-2.mb-0 Address:
 												td 1881  Rosewood Lane
 												td 1881  Rosewood Lane
-											tr
-												td 
-													p.title.title-2.mb-0 Address 2:
-												td 
-												td 
 											tr
 												td 
 													p.title.title-2.mb-0 City:
@@ -127,15 +122,15 @@ block mainContent
 												td.text-center 3
 												td.text-center 100$
 												td.text-end 300$
-				.invoice-body.box-spaces.mb-0.pt-0
+				.invoice-body.box-spaces.mb-0.pt-0.pb-5
 					.row
-						.col-sm-4.col-lg-3.order-sm-2.mb-3
+						.col-sm-4.col-lg-3.order-sm-2.mb-3.mb-md-0
 							.total-holder
 								.item.form-item.second.d-flex.justify-content-between
 									.item-title.meta-title subtotal:
 									span.ms-2 900$
 								.item.form-item.second.d-flex.justify-content-between
-									.item-title.meta-title shiiping:
+									.item-title.meta-title shipping:
 									span.ms-2 10$
 								.item.form-item.second.d-flex.justify-content-between
 									.item-title.meta-title Tax (10%):
@@ -148,18 +143,11 @@ block mainContent
 								p.title.title-1.mb-1 Notes:
 								p Lorem ipsum dolor sit amet, consetetur sadipscing <br> elitr, sed diam nonumy eirmod tempor invidunt ut <br> labore et dolore magna aliquyam erat, sed diam 
 
-
-				.invoice-footer.box-spaces.mb-0.pt-0
-					hr
-					.text-center
-						img(src="./assets/images/logo.png")
-						p.name.mb-0.mt-2 Company Name
-
 		.col-sm-6.col-lg-3.float-end.meta-box.ms-auto
 			.main-box.box-spaces
 				.btns-holder
-					button#download.btn.solid-btn.w-100.mb-2 Download (.Pdf)
-					button#print.btn.regular-btn.w-100.mb-2 send as email
+					button#download.btn.solid-btn.w-100.mb-2(data-invoice="34245") Download (.Pdf)
+					button#send-mail.btn.regular-btn.w-100.mb-2 send as email
 					button#print.btn.regular-btn.w-100.mb-2 print
 					button#trash.btn.trans-btn.w-100
 						span.icon.me-1

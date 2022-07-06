@@ -48,6 +48,14 @@ block mainContent
 				.form-item.primary.mb-3
 					.item-title Multi Currencies
 
+				.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap.mt-3
+					label.item-title(for="currencies-display") Dropdown Dispaly:
+					select#currencies-display.form-select(name="currencies_display")
+						option(value='full') Full [ United State Dollar ($) ]
+						option(value='code') Code [ USD ]
+						option(value='symbol') Symbol [ $ ]
+						option(value='code_symbol') Code + Symbol [ USD ($) ]
+
 				.form-item.second.d-flex.mt-3
 					label.item-title.mt-1(for="multi-currencies") Choose Currencies:
 						span(class="icon info ms-2" tooltip="Choose the currencies you want your store to support." flow="up")
