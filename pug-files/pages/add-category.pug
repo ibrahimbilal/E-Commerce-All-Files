@@ -14,8 +14,8 @@ block mainContent
 		.col-sm-12.col-lg-9.float-start.post-box
 			.main-box.box-spaces
 				.form-item.primary
-					label.item-title(for="category-name") category title
-					input#category-name.form-control(name="category_name" type="text")
+					label.item-title(for="item-title") category title
+					input#item-title.form-control(name="category_name" type="text")
 
 				.divider
 
@@ -30,16 +30,13 @@ block mainContent
 					.main-box.box-spaces
 						.form-item.second.justify-content-between.mb-2(class=flexClasses)
 							label.item-title.meta-title(for="newitem-lang") category Lang:
-							select#newitem-lang.form-select.dropdown(name="langs")
-								option(data-flag="./assets/images/flags/us.png" value="en") english
-								option(data-flag="./assets/images/flags/sa.png" value="ar") arabic
-								option(data-flag="./assets/images/flags/fr.png" value="fr") french
+							include ./../components/_langs-dropdown
 
 						.form-item.second
-							label.item-title.meta-title(for="newitem") category slug:
+							label.item-title.meta-title(for="item-slug") category slug:
 								span(class="icon info ms-2" tooltip="slug is the bit of text that appears after your domain name in the URL of a page" flow="up")
 									+getRIcon("info")
-							input#newitem.form-control.mt-2(name="category_slug" type="text")
+							input#item-slug.form-control.mt-2(name="category_slug" type="text")
 
 						.form-item.second.justify-content-between.mt-2(class=flexClasses)
 							label.item-title.meta-title created at: 

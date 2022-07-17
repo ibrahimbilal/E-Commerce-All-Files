@@ -17,7 +17,7 @@ block mainContent
 					.item-title Store Address
 
 				.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap
-					label.item-title(for="site-title") country:
+					label.item-title(for="country") country:
 					include ./../data/_countries
 				
 				.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap.mt-3
@@ -89,7 +89,7 @@ block mainContent
 				.form-item.second.d-flex.align-items-center.mt-3
 					label.item-title(for="social-share") Enable Social Share?
 					label.switch.text-start
-						input#social-share(type="checkbox" class="switch" name="social_share" checked)
+						input#social-share(type="checkbox" class="switch control-toggle" data-toggle="social-share-items" name="social_share" checked)
 						span.slider
 
 				#social-share-items.form-item.second.d-flex.align-items-center.mt-3

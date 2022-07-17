@@ -37,6 +37,7 @@
             <li class="list-item has-submenu"><a href="./products.html"><i class="fi-rr-shopping-bag"> </i><span class="title">products</span><span class="icon"><i class="fi-rr-angle-small-down"> </i></span></a>
               <ul class="submenu">
                 <li class="list-item"><a href="./attributes.html"><i class="fi-rr-circle"> </i><span class="title">attributes</span></a></li>
+                <li class="list-item"><a href="javascript:void(0)"><i class="fi-rr-circle"> </i><span class="title">reviews</span></a></li>
               </ul>
             </li>
             <li class="list-item"><a href="./categories.html"><i class="fi-rr-folder"> </i><span class="title">categories</span></a></li>
@@ -65,6 +66,8 @@
                 <li class="list-item"><a href="./theme-settings.html"><i class="fi-rr-circle"> </i><span class="title">theme</span></a></li>
                 <li class="list-item active"><a href="./store-settings.html"><i class="fi-rr-circle"> </i><span class="title">store</span></a></li>
                 <li class="list-item"><a href="./currencies-settings.html"><i class="fi-rr-circle"> </i><span class="title">currencies</span></a></li>
+                <li class="list-item"><a href="./emails-settings.html"><i class="fi-rr-circle"> </i><span class="title">emails</span></a></li>
+                <li class="list-item"><a href="javascript:void(0)"><i class="fi-rr-circle"> </i><span class="title">payment</span></a></li>
               </ul>
             </li>
           </ul>
@@ -196,7 +199,7 @@
               <div class="item-title">Store Address</div>
             </div>
             <div class="form-item second d-flex align-items-center flex-wrap flex-sm-nowrap">
-              <label class="item-title" for="site-title">country:</label>
+              <label class="item-title" for="country">country:</label>
               <select class="form-select" id="country" name="country">
                 <option value="">-- Select Country --</option>
                 <option value="AF">Afghanistan</option>
@@ -529,7 +532,7 @@
             <div class="form-item second d-flex align-items-center mt-3">
               <label class="item-title" for="social-share">Enable Social Share?</label>
               <label class="switch text-start">
-                <input class="switch" id="social-share" type="checkbox" name="social_share" checked><span class="slider"></span>
+                <input class="switch control-toggle" id="social-share" type="checkbox" data-toggle="social-share-items" name="social_share" checked><span class="slider"></span>
               </label>
             </div>
             <div class="form-item second d-flex align-items-center mt-3" id="social-share-items">

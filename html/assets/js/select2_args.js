@@ -53,7 +53,7 @@ jQuery(() => {
     }).trigger('change');
 
     // Select 2 Sizes && Colors
-    var productAttributes = $('#attribute').find('select');
+    var productAttributes = $('.select2-wrapper').find('select');
     var selectIDArray = []; // empty array 
     productAttributes.each(function(k, v) {
         var selectID = $(this).attr('id'); // select element id
@@ -61,7 +61,7 @@ jQuery(() => {
         $('#' + selectID).select2({
             width: "100%",
             tags: true,
-            placeholder: "Select Attribute From The List.",
+            placeholder: $(this).attr('placeholder'),
             createTag: function () {
                 // Disable tagging
                 return undefined;

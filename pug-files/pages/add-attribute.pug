@@ -14,8 +14,8 @@ block mainContent
 		.col-sm-12
 			.main-box.box-spaces
 				.form-item.primary
-					label.item-title(for="attribute-name") attribute title
-					input#attribute-name.form-control(name="attribute_name" type="text")
+					label.item-title(for="item-title") attribute title
+					input#item-title.form-control(name="attribute_name" type="text")
 
 		.col-sm-12.col-lg-9.post-box
 			.main-box.box-spaces
@@ -31,7 +31,7 @@ block mainContent
 							.icons.d-flex.align-items-center
 								span.icon.active
 									+getRIcon("angle-small-down")
-								span.remove(tooltip="Remove This Item" flow="up")
+								span.remove(tooltip="Remove" flow="up")
 									+getRIcon("trash")
 
 						.repeater-inputs.px-3.active
@@ -57,10 +57,10 @@ block mainContent
 				.col-sm-6.col-lg-12.float-end.float-lg-none
 					.main-box.box-spaces.mb-0
 						.form-item.second
-							label.item-title.meta-title(for="slug") attribute slug:
+							label.item-title.meta-title(for="item-slug") attribute slug:
 								span(class="icon info ms-2" tooltip="slug is the bit of text that appears after your domain name in the URL of a page" flow="up")
 									+getRIcon("info")
-							input#slug.form-control.mt-2(name="attribute_slug" type="text")
+							input#item-slug.form-control.mt-2(name="attribute_slug" type="text")
 
 						.form-item.second.justify-content-between.mt-2(class=flexClasses)
 							label.item-title.meta-title created at: 

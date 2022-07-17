@@ -14,8 +14,8 @@ block mainContent
 		.col-sm-12.col-lg-9.float-start.post-box
 			.main-box.box-spaces
 				.form-item.primary
-					label.item-title(for="product-name") product name
-					input#product-name.form-control(name="product_name" type="text")
+					label.item-title(for="item-title") product name
+					input#item-title.form-control(name="product_name" type="text")
 
 				.divider
 
@@ -30,16 +30,13 @@ block mainContent
 					.main-box.box-spaces
 						.form-item.second.justify-content-between.mb-2(class=flexClasses)
 							label.item-title.meta-title(for="newitem-lang") Product Lang:
-							select#newitem-lang.form-select.dropdown(name="langs")
-								option(data-flag="./assets/images/flags/us.png" value="en") english
-								option(data-flag="./assets/images/flags/sa.png" value="ar") arabic
-								option(data-flag="./assets/images/flags/fr.png" value="fr") french
+							include ./../components/_langs-dropdown
 
 						.form-item.second
-							label.item-title.meta-title(for="newitem") product slug:
+							label.item-title.meta-title(for="item-slug") product slug:
 								span(class="icon info ms-2" tooltip="slug is the bit of text that appears after your domain name in the URL of a page" flow="up")
 									+getRIcon("info")
-							input#newitem.form-control.mt-2(name="product_slug" type="text")
+							input#item-slug.form-control.mt-2(name="product_slug" type="text")
 
 						.form-item.second.justify-content-between.mt-2(class=flexClasses)
 							label.item-title.meta-title created at: 
@@ -214,23 +211,24 @@ block mainContent
 									input#last-sale-date.form-control(name="last_sale_date" type="text" data-toggle="datepicker")
 
 						#attribute.tab-box
-							.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap
-								label.item-title(for="product-sizes") sizes:
-									span(class="icon info ms-2" tooltip="the attribute you created." flow="up")
-										+getRIcon("info")
-								select#product-sizes.form-select.multi-select(name="sizes" multiple="multiple")
-									- var str = ["XS", "S", "M", "L", "XL", "XXL"]
-									each val, index in str
-											option(value=val)= val
+							.select2-wrapper
+								.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap
+									label.item-title(for="product-sizes") sizes:
+										span(class="icon info ms-2" tooltip="the attribute you created." flow="up")
+											+getRIcon("info")
+									select#product-sizes.form-select.multi-select(name="sizes" multiple="multiple" placeholder="Select Attribute From The List.")
+										- var str = ["XS", "S", "M", "L", "XL", "XXL"]
+										each val, index in str
+												option(value=val)= val
 
-							.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap.mt-3
-								label.item-title(for="product-colors") colors:
-									span(class="icon info ms-2" tooltip="the attribute you created." flow="up")
-										+getRIcon("info")
-								select#product-colors.form-select.multi-select(name="colors" multiple="multiple")
-									- var str = [{'title': 'black', 'color': '#000000'}, {'title': 'green', 'color': '#45CC5B'}, {'title': 'red', 'color': '#FE2B2B'}, {'title': 'orang', 'color': '#FFA620'}, {'title': 'blue', 'color': '#3932FE'},]
-									each val, index in str
-										option(value=val.color)= val.title
+								.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap.mt-3
+									label.item-title(for="product-colors") colors:
+										span(class="icon info ms-2" tooltip="the attribute you created." flow="up")
+											+getRIcon("info")
+									select#product-colors.form-select.multi-select(name="colors" multiple="multiple" placeholder="Select Attribute From The List.")
+										- var str = [{'title': 'black', 'color': '#000000'}, {'title': 'green', 'color': '#45CC5B'}, {'title': 'red', 'color': '#FE2B2B'}, {'title': 'orang', 'color': '#FFA620'}, {'title': 'blue', 'color': '#3932FE'},]
+										each val, index in str
+											option(value=val.color)= val.title
 
 						#seo.tab-box
 							.form-item.second.d-flex.flex-wrap.flex-sm-nowrap

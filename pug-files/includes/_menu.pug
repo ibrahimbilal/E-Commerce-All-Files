@@ -12,7 +12,7 @@
 					+getRIcon("apps")
 					span.title dashboard
 		ul.menu-list-group
-			li.list-item.has-submenu(class={active: current_url === 'products' || current_url === 'add-product' || current_url === 'attributes' || current_url === 'add-attribute' } )
+			li.list-item.has-submenu(class={active: current_url === 'products' || current_url === 'add-product' || current_url === 'attributes' || current_url === 'add-attribute' || current_url === 'reviews' || current_url === 'edit-reviews'} )
 				a(href="./products.html")
 					+getRIcon("shopping-bag")
 					span.title products
@@ -23,6 +23,10 @@
 						a(href="./attributes.html")
 							+getRIcon("circle")
 							span.title attributes
+					li.list-item(class={active: current_url === 'reviews' || current_url === 'edit-reviews'} )
+						a(href="javascript:void(0)")
+							+getRIcon("circle")
+							span.title reviews
 			li.list-item(class={active: current_url === 'categories' || current_url === 'add-category'} )
 				a(href="./categories.html")
 					+getRIcon("folder")
@@ -82,7 +86,7 @@
 				a(href="./languages.html")
 					+getRIcon("world")
 					span.title languages
-			li.list-item.has-submenu(class={active: current_url === 'general-settings' || current_url === 'theme-settings'|| current_url === 'store-settings' || current_url === 'currencies-settings'} )
+			li.list-item.has-submenu(class={active: current_url === 'general-settings' || current_url === 'theme-settings'|| current_url === 'store-settings' || current_url === 'currencies-settings' || current_url === 'emails-settings' || current_url === 'payment-settings'} )
 				a(href="javascript:void(0)")
 					+getRIcon("settings")
 					span.title settings
@@ -105,6 +109,14 @@
 						a(href="./currencies-settings.html")
 							+getRIcon("circle")
 							span.title currencies
+					li.list-item(class={active: current_url === 'emails-settings'} )
+						a(href="./emails-settings.html")
+							+getRIcon("circle")
+							span.title emails
+					li.list-item(class={active: current_url === 'payment-settings'} )
+						a(href="javascript:void(0)")
+							+getRIcon("circle")
+							span.title payment
 
 		ul.menu-list-group
 			li#collaps.list-item

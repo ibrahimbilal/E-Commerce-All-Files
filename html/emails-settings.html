@@ -62,11 +62,11 @@
             <li class="list-item"><a href="./languages.html"><i class="fi-rr-world"> </i><span class="title">languages</span></a></li>
             <li class="list-item has-submenu active"><a href="javascript:void(0)"><i class="fi-rr-settings"> </i><span class="title">settings</span><span class="icon"><i class="fi-rr-angle-small-down"> </i></span></a>
               <ul class="submenu">
-                <li class="list-item active"><a href="./general-settings.html"><i class="fi-rr-circle"> </i><span class="title">general</span></a></li>
+                <li class="list-item"><a href="./general-settings.html"><i class="fi-rr-circle"> </i><span class="title">general</span></a></li>
                 <li class="list-item"><a href="./theme-settings.html"><i class="fi-rr-circle"> </i><span class="title">theme</span></a></li>
                 <li class="list-item"><a href="./store-settings.html"><i class="fi-rr-circle"> </i><span class="title">store</span></a></li>
                 <li class="list-item"><a href="./currencies-settings.html"><i class="fi-rr-circle"> </i><span class="title">currencies</span></a></li>
-                <li class="list-item"><a href="./emails-settings.html"><i class="fi-rr-circle"> </i><span class="title">emails</span></a></li>
+                <li class="list-item active"><a href="./emails-settings.html"><i class="fi-rr-circle"> </i><span class="title">emails</span></a></li>
                 <li class="list-item"><a href="javascript:void(0)"><i class="fi-rr-circle"> </i><span class="title">payment</span></a></li>
               </ul>
             </li>
@@ -194,102 +194,164 @@
       </div>
       <form class="row d-block clearfix" id="settings-form" data-post-type="settings">
         <div class="col-sm-12 col-lg-9 float-start post-box">
-          <div class="main-box box-spaces mb-0">
+          <div class="main-box box-spaces">
             <div class="form-item primary mb-3">
-              <div class="item-title">General Settings </div>
+              <div class="item-title">Emails Settings</div>
             </div>
             <div class="form-item second d-flex align-items-center flex-wrap flex-sm-nowrap">
-              <label class="item-title" for="site-title">site title:</label>
-              <input class="form-control" id="site-title" name="site_title" type="text">
+              <label class="item-title" for="email-from">"From" Name:<span class="icon info ms-2" tooltip="How the sender name appears in outgoing your store emails." flow="up"><i class="fi-rr-info"> </i></span></label>
+              <input class="form-control" id="email-from" name="email_from" type="text" placeholder="Store Name">
             </div>
-            <div class="form-item second d-flex flex-wrap flex-sm-nowrap mt-3">
-              <label class="item-title mt-1" for="tagline">tagline:</label>
-              <div class="input-holder w-100">
-                <input class="form-control" id="tagline" name="tagline" type="text"><small>In A Few Words, Explain What This Site Is About.</small>
-              </div>
+            <div class="form-item second d-flex align-items-center flex-wrap flex-sm-nowrap mt-3">
+              <label class="item-title" for="email-from">"From" Address:<span class="icon info ms-2" tooltip="How the sender email appears in outgoing from your store emails." flow="up"><i class="fi-rr-info"> </i></span></label>
+              <input class="form-control" id="email-from" name="email_from" type="text" placeholder="example@email.com">
             </div>
-            <div class="form-item second d-flex flex-wrap flex-sm-nowrap mt-3">
-              <label class="item-title mt-1" for="site-desc">Site Description:</label>
-              <textarea class="form-control" id="site-desc" name="site_desc" rows="4" style="resize:none"></textarea>
+            <div class="form-item second d-flex flex-wrap align-items-center mt-3">
+              <label class="item-title mb-2">Base Color:<span class="icon info ms-2" tooltip="The base color for store email templates. Default #2C2CCC." flow="up"><i class="fi-rr-info"> </i></span></label>
+              <input class="form-control-color" type="color" name="email_base_color" value="#2C2CCC" title="Choose your color">
+            </div>
+            <div class="form-item second d-flex flex-wrap align-items-center mt-3">
+              <label class="item-title mb-2">Background Color:<span class="icon info ms-2" tooltip="The background color for store email templates. Default #F7F7F7." flow="up"><i class="fi-rr-info"> </i></span></label>
+              <input class="form-control-color" type="color" name="email_bg_color" value="#F7F7F7" title="Choose your color">
+            </div>
+            <div class="form-item second d-flex flex-wrap align-items-center mt-3">
+              <label class="item-title mb-2">Body Background Color:<span class="icon info ms-2" tooltip="The main body background color. Default #FFFFFF." flow="up"><i class="fi-rr-info"> </i></span></label>
+              <input class="form-control-color" type="color" name="email_body_bg_color" value="#FFFFFF" title="Choose your color">
+            </div>
+            <div class="form-item second d-flex flex-wrap align-items-center mt-3">
+              <label class="item-title mb-2">Body Text Color:<span class="icon info ms-2" tooltip="The main body text color. Default #333333." flow="up"><i class="fi-rr-info"> </i></span></label>
+              <input class="form-control-color" type="color" name="email_text_color" value="#333333" title="Choose your color">
             </div>
             <hr>
-            <div class="form-item second d-flex align-items-center flex-wrap flex-sm-nowrap">
-              <label class="item-title" for="site-url">site URL:</label>
-              <input class="form-control" id="site-url" name="site_url" type="url" placeholder="https://example.com/">
+            <div class="form-item primary mb-3">
+              <div class="item-title">Email Notification Settings</div>
             </div>
             <div class="form-item second d-flex mt-3 flex-wrap">
               <div class="item-title d-block mb-2">
-                <label class="item-title d-block">Favicon:</label><small>Site Icons Should Be Square And At Least 512 × 512 Pixels.</small>
+                <label class="item-title" for="new-order">New Order Placed:<span class="icon info ms-2" tooltip="Sent email when a new order is placed" flow="up"><i class="fi-rr-info"> </i></span></label><small>Recipient Are Store Users</small>
               </div>
-              <div class="item-content"><a class="btn regular-btn gallery-btn" href="javascript:void(0)" style="width: 150px">Change Image</a>
-                <div class="selected-img">
-                  <div class="img-holder mt-3"><img class="preview p-1" src="./assets/images/logo.png" width="70"><span class="overlay"><i class="fi-rr-trash"> </i><span>remove</span></span></div>
+              <div class="item-content">
+                <label class="switch text-start">
+                  <input class="switch control-toggle" id="new-order" type="checkbox" data-toggle="new-order-recipients" name="email-new-order" checked><span class="slider"></span>
+                </label>
+                <div class="form-item d-flex flex-column mt-1" id="new-order-recipients">
+                  <div class="item-title">send to:<span class="icon info ms-2" tooltip="Custom Recipients: you should choose recipients from the list. Recipients By Role: all members in the role will be receive the email." flow="up"><i class="fi-rr-info"> </i></span></div>
+                  <div class="controls-wrapper d-flex align-items-start mt-2">
+                    <select class="form-select w-mc me-2" name="new-order-recipients-type">
+                      <option value="custom">Custom Recipients</option>
+                      <option value="recipients-role">Recipients By Role</option>
+                    </select>
+                    <div class="select2-wrapper w-100">
+                      <select class="form-select multi-select" id="new-order-recipients-emails" name="new-order-recipients-emails" multiple="multiple" placeholder="Select Recipients">
+                        <option value="example1@email.com">example1@email.com</option>
+                        <option value="example2@email.com">example2@email.com</option>
+                        <option value="example3@email.com">example3@email.com</option>
+                        <option value="example4@email.com">example4@email.com</option>
+                        <option value="example5@email.com">example5@email.com</option>
+                        <option value="example6@email.com">example6@email.com</option>
+                      </select>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-            <hr>
-            <div class="form-item second d-flex flex-wrap flex-sm-nowrap mt-3">
-              <label class="item-title mt-2" for="timezone">Timezone:</label>
-              <div class="input-holder w-100">
-                <select class="form-select" id="timezone" name="timezone">
-                  <option>UTC +0</option>
-                  <option>UTC +1</option>
-                  <option>UTC +2</option>
-                  <option>UTC +3</option>
-                  <option>UTC +4</option>
-                  <option>UTC +5</option>
-                  <option>UTC +6</option>
-                  <option>UTC +7</option>
-                  <option>UTC +8</option>
-                  <option>UTC +9</option>
-                  <option>UTC +10</option>
-                  <option>UTC +11</option>
-                  <option>UTC +12</option>
-                </select><small>UTC Time Is: 2022-7-17 22:10:27</small>
+            <div class="form-item second d-flex mt-3 flex-wrap">
+              <div class="item-title d-block mb-2">
+                <label class="item-title" for="out-of-stock">Out Of Stock:<span class="icon info ms-2" tooltip="Sent email when product is out of stock" flow="up"><i class="fi-rr-info"> </i></span></label><small>Recipient Are Store Users</small>
+              </div>
+              <div class="item-content">
+                <label class="switch text-start">
+                  <input class="switch control-toggle" id="out-of-stock" type="checkbox" data-toggle="out-of-stock-recipients" name="email-new-order" checked><span class="slider"></span>
+                </label>
+                <div class="form-item d-flex flex-column mt-1" id="out-of-stock-recipients">
+                  <div class="item-title">send to:<span class="icon info ms-2" tooltip="Custom Recipients: you should choose recipients from the list. Recipients By Role: all members in the role will be receive the email." flow="up"><i class="fi-rr-info"> </i></span></div>
+                  <div class="controls-wrapper d-flex align-items-start mt-2">
+                    <select class="form-select w-mc me-2" name="out-of-stock-recipients-type">
+                      <option value="custom">Custom Recipients</option>
+                      <option value="recipients-role">Recipients By Role</option>
+                    </select>
+                    <div class="select2-wrapper w-100">
+                      <select class="form-select multi-select" id="out-of-stock-recipients-emails" name="out-of-stock-recipients-emails" multiple="multiple" placeholder="Select Recipients">
+                        <option value="example1@email.com">example1@email.com</option>
+                        <option value="example2@email.com">example2@email.com</option>
+                        <option value="example3@email.com">example3@email.com</option>
+                        <option value="example4@email.com">example4@email.com</option>
+                        <option value="example5@email.com">example5@email.com</option>
+                        <option value="example6@email.com">example6@email.com</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="form-item second d-flex flex-wrap flex-sm-nowrap mt-3">
-              <label class="item-title">Date Formate:</label>
-              <div class="input-holder w-100">
-                <label class="radio-label w-100 mb-3">
-                  <input class="input-radio" type="radio" name="date_formate" value="F j, Y" checked>December 10, 2022
+            <div class="form-item second d-flex mt-3 flex-wrap">
+              <div class="item-title d-block mb-2">
+                <label class="item-title" for="order-canceled">Order Canceled:<span class="icon info ms-2" tooltip="Sent email when customer canceled the order" flow="up"><i class="fi-rr-info"> </i></span></label><small>Recipient Are Store Users</small>
+              </div>
+              <div class="item-content">
+                <label class="switch text-start">
+                  <input class="switch control-toggle" id="order-canceled" type="checkbox" data-toggle="order-canceled-recipients" name="email-new-order" checked><span class="slider"></span>
                 </label>
-                <label class="radio-label w-100 mb-3">
-                  <input class="input-radio" type="radio" name="date_formate" value="Y-m-d">2022/12/10
-                </label>
-                <label class="radio-label w-100 mb-3">
-                  <input class="input-radio" type="radio" name="date_formate" value="m/d/Y">12/10/2022
-                </label>
-                <label class="radio-label w-100 mb-3">
-                  <input class="input-radio" type="radio" name="date_formate" value="d/m/Y">10/12/2022
-                </label>
-                <label class="radio-label w-100 mb-3">
-                  <input class="input-radio" type="radio" name="date_formate" value="custom">Custom:
-                  <input class="text-center me-2" type="text" name="date_formate_custom" placeholder="d-M-Y" style="width: 70px" disabled>10-Dec-2022
+                <div class="form-item d-flex flex-column mt-1" id="order-canceled-recipients">
+                  <div class="item-title">send to:<span class="icon info ms-2" tooltip="Custom Recipients: you should choose recipients from the list. Recipients By Role: all members in the role will be receive the email." flow="up"><i class="fi-rr-info"> </i></span></div>
+                  <div class="controls-wrapper d-flex align-items-start mt-2">
+                    <select class="form-select w-mc me-2" name="order-canceled-recipients-type">
+                      <option value="custom">Custom Recipients</option>
+                      <option value="recipients-role">Recipients By Role</option>
+                    </select>
+                    <div class="select2-wrapper w-100">
+                      <select class="form-select multi-select" id="order-canceled-recipients-emails" name="order-canceled-recipients-emails" multiple="multiple" placeholder="Select Recipients">
+                        <option value="example1@email.com">example1@email.com</option>
+                        <option value="example2@email.com">example2@email.com</option>
+                        <option value="example3@email.com">example3@email.com</option>
+                        <option value="example4@email.com">example4@email.com</option>
+                        <option value="example5@email.com">example5@email.com</option>
+                        <option value="example6@email.com">example6@email.com</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-item second d-flex mt-3">
+              <div class="item-title d-block mb-2">
+                <label class="item-title" for="order-confirmed">Order Confirmed:<span class="icon info ms-2" tooltip="Sent email automatically after purchase" flow="up"><i class="fi-rr-info"> </i></span></label><small>Recipient Is Customer</small>
+              </div>
+              <div class="item-content">
+                <label class="switch text-start">
+                  <input class="switch" id="order-confirmed" type="checkbox" name="order-confirmed" checked><span class="slider"></span>
                 </label>
               </div>
             </div>
-            <div class="form-item second d-flex flex-wrap flex-sm-nowrap mt-3">
-              <label class="item-title">Time Formate:</label>
-              <div class="input-holder w-100">
-                <label class="radio-label w-100 mb-3">
-                  <input class="input-radio" type="radio" name="time_formate" value="g:i a" checked>9:23 pm
-                </label>
-                <label class="radio-label w-100 mb-3">
-                  <input class="input-radio" type="radio" name="time_formate" value="g:i A">9:23 PM
-                </label>
-                <label class="radio-label w-100 mb-3">
-                  <input class="input-radio" type="radio" name="time_formate" value="H:i">21:23
-                </label>
-                <label class="radio-label w-100">
-                  <input class="input-radio" type="radio" name="time_formate" value="custom">Custom:
-                  <input class="text-center me-2" type="text" name="time_formate_custom" placeholder="g:i a" style="width: 70px" disabled>9:23 pm
+            <div class="form-item second d-flex mt-3">
+              <div class="item-title d-block mb-2">
+                <label class="item-title" for="order-shipped">Order Shipped:<span class="icon info ms-2" tooltip="Sent email automatically when an order is marked as shipped" flow="up"><i class="fi-rr-info"> </i></span></label><small>Recipient Is Customer</small>
+              </div>
+              <div class="item-content">
+                <label class="switch text-start">
+                  <input class="switch" id="order-shipped" type="checkbox" name="order-shipped" checked><span class="slider"></span>
                 </label>
               </div>
             </div>
-            <div class="form-item second d-flex flex-wrap flex-sm-nowrap mt-3">
-              <label class="item-title"></label>
-              <div class="input-holder w-100"><a href="javascript:void(0)">Documentation on date and time formatting.</a></div>
+            <div class="form-item second d-flex mt-3">
+              <div class="item-title d-block mb-2">
+                <label class="item-title" for="order-completed">Order Completed:<span class="icon info ms-2" tooltip="Sent automatically when an order is marked as completed" flow="up"><i class="fi-rr-info"> </i></span></label><small>Recipient Is Customer</small>
+              </div>
+              <div class="item-content">
+                <label class="switch text-start">
+                  <input class="switch" id="order-completed" type="checkbox" name="order-completed" checked><span class="slider"></span>
+                </label>
+              </div>
+            </div>
+            <div class="form-item second d-flex mt-3">
+              <div class="item-title d-block mb-2">
+                <label class="item-title" for="order-refunded">Order Refunded:<span class="icon info ms-2" tooltip="Sent automatically when a refund is issued" flow="up"><i class="fi-rr-info"> </i></span></label><small>Recipient Is Customer</small>
+              </div>
+              <div class="item-content">
+                <label class="switch text-start">
+                  <input class="switch" id="order-refunded" type="checkbox" name="order-refunded" checked><span class="slider"></span>
+                </label>
+              </div>
             </div>
           </div>
         </div>

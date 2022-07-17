@@ -214,9 +214,9 @@ jQuery(() => {
     });
 
     // String To Slug
-    $('#newitem-name').stringToSlug({
+    $('#item-title').stringToSlug({
         setEvents: 'keyup keydown input',
-        getPut: '#newitem-slug',
+        getPut: '#item-slug',
         space: '-',
         prefix: '',
         suffix: '',
@@ -425,15 +425,16 @@ jQuery(() => {
 	$('.form-control-color').on('input', function() {
 		let cssVar = $(this).attr('name'),
 			cssVarVal = $(this).val();
-		$('html').get(0).style.setProperty(cssVar, cssVarVal);
+		$('html').get(0).style.setProperty('--' + cssVar, cssVarVal);
 	});
 
 	// Toggle Form Item
-	$("#social-share").on('change', function() {
+	$(".control-toggle").on('change', function() {
+		const toggleWrapper = $(this).data('toggle');
 		if ( $(this).is(':checked') ) {
-			$("#social-share-items").addClass('d-flex').removeClass('d-none');
+			$(`#${toggleWrapper}`).addClass('d-flex').removeClass('d-none');
 		} else {
-			$("#social-share-items").removeClass('d-flex').addClass('d-none');
+			$(`#${toggleWrapper}`).removeClass('d-flex').addClass('d-none');
 		}
 	});
 
@@ -451,7 +452,6 @@ jQuery(() => {
 
 		// New Promise-based usage:
 		var worker = html2pdf().set(opt).from(element).save();
-		// var worker = html2pdf(element);
 	});
 
 	// Print Invoice

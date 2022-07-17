@@ -15,7 +15,7 @@ body {
     color: var(--text-color);
     @media ( min-width: $lg ) {
         display: grid;
-        grid-template-columns: min-content 1fr;
+		grid-template-columns: min-content;
         grid-gap: 30px;
         grid-template-areas:
 		"side main"
@@ -49,7 +49,9 @@ i {
 main {
     @media ( min-width: $lg ) {
         grid-area: main;
-        grid-column: 2/4;
+		overflow: hidden;
+		padding: 0 10px 10px 0;
+		margin: 0 -10px -10px 0;
     }
 }
 
@@ -108,7 +110,7 @@ hr {
 
 .select2-selection__rendered,
 .select2-results__option {
-    text-transform: capitalize;
+    // text-transform: capitalize;
     font-size: 14px;
 }
 
