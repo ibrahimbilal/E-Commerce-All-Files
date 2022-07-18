@@ -55,7 +55,7 @@
           </ul>
           <ul class="menu-list-group">
             <li class="list-item"><a href="./users.html"><i class="fi-rr-user"> </i><span class="title">users</span></a></li>
-            <li class="list-item"><a href="./roles.html"><i class="fi-rr-key"> </i><span class="title">permissions</span></a></li>
+            <li class="list-item"><a href="./roles.html"><i class="fi-rr-key"> </i><span class="title">roles</span></a></li>
           </ul>
           <ul class="menu-list-group">
             <li class="list-item"><a href="./gallery.html"><i class="fi-rr-picture"> </i><span class="title">gallery</span></a></li>
@@ -184,7 +184,9 @@
       <div class="page-header">
         <div class="row">
           <div class="col-12 d-flex align-items-sm-center justify-content-sm-between flex-column flex-sm-row">
-            <div class="page-title text-capitalize">add product</div>
+            <div class="text-capitalize mb-2 mb-sm-0 d-flex align-items-sm-center">
+              <h1 class="page-title">add product</h1>
+            </div>
             <div class="page-breadcrumbs d-flex align-items-sm-center justify-content-start justify-content-sm-end">
               <div class="breadcrumbs d-flex justify-content-between align-items-center"><a class="item text-capitalize d-flex justify-content-between align-items-center" href="./index.html"><span class="icon"><i class="fi-rr-apps"> </i></span>dashboard</a><span class="angle"><span class="icon"><i class="fi-rr-angle-double-right"> </i></span></span><a class="item text-capitalize d-flex justify-content-between align-items-center">products</a><span class="angle"><span class="icon"><i class="fi-rr-angle-double-right"> </i></span></span><span class="item text-capitalize d-flex justify-content-between align-items-center">add</span>
               </div>
@@ -196,12 +198,12 @@
         <div class="col-sm-12 col-lg-9 float-start post-box">
           <div class="main-box box-spaces">
             <div class="form-item primary">
-              <label class="item-title" for="item-title">product name</label>
+              <h2 class="box-title item-title">product name</h2>
               <input class="form-control" id="item-title" name="product_name" type="text">
             </div>
             <div class="divider"></div>
             <div class="form-item primary">
-              <label class="item-title" for="product-desc">product description</label>
+              <h2 class="box-title item-title">product description</h2>
               <div id="product-desc">
                 <div class="editor-container"></div>
               </div>
@@ -241,7 +243,7 @@
             </div>
             <div class="col-sm-6 col-lg-12 float-start float-lg-none">
               <div class="main-box box-spaces form-item" id="product-cat">
-                <h3 class="box-title item-title">product category</h3>
+                <h2 class="box-title item-title">product category</h2>
                 <div class="cat-list-holder">
                   <ul class="my-list main-list">
                     <li class="my-item">
@@ -363,7 +365,7 @@
             </div>
             <div class="col-sm-6 col-lg-12 float-end float-lg-none">
               <div class="main-box box-spaces form-item mb-lg-0" id="product-tags">
-                <h3 class="box-title item-title">product tags:<span class="icon info ms-2" tooltip="separate tags with comma (,)" flow="up"><i class="fi-rr-info"> </i></span></h3>
+                <h2 class="box-title item-title">product tags:<span class="icon info ms-2" tooltip="separate tags with comma (,)" flow="up"><i class="fi-rr-info"> </i></span></h2>
                 <select class="form-select multi-select" id="product-tags-select" name="product_tags" multiple="multiple">
                   <option value="Something" selected>Something</option>
                   <option value="Clothes" selected>Clothes</option>
@@ -387,7 +389,7 @@
         <div class="col-sm-12 col-lg-9 float-start post-box">
           <div class="main-box box-spaces mb-0">
             <div class="form-item primary">
-              <div class="item-title">product details</div>
+              <h2 class="box-title item-title">product details</h2>
             </div>
             <div class="tabs-holder">
               <div class="tabs-buttons"><a class="btn tab-btn active" href="javascript:void(0)" data-tab-id="#general">general</a><a class="btn tab-btn" href="javascript:void(0)" data-tab-id="#price">price</a><a class="btn tab-btn" href="javascript:void(0)" data-tab-id="#attribute">attribute</a><a class="btn tab-btn" href="javascript:void(0)" data-tab-id="#seo">seo</a></div>

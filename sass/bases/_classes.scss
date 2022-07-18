@@ -28,6 +28,7 @@
 
 .box-title {
     font-size: 20px;
+	margin: 0;
 }
 
 .list-holder {
@@ -179,12 +180,10 @@
 }
 
 .page-title {
+	margin: 0;
     @include responsive-property(font-size, 1.85rem, 1.5rem, 1.5rem);
     @media ( min-width: $xl ) {
         font-size: 2rem;
-    }
-    @media ( max-width: $sm ) {
-        margin-bottom: 10px;
     }
 }
 

@@ -4,11 +4,9 @@ block mainContent
 	.page-header
 		.row
 			.col-12(class=flexClasses).justify-content-sm-between.flex-column.flex-sm-row
-				.page-title.text-capitalize view customer
-					a.add-btn.btn.text-capitalize(href='./add-customer.html')
-						span.icon
-							+getRIcon("edit")
-						| edit <span class="page">customer<span>
+				- var pageTitle = 'customer'
+				- var btnType = 'edit'
+				include ./../components/_page-title
 
 				.page-breadcrumbs(class=flexClasses).justify-content-start.justify-content-sm-end
 					- var breadCrumbsItems = ['customers', 'view']
@@ -18,69 +16,36 @@ block mainContent
 		.col-12
 			.main-box.box-spaces
 				.row
-					.col-sm-12.col-lg-3.d-flex.align-items-center.justify-content-center.user-holder
+					.col-sm-12.col-lg-3.d-flex.justify-content-center.user-holder
 						.profile-image.text-center
 							img(src="./assets/images/customers/image-1.png")
 					.col-sm-12.col-lg-9
 						.profile-details.row.mt-3.mt-lg-0
-							.col-sm-6
-								.item.form-item.second.mb-4
-									.item-title First Name:
-									span.ms-2 Mildred
-								.item.form-item.second.mb-4
-									.item-title Last Name:
-									span.ms-2 Stoddard
-								.item.form-item.second.mb-4
-									.item-title Email Address:
-									span.ms-2 m.stoddard@gmail.com
-								.item.form-item.second.mb-4
-									.item-title Registered At:
-									span.ms-2 26/03/2021 14:58
-								.item.form-item.second.mb-4
-									.item-title Updated At:
-									span.ms-2 26/03/2021 14:58
-								.item.form-item.second.mb-4
-									.item-title Last Logged In:
-									span.ms-2 26/03/2021 14:58
-								.item.form-item.second
-									.item-title Device:
-									span.ms-2 Samsung Galaxy S20
-							.col-sm-6
-								.item.form-item.second.mb-4.mt-4.mt-sm-0
-									.item-title Birth Of Date:
-									span.ms-2 26/03/2021
-								.item.form-item.second.mb-4
-									.item-title Mobile:
-									span.ms-2 516-913-8323
-								.item.form-item.second.mb-4
-									.item-title Gender:
-									span.ms-2 Male
-								.item.form-item.second.mb-4
-									.item-title iP Address:
-									span.ms-2 216.58.217.164
-								.item.form-item.second.mb-4
-									.item-title iP Country:
-									span.ms-2 United State of America
-								.item.form-item.second
-									.item-title iP City:
-									span.ms-2 New York
+							- var profileDetailsRows = [[{title: 'First Name:', value: 'Mildred'},{title: 'Last Name:', value: 'Stoddard'},{title: 'Email Address:', value: 'm.stoddard@gmail.com'},{title: 'Registered At:', value: '26/03/2021 14:58'},{title: 'Updated At:', value: '26/03/2021 14:58'},{title: 'Last Logged In:', value: '26/03/2021 14:58'},{title: 'Device:', value: 'Samsung Galaxy S20'}],[{title: 'Birth Of Date:', value: '26/03/2021'},{title: 'Mobile:', value: '516-913-8323'},{title: 'Gender:', value: 'Female'},{title: 'iP Address:', value: '216.58.217.164'},{title: 'iP Country:', value: 'United State'},{title: 'iP City:', value: 'New York'}]]
+							each row in profileDetailsRows
+								.col-sm-6
+									each detail in row
+										.form-item.second.justify-content-between.mt-2(class=flexClasses)
+											.title
+												b= detail.title
+											span.ms-2= detail.value
 
 		.col-12.col-lg-5
 			.main-box.box-spaces
-				.box-header(class=flexClasses)
-					.box-title Addresses
-				.address-holder
-					.address
-						.address-title.p-3.d-flex.justify-content-between.align-items-center
-							h6.mb-0 First Address Title
-							span.icon.active
-								+getRIcon("angle-small-down")
-						.address-inputs.active
+				h2.box-title.text-capitalize.mb-3 Addresses 
+				.repeater-holder
+					.repeater
+						.repeater-title.p-3.d-flex.justify-content-between.align-items-center
+							h3.h6.mb-0 First Address Title
+							.icons.d-flex.align-items-center
+								span.icon.active
+									+getRIcon("angle-small-down")
+						.repeater-inputs.active
 							table.table.mb-0
 								tbody
 									tr
 										td.text-capitalize Country:
-										td.text-capitalize United State Of America
+										td.text-capitalize United State
 									tr
 										td.text-capitalize State:
 										td.text-capitalize New York
@@ -102,7 +67,7 @@ block mainContent
 
 		.col-12.col-lg-7
 			.main-box.box-spaces.mb-0
-				.box-title.text-capitalize Orders 
+				h2.box-title.text-capitalize.mb-3 Orders 
 				.table-holder
 					include ./../data/_c_orders
 

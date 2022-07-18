@@ -4,7 +4,9 @@ block mainContent
 	.page-header
 		.row
 			.col-12(class=flexClasses).justify-content-sm-between.flex-column.flex-sm-row
-				.page-title.text-capitalize gallery
+				- var pageTitle = 'gallery'
+				- var btnType = ''
+				include ./../components/_page-title
 
 				.page-breadcrumbs(class=flexClasses).justify-content-start.justify-content-sm-end
 					- var breadCrumbsItems = ['gallery']

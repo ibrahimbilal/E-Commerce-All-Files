@@ -4,11 +4,9 @@ block mainContent
 	.page-header
 		.row
 			.col-12(class=flexClasses).justify-content-sm-between.flex-column.flex-sm-row
-				.page-title.text-capitalize view user
-					a.add-btn.btn.text-capitalize(href='./add-user.html')
-						span.icon
-							+getRIcon("edit")
-						| edit <span class="page">user<span>
+				- var pageTitle = 'user'
+				- var btnType = 'edit'
+				include ./../components/_page-title
 
 				.page-breadcrumbs(class=flexClasses).justify-content-start.justify-content-sm-end
 					- var breadCrumbsItems = ['users', 'view']
@@ -20,54 +18,88 @@ block mainContent
 				.row
 					.col-sm-12.col-lg-3.d-flex.justify-content-center.user-holder
 						.profile-image.text-center.w-100
-							img(src="./assets/images/customers/image-1.png")
+							img(src="./assets/images/customers/image-2.png")
 					.col-sm-12.col-lg-9
-						.profile-details.row
-							.col-sm-6
-								.form-item.second.justify-content-between.mt-2(class=flexClasses)
-									.title First Name:
-									span.ms-2 Mildred
-								.form-item.second.justify-content-between.mt-2(class=flexClasses)
-									.title Last Name:
-									span.ms-2 Stoddard
-								.form-item.second.justify-content-between.mt-2(class=flexClasses)
-									.title Email Address:
-									span.ms-2 m.stoddard@gmail.com
-								.form-item.second.justify-content-between.mt-2(class=flexClasses)
-									.title Registered At:
-									span.ms-2 26/03/2021 14:58
-								.form-item.second.justify-content-between.mt-2(class=flexClasses)
-									.title Updated At:
-									span.ms-2 26/03/2021 14:58
-								.form-item.second.justify-content-between.mt-2(class=flexClasses)
-									.title Last Logged In:
-									span.ms-2 26/03/2021 14:58
-								.form-item.second.justify-content-between.mt-2(class=flexClasses)
-									.title Device:
-									span.ms-2 Samsung Galaxy S20
-							.col-sm-6
-								.form-item.second.justify-content-between.mt-2(class=flexClasses)
-									.title Birth Of Date:
-									span.ms-2 26/03/2021
-								.form-item.second.justify-content-between.mt-2(class=flexClasses)
-									.title Mobile:
-									span.ms-2 516-913-8323
-								.form-item.second.justify-content-between.mt-2(class=flexClasses)
-									.title Gender:
-									span.ms-2 Female
-								.form-item.second.justify-content-between.mt-2(class=flexClasses)
-									.title iP Address:
-									span.ms-2 216.58.217.164
-								.form-item.second.justify-content-between.mt-2(class=flexClasses)
-									.title iP Country:
-									span.ms-2 United State of America
-								.form-item.second.justify-content-between.mt-2(class=flexClasses)
-									.title iP City:
-									span.ms-2 New York
-								.form-item.second.justify-content-between.mt-2(class=flexClasses)
-									.title role:
-									span.ms-2 Administrator
+						.profile-details.row.mt-3.mt-lg-0
+							- var profileDetailsRows = [[{title: 'First Name:', value: 'Mildred'},{title: 'Last Name:', value: 'Stoddard'},{title: 'Email Address:', value: 'm.stoddard@gmail.com'},{title: 'Registered At:', value: '26/03/2021 14:58'},{title: 'Updated At:', value: '26/03/2021 14:58'},{title: 'Last Logged In:', value: '26/03/2021 14:58'},{title: 'Device:', value: 'Samsung Galaxy S20'}],[{title: 'Birth Of Date:', value: '26/03/2021'},{title: 'Mobile:', value: '516-913-8323'},{title: 'Gender:', value: 'Female'},{title: 'iP Address:', value: '216.58.217.164'},{title: 'iP Country:', value: 'United State'},{title: 'iP City:', value: 'New York'},{title: 'role:', value: 'Administrator'}]]
+							each row in profileDetailsRows
+								.col-sm-6
+									each detail in row
+										.form-item.second.justify-content-between.mt-2(class=flexClasses)
+											.title
+												b= detail.title
+											span.ms-2= detail.value
+
+		.col-12
+			.main-box.box-spaces
+				h2.box-title.text-capitalize.mb-3 Activities
+				.table-holder.mt-0
+					include ./../data/_activities
 
 block footer_script
 	script.
-		
+		// Data Tables
+		let product_table = $('#activities').DataTable({
+			dom: 'Bfrtip',
+			columnDefs: [
+				{ 
+					bSortable: false, 
+					aTargets: [ 4] 
+				},
+				{ 
+					bSearchable: false, 
+					aTargets: [ 0, 1, 2, 3] 
+				}
+			],
+			order: [
+				[3, 'desc']
+			],
+			language: {
+				info: "Show _START_ To _END_ Of _TOTAL_ Activity",
+				buttons: {
+					pageLength: 'Show %d',
+					colvis: 'Columns'
+				}
+			},
+			stateSave: true,
+			paging: true,
+			searching: true,
+			lengthMenu: [[ 10, 15, 25, 50, 75, 100 ], ['10 Activities', '15 Activities', '25 Activities', '50 Activities', '75 Activities', '100 Activities']],
+			buttons: ($(window).width() > 578) ? ['pageLength', 'print', {
+				extend: 'collection',
+				text: 'Export',
+				className: 'btn btn-group',
+				buttons: [
+					{
+						extend: 'excelHtml5',
+						className: 'dropdown-item'
+					},
+					{
+						extend: 'csvHtml5',
+						className: 'dropdown-item'
+					},
+					{
+						extend: 'pdfHtml5',
+						className: 'dropdown-item'
+					}
+				]
+			}, 'colvis'] : ['pageLength', {
+				extend: 'collection',
+				text: 'Export',
+				className: 'btn btn-group',
+				buttons: [
+					{
+						extend: 'excelHtml5',
+						className: 'dropdown-item'
+					},
+					{
+						extend: 'csvHtml5',
+						className: 'dropdown-item'
+					},
+					{
+						extend: 'pdfHtml5',
+						className: 'dropdown-item'
+					}
+				]
+			}, 'colvis']
+		});

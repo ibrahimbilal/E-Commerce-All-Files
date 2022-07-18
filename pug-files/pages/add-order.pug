@@ -4,7 +4,9 @@ block mainContent
 	.page-header
 		.row
 			.col-12(class=flexClasses).justify-content-sm-between.flex-column.flex-sm-row
-				.page-title.text-capitalize add order
+				- var pageTitle = 'add order'
+				- var btnType = ''
+				include ./../components/_page-title
 
 				.page-breadcrumbs(class=flexClasses).justify-content-start.justify-content-sm-end
 					- var breadCrumbsItems = ['orders', 'add']
@@ -14,7 +16,7 @@ block mainContent
 		.col-sm-12.float-start.post-box.order-sm-1
 			.main-box.box-spaces
 				.form-item.primary.mb-3
-					.item-title Order Details
+					h2.box-title.item-title Order Details
 
 				.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap
 					label.item-title(for="customer") Customer:
@@ -43,7 +45,7 @@ block mainContent
 		.col-sm-12.float-start.post-box.order-sm-3
 			.main-box.box-spaces
 				.form-item.primary.mb-3
-					.item-title Order Addresses
+					h2.box-title.item-title Order Addresses
 				
 				.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap.mt-3
 					label.item-title(for="country") Country:
@@ -80,12 +82,12 @@ block mainContent
 		.col-sm-12.float-start.post-box.order-sm-4
 			.main-box.box-spaces
 				.form-item.primary.mb-3
-					.item-title Order Items
+					h2.box-title.item-title Order Items
 
 				.repeater-holder
 					.repeater.mb-3
 						.repeater-title.p-3.mb-3.d-flex.justify-content-between.align-items-center
-							h5.mb-0 Item Title
+							h3.h5.mb-0 Item Title
 							.icons.d-flex.align-items-center
 								span.icon.active
 									+getRIcon("angle-small-down")

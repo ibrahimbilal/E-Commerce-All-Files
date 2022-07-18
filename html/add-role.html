@@ -55,7 +55,7 @@
           </ul>
           <ul class="menu-list-group">
             <li class="list-item"><a href="./users.html"><i class="fi-rr-user"> </i><span class="title">users</span></a></li>
-            <li class="list-item active"><a href="./roles.html"><i class="fi-rr-key"> </i><span class="title">permissions</span></a></li>
+            <li class="list-item active"><a href="./roles.html"><i class="fi-rr-key"> </i><span class="title">roles</span></a></li>
           </ul>
           <ul class="menu-list-group">
             <li class="list-item"><a href="./gallery.html"><i class="fi-rr-picture"> </i><span class="title">gallery</span></a></li>
@@ -184,7 +184,9 @@
       <div class="page-header">
         <div class="row">
           <div class="col-12 d-flex align-items-sm-center justify-content-sm-between flex-column flex-sm-row">
-            <div class="page-title text-capitalize">add role</div>
+            <div class="text-capitalize mb-2 mb-sm-0 d-flex align-items-sm-center">
+              <h1 class="page-title">add role</h1>
+            </div>
             <div class="page-breadcrumbs d-flex align-items-sm-center justify-content-start justify-content-sm-end">
               <div class="breadcrumbs d-flex justify-content-between align-items-center"><a class="item text-capitalize d-flex justify-content-between align-items-center" href="./index.html"><span class="icon"><i class="fi-rr-apps"> </i></span>dashboard</a><span class="angle"><span class="icon"><i class="fi-rr-angle-double-right"> </i></span></span><a class="item text-capitalize d-flex justify-content-between align-items-center">roles</a><span class="angle"><span class="icon"><i class="fi-rr-angle-double-right"> </i></span></span><span class="item text-capitalize d-flex justify-content-between align-items-center">add</span>
               </div>
@@ -196,7 +198,7 @@
         <div class="col-sm-12">
           <div class="main-box box-spaces">
             <div class="form-item primary">
-              <label class="item-title" for="role-name">role title</label>
+              <h2 class="box-title item-title">role title</h2>
               <input class="form-control" id="role-name" name="role_name" type="text">
             </div>
           </div>
@@ -205,7 +207,7 @@
           <div class="main-box box-spaces mb-0">
             <div class="d-flex justify-content-between align-items-center mb-3">
               <div class="form-item primary">
-                <div class="item-title mb-0">Permissions</div>
+                <h2 class="box-title item-title mb-0">Permissions</h2>
               </div>
               <div class="select-all"><a class="btn btn-primary btn-rounded me-2 py-1 text-capitalize">select all</a></div>
             </div>
@@ -216,135 +218,464 @@
                     <table class="table mb-0 border-0">
                       <tbody>
                         <tr class="bg-active">
-                          <td class="border-0 p-4"><b class="text-capitalize text-nowrap">Products role?</b></td>
+                          <td class="border-0 p-4">
+                            <h3 class="h6 text-capitalize text-nowrap mb-0"><strong>Products</strong></h3>
+                          </td>
                           <td class="border-0 p-4">
                             <div class="d-flex justify-content-between align-items-center w-100">
                               <div class="d-flex ms-2"><span class="text-capitalize me-2">view</span>
                                 <label class="switch text-start">
-                                  <input class="switch" id="product-new" type="checkbox" name="new"><span class="slider"></span>
+                                  <input class="switch" type="checkbox" name="new"><span class="slider"></span>
                                 </label>
                               </div>
                               <div class="d-flex ms-2"><span class="text-capitalize me-2">edit</span>
                                 <label class="switch text-start">
-                                  <input class="switch" id="product-new" type="checkbox" name="new"><span class="slider"></span>
+                                  <input class="switch" type="checkbox" name="new"><span class="slider"></span>
                                 </label>
                               </div>
                               <div class="d-flex ms-2"><span class="text-capitalize me-2">create</span>
                                 <label class="switch text-start">
-                                  <input class="switch" id="product-new" type="checkbox" name="new"><span class="slider"></span>
+                                  <input class="switch" type="checkbox" name="new"><span class="slider"></span>
                                 </label>
                               </div>
                               <div class="d-flex ms-2"><span class="text-capitalize me-2">delete</span>
                                 <label class="switch text-start">
-                                  <input class="switch" id="product-new" type="checkbox" name="new"><span class="slider"></span>
+                                  <input class="switch" type="checkbox" name="new"><span class="slider"></span>
                                 </label>
                               </div>
                             </div>
                           </td>
                         </tr>
                         <tr class="bg-active">
-                          <td class="border-0 p-4"><b class="text-capitalize text-nowrap">Customers role?</b></td>
+                          <td class="border-0 p-4">
+                            <h3 class="h6 text-capitalize text-nowrap mb-0"><strong>Attributes</strong></h3>
+                          </td>
                           <td class="border-0 p-4">
                             <div class="d-flex justify-content-between align-items-center w-100">
                               <div class="d-flex ms-2"><span class="text-capitalize me-2">view</span>
                                 <label class="switch text-start">
-                                  <input class="switch" id="product-new" type="checkbox" name="new"><span class="slider"></span>
+                                  <input class="switch" type="checkbox" name="new"><span class="slider"></span>
                                 </label>
                               </div>
                               <div class="d-flex ms-2"><span class="text-capitalize me-2">edit</span>
                                 <label class="switch text-start">
-                                  <input class="switch" id="product-new" type="checkbox" name="new"><span class="slider"></span>
+                                  <input class="switch" type="checkbox" name="new"><span class="slider"></span>
                                 </label>
                               </div>
                               <div class="d-flex ms-2"><span class="text-capitalize me-2">create</span>
                                 <label class="switch text-start">
-                                  <input class="switch" id="product-new" type="checkbox" name="new"><span class="slider"></span>
+                                  <input class="switch" type="checkbox" name="new"><span class="slider"></span>
                                 </label>
                               </div>
                               <div class="d-flex ms-2"><span class="text-capitalize me-2">delete</span>
                                 <label class="switch text-start">
-                                  <input class="switch" id="product-new" type="checkbox" name="new"><span class="slider"></span>
+                                  <input class="switch" type="checkbox" name="new"><span class="slider"></span>
                                 </label>
                               </div>
                             </div>
                           </td>
                         </tr>
                         <tr class="bg-active">
-                          <td class="border-0 p-4"><b class="text-capitalize text-nowrap">Tags role?</b></td>
+                          <td class="border-0 p-4">
+                            <h3 class="h6 text-capitalize text-nowrap mb-0"><strong>reviews</strong></h3>
+                          </td>
                           <td class="border-0 p-4">
                             <div class="d-flex justify-content-between align-items-center w-100">
                               <div class="d-flex ms-2"><span class="text-capitalize me-2">view</span>
                                 <label class="switch text-start">
-                                  <input class="switch" id="product-new" type="checkbox" name="new"><span class="slider"></span>
+                                  <input class="switch" type="checkbox" name="new"><span class="slider"></span>
                                 </label>
                               </div>
                               <div class="d-flex ms-2"><span class="text-capitalize me-2">edit</span>
                                 <label class="switch text-start">
-                                  <input class="switch" id="product-new" type="checkbox" name="new"><span class="slider"></span>
+                                  <input class="switch" type="checkbox" name="new"><span class="slider"></span>
                                 </label>
                               </div>
                               <div class="d-flex ms-2"><span class="text-capitalize me-2">create</span>
                                 <label class="switch text-start">
-                                  <input class="switch" id="product-new" type="checkbox" name="new"><span class="slider"></span>
+                                  <input class="switch" type="checkbox" name="new"><span class="slider"></span>
                                 </label>
                               </div>
                               <div class="d-flex ms-2"><span class="text-capitalize me-2">delete</span>
                                 <label class="switch text-start">
-                                  <input class="switch" id="product-new" type="checkbox" name="new"><span class="slider"></span>
+                                  <input class="switch" type="checkbox" name="new"><span class="slider"></span>
                                 </label>
                               </div>
                             </div>
                           </td>
                         </tr>
                         <tr class="bg-active">
-                          <td class="border-0 p-4"><b class="text-capitalize text-nowrap">Categories role?</b></td>
+                          <td class="border-0 p-4">
+                            <h3 class="h6 text-capitalize text-nowrap mb-0"><strong>Categories</strong></h3>
+                          </td>
                           <td class="border-0 p-4">
                             <div class="d-flex justify-content-between align-items-center w-100">
                               <div class="d-flex ms-2"><span class="text-capitalize me-2">view</span>
                                 <label class="switch text-start">
-                                  <input class="switch" id="product-new" type="checkbox" name="new"><span class="slider"></span>
+                                  <input class="switch" type="checkbox" name="new"><span class="slider"></span>
                                 </label>
                               </div>
                               <div class="d-flex ms-2"><span class="text-capitalize me-2">edit</span>
                                 <label class="switch text-start">
-                                  <input class="switch" id="product-new" type="checkbox" name="new"><span class="slider"></span>
+                                  <input class="switch" type="checkbox" name="new"><span class="slider"></span>
                                 </label>
                               </div>
                               <div class="d-flex ms-2"><span class="text-capitalize me-2">create</span>
                                 <label class="switch text-start">
-                                  <input class="switch" id="product-new" type="checkbox" name="new"><span class="slider"></span>
+                                  <input class="switch" type="checkbox" name="new"><span class="slider"></span>
                                 </label>
                               </div>
                               <div class="d-flex ms-2"><span class="text-capitalize me-2">delete</span>
                                 <label class="switch text-start">
-                                  <input class="switch" id="product-new" type="checkbox" name="new"><span class="slider"></span>
+                                  <input class="switch" type="checkbox" name="new"><span class="slider"></span>
                                 </label>
                               </div>
                             </div>
                           </td>
                         </tr>
                         <tr class="bg-active">
-                          <td class="border-0 p-4"><b class="text-capitalize text-nowrap">settings role?</b></td>
+                          <td class="border-0 p-4">
+                            <h3 class="h6 text-capitalize text-nowrap mb-0"><strong>Tags</strong></h3>
+                          </td>
                           <td class="border-0 p-4">
                             <div class="d-flex justify-content-between align-items-center w-100">
                               <div class="d-flex ms-2"><span class="text-capitalize me-2">view</span>
                                 <label class="switch text-start">
-                                  <input class="switch" id="product-new" type="checkbox" name="new"><span class="slider"></span>
+                                  <input class="switch" type="checkbox" name="new"><span class="slider"></span>
                                 </label>
                               </div>
                               <div class="d-flex ms-2"><span class="text-capitalize me-2">edit</span>
                                 <label class="switch text-start">
-                                  <input class="switch" id="product-new" type="checkbox" name="new"><span class="slider"></span>
+                                  <input class="switch" type="checkbox" name="new"><span class="slider"></span>
                                 </label>
                               </div>
                               <div class="d-flex ms-2"><span class="text-capitalize me-2">create</span>
                                 <label class="switch text-start">
-                                  <input class="switch" id="product-new" type="checkbox" name="new"><span class="slider"></span>
+                                  <input class="switch" type="checkbox" name="new"><span class="slider"></span>
                                 </label>
                               </div>
                               <div class="d-flex ms-2"><span class="text-capitalize me-2">delete</span>
                                 <label class="switch text-start">
-                                  <input class="switch" id="product-new" type="checkbox" name="new"><span class="slider"></span>
+                                  <input class="switch" type="checkbox" name="new"><span class="slider"></span>
+                                </label>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr class="bg-active">
+                          <td class="border-0 p-4">
+                            <h3 class="h6 text-capitalize text-nowrap mb-0"><strong>discounts</strong></h3>
+                          </td>
+                          <td class="border-0 p-4">
+                            <div class="d-flex justify-content-between align-items-center w-100">
+                              <div class="d-flex ms-2"><span class="text-capitalize me-2">view</span>
+                                <label class="switch text-start">
+                                  <input class="switch" type="checkbox" name="new"><span class="slider"></span>
+                                </label>
+                              </div>
+                              <div class="d-flex ms-2"><span class="text-capitalize me-2">edit</span>
+                                <label class="switch text-start">
+                                  <input class="switch" type="checkbox" name="new"><span class="slider"></span>
+                                </label>
+                              </div>
+                              <div class="d-flex ms-2"><span class="text-capitalize me-2">create</span>
+                                <label class="switch text-start">
+                                  <input class="switch" type="checkbox" name="new"><span class="slider"></span>
+                                </label>
+                              </div>
+                              <div class="d-flex ms-2"><span class="text-capitalize me-2">delete</span>
+                                <label class="switch text-start">
+                                  <input class="switch" type="checkbox" name="new"><span class="slider"></span>
+                                </label>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr class="bg-active">
+                          <td class="border-0 p-4">
+                            <h3 class="h6 text-capitalize text-nowrap mb-0"><strong>Customers</strong></h3>
+                          </td>
+                          <td class="border-0 p-4">
+                            <div class="d-flex justify-content-between align-items-center w-100">
+                              <div class="d-flex ms-2"><span class="text-capitalize me-2">view</span>
+                                <label class="switch text-start">
+                                  <input class="switch" type="checkbox" name="new"><span class="slider"></span>
+                                </label>
+                              </div>
+                              <div class="d-flex ms-2"><span class="text-capitalize me-2">edit</span>
+                                <label class="switch text-start">
+                                  <input class="switch" type="checkbox" name="new"><span class="slider"></span>
+                                </label>
+                              </div>
+                              <div class="d-flex ms-2"><span class="text-capitalize me-2">create</span>
+                                <label class="switch text-start">
+                                  <input class="switch" type="checkbox" name="new"><span class="slider"></span>
+                                </label>
+                              </div>
+                              <div class="d-flex ms-2"><span class="text-capitalize me-2">delete</span>
+                                <label class="switch text-start">
+                                  <input class="switch" type="checkbox" name="new"><span class="slider"></span>
+                                </label>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr class="bg-active">
+                          <td class="border-0 p-4">
+                            <h3 class="h6 text-capitalize text-nowrap mb-0"><strong>orders</strong></h3>
+                          </td>
+                          <td class="border-0 p-4">
+                            <div class="d-flex justify-content-between align-items-center w-100">
+                              <div class="d-flex ms-2"><span class="text-capitalize me-2">view</span>
+                                <label class="switch text-start">
+                                  <input class="switch" type="checkbox" name="new"><span class="slider"></span>
+                                </label>
+                              </div>
+                              <div class="d-flex ms-2"><span class="text-capitalize me-2">edit</span>
+                                <label class="switch text-start">
+                                  <input class="switch" type="checkbox" name="new"><span class="slider"></span>
+                                </label>
+                              </div>
+                              <div class="d-flex ms-2"><span class="text-capitalize me-2">create</span>
+                                <label class="switch text-start">
+                                  <input class="switch" type="checkbox" name="new"><span class="slider"></span>
+                                </label>
+                              </div>
+                              <div class="d-flex ms-2"><span class="text-capitalize me-2">delete</span>
+                                <label class="switch text-start">
+                                  <input class="switch" type="checkbox" name="new"><span class="slider"></span>
+                                </label>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr class="bg-active">
+                          <td class="border-0 p-4">
+                            <h3 class="h6 text-capitalize text-nowrap mb-0"><strong>invoices</strong></h3>
+                          </td>
+                          <td class="border-0 p-4">
+                            <div class="d-flex justify-content-between align-items-center w-100">
+                              <div class="d-flex ms-2"><span class="text-capitalize me-2">view</span>
+                                <label class="switch text-start">
+                                  <input class="switch" type="checkbox" name="new"><span class="slider"></span>
+                                </label>
+                              </div>
+                              <div class="d-flex ms-2"><span class="text-capitalize me-2">edit</span>
+                                <label class="switch text-start">
+                                  <input class="switch" type="checkbox" name="new"><span class="slider"></span>
+                                </label>
+                              </div>
+                              <div class="d-flex ms-2"><span class="text-capitalize me-2">create</span>
+                                <label class="switch text-start">
+                                  <input class="switch" type="checkbox" name="new"><span class="slider"></span>
+                                </label>
+                              </div>
+                              <div class="d-flex ms-2"><span class="text-capitalize me-2">delete</span>
+                                <label class="switch text-start">
+                                  <input class="switch" type="checkbox" name="new"><span class="slider"></span>
+                                </label>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr class="bg-active">
+                          <td class="border-0 p-4">
+                            <h3 class="h6 text-capitalize text-nowrap mb-0"><strong>analytics</strong></h3>
+                          </td>
+                          <td class="border-0 p-4">
+                            <div class="d-flex justify-content-between align-items-center w-100">
+                              <div class="d-flex ms-2"><span class="text-capitalize me-2">view</span>
+                                <label class="switch text-start">
+                                  <input class="switch" type="checkbox" name="new"><span class="slider"></span>
+                                </label>
+                              </div>
+                              <div class="d-flex ms-2"><span class="text-capitalize me-2">edit</span>
+                                <label class="switch text-start">
+                                  <input class="switch" type="checkbox" name="new"><span class="slider"></span>
+                                </label>
+                              </div>
+                              <div class="d-flex ms-2"><span class="text-capitalize me-2">create</span>
+                                <label class="switch text-start">
+                                  <input class="switch" type="checkbox" name="new"><span class="slider"></span>
+                                </label>
+                              </div>
+                              <div class="d-flex ms-2"><span class="text-capitalize me-2">delete</span>
+                                <label class="switch text-start">
+                                  <input class="switch" type="checkbox" name="new"><span class="slider"></span>
+                                </label>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr class="bg-active">
+                          <td class="border-0 p-4">
+                            <h3 class="h6 text-capitalize text-nowrap mb-0"><strong>marketing</strong></h3>
+                          </td>
+                          <td class="border-0 p-4">
+                            <div class="d-flex justify-content-between align-items-center w-100">
+                              <div class="d-flex ms-2"><span class="text-capitalize me-2">view</span>
+                                <label class="switch text-start">
+                                  <input class="switch" type="checkbox" name="new"><span class="slider"></span>
+                                </label>
+                              </div>
+                              <div class="d-flex ms-2"><span class="text-capitalize me-2">edit</span>
+                                <label class="switch text-start">
+                                  <input class="switch" type="checkbox" name="new"><span class="slider"></span>
+                                </label>
+                              </div>
+                              <div class="d-flex ms-2"><span class="text-capitalize me-2">create</span>
+                                <label class="switch text-start">
+                                  <input class="switch" type="checkbox" name="new"><span class="slider"></span>
+                                </label>
+                              </div>
+                              <div class="d-flex ms-2"><span class="text-capitalize me-2">delete</span>
+                                <label class="switch text-start">
+                                  <input class="switch" type="checkbox" name="new"><span class="slider"></span>
+                                </label>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr class="bg-active">
+                          <td class="border-0 p-4">
+                            <h3 class="h6 text-capitalize text-nowrap mb-0"><strong>users</strong></h3>
+                          </td>
+                          <td class="border-0 p-4">
+                            <div class="d-flex justify-content-between align-items-center w-100">
+                              <div class="d-flex ms-2"><span class="text-capitalize me-2">view</span>
+                                <label class="switch text-start">
+                                  <input class="switch" type="checkbox" name="new"><span class="slider"></span>
+                                </label>
+                              </div>
+                              <div class="d-flex ms-2"><span class="text-capitalize me-2">edit</span>
+                                <label class="switch text-start">
+                                  <input class="switch" type="checkbox" name="new"><span class="slider"></span>
+                                </label>
+                              </div>
+                              <div class="d-flex ms-2"><span class="text-capitalize me-2">create</span>
+                                <label class="switch text-start">
+                                  <input class="switch" type="checkbox" name="new"><span class="slider"></span>
+                                </label>
+                              </div>
+                              <div class="d-flex ms-2"><span class="text-capitalize me-2">delete</span>
+                                <label class="switch text-start">
+                                  <input class="switch" type="checkbox" name="new"><span class="slider"></span>
+                                </label>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr class="bg-active">
+                          <td class="border-0 p-4">
+                            <h3 class="h6 text-capitalize text-nowrap mb-0"><strong>roles</strong></h3>
+                          </td>
+                          <td class="border-0 p-4">
+                            <div class="d-flex justify-content-between align-items-center w-100">
+                              <div class="d-flex ms-2"><span class="text-capitalize me-2">view</span>
+                                <label class="switch text-start">
+                                  <input class="switch" type="checkbox" name="new"><span class="slider"></span>
+                                </label>
+                              </div>
+                              <div class="d-flex ms-2"><span class="text-capitalize me-2">edit</span>
+                                <label class="switch text-start">
+                                  <input class="switch" type="checkbox" name="new"><span class="slider"></span>
+                                </label>
+                              </div>
+                              <div class="d-flex ms-2"><span class="text-capitalize me-2">create</span>
+                                <label class="switch text-start">
+                                  <input class="switch" type="checkbox" name="new"><span class="slider"></span>
+                                </label>
+                              </div>
+                              <div class="d-flex ms-2"><span class="text-capitalize me-2">delete</span>
+                                <label class="switch text-start">
+                                  <input class="switch" type="checkbox" name="new"><span class="slider"></span>
+                                </label>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr class="bg-active">
+                          <td class="border-0 p-4">
+                            <h3 class="h6 text-capitalize text-nowrap mb-0"><strong>gallary</strong></h3>
+                          </td>
+                          <td class="border-0 p-4">
+                            <div class="d-flex justify-content-between align-items-center w-100">
+                              <div class="d-flex ms-2"><span class="text-capitalize me-2">view</span>
+                                <label class="switch text-start">
+                                  <input class="switch" type="checkbox" name="new"><span class="slider"></span>
+                                </label>
+                              </div>
+                              <div class="d-flex ms-2"><span class="text-capitalize me-2">edit</span>
+                                <label class="switch text-start">
+                                  <input class="switch" type="checkbox" name="new"><span class="slider"></span>
+                                </label>
+                              </div>
+                              <div class="d-flex ms-2"><span class="text-capitalize me-2">create</span>
+                                <label class="switch text-start">
+                                  <input class="switch" type="checkbox" name="new"><span class="slider"></span>
+                                </label>
+                              </div>
+                              <div class="d-flex ms-2"><span class="text-capitalize me-2">delete</span>
+                                <label class="switch text-start">
+                                  <input class="switch" type="checkbox" name="new"><span class="slider"></span>
+                                </label>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr class="bg-active">
+                          <td class="border-0 p-4">
+                            <h3 class="h6 text-capitalize text-nowrap mb-0"><strong>languages</strong></h3>
+                          </td>
+                          <td class="border-0 p-4">
+                            <div class="d-flex justify-content-between align-items-center w-100">
+                              <div class="d-flex ms-2"><span class="text-capitalize me-2">view</span>
+                                <label class="switch text-start">
+                                  <input class="switch" type="checkbox" name="new"><span class="slider"></span>
+                                </label>
+                              </div>
+                              <div class="d-flex ms-2"><span class="text-capitalize me-2">edit</span>
+                                <label class="switch text-start">
+                                  <input class="switch" type="checkbox" name="new"><span class="slider"></span>
+                                </label>
+                              </div>
+                              <div class="d-flex ms-2"><span class="text-capitalize me-2">create</span>
+                                <label class="switch text-start">
+                                  <input class="switch" type="checkbox" name="new"><span class="slider"></span>
+                                </label>
+                              </div>
+                              <div class="d-flex ms-2"><span class="text-capitalize me-2">delete</span>
+                                <label class="switch text-start">
+                                  <input class="switch" type="checkbox" name="new"><span class="slider"></span>
+                                </label>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr class="bg-active">
+                          <td class="border-0 p-4">
+                            <h3 class="h6 text-capitalize text-nowrap mb-0"><strong>Settings</strong></h3>
+                          </td>
+                          <td class="border-0 p-4">
+                            <div class="d-flex justify-content-between align-items-center w-100">
+                              <div class="d-flex ms-2"><span class="text-capitalize me-2">view</span>
+                                <label class="switch text-start">
+                                  <input class="switch" type="checkbox" name="new"><span class="slider"></span>
+                                </label>
+                              </div>
+                              <div class="d-flex ms-2"><span class="text-capitalize me-2">edit</span>
+                                <label class="switch text-start">
+                                  <input class="switch" type="checkbox" name="new"><span class="slider"></span>
+                                </label>
+                              </div>
+                              <div class="d-flex ms-2"><span class="text-capitalize me-2">create</span>
+                                <label class="switch text-start">
+                                  <input class="switch" type="checkbox" name="new"><span class="slider"></span>
+                                </label>
+                              </div>
+                              <div class="d-flex ms-2"><span class="text-capitalize me-2">delete</span>
+                                <label class="switch text-start">
+                                  <input class="switch" type="checkbox" name="new"><span class="slider"></span>
                                 </label>
                               </div>
                             </div>

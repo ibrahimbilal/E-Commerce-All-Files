@@ -4,11 +4,9 @@ block mainContent
 	.page-header
 		.row
 			.col-12(class=flexClasses).justify-content-sm-between.flex-column.flex-sm-row
-				.page-title.text-capitalize marketing
-					a.add-btn.btn.text-capitalize(href='#')
-						span.icon
-							+getRIcon("add")
-						| add new
+				- var pageTitle = 'marketing'
+				- var btnType = 'add'
+				include ./../components/_page-title
 
 				.page-breadcrumbs(class=flexClasses).justify-content-start.justify-content-sm-end
 					- var breadCrumbsItems = ['marketing']

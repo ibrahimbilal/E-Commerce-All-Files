@@ -4,7 +4,9 @@ block mainContent
 	.page-header
 		.row
 			.col-12(class=flexClasses).justify-content-sm-between.flex-column.flex-sm-row
-				.page-title.text-capitalize add category
+				- var pageTitle = 'add category'
+				- var btnType = ''
+				include ./../components/_page-title
 
 				.page-breadcrumbs(class=flexClasses).justify-content-start.justify-content-sm-end
 					- var breadCrumbsItems = ['categories', 'add']
@@ -14,13 +16,13 @@ block mainContent
 		.col-sm-12.col-lg-9.float-start.post-box
 			.main-box.box-spaces
 				.form-item.primary
-					label.item-title(for="item-title") category title
+					h2.box-title.item-title category title
 					input#item-title.form-control(name="category_name" type="text")
 
 				.divider
 
 				.form-item.primary
-					label.item-title(for="category-desc") category description
+					h2.box-title.item-title category description
 					#category-desc
 						.editor-container
 
@@ -58,7 +60,7 @@ block mainContent
 
 				.col-sm-6.col-lg-12.float-start.float-lg-none
 					#parent-cat.main-box.box-spaces.form-item
-						h3.box-title.item-title parent category
+						h2.box-title.item-title parent category
 						.cat-list-holder
 							ul.my-list.main-list
 								li.my-item
@@ -91,7 +93,7 @@ block mainContent
 		.col-sm-12.col-lg-9.float-start.post-box
 			.main-box.box-spaces.mb-0
 				.form-item.primary
-					.item-title category details
+					h2.box-title.item-title category details
 				.tabs-holder
 					.tabs-buttons
 						a.btn.tab-btn.active(href="javascript:void(0)" data-tab-id="#general") general

@@ -4,7 +4,9 @@ block mainContent
 	.page-header
 		.row
 			.col-12(class=flexClasses).justify-content-sm-between.flex-column.flex-sm-row
-				.page-title.text-capitalize add product
+				- var pageTitle = 'add product'
+				- var btnType = ''
+				include ./../components/_page-title
 
 				.page-breadcrumbs(class=flexClasses).justify-content-start.justify-content-sm-end
 					- var breadCrumbsItems = ['products', 'add']
@@ -14,13 +16,13 @@ block mainContent
 		.col-sm-12.col-lg-9.float-start.post-box
 			.main-box.box-spaces
 				.form-item.primary
-					label.item-title(for="item-title") product name
+					h2.box-title.item-title product name
 					input#item-title.form-control(name="product_name" type="text")
 
 				.divider
 
 				.form-item.primary
-					label.item-title(for="product-desc") product description
+					h2.box-title.item-title product description
 					#product-desc
 						.editor-container
 
@@ -58,7 +60,7 @@ block mainContent
 
 				.col-sm-6.col-lg-12.float-start.float-lg-none
 					#product-cat.main-box.box-spaces.form-item
-						h3.box-title.item-title product category
+						h2.box-title.item-title product category
 						.cat-list-holder
 							ul.my-list.main-list
 								li.my-item
@@ -90,7 +92,7 @@ block mainContent
 
 				.col-sm-6.col-lg-12.float-end.float-lg-none
 					#product-tags.main-box.box-spaces.form-item.mb-lg-0
-						h3.box-title.item-title product tags:
+						h2.box-title.item-title product tags:
 							span(class="icon info ms-2" tooltip="separate tags with comma (,)" flow="up")
 								+getRIcon("info")
 						select#product-tags-select.form-select.multi-select(name="product_tags" multiple="multiple")
@@ -107,7 +109,7 @@ block mainContent
 		.col-sm-12.col-lg-9.float-start.post-box
 			.main-box.box-spaces.mb-0
 				.form-item.primary
-					.item-title product details
+					h2.box-title.item-title product details
 				.tabs-holder
 					.tabs-buttons
 						a.btn.tab-btn.active(href="javascript:void(0)" data-tab-id="#general") general

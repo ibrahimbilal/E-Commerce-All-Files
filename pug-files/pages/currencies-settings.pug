@@ -4,7 +4,9 @@ block mainContent
 	.page-header
 		.row
 			.col-12(class=flexClasses).justify-content-sm-between.flex-column.flex-sm-row
-				.page-title.text-capitalize settings
+				- var pageTitle = 'settings'
+				- var btnType = ''
+				include ./../components/_page-title
 
 				.page-breadcrumbs(class=flexClasses).justify-content-start.justify-content-sm-end
 					- var breadCrumbsItems = ['settings']
@@ -14,7 +16,7 @@ block mainContent
 		.col-sm-12.col-lg-9.float-start.post-box
 			.main-box.box-spaces
 				.form-item.primary.mb-3
-					.item-title Currencies Settings
+					h2.box-title.item-title Currencies Settings
 
 				.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap
 					label.item-title(for="main-currency") Currency:
@@ -46,7 +48,7 @@ block mainContent
 				hr
 
 				.form-item.primary.mb-3
-					.item-title Multi Currencies
+					h2.box-title.item-title Multi Currencies
 
 				.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap.mt-3
 					label.item-title(for="currencies-display") Dropdown Dispaly:

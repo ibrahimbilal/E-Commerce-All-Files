@@ -102,14 +102,14 @@
     &[flow^="left"]:hover::after,
     &[flow^="right"]:hover::before,
     &[flow^="right"]:hover::after {
-        animation: tooltips-horz 150ms ease-in-out forwards;
+        animation: tooltips_horz 150ms ease-in-out forwards;
     }
 
     &[flow^="up"]:hover::before,
     &[flow^="up"]:hover::after,
     &[flow^="down"]:hover::before,
     &[flow^="down"]:hover::after {
-        animation: tooltips-vert 150ms ease-out forwards
+        animation: tooltips_vert 150ms ease-out forwards
     }
 }
 
@@ -145,12 +145,6 @@
         color: var(--box-bg-color);
         z-index: 1000;
     }
-    // &:hover {
-    //     .before,
-    //     .after {
-    //         display: block;
-    //     }
-    // }
 
     // Left Tooltip
     &[flow^="left"] .before {
@@ -219,14 +213,14 @@
     &[flow^="left"].show .after,
     &[flow^="right"].show .before,
     &[flow^="right"].show .after {
-        animation: tooltips-horz 150ms ease-in-out forwards;
+        animation: tooltips_horz 150ms ease-in-out forwards;
     }
 
     &[flow^="up"].show .before,
     &[flow^="up"].show .after,
     &[flow^="down"].show .before,
     &[flow^="down"].show .after {
-        animation: tooltips-vert 150ms ease-in-out forwards
+        animation: tooltips_vert 150ms ease-in-out forwards
     }
 }
 
@@ -234,14 +228,14 @@
     display: block;
 }
 
-@keyframes tooltips-vert {
+@keyframes tooltips_vert {
     to {
         opacity: 1;
         transform: translate(-50%, 0)
     }
 }
 
-@keyframes tooltips-horz {
+@keyframes tooltips_horz {
     to {
         opacity: 1;
         transform: translate(0, -50%)

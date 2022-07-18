@@ -4,11 +4,9 @@ block mainContent
 	.page-header
 		.row
 			.col-12(class=flexClasses).justify-content-sm-between.flex-column.flex-sm-row
-				.page-title.text-capitalize view order
-					a.add-btn.btn.text-capitalize(href='./add-order.html')
-						span.icon
-							+getRIcon("edit")
-						| edit <span class="page">order 
+				- var pageTitle = 'order'
+				- var btnType = 'edit'
+				include ./../components/_page-title
 
 				.page-breadcrumbs(class=flexClasses).justify-content-start.justify-content-sm-end
 					- var breadCrumbsItems = ['orders', 'view']
@@ -17,92 +15,89 @@ block mainContent
 	.row
 		.col-12
 			.main-box.box-spaces
-				.form-item
-					h3.box-title.item-title order Details:
-					.row 
-						.col-sm-6
-							.table-holder.mt-0
-								.table-responsive
-									table.table
-										tbody
-											tr
-												td Order ID:
-												td #27282
-											tr
-												td Order Date:
-												td 26/03/2021 14:58
-											tr
-												td Order Status:
-												td.status.success Processing
-											tr
-												td Payment Method:
-												td Cash On Delivery
-											tr
-												td Payment Status:
-												td Paid
-											tr
-												td Payment Currency:
-												td USD
-						.col-sm-6
-							.table-holder.mt-0
-								.table-responsive
-									table.table
-										tbody
-											tr
-												td Customer Name:
-												td Mildred Stoddard
-											tr
-												td Email Address:
-												td m.stoddard@gmail.com
-											tr
-												td Mobile:
-												td 516-913-8323
+				h2.box-title.text-capitalize.mb-3 order Details:
+				.row 
+					.col-sm-6
+						.table-holder.mt-0
+							.table-responsive
+								table.table
+									tbody
+										tr
+											td Order ID:
+											td #27282
+										tr
+											td Order Date:
+											td 26/03/2021 14:58
+										tr
+											td Order Status:
+											td.status.success Processing
+										tr
+											td Payment Method:
+											td Cash On Delivery
+										tr
+											td Payment Status:
+											td Paid
+										tr
+											td Payment Currency:
+											td USD
+					.col-sm-6
+						.table-holder.mt-0
+							.table-responsive
+								table.table
+									tbody
+										tr
+											td Customer Name:
+											td Mildred Stoddard
+										tr
+											td Email Address:
+											td m.stoddard@gmail.com
+										tr
+											td Mobile:
+											td 516-913-8323
 		.col-12
 			.main-box.box-spaces
-				.form-item
-					h3.box-title.item-title order Addresses:
-					.table-holder.mt-0
-						.table-responsive
-							table.table.w-100
-								thead.table-light
-									th
-									th Billing to:
-									th Shipping to:
-								tbody
-									tr
-										td 
-											p.title.title-2.mb-0 Full Name:
-										td Jayson Hinrichsen
-										td Jayson Hinrichsen
-									tr
-										td 
-											p.title.title-2.mb-0 Address:
-										td 1881  Rosewood Lane
-										td 1881  Rosewood Lane
-									tr
-										td 
-											p.title.title-2.mb-0 City:
-										td New York City
-										td New York City
-									tr
-										td 
-											p.title.title-2.mb-0 Country:
-										td United State Of America
-										td United State Of America
-									tr
-										td 
-											p.title.title-2.mb-0 Postal:
-										td 10011
-										td 10011
-									tr
-										td 
-											p.title.title-2.mb-0 Mobile:
-										td 516-913-8323
-										td 516-913-8323
+				h2.box-title.text-capitalize.mb-3 order Addresses:
+				.table-holder.mt-0
+					.table-responsive
+						table.table.w-100
+							thead
+								th
+								th Billing to:
+								th Shipping to:
+							tbody
+								tr
+									td 
+										p.title.title-2.mb-0 Full Name:
+									td Jayson Hinrichsen
+									td Jayson Hinrichsen
+								tr
+									td 
+										p.title.title-2.mb-0 Address:
+									td 1881  Rosewood Lane
+									td 1881  Rosewood Lane
+								tr
+									td 
+										p.title.title-2.mb-0 City:
+									td New York City
+									td New York City
+								tr
+									td 
+										p.title.title-2.mb-0 Country:
+									td United State
+									td United State
+								tr
+									td 
+										p.title.title-2.mb-0 Postal:
+									td 10011
+									td 10011
+								tr
+									td 
+										p.title.title-2.mb-0 Mobile:
+									td 516-913-8323
+									td 516-913-8323
 		.col-12
 			.main-box.box-spaces.mb-0
-				.form-item
-					h3.box-title.item-title order Items:
+				h2.box-title.text-capitalize.mb-3 order Items:
 
 				.table-holder.mt-0
 					.table-responsive

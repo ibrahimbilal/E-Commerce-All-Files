@@ -4,7 +4,9 @@ block mainContent
 	.page-header
 		.row
 			.col-12(class=flexClasses).justify-content-sm-between.flex-column.flex-sm-row
-				.page-title.text-capitalize add discount
+				- var pageTitle = 'add discount'
+				- var btnType = ''
+				include ./../components/_page-title
 
 				.page-breadcrumbs(class=flexClasses).justify-content-start.justify-content-sm-end
 					- var breadCrumbsItems = ['discounts', 'add']
@@ -14,13 +16,13 @@ block mainContent
 		.col-sm-12
 			.main-box.box-spaces
 				.form-item.primary
-					label.item-title(for="discount-name") discount title
+					h2.box-title.item-title discount title
 					input#discount-name.form-control(name="discount_name" type="text")
 
 		.col-sm-12.col-lg-9.post-box
 			.main-box.box-spaces
 				.form-item.primary
-					.item-title discount details
+					h2.box-title.item-title discount details
 
 				.form-item.second.d-flex.flex-wrap.flex-sm-nowrap
 					label.item-title(for="the-discount") the discount:

@@ -4,7 +4,9 @@ block mainContent
 	.page-header
 		.row
 			.col-12(class=flexClasses).justify-content-sm-between.flex-column.flex-sm-row
-				.page-title.text-capitalize add tag
+				- var pageTitle = 'add tag'
+				- var btnType = ''
+				include ./../components/_page-title
 
 				.page-breadcrumbs(class=flexClasses).justify-content-start.justify-content-sm-end
 					- var breadCrumbsItems = ['tags', 'add']
@@ -14,13 +16,13 @@ block mainContent
 		.col-sm-12.col-lg-9.post-box
 			.main-box.box-spaces
 				.form-item.primary
-					label.item-title(for="item-title") tag title
+					h2.box-title.item-title tag title
 					input#item-title.form-control(name="tag_name" type="text")
 
 				.divider
 
 				.form-item.primary
-					label.item-title(for="tag-desc") tag description
+					h2.box-title.item-title tag description
 					#tag-desc
 						.editor-container
 
@@ -59,7 +61,7 @@ block mainContent
 		.col-sm-12.col-lg-9.post-box
 			.main-box.box-spaces.mb-0
 				.form-item.primary
-					.item-title tag details
+					h2.box-title.item-title tag details
 				.tabs-holder
 					.tabs-buttons
 						a.btn.tab-btn.active(href="javascript:void(0)" data-tab-id="#general") general

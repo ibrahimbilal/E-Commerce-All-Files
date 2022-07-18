@@ -1,0 +1,17 @@
+if (btnType == 'edit')
+	.text-capitalize.mb-2.mb-sm-0(class=flexClasses)
+		h1.page-title view #{pageTitle}
+		a.add-btn.btn.text-capitalize(href=`./add-${pageTitle}.html`)
+			span.icon
+				+getRIcon(`${btnType}`)
+			| #{btnType} <span class="page">#{pageTitle}<span>
+else if (btnType == 'add')
+	.text-capitalize.mb-2.mb-sm-0(class=flexClasses)
+		h1.page-title #{pageTitle}s
+		a.add-btn.btn.text-capitalize(href=`./add-${pageTitle}.html`)
+			span.icon
+				+getRIcon(`${btnType}`)
+			| #{btnType} new
+else 
+	.text-capitalize.mb-2.mb-sm-0(class=flexClasses)
+		h1.page-title #{pageTitle}

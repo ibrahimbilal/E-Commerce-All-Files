@@ -55,7 +55,7 @@
           </ul>
           <ul class="menu-list-group">
             <li class="list-item"><a href="./users.html"><i class="fi-rr-user"> </i><span class="title">users</span></a></li>
-            <li class="list-item"><a href="./roles.html"><i class="fi-rr-key"> </i><span class="title">permissions</span></a></li>
+            <li class="list-item"><a href="./roles.html"><i class="fi-rr-key"> </i><span class="title">roles</span></a></li>
           </ul>
           <ul class="menu-list-group">
             <li class="list-item"><a href="./gallery.html"><i class="fi-rr-picture"> </i><span class="title">gallery</span></a></li>
@@ -184,7 +184,9 @@
       <div class="page-header">
         <div class="row">
           <div class="col-12 d-flex align-items-sm-center justify-content-sm-between flex-column flex-sm-row">
-            <div class="page-title text-capitalize">view order<a class="add-btn btn text-capitalize" href="./add-order.html"><span class="icon"><i class="fi-rr-edit"> </i></span>edit <span class="page">order </a></div>
+            <div class="text-capitalize mb-2 mb-sm-0 d-flex align-items-sm-center">
+              <h1 class="page-title">view order</h1><a class="add-btn btn text-capitalize" href="./add-order.html"><span class="icon"><i class="fi-rr-edit"> </i></span>edit <span class="page">order<span></a>
+            </div>
             <div class="page-breadcrumbs d-flex align-items-sm-center justify-content-start justify-content-sm-end">
               <div class="breadcrumbs d-flex justify-content-between align-items-center"><a class="item text-capitalize d-flex justify-content-between align-items-center" href="./index.html"><span class="icon"><i class="fi-rr-apps"> </i></span>dashboard</a><span class="angle"><span class="icon"><i class="fi-rr-angle-double-right"> </i></span></span><a class="item text-capitalize d-flex justify-content-between align-items-center">orders</a><span class="angle"><span class="icon"><i class="fi-rr-angle-double-right"> </i></span></span><span class="item text-capitalize d-flex justify-content-between align-items-center">view</span>
               </div>
@@ -195,63 +197,61 @@
       <div class="row">
         <div class="col-12">
           <div class="main-box box-spaces">
-            <div class="form-item">
-              <h3 class="box-title item-title">order Details:</h3>
-              <div class="row"> 
-                <div class="col-sm-6">
-                  <div class="table-holder mt-0">
-                    <div class="table-responsive">
-                      <table class="table">
-                        <tbody>
-                          <tr>
-                            <td>Order ID:</td>
-                            <td>#27282</td>
-                          </tr>
-                          <tr>
-                            <td>Order Date:</td>
-                            <td>26/03/2021 14:58</td>
-                          </tr>
-                          <tr>
-                            <td>Order Status:</td>
-                            <td class="status success">Processing</td>
-                          </tr>
-                          <tr>
-                            <td>Payment Method:</td>
-                            <td>Cash On Delivery</td>
-                          </tr>
-                          <tr>
-                            <td>Payment Status:</td>
-                            <td>Paid</td>
-                          </tr>
-                          <tr>
-                            <td>Payment Currency:</td>
-                            <td>USD</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
+            <h2 class="box-title text-capitalize mb-3">order Details:</h2>
+            <div class="row"> 
+              <div class="col-sm-6">
+                <div class="table-holder mt-0">
+                  <div class="table-responsive">
+                    <table class="table">
+                      <tbody>
+                        <tr>
+                          <td>Order ID:</td>
+                          <td>#27282</td>
+                        </tr>
+                        <tr>
+                          <td>Order Date:</td>
+                          <td>26/03/2021 14:58</td>
+                        </tr>
+                        <tr>
+                          <td>Order Status:</td>
+                          <td class="status success">Processing</td>
+                        </tr>
+                        <tr>
+                          <td>Payment Method:</td>
+                          <td>Cash On Delivery</td>
+                        </tr>
+                        <tr>
+                          <td>Payment Status:</td>
+                          <td>Paid</td>
+                        </tr>
+                        <tr>
+                          <td>Payment Currency:</td>
+                          <td>USD</td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
                 </div>
-                <div class="col-sm-6">
-                  <div class="table-holder mt-0">
-                    <div class="table-responsive">
-                      <table class="table">
-                        <tbody>
-                          <tr>
-                            <td>Customer Name:</td>
-                            <td>Mildred Stoddard</td>
-                          </tr>
-                          <tr>
-                            <td>Email Address:</td>
-                            <td>m.stoddard@gmail.com</td>
-                          </tr>
-                          <tr>
-                            <td>Mobile:</td>
-                            <td>516-913-8323</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="table-holder mt-0">
+                  <div class="table-responsive">
+                    <table class="table">
+                      <tbody>
+                        <tr>
+                          <td>Customer Name:</td>
+                          <td>Mildred Stoddard</td>
+                        </tr>
+                        <tr>
+                          <td>Email Address:</td>
+                          <td>m.stoddard@gmail.com</td>
+                        </tr>
+                        <tr>
+                          <td>Mobile:</td>
+                          <td>516-913-8323</td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
                 </div>
               </div>
@@ -260,71 +260,67 @@
         </div>
         <div class="col-12">
           <div class="main-box box-spaces">
-            <div class="form-item">
-              <h3 class="box-title item-title">order Addresses:</h3>
-              <div class="table-holder mt-0">
-                <div class="table-responsive">
-                  <table class="table w-100">
-                    <thead class="table-light">
-                      <th></th>
-                      <th>Billing to:</th>
-                      <th>Shipping to:</th>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td> 
-                          <p class="title title-2 mb-0">Full Name:</p>
-                        </td>
-                        <td>Jayson Hinrichsen</td>
-                        <td>Jayson Hinrichsen</td>
-                      </tr>
-                      <tr>
-                        <td> 
-                          <p class="title title-2 mb-0">Address:</p>
-                        </td>
-                        <td>1881  Rosewood Lane</td>
-                        <td>1881  Rosewood Lane</td>
-                      </tr>
-                      <tr>
-                        <td> 
-                          <p class="title title-2 mb-0">City:</p>
-                        </td>
-                        <td>New York City</td>
-                        <td>New York City</td>
-                      </tr>
-                      <tr>
-                        <td> 
-                          <p class="title title-2 mb-0">Country:</p>
-                        </td>
-                        <td>United State Of America</td>
-                        <td>United State Of America</td>
-                      </tr>
-                      <tr>
-                        <td> 
-                          <p class="title title-2 mb-0">Postal:</p>
-                        </td>
-                        <td>10011</td>
-                        <td>10011</td>
-                      </tr>
-                      <tr>
-                        <td> 
-                          <p class="title title-2 mb-0">Mobile:</p>
-                        </td>
-                        <td>516-913-8323</td>
-                        <td>516-913-8323</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
+            <h2 class="box-title text-capitalize mb-3">order Addresses:</h2>
+            <div class="table-holder mt-0">
+              <div class="table-responsive">
+                <table class="table w-100">
+                  <thead>
+                    <th></th>
+                    <th>Billing to:</th>
+                    <th>Shipping to:</th>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td> 
+                        <p class="title title-2 mb-0">Full Name:</p>
+                      </td>
+                      <td>Jayson Hinrichsen</td>
+                      <td>Jayson Hinrichsen</td>
+                    </tr>
+                    <tr>
+                      <td> 
+                        <p class="title title-2 mb-0">Address:</p>
+                      </td>
+                      <td>1881  Rosewood Lane</td>
+                      <td>1881  Rosewood Lane</td>
+                    </tr>
+                    <tr>
+                      <td> 
+                        <p class="title title-2 mb-0">City:</p>
+                      </td>
+                      <td>New York City</td>
+                      <td>New York City</td>
+                    </tr>
+                    <tr>
+                      <td> 
+                        <p class="title title-2 mb-0">Country:</p>
+                      </td>
+                      <td>United State</td>
+                      <td>United State</td>
+                    </tr>
+                    <tr>
+                      <td> 
+                        <p class="title title-2 mb-0">Postal:</p>
+                      </td>
+                      <td>10011</td>
+                      <td>10011</td>
+                    </tr>
+                    <tr>
+                      <td> 
+                        <p class="title title-2 mb-0">Mobile:</p>
+                      </td>
+                      <td>516-913-8323</td>
+                      <td>516-913-8323</td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
         </div>
         <div class="col-12">
           <div class="main-box box-spaces mb-0">
-            <div class="form-item">
-              <h3 class="box-title item-title">order Items:</h3>
-            </div>
+            <h2 class="box-title text-capitalize mb-3">order Items:</h2>
             <div class="table-holder mt-0">
               <div class="table-responsive">
                 <table class="table table-striped">

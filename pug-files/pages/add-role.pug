@@ -4,7 +4,9 @@ block mainContent
 	.page-header
 		.row
 			.col-12(class=flexClasses).justify-content-sm-between.flex-column.flex-sm-row
-				.page-title.text-capitalize add role
+				- var pageTitle = 'add role'
+				- var btnType = ''
+				include ./../components/_page-title
 
 				.page-breadcrumbs(class=flexClasses).justify-content-start.justify-content-sm-end
 					- var breadCrumbsItems = ['roles', 'add']
@@ -14,14 +16,14 @@ block mainContent
 		.col-sm-12
 			.main-box.box-spaces
 				.form-item.primary
-					label.item-title(for="role-name") role title
+					h2.box-title.item-title role title
 					input#role-name.form-control(name="role_name" type="text")
 
 		.col-sm-12.col-lg-8.mb-3
 			.main-box.box-spaces.mb-0
 				.d-flex.justify-content-between.align-items-center.mb-3
 					.form-item.primary
-						.item-title.mb-0 Permissions
+						h2.box-title.item-title.mb-0 Permissions
 					.select-all
 						a.btn.btn-primary.btn-rounded.me-2.py-1.text-capitalize select all
 
@@ -31,131 +33,34 @@ block mainContent
 							.table-responsive
 								table.table.mb-0.border-0
 									tbody
-										tr.bg-active
-											td.border-0.p-4
-												b.text-capitalize.text-nowrap Products role?
-											td.border-0.p-4
-												.d-flex.justify-content-between.align-items-center.w-100
-													.d-flex.ms-2
-														span.text-capitalize.me-2 view
-														label.switch.text-start
-															input#product-new(type="checkbox" class="switch" name="new")
-															span.slider
-													.d-flex.ms-2
-														span.text-capitalize.me-2 edit
-														label.switch.text-start
-															input#product-new(type="checkbox" class="switch" name="new")
-															span.slider
-													.d-flex.ms-2
-														span.text-capitalize.me-2 create
-														label.switch.text-start
-															input#product-new(type="checkbox" class="switch" name="new")
-															span.slider
-													.d-flex.ms-2
-														span.text-capitalize.me-2 delete
-														label.switch.text-start
-															input#product-new(type="checkbox" class="switch" name="new")
-															span.slider
-										tr.bg-active
-											td.border-0.p-4
-												b.text-capitalize.text-nowrap Customers role?
-											td.border-0.p-4
-												.d-flex.justify-content-between.align-items-center.w-100
-													.d-flex.ms-2
-														span.text-capitalize.me-2 view
-														label.switch.text-start
-															input#product-new(type="checkbox" class="switch" name="new")
-															span.slider
-													.d-flex.ms-2
-														span.text-capitalize.me-2 edit
-														label.switch.text-start
-															input#product-new(type="checkbox" class="switch" name="new")
-															span.slider
-													.d-flex.ms-2
-														span.text-capitalize.me-2 create
-														label.switch.text-start
-															input#product-new(type="checkbox" class="switch" name="new")
-															span.slider
-													.d-flex.ms-2
-														span.text-capitalize.me-2 delete
-														label.switch.text-start
-															input#product-new(type="checkbox" class="switch" name="new")
-															span.slider
-										tr.bg-active
-											td.border-0.p-4
-												b.text-capitalize.text-nowrap Tags role?
-											td.border-0.p-4
-												.d-flex.justify-content-between.align-items-center.w-100
-													.d-flex.ms-2
-														span.text-capitalize.me-2 view
-														label.switch.text-start
-															input#product-new(type="checkbox" class="switch" name="new")
-															span.slider
-													.d-flex.ms-2
-														span.text-capitalize.me-2 edit
-														label.switch.text-start
-															input#product-new(type="checkbox" class="switch" name="new")
-															span.slider
-													.d-flex.ms-2
-														span.text-capitalize.me-2 create
-														label.switch.text-start
-															input#product-new(type="checkbox" class="switch" name="new")
-															span.slider
-													.d-flex.ms-2
-														span.text-capitalize.me-2 delete
-														label.switch.text-start
-															input#product-new(type="checkbox" class="switch" name="new")
-															span.slider
-										tr.bg-active
-											td.border-0.p-4
-												b.text-capitalize.text-nowrap Categories role?
-											td.border-0.p-4
-												.d-flex.justify-content-between.align-items-center.w-100
-													.d-flex.ms-2
-														span.text-capitalize.me-2 view
-														label.switch.text-start
-															input#product-new(type="checkbox" class="switch" name="new")
-															span.slider
-													.d-flex.ms-2
-														span.text-capitalize.me-2 edit
-														label.switch.text-start
-															input#product-new(type="checkbox" class="switch" name="new")
-															span.slider
-													.d-flex.ms-2
-														span.text-capitalize.me-2 create
-														label.switch.text-start
-															input#product-new(type="checkbox" class="switch" name="new")
-															span.slider
-													.d-flex.ms-2
-														span.text-capitalize.me-2 delete
-														label.switch.text-start
-															input#product-new(type="checkbox" class="switch" name="new")
-															span.slider
-										tr.bg-active
-											td.border-0.p-4
-												b.text-capitalize.text-nowrap settings role?
-											td.border-0.p-4
-												.d-flex.justify-content-between.align-items-center.w-100
-													.d-flex.ms-2
-														span.text-capitalize.me-2 view
-														label.switch.text-start
-															input#product-new(type="checkbox" class="switch" name="new")
-															span.slider
-													.d-flex.ms-2
-														span.text-capitalize.me-2 edit
-														label.switch.text-start
-															input#product-new(type="checkbox" class="switch" name="new")
-															span.slider
-													.d-flex.ms-2
-														span.text-capitalize.me-2 create
-														label.switch.text-start
-															input#product-new(type="checkbox" class="switch" name="new")
-															span.slider
-													.d-flex.ms-2
-														span.text-capitalize.me-2 delete
-														label.switch.text-start
-															input#product-new(type="checkbox" class="switch" name="new")
-															span.slider
+										- var roles = ['Products', 'Attributes', 'reviews', 'Categories', 'Tags', 'discounts', 'Customers', 'orders', 'invoices', 'analytics', 'marketing', 'users', 'roles', 'gallary', 'languages', 'Settings']
+										each role in roles
+											tr.bg-active
+												td.border-0.p-4
+													h3.h6.text-capitalize.text-nowrap.mb-0
+														strong= role
+												td.border-0.p-4
+													.d-flex.justify-content-between.align-items-center.w-100
+														.d-flex.ms-2
+															span.text-capitalize.me-2 view
+															label.switch.text-start
+																input(type="checkbox" class="switch" name="new")
+																span.slider
+														.d-flex.ms-2
+															span.text-capitalize.me-2 edit
+															label.switch.text-start
+																input(type="checkbox" class="switch" name="new")
+																span.slider
+														.d-flex.ms-2
+															span.text-capitalize.me-2 create
+															label.switch.text-start
+																input(type="checkbox" class="switch" name="new")
+																span.slider
+														.d-flex.ms-2
+															span.text-capitalize.me-2 delete
+															label.switch.text-start
+																input(type="checkbox" class="switch" name="new")
+																span.slider
 
 		.col-sm-12.col-lg-4
 			.main-box.box-spaces

@@ -4,7 +4,9 @@ block mainContent
 	.page-header
 		.row
 			.col-12(class=flexClasses).justify-content-sm-between.flex-column.flex-sm-row
-				.page-title.text-capitalize settings
+				- var pageTitle = 'settings'
+				- var btnType = ''
+				include ./../components/_page-title
 
 				.page-breadcrumbs(class=flexClasses).justify-content-start.justify-content-sm-end
 					- var breadCrumbsItems = ['settings']
@@ -14,7 +16,7 @@ block mainContent
 		.col-sm-12.col-lg-9.float-start.post-box
 			.main-box.box-spaces
 				.form-item.primary.mb-3
-					.item-title Emails Settings
+					h2.box-title.item-title Emails Settings
 
 				.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap
 					label.item-title(for="email-from") "From" Name:
@@ -55,7 +57,7 @@ block mainContent
 				hr
 
 				.form-item.primary.mb-3
-					.item-title Email Notification Settings
+					h2.box-title.item-title Email Notification Settings
 
 				- var sections = [{title: "New Order Placed", id: "new-order", tooltip: "Sent email when a new order is placed"}, {title: "Out Of Stock", id: "out-of-stock", tooltip: "Sent email when product is out of stock"}, {title: "Order Canceled", id: "order-canceled", tooltip: "Sent email when customer canceled the order"}]
 				each section in sections

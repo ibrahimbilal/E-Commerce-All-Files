@@ -4,7 +4,9 @@ block mainContent
 	.page-header
 		.row
 			.col-12(class=flexClasses).justify-content-sm-between.flex-column.flex-sm-row
-				.page-title.text-capitalize settings
+				- var pageTitle = 'settings'
+				- var btnType = ''
+				include ./../components/_page-title
 
 				.page-breadcrumbs(class=flexClasses).justify-content-start.justify-content-sm-end
 					- var breadCrumbsItems = ['settings']
@@ -14,7 +16,7 @@ block mainContent
 		.col-sm-12.col-lg-9.float-start.post-box
 			.main-box.box-spaces
 				.form-item.primary.mb-3
-					.item-title Store Address
+					h2.box-title.item-title Store Address
 
 				.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap
 					label.item-title(for="country") country:
@@ -42,7 +44,7 @@ block mainContent
 
 			.main-box.box-spaces
 				.form-item.primary.mb-3
-					.item-title Store Settings
+					h2.box-title.item-title Store Settings
 
 				.form-item.second.d-flex.align-items-center.mt-3
 					label.item-title(for="allow-reviews") Allow Reviews?
@@ -117,7 +119,7 @@ block mainContent
 
 			.main-box.box-spaces.mb-0
 				.form-item.primary.mb-3
-					.item-title Store Sections Settings 
+					h2.box-title.item-title Store Sections Settings 
 
 				.form-item.second.d-flex.align-items-center.mt-3
 					label.item-title(for="recently-viewed") Active Recently Viewed:
