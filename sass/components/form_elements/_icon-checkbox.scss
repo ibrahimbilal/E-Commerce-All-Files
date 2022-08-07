@@ -3,7 +3,7 @@
 	height: 30px;
 	flex: 0 0 30px;
 	font-size: 20px;
-	@extend .flex-box;
+	@include prefix(display, flex);
 	@extend .center-items;
 	cursor: pointer;
 	&:not(:last-of-type) {
@@ -40,7 +40,7 @@
 
 	}
 	.icon {
-		@extend .flex-box;
+		@include prefix(display, flex);
 		@extend .center-items;
 		color: #B9B9B9;
 		border: 1px solid #B9B9B9;

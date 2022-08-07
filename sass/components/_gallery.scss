@@ -8,7 +8,7 @@
 }
 
 .gallery-page {
-    @extend .flex-box;
+	@include prefix(display, flex);
     flex-direction: column;
 }
 

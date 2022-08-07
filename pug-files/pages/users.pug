@@ -35,6 +35,7 @@ block mainContent
 									th.text-uppercase email
 									th.text-uppercase role
 									th.text-uppercase registered date
+									th.text-uppercase status
 									th.text-uppercase action
 							tbody
 								tr
@@ -42,17 +43,14 @@ block mainContent
 									td.customer-img
 										.img-holder
 											img(src="./assets/images/customers/image-1.png" width="70")
-									td.prod-title Jayson Hinrichsen
+									td.user-title jayson hinrichsen
 									td example@email.com
 									td Administrator
 									td 14:58 26/03/2022
+									td.status-title verified
 									td
 										.btn-group
-											a.btn.btn-primary.btn-rounded.me-2.py-1(href="./view-user.html")
-												span.icon
-													+getRIcon("eye")
-												| view
-											a.btn.btn-warning.btn-rounded.me-2.py-1
+											a.btn.btn-warning.btn-rounded.me-2.py-1(href="./edit-user.html")
 												span.icon
 													+getRIcon("edit")
 												| edit
@@ -65,17 +63,14 @@ block mainContent
 									td.customer-img
 										.img-holder
 											img(src="./assets/images/customers/image-2.png" width="70")
-									td.prod-title Jayson Hinrichsen
+									td.user-title jayson hinrichsen
 									td example@email.com
 									td Accountant
 									td 14:58 26/03/2022
+									td.status-title blocked
 									td
 										.btn-group
-											a.btn.btn-primary.btn-rounded.me-2.py-1(href="./view-user.html")
-												span.icon
-													+getRIcon("eye")
-												| view
-											a.btn.btn-warning.btn-rounded.me-2.py-1
+											a.btn.btn-warning.btn-rounded.me-2.py-1(href="./edit-user.html")
 												span.icon
 													+getRIcon("edit")
 												| edit
@@ -88,17 +83,14 @@ block mainContent
 									td.customer-img
 										.img-holder
 											img(src="./assets/images/customers/image-3.png" width="70")
-									td.prod-title Jayson Hinrichsen
+									td.user-title jayson hinrichsen
 									td example@email.com
 									td Store Manager
 									td 14:58 26/03/2022
+									td.status-title not verified
 									td
 										.btn-group
-											a.btn.btn-primary.btn-rounded.me-2.py-1(href="./view-user.html")
-												span.icon
-													+getRIcon("eye")
-												| view
-											a.btn.btn-warning.btn-rounded.me-2.py-1
+											a.btn.btn-warning.btn-rounded.me-2.py-1(href="./edit-user.html")
 												span.icon
 													+getRIcon("edit")
 												| edit

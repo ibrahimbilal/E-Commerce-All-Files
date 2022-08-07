@@ -1,0 +1,30 @@
+.sessions-list {
+	.session-item {
+		@include prefix(display, flex);
+		gap: 10px;
+		&:not(:last-child) {
+			margin-bottom: 1.2rem;
+		}
+		.icon {
+			font-size: 32px;
+			line-height: 1;
+			color: var(--disable-text-color);
+		}
+		.details {
+			.browser {
+				font-size: 14px;
+			}
+			.status {
+				font-size: 12px;
+				.ip {
+					margin-right: 10px;
+				}
+				.login {
+					&.this {
+						color: var(--success-color);
+					}
+				}
+			}
+		}
+	}
+}

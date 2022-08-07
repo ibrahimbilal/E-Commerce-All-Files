@@ -214,20 +214,22 @@ jQuery(() => {
     });
 
     // String To Slug
-    $('#item-title').stringToSlug({
-        setEvents: 'keyup keydown input',
-        getPut: '#item-slug',
-        space: '-',
-        prefix: '',
-        suffix: '',
-        replace: '',
-        AND: '-and-',
-        options: {
-            lang: 'ar',
-            titleCase: false
-        },
-        callback: false
-    });
+	if ( $('#item-title').length > 0 ) {
+		$('#item-title').stringToSlug({
+			setEvents: 'keyup keydown input',
+			getPut: '#item-slug',
+			space: '-',
+			prefix: '',
+			suffix: '',
+			replace: '',
+			AND: '-and-',
+			options: {
+				lang: 'ar',
+				titleCase: false
+			},
+			callback: false
+		});
+	}
 
     // Tabs
     $('.tab-btn').on('click', function () {
@@ -243,24 +245,26 @@ jQuery(() => {
     });
 
     // DatePicker.
-    $('[data-toggle="datepicker"]').pickadate({
-        onOpen: function () {
-            // Chenge Datepicker position
-            var pageHeight = $(document).height(); // 1361
-            var inputOffsetTop = $('[data-toggle="datepicker"]').offset().top; // 1128
-            var inputHeight = $('[data-toggle="datepicker"]').outerHeight(); // 38
-            var datePickerHeight = 350; // 347
-            var datePickerOffsetTop = -(inputHeight + datePickerHeight);
-            if (pageHeight < (inputOffsetTop + datePickerHeight)) {
-                $('.picker__holder').css({
-                    'top': datePickerOffsetTop,
-                });
-            }
-        }
-    });
+	if ( $('[data-toggle="datepicker"]').length > 0 ) {
+		$('[data-toggle="datepicker"]').pickadate({
+			onOpen: function () {
+				// Chenge Datepicker position
+				var pageHeight = $(document).height(); // 1361
+				var inputOffsetTop = $('[data-toggle="datepicker"]').offset().top; // 1128
+				var inputHeight = $('[data-toggle="datepicker"]').outerHeight(); // 38
+				var datePickerHeight = 350; // 347
+				var datePickerOffsetTop = -(inputHeight + datePickerHeight);
+				if (pageHeight < (inputOffsetTop + datePickerHeight)) {
+					$('.picker__holder').css({
+						'top': datePickerOffsetTop,
+					});
+				}
+			}
+		});
+	}
 
     // Sweet Alert 2
-    $('form#add-newitem-form, form#settings-form').on('submit', function (e) {
+    $('form#add-newitem-form, form#settings-form, form#edit-image-gallery').on('submit', function (e) {
         e.preventDefault();
         var postType = $(this).data('post-type');
         Swal.fire({
@@ -486,14 +490,16 @@ jQuery(() => {
 });
 
 // Swiper Slider
-var swiper = new Swiper('.swiper-container', {
-    freeMode: true,
-    slidesPerView: 'auto',
-    pagination: false,
-    speed: 500,
-    grabCursor: true,
-    touchStartTime: 5000,
-});
+if ( $('.swiper-container').length > 0 ) {
+	var swiper = new Swiper('.swiper-container', {
+		freeMode: true,
+		slidesPerView: 'auto',
+		pagination: false,
+		speed: 500,
+		grabCursor: true,
+		touchStartTime: 5000,
+	});
+}
 
 // Function For Category Checklist
 function checkboxFunctions() {

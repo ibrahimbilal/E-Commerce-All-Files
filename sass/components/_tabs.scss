@@ -1,6 +1,6 @@
 .tabs-holder {
     .tabs-buttons {
-        @extend .flex-box;
+        @include prefix(display, flex);
         @include responsive-property(flex-wrap, wrap, nowrap, nowrap);
         .tab-btn {
             text-transform: capitalize;

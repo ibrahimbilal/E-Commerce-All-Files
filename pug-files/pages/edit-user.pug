@@ -1,0 +1,243 @@
+extends ../bases/_base
+block mainContent
+	- var flexClasses = ['d-flex', 'align-items-sm-center']
+	.page-header
+		.row
+			.col-12(class=flexClasses).justify-content-sm-between.flex-column.flex-sm-row
+				.page-title.text-capitalize edit user
+
+				.page-breadcrumbs(class=flexClasses).justify-content-start.justify-content-sm-end
+					- var breadCrumbsItems = ['users', 'edit']
+					include ./../components/_breadcrumbs
+
+	form#add-newitem-form.row.d-block.clearfix(data-post-type="user")
+		.col-sm-12.col-lg-9.float-start.post-box
+			.main-box.box-spaces
+				.form-item.primary.mb-3
+					h2.box-title.item-title user details
+
+				.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap
+					label.item-title(for="first-name") first name:
+					input#first-name.form-control(name="first_name" type="text")
+				
+				.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap.mt-3
+					label.item-title(for="last-name") last name:
+					input#last-name.form-control(name="last_name" type="text")
+				
+				.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap.mt-3
+					label.item-title(for="email") email address:
+					input#email.form-control(name="email" type="email")
+
+				.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap.mt-3
+					label.item-title(for="password") password:
+					.with-icon
+						input#password.form-control(name="password" type="password")
+						span.show-pass
+							+getRIcon("eye")
+					button.btn.regular-btn.ms-sm-3.mt-2.mt-sm-0.text-nowrap.generate-password(type="button") generate
+
+				.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap.mt-3
+					label.item-title(for="mobile") mobile:
+					input#mobile.form-control(name="mobile" type="tel")
+				
+				.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap.mt-3
+					label.item-title(for="birth-date") Birth Of Date:
+					.position-relative.w-100
+						input#birth-date.form-control(name="birth_date" type="text" data-toggle="datepicker")
+
+				.form-item.second.d-flex.flex-wrap.flex-sm-nowrap.mt-3
+					label.item-title gender:
+					label.radio-label(for="male")
+						input#male.input-radio(name="customer_type" type="radio" value="Male" checked)
+						| Male
+
+					label.radio-label(for="female")
+						input#female.input-radio(name="customer_type" type="radio" value="Female")
+						| Female
+
+				.form-item.second.d-flex.flex-wrap.flex-sm-nowrap.mt-3
+					label.item-title(for="user-role") role:
+					select#user-role.form-select(name="user_role")
+						option administrator
+						option store manager
+						option accountant
+
+				.form-item.second.d-flex.flex-wrap.flex-sm-nowrap.mt-3
+					label.item-title(for="user-status") status:
+					select#user-status.form-select(name="user_status")
+						option not verified
+						option verified
+						option blocked
+
+				.form-item.second.d-flex.mt-3.flex-wrap.flex-sm-nowrap
+					.item-title
+						label.item-title.mb-2(for="profile-picture") Profile Picture:
+					.item-content
+						a.btn.regular-btn.gallery-btn(href="javascript:void(0)" style="width: 150px") Change Image
+						.selected-img
+							.img-holder.mt-3
+								img.preview(src="./assets/images/customers/image-1.png" width="70")
+								span.overlay
+									+getRIcon("trash")
+									span remove
+
+		.col-sm-6.col-lg-3.float-end.meta-box
+			.main-box.box-spaces.mb-0
+
+				.form-item.second.justify-content-between.mt-2(class=flexClasses)
+					label.item-title.meta-title Registered At:
+					span.ms-2 26/03/2021 14:58
+
+				.form-item.second.justify-content-between.mt-2(class=flexClasses)
+					label.item-title.meta-title updated at:
+					span.ms-2 26/03/2021 14:58
+
+				.form-item.second.justify-content-between.mt-2(class=flexClasses)
+					label.item-title.meta-title Last Logged In:
+					span.ms-2 26/03/2021 14:58
+
+				.form-item.second.justify-content-between.mt-2(class=flexClasses)
+					label.item-title.meta-title Device:
+					span.ms-2 Samsung Galaxy S20
+
+
+				.form-item.second.justify-content-between.mt-2(class=flexClasses)
+					label.item-title.meta-title iP Address:
+					span.ms-2 216.58.217.164
+
+				.form-item.second.justify-content-between.mt-2(class=flexClasses)
+					label.item-title.meta-title iP Country:
+					span.ms-2 United State
+
+				.form-item.second.justify-content-between.mt-2(class=flexClasses)
+					label.item-title.meta-title iP City:
+					span.ms-2 New York
+
+				.btns-holder.d-flex.justify-content-between.mt-4
+					button.btn.trans-btn.w-100.text-start.delete(data-post-type="user")
+						span.icon.me-1
+							+getRIcon("trash")
+						| move to trash
+					button.btn.solid-btn(type="submit") create 
+
+		.col-sm-12.col-lg-9.float-start.post-box
+			.main-box.box-spaces
+				.form-item.primary
+					h2.box-title.item-title Two Factor Authentication
+
+					.form-item.second.d-flex.mt-3.flex-wrap.flex-sm-nowrap
+						.item-title
+							label.item-title.mb-2 status:
+						.item-content
+							p.mb-0 2FA Is Disabled
+							small When two factor authentication is enabled, you will be prompted for a secure, random token during authentication. You may retrieve this token from your phone's Google Authenticator application.
+							br
+							button.btn.regular-btn.mt-2.text-nowrap(type="button") Enable
+
+		.col-sm-12.col-lg-9.float-start.post-box
+			.main-box.box-spaces
+				.form-item.primary
+					h2.box-title.item-title Browser Sessions
+
+					.form-item.second.d-flex.mt-3.flex-wrap.flex-sm-nowrap
+						small If necessary, you may log out of all of your other browser sessions across all of your devices. Some of your recent sessions are listed below; however, this list may not be exhaustive. If you feel your account has been compromised, you should also update your password.
+
+					.form-item.second.d-flex.mt-3.flex-wrap.flex-sm-nowrap
+						.item-title
+							label.item-title.mb-2 Active Sessions:
+						.item-content
+							.sessions-list 
+								.session-item 
+									.icon 
+										+getRIcon("computer")
+									.details
+										.browser Windows - Chrome
+										.status
+											span.ip 127.0.0.1,
+											span.login.this This device
+								.session-item 
+									.icon 
+										+getRIcon("smartphone")
+									.details
+										.browser AndroidOS - Chrome
+										.status
+											span.ip 127.0.0.1,
+											span.login Last active 15 seconds ago
+							button.btn.solid-btn.mt-3(type="button") Log Out Other Browser Sessions 
+
+		.col-sm-12.col-lg-9.float-start.post-box
+			.main-box.box-spaces.mb-0
+				.form-item.primary
+					h2.box-title.item-title Activities
+					.table-holder.mt-0
+						include ./../data/_activities
+					
+block footer_script
+	include ./../components/_gallery
+
+	script.
+		// Data Tables
+		let product_table = $('#activities').DataTable({
+			dom: 'Bfrtip',
+			columnDefs: [
+				{ 
+					bSortable: false, 
+					aTargets: [ 4] 
+				},
+				{ 
+					bSearchable: false, 
+					aTargets: [ 0, 1, 2, 3] 
+				}
+			],
+			order: [
+				[3, 'desc']
+			],
+			language: {
+				info: "Show _START_ To _END_ Of _TOTAL_ Activity",
+				buttons: {
+					pageLength: 'Show %d',
+					colvis: 'Columns'
+				}
+			},
+			stateSave: true,
+			paging: true,
+			searching: true,
+			lengthMenu: [[ 10, 15, 25, 50, 75, 100 ], ['10 Activities', '15 Activities', '25 Activities', '50 Activities', '75 Activities', '100 Activities']],
+			buttons: ($(window).width() > 578) ? ['pageLength', 'print', {
+				extend: 'collection',
+				text: 'Export',
+				className: 'btn btn-group',
+				buttons: [
+					{
+						extend: 'excelHtml5',
+						className: 'dropdown-item'
+					},
+					{
+						extend: 'csvHtml5',
+						className: 'dropdown-item'
+					},
+					{
+						extend: 'pdfHtml5',
+						className: 'dropdown-item'
+					}
+				]
+			}, 'colvis'] : ['pageLength', {
+				extend: 'collection',
+				text: 'Export',
+				className: 'btn btn-group',
+				buttons: [
+					{
+						extend: 'excelHtml5',
+						className: 'dropdown-item'
+					},
+					{
+						extend: 'csvHtml5',
+						className: 'dropdown-item'
+					},
+					{
+						extend: 'pdfHtml5',
+						className: 'dropdown-item'
+					}
+				]
+			}, 'colvis']
+		});

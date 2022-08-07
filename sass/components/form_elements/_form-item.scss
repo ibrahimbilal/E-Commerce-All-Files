@@ -32,7 +32,7 @@
             font-size: 1rem;
         }
         .item-title {
-			@extend .flex-box;
+			@include prefix(display, flex);
             margin-bottom: 0;
             max-width: 100%;
             &:not(.meta-title) {
@@ -122,7 +122,7 @@
         width: 90px;
         height: 90px;
         overflow: hidden;
-        @extend .flex-box;
+        @include prefix(display, flex);
 		@extend .center-items;
         text-align: center;
         border: 1px solid var(--text-color);

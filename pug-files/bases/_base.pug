@@ -1,26 +1,54 @@
 doctype html
 html(dir="ltr" lang="en")
 	head
+		- var current_url = filename.split("\\").pop().split('.').slice(0, -1).join('.')
 		//- Meta Tags
 		meta(charset='UTF-8')
 		meta(name='viewport', content='width=device-width, initial-scale=1.0')
 		meta(http-equiv='X-UA-Compatible' content='ie=edge')
 		//- CSS Files
-		link(href='assets/css/uicons-regular-rounded.css' rel='stylesheet')
-		link(href='assets/css/uicons-solid-rounded.css' rel='stylesheet')
-		link(href='assets/css/uicons-brands.css' rel='stylesheet')
 		link(href='assets/css/bs.css' rel='stylesheet')
-		link(href='assets/css/select2.min.css' rel='stylesheet')
-		link(href='assets/css/swiper-bundle.min.css' rel='stylesheet')
-		link(href='assets/css/apexcharts.css' rel='stylesheet')
-		link(href='assets/css/datatables.min.css' rel='stylesheet')
-		link(href='assets/css/quill.snow.min.css' rel='stylesheet')
-		link(href='assets/css/sweetalert2.min.css' rel='stylesheet')
-		link(href='assets/css/pickadate.css' rel='stylesheet')
-		link(href='assets/css/dropzone.min.css' rel='stylesheet')
-		link(href='assets/css/daterangepicker.css' rel='stylesheet')
-		link(href='assets/css/filepond/filepond.min.css' rel='stylesheet')
-		link(href='assets/css/filepond/filepond-plugin-image-preview.min.css' rel='stylesheet')
+		link(href='assets/css/uicons-regular-rounded.css' rel='stylesheet')
+
+		- if ( current_url == "store-settings"  )
+			//- icons
+			//- link(href='assets/css/uicons-solid-rounded.css' rel='stylesheet')
+			link(href='assets/css/uicons-brands.css' rel='stylesheet')
+			
+		- if ( current_url == "add-product" || current_url == "add-category" || current_url == "add-tag" || current_url == "emails-settings" )
+			//- Select 2
+			link(href='assets/css/select2.min.css' rel='stylesheet')
+
+		- if ( current_url == "index" )
+			//- Swiper Slider 
+			link(href='assets/css/swiper-bundle.min.css' rel='stylesheet')
+
+		- if ( current_url == "index" || current_url == "analytics" || current_url == "marketing" )
+			//- Chart
+			link(href='assets/css/apexcharts.css' rel='stylesheet')
+
+		- if ( current_url == "index" || current_url == "users" || current_url == "edit-user" || current_url == "products" || current_url == "attributes"  || current_url == "categories" || current_url == "tags" || current_url == "marketing" || current_url == "discounts" || current_url == "customers" || current_url == "orders" || current_url == "invoices" || current_url == "roles" )
+			//- Data Tables
+			link(href='assets/css/datatables.min.css' rel='stylesheet')
+
+		- if ( current_url == "add-product" || current_url == "add-tag" || current_url == "add-category" )
+			//- Text Editor
+			link(href='assets/css/quill.snow.min.css' rel='stylesheet')
+
+		- if ( current_url == "add-product" || current_url == "add-tag" || current_url == "add-attribute"  || current_url == "add-category" || current_url == "add-user" || current_url == "add-discount" || current_url == "add-order" || current_url == "add-role" || current_url == "gallery" || current_url == "general-settings" || current_url == "theme-settings" || current_url == "store-settings" || current_url == "emails-settings" || current_url == "currencies-settings")
+			//- Sweet Alert
+			link(href='assets/css/sweetalert2.min.css' rel='stylesheet')
+
+		- if ( current_url == "add-product" || current_url == "add-user" || current_url == "edit-user" || current_url == "add-discount" || current_url == "add-coupon" || current_url == "add-customer" || current_url == "marketing" )
+			//- Date Picker
+			link(href='assets/css/pickadate.css' rel='stylesheet')
+
+		- if ( current_url == "gallery" )
+			//- File Uploder
+			link(href='assets/css/filepond/filepond.min.css' rel='stylesheet')
+			link(href='assets/css/filepond/filepond-plugin-image-preview.min.css' rel='stylesheet')
+
+		//- Main Css File
 		link(href='assets/css/style.css' rel='stylesheet')
 		
 		//- Fonts

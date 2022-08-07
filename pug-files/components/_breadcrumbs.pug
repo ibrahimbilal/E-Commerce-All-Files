@@ -10,7 +10,7 @@
     - var arr_count = breadCrumbsItems.length
     each val, index in breadCrumbsItems
         if ( arr_count != ( index +1 ) )
-            a.item.text-capitalize(class=flexClasses)= val
+            a.item.text-capitalize(class=flexClasses href=`${val}.html`)= val
             span.angle
                 span.icon
                     +getRIcon("angle-double-right")

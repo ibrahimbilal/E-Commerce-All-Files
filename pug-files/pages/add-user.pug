@@ -14,7 +14,7 @@ block mainContent
 		.col-sm-12.col-lg-9.float-start.post-box
 			.main-box.box-spaces
 				.form-item.primary.mb-3
-					h2.box-title.item-title Required Informations
+					h2.box-title.item-title user details
 
 				.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap
 					label.item-title(for="first-name") first name:
@@ -34,7 +34,7 @@ block mainContent
 						input#password.form-control(name="password" type="password")
 						span.show-pass
 							+getRIcon("eye")
-					button.btn.regular-btn.ms-sm-3.mt-2.mt-sm-0.text-nowrap.generate-password(type="button") Suggest Password
+					button.btn.regular-btn.ms-sm-3.mt-2.mt-sm-0.text-nowrap.generate-password(type="button") generate
 
 				.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap.mt-3
 					label.item-title(for="mobile") mobile:
@@ -56,11 +56,18 @@ block mainContent
 						| Female
 
 				.form-item.second.d-flex.flex-wrap.flex-sm-nowrap.mt-3
-					label.item-title(for="user-type") role:
-					select#user-type.form-select(name="user_type")
+					label.item-title(for="user-role") role:
+					select#user-role.form-select(name="user_role")
 						option administrator
 						option store manager
 						option accountant
+
+				.form-item.second.d-flex.flex-wrap.flex-sm-nowrap.mt-3
+					label.item-title(for="user-status") status:
+					select#user-status.form-select(name="user_status")
+						option not verified
+						option verified
+						option blocked
 
 				.form-item.second.d-flex.mt-3.flex-wrap.flex-sm-nowrap
 					.item-title
@@ -76,40 +83,7 @@ block mainContent
 
 		.col-sm-6.col-lg-3.float-end.meta-box
 			.main-box.box-spaces.mb-0
-
-				.form-item.second.justify-content-between.mt-2(class=flexClasses)
-					label.item-title.meta-title Registered At:
-					span.ms-2 26/03/2021 14:58
-
-				.form-item.second.justify-content-between.mt-2(class=flexClasses)
-					label.item-title.meta-title updated at:
-					span.ms-2 26/03/2021 14:58
-
-				.form-item.second.justify-content-between.mt-2(class=flexClasses)
-					label.item-title.meta-title iP Address:
-					span.ms-2 216.58.217.164
-
-				.form-item.second.justify-content-between.mt-2(class=flexClasses)
-					label.item-title.meta-title iP Country:
-					span.ms-2 United State
-
-				.form-item.second.justify-content-between.mt-2(class=flexClasses)
-					label.item-title.meta-title iP City:
-					span.ms-2 New York
-
-				.form-item.second.justify-content-between.mt-2(class=flexClasses)
-					label.item-title.meta-title Device:
-					span.ms-2 Samsung Galaxy S20
-
-				.form-item.second.justify-content-between.mt-2(class=flexClasses)
-					label.item-title.meta-title Last Logged In:
-					span.ms-2 26/03/2021 14:58
-
-				.btns-holder.d-flex.justify-content-between.mt-4
-					button.btn.trans-btn.w-100.text-start.delete(data-post-type="user")
-						span.icon.me-1
-							+getRIcon("trash")
-						| move to trash
-					button.btn.solid-btn(type="submit") publish 
+				.btns-holder.d-flex.justify-content-between
+					button.btn.solid-btn.w-100(type="submit") create 
 block footer_script
 	include ./../components/_gallery

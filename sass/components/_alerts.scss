@@ -1,6 +1,6 @@
 .alerts {
 	position: relative;
-	@extend .flex-box;
+	@include prefix(display, flex);
 	border-radius: 7px;
 	overflow: hidden;
 	@include prefix(box-shadow, 3px 3px 6px 0px var(--box-shadow-color));
@@ -14,7 +14,7 @@
 		text-transform: none;
 		line-height: 0;
 		-webkit-font-smoothing: antialiased;
-		@extend .flex-box;
+		@include prefix(display, flex);
 		@extend .center-items;
 		color: #FFF;
 		flex: 0 0 50px;
