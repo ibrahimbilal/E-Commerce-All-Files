@@ -539,7 +539,7 @@ function radioBoxFunctions() {
     const radioBoxActive = (el) => {
         el.querySelector(".my-radiobox__input").setAttribute('checked', 'checked');
         el.classList.add("my-radiobox--active");
-        el.querySelector(".my-radiobox__icon").innerHTML = '<i class="fi-sr-circle"></i>';
+        el.querySelector(".my-radiobox__icon").innerHTML = '<i class="fi-ss-circle"></i>';
 
     };
 
