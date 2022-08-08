@@ -129,6 +129,7 @@
                         }
                     }
                     img {
+						border-radius: 50%;
                         @media ( min-width: $xxl ) {
                             width: 64px;
                         }
@@ -245,11 +246,7 @@
 }
 
 .flex-box {
-	display: -webkit-box; 
-	display: -moz-box;
-	display: -ms-flexbox;
-	display: -webkit-flex; 
-	display: flex;
+	@include prefix(display, flex);
 }
 
 .center-items {
@@ -259,4 +256,18 @@
 
 .w-mc {
 	max-width: max-content !important;
+}
+
+.sec-title-wrapper {
+	@include prefix(display, flex);
+	align-items: center;
+	margin: 30px 0;
+	h2 {
+		margin: 0;
+		margin-right: 1.8rem;
+	}
+	hr {
+		background-color: var(--border-color);
+		flex: 1 1;
+	}
 }

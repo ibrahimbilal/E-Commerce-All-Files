@@ -4,18 +4,18 @@ block mainContent
 	.page-header
 		.row
 			.col-12(class=flexClasses).justify-content-sm-between.flex-column.flex-sm-row
-				- var pageTitle = 'marketing'
-				- var btnType = 'add'
+				- var pageTitle = 'Reviews'
+				- var btnType = ''
 				include ./../components/_page-title
 
 				.page-breadcrumbs(class=flexClasses).justify-content-start.justify-content-sm-end
-					- var breadCrumbsItems = ['marketing']
+					- var breadCrumbsItems = ['reviews']
 					include ./../components/_breadcrumbs
 
 	.row
 		.col-12(class=flexClasses).flex-column.flex-sm-row.mb-2
 			.dash-filters
-				- var filters = ['All (110)', 'Subscribers (90)', 'Not Subscribers (20)']
+				- var filters = ['All (110)', '1 Star (20)', '2 Star (20)', '3 Star (20)', '4 Star (20)', '5 Star (20)', 'Trashed (10)']
 				each val, index in filters
 					a.item.text-capitalize(href="#")= val
 
@@ -26,12 +26,13 @@ block mainContent
 			.main-box.box-spaces
 				.table-holder.mt-0
 					.table-responsive
-						include ./../data/_subscribers
+						include ./../data/_reviews
+
 
 block footer_script
 	script.
 		// Data Tables
-		let product_table = $('#subscribers').DataTable({
+		let product_table = $('#reviews').DataTable({
 			dom: 'Bfrtip',
 			columnDefs: [
 				{
@@ -41,11 +42,11 @@ block footer_script
 				},
 				{ 
 					bSortable: false, 
-					aTargets: [ 0, 5] 
+					aTargets: [0, 2, 6] 
 				},
 				{ 
 					bSearchable: false, 
-					aTargets: [ 0, 5] 
+					aTargets: [0, 2, 6] 
 				}
 			],
 			select: {
@@ -53,10 +54,10 @@ block footer_script
 				selector: 'td:first-child'
 			},
 			order: [
-				[1, 'desc']
+				[5, 'desc']
 			],
 			language: {
-				info: "Show _START_ To _END_ Of _TOTAL_ subscribers",
+				info: "Show _START_ To _END_ Of _TOTAL_ reviews",
 				buttons: {
 					pageLength: 'Show %d',
 					colvis: 'Columns'
@@ -65,7 +66,7 @@ block footer_script
 			stateSave: true,
 			paging: true,
 			searching: true,
-			lengthMenu: [[ 10, 15, 25, 50, 75, 100 ], ['10 subscribers', '15 subscribers', '25 subscribers', '50 subscribers', '75 subscribers', '100 subscribers']],
+			lengthMenu: [[ 10, 15, 25, 50, 75, 100 ], ['10 reviews', '15 reviews', '25 reviews', '50 reviews', '75 reviews', '100 reviews']],
 			buttons: ($(window).width() > 578) ? ['pageLength', 'print', {
 				extend: 'collection',
 				text: 'Export',

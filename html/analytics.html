@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="assets/css/bs.css" rel="stylesheet">
     <link href="assets/css/uicons-regular-rounded.css" rel="stylesheet">
-    <link href="assets/css/datatables.min.css" rel="stylesheet">
+    <link href="assets/css/apexcharts.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;display=swap" rel="stylesheet">
@@ -35,10 +35,10 @@
           <ul class="menu-list-group">
             <li class="list-item"><a href="./customers.html"><i class="fi-rr-users"> </i><span class="title">customers</span></a></li>
             <li class="list-item"><a href="./orders.html"><i class="fi-rr-box"> </i><span class="title">order</span><span class="title badge">35</span></a></li>
-            <li class="list-item active"><a href="./invoices.html"><i class="fi-rr-document"> </i><span class="title">invoices</span></a></li>
+            <li class="list-item"><a href="./invoices.html"><i class="fi-rr-document"> </i><span class="title">invoices</span></a></li>
           </ul>
           <ul class="menu-list-group">
-            <li class="list-item"><a href="./analytics.html"><i class="fi-rr-stats"> </i><span class="title">analytics</span></a></li>
+            <li class="list-item active"><a href="./analytics.html"><i class="fi-rr-stats"> </i><span class="title">analytics</span></a></li>
             <li class="list-item"><a href="./marketing.html"><i class="fi-rr-megaphone"> </i><span class="title">marketing</span></a></li>
           </ul>
           <ul class="menu-list-group">
@@ -173,81 +173,130 @@
         <div class="row">
           <div class="col-12 d-flex align-items-sm-center justify-content-sm-between flex-column flex-sm-row">
             <div class="text-capitalize mb-2 mb-sm-0 d-flex align-items-sm-center">
-              <h1 class="page-title">invoices</h1>
+              <h1 class="page-title">Analytics</h1>
             </div>
             <div class="page-breadcrumbs d-flex align-items-sm-center justify-content-start justify-content-sm-end">
-              <div class="breadcrumbs d-flex justify-content-between align-items-center"><a class="item text-capitalize d-flex justify-content-between align-items-center" href="./index.html"><span class="icon"><i class="fi-rr-apps"> </i></span>dashboard</a><span class="angle"><span class="icon"><i class="fi-rr-angle-double-right"> </i></span></span><span class="item text-capitalize d-flex justify-content-between align-items-center">invoices</span>
+              <div class="breadcrumbs d-flex justify-content-between align-items-center"><a class="item text-capitalize d-flex justify-content-between align-items-center" href="./index.html"><span class="icon"><i class="fi-rr-apps"> </i></span>dashboard</a><span class="angle"><span class="icon"><i class="fi-rr-angle-double-right"> </i></span></span><span class="item text-capitalize d-flex justify-content-between align-items-center">analytics</span>
               </div>
             </div>
           </div>
         </div>
       </div>
       <div class="row">
-        <div class="col-12 d-flex justify-content-between align-items-center justify-content-between flex-column flex-sm-row mb-2">
-          <div class="dash-filters"><a class="item text-capitalize" href="#">All (50)</a><a class="item text-capitalize" href="#">Trashed (99)</a>
-          </div>
-          <div class="bulk-action align-self-end">
-            <form class="bulk-form">
-              <select class="bulk-select text-capitalize">
-                <option value="">bulk action</option>
-                <option value="edit">edit</option>
-                <option value="delete">delete</option>
-              </select>
-              <button class="btn bulk-submit text-capitalize" type="submit">apply</button>
-            </form>
+        <div class="col-12 d-flex justify-content-between align-items-center flex-column flex-sm-row mb-2">
+          <div class="filter-wrapper"><span class="filter-title">Date Rang:</span>
+            <div class="inputs-wrapper">
+              <form id="filter-analytics-data">
+                <div class="filter-item">
+                  <label>From</label>
+                  <select name="filter-date">
+                    <option value="today">Today </option>
+                    <option value="week">Week to Day </option>
+                    <option value="month">Monthe To Day </option>
+                    <option value="quarter">Quarter To Day</option>
+                    <option value="year">Year To Day</option>
+                    <option value="yesterday">Yesterday</option>
+                    <option value="last-week">Last Week</option>
+                    <option value="last-month">Last Monthe</option>
+                    <option value="last-quarter">Last Quarter</option>
+                    <option value="last-year">Last Year</option>
+                  </select>
+                </div>
+                <div class="filter-item">
+                  <label>Compare To</label>
+                  <select name="filter-compare"> 
+                    <option value="pre-year">Previous Year</option>
+                    <option value="pre-period">Previous Period</option>
+                  </select>
+                </div>
+                <button class="btn solid-btn generate-password" type="submit">Filter</button>
+              </form>
+            </div>
           </div>
         </div>
         <div class="col-12">
-          <div class="main-box box-spaces mb-0">
-            <div class="table-holder mt-0">
-              <div class="table-responsive">
-                <table class="table table-striped" id="invoices">
-                  <thead>
-                    <tr>
-                      <th></th>
-                      <th class="text-uppercase">invoice no</th>
-                      <th class="text-uppercase">customer</th>
-                      <th class="text-uppercase">total Cost</th>
-                      <th class="text-uppercase">created date</th>
-                      <th class="text-uppercase">action</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td></td>
-                      <td>#123</td>
-                      <td class="prod-title">Jayson Hinrichsen</td>
-                      <td class="text-center">123$</td>
-                      <td>14:58 26/03/2022</td>
-                      <td>
-                        <div class="btn-group"><a class="btn btn-primary btn-rounded me-2 py-1" href="./view-invoice.html"><span class="icon"><i class="fi-rr-eye"> </i></span>view</a><a class="btn btn-warning btn-rounded me-2 py-1"><span class="icon"><i class="fi-rr-edit"> </i></span>edit</a><a class="btn btn-danger btn-rounded me-2 py-1"><span class="icon"><i class="fi-rr-trash"> </i></span>trash</a></div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td>#1234</td>
-                      <td class="prod-title">Jayson Hinrichsen</td>
-                      <td class="text-center">123$</td>
-                      <td>14:58 26/03/2022</td>
-                      <td>
-                        <div class="btn-group"><a class="btn btn-primary btn-rounded me-2 py-1" href="./view-invoice.html"><span class="icon"><i class="fi-rr-eye"> </i></span>view</a><a class="btn btn-warning btn-rounded me-2 py-1"><span class="icon"><i class="fi-rr-edit"> </i></span>edit</a><a class="btn btn-danger btn-rounded me-2 py-1"><span class="icon"><i class="fi-rr-trash"> </i></span>trash</a></div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td>#12345</td>
-                      <td class="prod-title">Jayson Hinrichsen</td>
-                      <td class="text-center">123$</td>
-                      <td>14:58 26/03/2022</td>
-                      <td>
-                        <div class="btn-group"><a class="btn btn-primary btn-rounded me-2 py-1" href="./view-invoice.html"><span class="icon"><i class="fi-rr-eye"> </i></span>view</a><a class="btn btn-warning btn-rounded me-2 py-1"><span class="icon"><i class="fi-rr-edit"> </i></span>edit</a><a class="btn btn-danger btn-rounded me-2 py-1"><span class="icon"><i class="fi-rr-trash"> </i></span>trash</a></div>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+          <section class="row"> 
+            <div class="col-12"> 
+              <div class="sec-title-wrapper"> 
+                <h2 class="h5">Charts</h2>
+                <hr>
               </div>
             </div>
-          </div>
+            <div class="col-md-6">
+              <div class="main-box box-spaces">
+                <div id="total-sales-chart"></div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="main-box box-spaces">
+                <div id="orders-overview-chart"></div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="main-box box-spaces mb-lg-0">
+                <div id="items-sold-chart"></div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="main-box box-spaces mb-lg-0">
+                <div id="total-tax-chart"></div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="col-12">
+          <section class="row"> 
+            <div class="col-12"> 
+              <div class="sec-title-wrapper"> 
+                <h2 class="h5">Leaderboards</h2>
+                <hr>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="main-box box-spaces mb-lg-0">
+                <h2 class="box-title text-capitalize">Top Selling Products</h2>
+                <div class="list-holder">
+                  <div class="list-item d-flex justify-content-between align-items-center">
+                    <div class="img"><img src="./assets/images/products/image-1.png" alt="product 1"></div>
+                    <div class="title text-start w-100 ps-4">Apple Watch Series 4 GPS</div>
+                    <div class="price">$399</div>
+                  </div>
+                  <div class="list-item d-flex justify-content-between align-items-center">
+                    <div class="img"><img src="./assets/images/products/image-2.png" alt="product 2"></div>
+                    <div class="title text-start w-100 ps-4">Beats Headphones</div>
+                    <div class="price">$459</div>
+                  </div>
+                  <div class="list-item d-flex justify-content-between align-items-center">
+                    <div class="img"><img src="./assets/images/products/image-3.png" alt="product 2"></div>
+                    <div class="title text-start w-100 ps-4">Apple iPad Pro 64GB</div>
+                    <div class="price">$899</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="main-box box-spaces mb-lg-0">
+                <h2 class="box-title text-capitalize">Top Selling Products</h2>
+                <div class="list-holder">
+                  <div class="list-item d-flex justify-content-between align-items-center">
+                    <div class="img"><img src="./assets/images/products/image-1.png" alt="product 1"></div>
+                    <div class="title text-start w-100 ps-4">Apple Watch Series 4 GPS</div>
+                    <div class="price">$399</div>
+                  </div>
+                  <div class="list-item d-flex justify-content-between align-items-center">
+                    <div class="img"><img src="./assets/images/products/image-2.png" alt="product 2"></div>
+                    <div class="title text-start w-100 ps-4">Beats Headphones</div>
+                    <div class="price">$459</div>
+                  </div>
+                  <div class="list-item d-flex justify-content-between align-items-center">
+                    <div class="img"><img src="./assets/images/products/image-3.png" alt="product 2"></div>
+                    <div class="title text-start w-100 ps-4">Apple iPad Pro 64GB</div>
+                    <div class="price">$899</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
         </div>
       </div>
     </main>
@@ -259,101 +308,8 @@
       </div>
     </footer>
     <script src="assets/js/jquery.min.js" type="text/javascript"></script>
-    <script src="assets/js/datatables.min.js" type="text/javascript"></script>
+    <script src="assets/js/apexcharts.min.js" type="text/javascript"></script>
+    <script src="assets/js/charts.js" type="text/javascript"></script>
     <script src="assets/js/script.js" type="text/javascript"></script>
-    <script>
-      // Data Tables
-      let product_table = $('#invoices').DataTable({
-      	dom: 'Bfrtip',
-      	columnDefs: [
-      		{
-      			orderable: false,
-      			className: 'select-checkbox',
-      			targets: 0
-      		},
-      		{ 
-      			bSortable: false, 
-      			aTargets: [ 0, 5] 
-      		},
-      		{ 
-      			bSearchable: false, 
-      			aTargets: [ 0, 5] 
-      		}
-      	],
-      	select: {
-      		style: 'os',
-      		selector: 'td:first-child'
-      	},
-      	order: [
-      		[4, 'desc']
-      	],
-      	language: {
-      		info: "Show _START_ To _END_ Of _TOTAL_ invoices",
-      		buttons: {
-      			pageLength: 'Show %d',
-      			colvis: 'Columns'
-      		}
-      	},
-      	stateSave: true,
-      	paging: true,
-      	searching: true,
-      	lengthMenu: [[ 10, 15, 25, 50, 75, 100 ], ['10 invoices', '15 invoices', '25 invoices', '50 invoices', '75 invoices', '100 invoices']],
-      	buttons: ($(window).width() > 578) ? ['pageLength', 'print', {
-      		extend: 'collection',
-      		text: 'Export',
-      		className: 'btn btn-group',
-      		buttons: [
-      			{
-      				extend: 'excelHtml5',
-      				className: 'dropdown-item'
-      			},
-      			{
-      				extend: 'csvHtml5',
-      				className: 'dropdown-item'
-      			},
-      			{
-      				extend: 'pdfHtml5',
-      				className: 'dropdown-item'
-      			}
-      		]
-      	}, 'colvis'] : ['pageLength', {
-      		extend: 'collection',
-      		text: 'Export',
-      		className: 'btn btn-group',
-      		buttons: [
-      			{
-      				extend: 'excelHtml5',
-      				className: 'dropdown-item'
-      			},
-      			{
-      				extend: 'csvHtml5',
-      				className: 'dropdown-item'
-      			},
-      			{
-      				extend: 'pdfHtml5',
-      				className: 'dropdown-item'
-      			}
-      		]
-      	}, 'colvis']
-      });
-      product_table.on("click", "th.select-checkbox", function() {
-      	if ($("th.select-checkbox").hasClass("selected")) {
-      		product_table.rows().deselect();
-      		$("th.select-checkbox").removeClass("selected");
-      	} else {
-      		product_table.rows().select();
-      		$("th.select-checkbox").addClass("selected");
-      	}
-      }).on("select deselect", function() {
-      	("Some selection or deselection going on")
-      	if (product_table.rows({
-      		selected: true
-      		}).count() !== product_table.rows().count()) {
-      		$("th.select-checkbox").removeClass("selected");
-      	} else {
-      		$("th.select-checkbox").addClass("selected");
-      	}
-      });
-    </script>
   </body>
 </html>

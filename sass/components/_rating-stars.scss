@@ -1,0 +1,20 @@
+.stars-wrapper {
+	position: relative;
+	& > div {
+		position: absolute;
+		left: 10px;
+		top: 50%;
+		// transform: translateY(-50%);
+		@include prefix(transform, translateY(-50%));
+	}
+	.main-stars {
+		.star {
+			color: #777;
+		}
+	}
+	.cust-stars {
+		.star {
+			color: var(--warning-color);
+		}
+	}
+}

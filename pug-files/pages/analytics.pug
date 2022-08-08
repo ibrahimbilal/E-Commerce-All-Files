@@ -1,0 +1,82 @@
+extends ../bases/_base
+block mainContent
+	- var flexClasses = ['d-flex', 'align-items-sm-center']
+	.page-header
+		.row
+			.col-12(class=flexClasses).justify-content-sm-between.flex-column.flex-sm-row
+				- var pageTitle = 'Analytics'
+				- var btnType = ''
+				include ./../components/_page-title
+
+				.page-breadcrumbs(class=flexClasses).justify-content-start.justify-content-sm-end
+					- var breadCrumbsItems = ['analytics']
+					include ./../components/_breadcrumbs
+
+	.row
+		.col-12(class=flexClasses).flex-column.flex-sm-row.mb-2
+			include ./../components/_analytics-filter
+
+		.col-12
+			section.row 
+				.col-12 
+					.sec-title-wrapper 
+						h2.h5 Charts
+						hr
+
+				.col-md-6
+					.main-box.box-spaces
+						#total-sales-chart
+				.col-md-6
+					.main-box.box-spaces
+						#orders-overview-chart
+				.col-md-6
+					.main-box.box-spaces.mb-lg-0
+						#items-sold-chart
+				.col-md-6
+					.main-box.box-spaces.mb-lg-0
+						#total-tax-chart
+		.col-12
+			section.row 
+				.col-12 
+					.sec-title-wrapper 
+						h2.h5 Leaderboards
+						hr
+
+				.col-md-6
+					.main-box.box-spaces.mb-lg-0
+						h2.box-title.text-capitalize Top Selling Products
+						.list-holder
+							.list-item(class=flexClasses)
+								.img
+									img(src="./assets/images/products/image-1.png" alt="product 1")
+								.title.text-start.w-100.ps-4 Apple Watch Series 4 GPS
+								.price $399
+							.list-item(class=flexClasses)
+								.img
+									img(src="./assets/images/products/image-2.png" alt="product 2")
+								.title.text-start.w-100.ps-4 Beats Headphones
+								.price $459
+							.list-item(class=flexClasses)
+								.img
+									img(src="./assets/images/products/image-3.png" alt="product 2")
+								.title.text-start.w-100.ps-4 Apple iPad Pro 64GB
+								.price $899
+				.col-md-6
+					.main-box.box-spaces.mb-lg-0
+						h2.box-title.text-capitalize Top Selling Products
+						.list-holder
+							.list-item(class=flexClasses)
+								.img
+									img(src="./assets/images/products/image-1.png" alt="product 1")
+								.title.text-start.w-100.ps-4 Apple Watch Series 4 GPS
+								.price $399
+							.list-item(class=flexClasses)
+								.img
+									img(src="./assets/images/products/image-2.png" alt="product 2")
+								.title.text-start.w-100.ps-4 Beats Headphones
+								.price $459
+							.list-item(class=flexClasses)
+								.img
+									img(src="./assets/images/products/image-3.png" alt="product 2")
+								.title.text-start.w-100.ps-4 Apple iPad Pro 64GB
+								.price $899

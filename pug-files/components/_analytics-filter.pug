@@ -1,0 +1,23 @@
+.filter-wrapper
+	span.filter-title Date Rang:
+	.inputs-wrapper
+		form#filter-analytics-data
+			.filter-item
+				label From
+				select(name="filter-date")
+					option(value="today") Today 
+					option(value="week") Week to Day 
+					option(value="month") Monthe To Day 
+					option(value="quarter") Quarter To Day
+					option(value="year") Year To Day
+					option(value="yesterday") Yesterday
+					option(value="last-week") Last Week
+					option(value="last-month") Last Monthe
+					option(value="last-quarter") Last Quarter
+					option(value="last-year") Last Year
+			.filter-item
+				label Compare To
+				select(name="filter-compare") 
+					option(value="pre-year") Previous Year
+					option(value="pre-period") Previous Period
+			button.btn.solid-btn.generate-password(type="submit") Filter

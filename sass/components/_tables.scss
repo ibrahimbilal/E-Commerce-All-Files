@@ -172,6 +172,10 @@
                         text-align: center;
                     }
                 }
+				&.comment {
+					white-space: break-spaces;
+					min-width: 250px;
+				}
             }
         }
     }
@@ -249,7 +253,7 @@ table.dataTable thead tr th.select-checkbox.selected::after {
     line-height: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    content: "\f144";
+    content: "\f1f5";
     color: var(--main-color);
     margin-top: 6px;
     margin-left: -6px;

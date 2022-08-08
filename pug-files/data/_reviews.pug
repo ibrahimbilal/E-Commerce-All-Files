@@ -1,0 +1,39 @@
+table(id="reviews" class="table table-striped")
+	thead
+		tr
+			th
+			th.text-uppercase customer name
+			th.text-uppercase rate stars
+			th.text-uppercase comment
+			th.text-uppercase product
+			th.text-uppercase created date
+			th.text-uppercase action
+	tbody
+		- var rows = [{name: "Jayson Hinrichsen", stars: 4, comment: "The Product Is Perfect And Exelent", product: "Apple Watch Series 4 GPS"},{name: "Arezou Firouzeh", stars: 5, comment: "The Product Is Perfect And Exelent", product: "Aliquam Quaerat Ultrices Cursus"},{name: "Hossein Roghayeh", stars: "3", comment: "The Product Is Perfect And Exelent", product: "Beats Headphones"},{name: "Soraya Siavash", stars: "1", comment: "The Product Is Perfect And Exelent", product: "Apple Ipad Pro 64GB"},{name: "Jayson Hinrichsen", stars: "2", comment: "The Product Is Perfect And Exelent", product: "Apple Watch Series 4 GPS"},{name: "Arezou Firouzeh", stars: "3", comment: "The Product Is Perfect And Exelent", product: "Aliquam Quaerat Ultrices Cursus"},{name: "Hossein Roghayeh", stars: "4", comment: "The Product Is Perfect And Exelent", product: "Beats Headphones"},{name: "Soraya Siavash", stars: "5", comment: "The Product Is Perfect And Exelent", product: "Apple Ipad Pro 64GB"},{name: "Jayson Hinrichsen", stars: "4", comment: "The Product Is Perfect And Exelent", product: "Apple Watch Series 4 GPS"},{name: "Arezou Firouzeh", stars: "5", comment: "The Product Is Perfect And Exelent", product: "Aliquam Quaerat Ultrices Cursus"},{name: "Hossein Roghayeh", stars: "3", comment: "The Product Is Perfect And Exelent", product: "Beats Headphones"},{name: "Soraya Siavash", stars: "1", comment: "The Product Is Perfect And Exelent", product: "Apple Ipad Pro 64GB"},{name: "Jayson Hinrichsen", stars: "2", comment: "The Product Is Perfect And Exelent", product: "Apple Watch Series 4 GPS"},{name: "Arezou Firouzeh", stars: "3", comment: "The Product Is Perfect And Exelent", product: "Aliquam Quaerat Ultrices Cursus"},{name: "Hossein Roghayeh", stars: "4", comment: "The Product Is Perfect And Exelent", product: "Beats Headphones"},{name: "Soraya Siavash", stars: "5", comment: "The Product Is Perfect And Exelent", product: "Apple Ipad Pro 64GB"},{name: "Jayson Hinrichsen", stars: "4", comment: "The Product Is Perfect And Exelent", product: "Apple Watch Series 4 GPS"},{name: "Arezou Firouzeh", stars: "5", comment: "The Product Is Perfect And Exelent", product: "Aliquam Quaerat Ultrices Cursus"},{name: "Hossein Roghayeh", stars: "3", comment: "The Product Is Perfect And Exelent", product: "Beats Headphones"},{name: "Soraya Siavash", stars: "1", comment: "The Product Is Perfect And Exelent", product: "Apple Ipad Pro 64GB"},{name: "Jayson Hinrichsen", stars: "2", comment: "The Product Is Perfect And Exelent", product: "Apple Watch Series 4 GPS"},{name: "Arezou Firouzeh", stars: "3", comment: "The Product Is Perfect And Exelent", product: "Aliquam Quaerat Ultrices Cursus"},{name: "Hossein Roghayeh", stars: "4", comment: "The Product Is Perfect And Exelent", product: "Beats Headphones"},{name: "Soraya Siavash", stars: "5", comment: "The Product Is Perfect And Exelent", product: "Apple Ipad Pro 64GB"},{name: "Jayson Hinrichsen", stars: "4", comment: "The Product Is Perfect And Exelent", product: "Apple Watch Series 4 GPS"},{name: "Arezou Firouzeh", stars: "5", comment: "The Product Is Perfect And Exelent", product: "Aliquam Quaerat Ultrices Cursus"},{name: "Hossein Roghayeh", stars: "3", comment: "The Product Is Perfect And Exelent", product: "Beats Headphones"},{name: "Soraya Siavash", stars: "1", comment: "The Product Is Perfect And Exelent", product: "Apple Ipad Pro 64GB"},{name: "Jayson Hinrichsen", stars: "2", comment: "The Product Is Perfect And Exelent", product: "Apple Watch Series 4 GPS"},{name: "Arezou Firouzeh", stars: "3", comment: "The Product Is Perfect And Exelent", product: "Aliquam Quaerat Ultrices Cursus"},{name: "Hossein Roghayeh", stars: "4", comment: "The Product Is Perfect And Exelent", product: "Beats Headphones"},{name: "Soraya Siavash", stars: "5", comment: "The Product Is Perfect And Exelent", product: "Apple Ipad Pro 64GB"},{name: "Jayson Hinrichsen", stars: "4", comment: "The Product Is Perfect And Exelent", product: "Apple Watch Series 4 GPS"},{name: "Arezou Firouzeh", stars: "5", comment: "The Product Is Perfect And Exelent", product: "Aliquam Quaerat Ultrices Cursus"},{name: "Hossein Roghayeh", stars: "3", comment: "The Product Is Perfect And Exelent", product: "Beats Headphones"},{name: "Soraya Siavash", stars: "1", comment: "The Product Is Perfect And Exelent", product: "Apple Ipad Pro 64GB"},{name: "Jayson Hinrichsen", stars: "2", comment: "The Product Is Perfect And Exelent", product: "Apple Watch Series 4 GPS"},{name: "Arezou Firouzeh", stars: "3", comment: "The Product Is Perfect And Exelent", product: "Aliquam Quaerat Ultrices Cursus"},{name: "Hossein Roghayeh", stars: "4", comment: "The Product Is Perfect And Exelent", product: "Beats Headphones"},{name: "Soraya Siavash", stars: "5", comment: "The Product Is Perfect And Exelent", product: "Apple Ipad Pro 64GB"},{name: "Jayson Hinrichsen", stars: "4", comment: "The Product Is Perfect And Exelent", product: "Apple Watch Series 4 GPS"},{name: "Arezou Firouzeh", stars: "5", comment: "The Product Is Perfect And Exelent", product: "Aliquam Quaerat Ultrices Cursus"},{name: "Hossein Roghayeh", stars: "3", comment: "The Product Is Perfect And Exelent", product: "Beats Headphones"},{name: "Soraya Siavash", stars: "1", comment: "The Product Is Perfect And Exelent", product: "Apple Ipad Pro 64GB"},{name: "Jayson Hinrichsen", stars: "2", comment: "The Product Is Perfect And Exelent", product: "Apple Watch Series 4 GPS"},{name: "Arezou Firouzeh", stars: "3", comment: "The Product Is Perfect And Exelent", product: "Aliquam Quaerat Ultrices Cursus"},{name: "Hossein Roghayeh", stars: "4", comment: "The Product Is Perfect And Exelent", product: "Beats Headphones"},{name: "Soraya Siavash", stars: "5", comment: "The Product Is Perfect And Exelent", product: "Apple Ipad Pro 64GB"},{name: "Jayson Hinrichsen", stars: "4", comment: "The Product Is Perfect And Exelent", product: "Apple Watch Series 4 GPS"},{name: "Arezou Firouzeh", stars: "5", comment: "The Product Is Perfect And Exelent", product: "Aliquam Quaerat Ultrices Cursus"},{name: "Hossein Roghayeh", stars: "3", comment: "The Product Is Perfect And Exelent", product: "Beats Headphones"},{name: "Soraya Siavash", stars: "1", comment: "The Product Is Perfect And Exelent", product: "Apple Ipad Pro 64GB"},{name: "Jayson Hinrichsen", stars: "2", comment: "The Product Is Perfect And Exelent", product: "Apple Watch Series 4 GPS"},{name: "Arezou Firouzeh", stars: "3", comment: "The Product Is Perfect And Exelent", product: "Aliquam Quaerat Ultrices Cursus"},{name: "Hossein Roghayeh", stars: "4", comment: "The Product Is Perfect And Exelent", product: "Beats Headphones"},{name: "Soraya Siavash", stars: "5", comment: "The Product Is Perfect And Exelent", product: "Apple Ipad Pro 64GB"}]
+			each row in rows
+				tr
+					td
+					td.text-capitalize= row.name
+					td.stars-wrapper
+						.main-stars
+							- for (var i = 0; i < 5; ++i)
+								span.star
+									+getRIcon("star")
+						.cust-stars
+							- for (var i = 0; i < row.stars; ++i)
+								span.star
+									+getSIcon("star")
+
+					td.text-capitalize.comment= row.comment
+					td.text-capitalize= row.product
+					td.text-uppercase 14:58 26/03/2021
+					td
+						.btn-group
+							a.btn.btn-primary.btn-rounded.me-2.py-1
+								span.icon
+									+getRIcon("eye")
+								| view
+							a.btn.btn-danger.btn-rounded.me-2.py-1
+								span.icon
+									+getRIcon("trash")
+								| trash

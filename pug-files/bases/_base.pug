@@ -14,7 +14,7 @@ html(dir="ltr" lang="en")
 			//- icons
 			link(href='assets/css/uicons-solid-straight.css' rel='stylesheet')
 
-		- if ( current_url == "add-product" || current_url == "languages" )
+		- if ( current_url == "add-product" || current_url == "languages" || current_url == "reviews" )
 			//- icons
 			link(href='assets/css/uicons-solid-rounded.css' rel='stylesheet')
 
@@ -30,11 +30,11 @@ html(dir="ltr" lang="en")
 			//- Swiper Slider 
 			link(href='assets/css/swiper-bundle.min.css' rel='stylesheet')
 
-		- if ( current_url == "index" || current_url == "analytics" || current_url == "marketing" )
+		- if ( current_url == "index" || current_url == "analytics" )
 			//- Chart
 			link(href='assets/css/apexcharts.css' rel='stylesheet')
 
-		- if ( current_url == "index" || current_url == "users" || current_url == "edit-user" || current_url == "products" || current_url == "attributes"  || current_url == "categories" || current_url == "tags" || current_url == "marketing" || current_url == "discounts" || current_url == "customers" || current_url == "orders" || current_url == "invoices" || current_url == "roles" )
+		- if ( current_url == "index" || current_url == "users" || current_url == "edit-user" || current_url == "products" || current_url == "attributes" || current_url == "reviews"  || current_url == "categories" || current_url == "tags" || current_url == "marketing" || current_url == "discounts" || current_url == "customers" || current_url == "orders" || current_url == "invoices" || current_url == "roles" )
 			//- Data Tables
 			link(href='assets/css/datatables.min.css' rel='stylesheet')
 

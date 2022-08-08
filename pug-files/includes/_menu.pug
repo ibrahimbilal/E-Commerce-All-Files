@@ -24,7 +24,7 @@
 							+getRIcon("circle")
 							span.title attributes
 					li.list-item(class={active: current_url === 'reviews' || current_url === 'edit-reviews'} )
-						a(href="javascript:void(0)")
+						a(href="./reviews.html")
 							+getRIcon("circle")
 							span.title reviews
 			li.list-item(class={active: current_url === 'categories' || current_url === 'add-category'} )
@@ -58,8 +58,8 @@
 					span.title invoices
 
 		ul.menu-list-group
-			li.list-item
-				a(href="javascript:void(0)")
+			li.list-item(class={active: current_url === 'analytics' } )
+				a(href="./analytics.html")
 					+getRIcon("stats")
 					span.title analytics
 			li.list-item(class={active: current_url === 'marketing' } )
