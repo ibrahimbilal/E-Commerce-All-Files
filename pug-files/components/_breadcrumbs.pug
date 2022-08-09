@@ -1,18 +1,19 @@
 - var flexClasses = ['d-flex', 'justify-content-between', 'align-items-center']
-.breadcrumbs(class=flexClasses)
-    a.item.text-capitalize(class=flexClasses href="./index.html")
-        span.icon
-            +getRIcon("apps")
-        | dashboard
-    span.angle
-        span.icon
-            +getRIcon("angle-double-right")
-    - var arr_count = breadCrumbsItems.length
-    each val, index in breadCrumbsItems
-        if ( arr_count != ( index +1 ) )
-            a.item.text-capitalize(class=flexClasses href=`${val}.html`)= val
-            span.angle
-                span.icon
-                    +getRIcon("angle-double-right")
-        else
-            span.item.text-capitalize(class=flexClasses)= val
+.page-breadcrumbs.d-flex.align-items-sm-center.justify-content-start.justify-content-sm-end
+	.breadcrumbs(class=flexClasses)
+		a.item.text-capitalize(class=flexClasses href="./index.html")
+			span.icon
+				+getRIcon("apps")
+			| dashboard
+		span.angle
+			span.icon
+				+getRIcon("angle-double-right")
+		- var arr_count = breadCrumbsItems.length
+		each val, index in breadCrumbsItems
+			if ( arr_count != ( index +1 ) )
+				a.item.text-capitalize(class=flexClasses href=`${val}.html`)= val
+				span.angle
+					span.icon
+						+getRIcon("angle-double-right")
+			else
+				span.item.text-capitalize(class=flexClasses)= val

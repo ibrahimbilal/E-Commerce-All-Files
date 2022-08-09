@@ -1,6 +1,5 @@
 extends ../bases/_base
 block mainContent
-	- var flexClasses = ['d-flex', 'justify-content-between', 'align-items-center']
 	.slider-holder
 		include ./../components/_swiper-slider
 
@@ -13,17 +12,17 @@ block mainContent
 			.main-box.box-spaces
 				h2.box-title.text-capitalize Top Selling Products
 				.list-holder
-					.list-item(class=flexClasses)
+					.list-item.d-flex.align-items-center.justify-content-between
 						.img
 							img(src="./assets/images/products/image-1.png" alt="product 1")
 						.title.text-start.w-100.ps-4 Apple Watch Series 4 GPS
 						.price $399
-					.list-item(class=flexClasses)
+					.list-item.d-flex.align-items-center.justify-content-between
 						.img
 							img(src="./assets/images/products/image-2.png" alt="product 2")
 						.title.text-start.w-100.ps-4 Beats Headphones
 						.price $459
-					.list-item(class=flexClasses)
+					.list-item.d-flex.align-items-center.justify-content-between
 						.img
 							img(src="./assets/images/products/image-3.png" alt="product 2")
 						.title.text-start.w-100.ps-4 Apple iPad Pro 64GB
@@ -31,7 +30,7 @@ block mainContent
 
 		.col-12.col-sm-6.col-xxl-4
 			.main-box.box-spaces
-				.box-header(class=flexClasses).flex-row-reverse
+				.box-header.d-flex.align-items-center.justify-content-between.flex-row-reverse
 					.select-holder
 						select.select
 							option(value="7") Last 7 Days
@@ -39,31 +38,31 @@ block mainContent
 							option(value="30") Last 30 Days
 					h2.box-title.text-capitalize Visitors Referrals
 				.list-holder
-					.list-item(class=flexClasses)
+					.list-item.d-flex.align-items-center.justify-content-between
 						.img
 							img(src="./assets/images/social/facebook.png" alt="facebook")
 						.title.text-start.w-100.ps-4 Facebook - 52%
 						.percent.good 20%
 							+getSIcon("arrow-small-up")
-					.list-item(class=flexClasses)
+					.list-item.d-flex.align-items-center.justify-content-between
 						.img
 							img(src="./assets/images/social/google.png" alt="google")
 						.title.text-start.w-100.ps-4 Google - 34.6%
 						.percent.good 14%
 							+getSIcon("arrow-small-up")
-					.list-item(class=flexClasses)
+					.list-item.d-flex.align-items-center.justify-content-between
 						.img
 							img(src="./assets/images/social/instagram.png" alt="instagram")
 						.title.text-start.w-100.ps-4 Instagram - 9.7%
 						.percent.good 33%
 							+getSIcon("arrow-small-up")
-					.list-item(class=flexClasses)
+					.list-item.d-flex.align-items-center.justify-content-between
 						.img
 							img(src="./assets/images/social/snapchat.png" alt="snapchat")
 						.title.text-start.w-100.ps-4 Snapchat - 2.58%
 						.percent.good 6%
 							+getSIcon("arrow-small-up")
-					.list-item(class=flexClasses)
+					.list-item.d-flex.align-items-center.justify-content-between
 						.img
 							img(src="./assets/images/social/random.png" alt="Others")
 						.title.text-start.w-100.ps-4 Others - 1.12%

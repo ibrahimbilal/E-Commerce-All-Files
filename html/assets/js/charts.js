@@ -111,11 +111,11 @@ if (typeof(chartElement) != 'undefined' && chartElement != null) {
 var totalSalesOptions = {
     series: [
 		{
-			name: "Main Date",
+			name: "Main Data",
 			data: [0, 50, 20, 40, 27, 50, 35, 60]
 		},
 		{
-			name: "Compare Date",
+			name: "Compare Data",
 			data: [0, 40, 10, 30, 17, 40, 25, 50]
 		}
 	],
@@ -234,11 +234,11 @@ if (typeof(chartElement) != 'undefined' && chartElement != null) {
 var orderOverviewOptions = {
     series: [
 		{
-			name: "Main Date",
+			name: "Main Data",
 			data: [0, 20, 40, 18, 50, 18, 22, 60]
 		},
 		{
-			name: "Compare Date",
+			name: "Compare Data",
 			data: [0, 5, 10, 30, 17, 40, 25, 50]
 		}
 	],
@@ -260,15 +260,15 @@ var orderOverviewOptions = {
         toolbar: {
             export: {
                 csv: {
-                    filename: 'Store Order Overview',
+                    filename: 'Store Orders Overview',
                     columnDelimiter: ',',
                     headerCategory: 'Date',
                 },
                 svg: {
-                    filename: 'Store Order Overview',
+                    filename: 'Store Orders Overview',
                 },
                 png: {
-                    filename: 'Store Order Overview',
+                    filename: 'Store Orders Overview',
                 }
             },
         }
@@ -321,7 +321,7 @@ var orderOverviewOptions = {
 
     },
     title: {
-        text: 'Order Overview',
+        text: 'Orders Overview',
         align: 'left',
         style: {
             fontSize: '20px',
@@ -345,11 +345,11 @@ if (typeof(chartElement) != 'undefined' && chartElement != null) {
 var itemsSoldOptions = {
     series: [
 		{
-			name: "Main Date",
+			name: "Main Data",
 			data: [44, 55, 57, 56, 61, 58, 63, 60, 66]
 		},
 		{
-			name: "Compare Date",
+			name: "Compare Data",
 			data: [76, 85, 101, 98, 87, 105, 91, 114, 94]
 		}
 	],
@@ -451,11 +451,11 @@ if (typeof(chartElement) != 'undefined' && chartElement != null) {
 var totalTaxOptions = {
     series: [
 		{
-			name: "Main Date",
+			name: "Main Data",
 			data: [44, 50, 44, 56, 61, 58, 63, 60]
 		},
 		{
-			name: "Compare Date",
+			name: "Compare Data",
 			data: [50, 52, 48, 55, 45, 55, 38, 42]
 		}
 	],

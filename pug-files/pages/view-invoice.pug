@@ -1,14 +1,14 @@
 extends ../bases/_base
 block mainContent
-	- var flexClasses = ['d-flex', 'align-items-sm-center']
 	.page-header
 		.row
-			.col-12(class=flexClasses).justify-content-sm-between.flex-column.flex-sm-row
+			.col-12.d-flex.align-items-sm-center.justify-content-sm-between.flex-column.flex-sm-row
+				// Page Title
 				.page-title.text-capitalize invoice #34245
 
-				.page-breadcrumbs(class=flexClasses).justify-content-start.justify-content-sm-end
-					- var breadCrumbsItems = ['invoices', 'view']
-					include ./../components/_breadcrumbs
+				// Breadcrumbs
+				- var breadCrumbsItems = ['invoices', 'view']
+				include ./../components/_breadcrumbs
 
 	.row
 		.col-lg-9.float-start.post-box.mb-3.mb-lg-0

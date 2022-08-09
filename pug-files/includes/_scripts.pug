@@ -1,45 +1,45 @@
 - var current_url = filename.split("\\").pop().split('.').slice(0, -1).join('.')
 
-//- jQuery
+// jQuery
 script(src="assets/js/jquery.min.js" type="text/javascript")
 
 - if ( current_url == "add-product" || current_url == "add-category" || current_url == "add-tag" || current_url == "emails-settings" )
-	//- Select 2
+	// Select 2
 	script(src="assets/js/select2.min.js" type="text/javascript")
 	script(src="assets/js/select2_args.js" type="text/javascript")
 
 - if ( current_url == "add-product" || current_url == "add-category" || current_url == "add-tag" || current_url == "add-attribute"  )
-	//- Create Slug From Text
+	// Create Slug From Text
 	script(src="assets/js/speakingurl.min.js" type="text/javascript")
 	script(src="assets/js/jquery.stringtoslug.min.js" type="text/javascript")
 
-- if ( current_url == "index" || current_url == "analytics" )
-	//- Charts Script
+- if ( current_url == "index" || current_url == "analytics" || current_url == "analytics-overview" )
+	// Charts Script
 	script(src="assets/js/apexcharts.min.js" type="text/javascript")
 	script(src="assets/js/charts.js" type="text/javascript")
 - if ( current_url == "index" )
-	//- Slider
+	// Slider
 	script(src="assets/js/swiper-bundle.min.js" type="text/javascript")
 
 - if ( current_url == "index" || current_url == "users" || current_url == "edit-user" || current_url == "products" || current_url == "attributes" || current_url == "reviews" || current_url == "categories" || current_url == "tags" || current_url == "marketing" || current_url == "discounts" || current_url == "customers"  || current_url == "orders" || current_url == "invoices" || current_url == "roles")
-	//- Data Table
+	// Data Table
 	script(src="assets/js/datatables.min.js" type="text/javascript")
 
 - if ( current_url == "add-product" || current_url == "add-tag" || current_url == "add-category" )
-	//- Text Editor
+	// Text Editor
 	script(src="assets/js/quill.min.js" type="text/javascript")
 
 - if ( current_url == "add-product" || current_url == "add-attribute" || current_url == "add-tag" || current_url == "add-category" || current_url == "add-user" || current_url == "add-discount" || current_url == "add-customer" || current_url == "add-order" || current_url == "add-role" || current_url == "gallery" || current_url == "general-settings" || current_url == "theme-settings" || current_url == "store-settings" || current_url == "emails-settings" || current_url == "currencies-settings" )
-	//- Sweet Alert
+	// Sweet Alert
 	script(src="assets/js/sweetalert2.all.min.js" type="text/javascript")
 
 - if ( current_url == "add-product" || current_url == "add-user" || current_url == "edit-user" || current_url == "add-discount" || current_url == "add-coupon" || current_url == "add-customer" || current_url == "marketing" )
-	//- Date Picker
+	// Date Picker
 	script(src="assets/js/pickadate/picker.js" type="text/javascript")
 	script(src="assets/js/pickadate/picker.date.js" type="text/javascript")
 
 - if ( current_url == "gallery" )
-	//- Upload Files Library
+	// Upload Files Library
 	script(src="assets/js/filepond/filepond.min.js" type="text/javascript")
 	script(src="assets/js/filepond/filepond-plugin-image-preview.min.js" type="text/javascript")
 	script(src="assets/js/filepond/filepond-plugin-file-validate-size.min.js" type="text/javascript")
@@ -47,8 +47,8 @@ script(src="assets/js/jquery.min.js" type="text/javascript")
 	script(src="assets/js/filepond/filepond.jquery.js" type="text/javascript")
 
 - if ( current_url == "view-invoice" )
-	//- PDF Maker
+	// PDF Maker
 	script(src="assets/js/html2pdf.min.js" type="text/javascript")
 
-//- Main Site JS Script
+// Main Site JS Script
 script(src="assets/js/script.js" type="text/javascript")

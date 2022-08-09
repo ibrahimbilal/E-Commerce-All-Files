@@ -1,23 +1,34 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
   <head>
+    <!-- Meta Tags-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="assets/css/bs.css" rel="stylesheet">
+    <!-- CSS Files-->
     <link href="assets/css/uicons-regular-rounded.css" rel="stylesheet">
+    <!-- Bootstrap-->
+    <link href="assets/css/bs.css" rel="stylesheet">
+    <!-- Data Tables-->
     <link href="assets/css/datatables.min.css" rel="stylesheet">
+    <!-- Date Picker-->
     <link href="assets/css/pickadate.css" rel="stylesheet">
+    <!-- Main Css File-->
     <link href="assets/css/style.css" rel="stylesheet">
+    <!-- Fonts-->
     <link href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;display=swap" rel="stylesheet">
     <title>E-Commerce Project</title>
+    <!-- async scripts-->
     <script src="assets/js/async.js" type="text/javascript" async></script>
   </head>
   <body class="body-class">
     <aside>
+      <!-- Side Menu-->
       <div class="dashbord-menu main-box menu-padding">
+        <!-- Menu Header-->
         <div class="menu-header"><a href="./index.html"><i class="fi-rr-shop"> </i><span class="title">Admin Panel</span></a></div>
+        <!-- Menu Links-->
         <div class="menu-links d-flex flex-column">
           <ul class="menu-list-group">
             <li class="list-item"><a href="./index.html"><i class="fi-rr-apps"> </i><span class="title">dashboard</span></a></li>
@@ -39,7 +50,11 @@
             <li class="list-item"><a href="./invoices.html"><i class="fi-rr-document"> </i><span class="title">invoices</span></a></li>
           </ul>
           <ul class="menu-list-group">
-            <li class="list-item"><a href="./analytics.html"><i class="fi-rr-stats"> </i><span class="title">analytics</span></a></li>
+            <li class="list-item has-submenu"><a href="./analytics-overview.html"><i class="fi-rr-stats"> </i><span class="title">analytics</span><span class="icon"><i class="fi-rr-angle-small-down"> </i></span></a>
+              <ul class="submenu">
+                <li class="list-item"><a href="./analytics-overview.html"><i class="fi-rr-circle"> </i><span class="title">overview</span></a></li>
+              </ul>
+            </li>
             <li class="list-item"><a href="./marketing.html"><i class="fi-rr-megaphone"> </i><span class="title">marketing</span></a></li>
           </ul>
           <ul class="menu-list-group">
@@ -49,7 +64,7 @@
           <ul class="menu-list-group">
             <li class="list-item"><a href="./gallery.html"><i class="fi-rr-picture"> </i><span class="title">gallery</span></a></li>
             <li class="list-item"><a href="./languages.html"><i class="fi-rr-world"> </i><span class="title">languages</span></a></li>
-            <li class="list-item has-submenu"><a href="javascript:void(0)"><i class="fi-rr-settings"> </i><span class="title">settings</span><span class="icon"><i class="fi-rr-angle-small-down"> </i></span></a>
+            <li class="list-item has-submenu"><a href="./general-settings.html"><i class="fi-rr-settings"> </i><span class="title">settings</span><span class="icon"><i class="fi-rr-angle-small-down"> </i></span></a>
               <ul class="submenu">
                 <li class="list-item"><a href="./general-settings.html"><i class="fi-rr-circle"> </i><span class="title">general</span></a></li>
                 <li class="list-item"><a href="./theme-settings.html"><i class="fi-rr-circle"> </i><span class="title">theme</span></a></li>
@@ -60,6 +75,7 @@
               </ul>
             </li>
           </ul>
+          <!-- Menu Collaps Button-->
           <ul class="menu-list-group">
             <li class="list-item" id="collaps"><a href="javascript:void(0)"><i class="fi-rr-list"> </i><span class="title">collaps</span></a></li>
           </ul>
@@ -67,7 +83,9 @@
       </div>
     </aside>
     <main>
+      <!-- Main Header-->
       <header class="main-box d-flex justify-content-between align-items-center">
+        <!-- Search Form-->
         <div class="search-area d-flex justify-content-between align-items-center">
           <div class="action-item d-flex justify-content-between align-items-center me-4 d-lg-none"><span class="icon" id="menu-btn"><i class="fi-rr-menu-burger"> </i></span></div>
           <div class="action-item d-flex justify-content-between align-items-center me-4 d-sm-none"><span class="icon" id="search-btn"><i class="fi-rr-search"> </i></span></div>
@@ -77,6 +95,7 @@
             </button>
           </form>
         </div>
+        <!-- Mobile Search Form-->
         <div class="mobile search-area align-items-center"><span class="close"><i class="fi-rr-cross"> </i></span>
           <form class="search-form d-flex">
             <input class="search-input" type="text" name="s" placeholder="Search Here..." autocomplete="off">
@@ -85,14 +104,20 @@
           </form>
         </div>
         <div class="action-area flex-row-reverse d-flex justify-content-between align-items-center">
+          <!-- Full Screen -->
           <div class="action-item d-flex justify-content-between align-items-center d-none d-sm-flex"><span class="icon" id="expand" tooltip="Full Screen" main-tooltip="Full Screen" alt-tooltip="Exit Full Screen" flow="left"><i class="fi-rr-expand"> </i></span></div>
+          <!-- Theme Mode-->
           <div class="action-item d-flex justify-content-between align-items-center"><span class="icon" id="theme-mode" tooltip="Dark Mode" main-tooltip="Dark Mode" alt-tooltip="Light Mode" flow="left"><i class="fi-rr-moon-stars"> </i></span></div>
+          <!-- Notifications Button-->
           <div class="action-item d-flex justify-content-between align-items-center relative"><span class="icon header-btn" id="notify" data-window="#notify-window"><i class="fi-rr-bell"> </i><span class="dot"></span></span></div>
+          <!-- Messages Button-->
           <div class="action-item d-flex justify-content-between align-items-center"><span class="icon header-btn" id="messages" data-window="#messages-window"><i class="fi-rr-envelope"> </i><span class="dot"></span></span></div>
+          <!-- User Area-->
           <div class="header-btn action-item user-area flex-row-reverse d-flex justify-content-between align-items-center" id="user" data-window="#user-window"><span class="icon"><i class="fi-rr-angle-small-down"> </i></span>
             <div class="user-name d-none d-xl-block me-2">Jayson Hinrichsen</div><img class="avatar me-2" src="./assets/images/avatars/image-01.png">
           </div>
         </div>
+        <!-- Notifications-->
         <div class="float-window main-box" id="notify-window">
           <div class="win-head d-flex justify-content-between align-items-center">
             <p class="head-title mb-0">Notifications</p><span class="icon mark-as-read"><i class="fi-rr-list-check"> </i></span>
@@ -137,7 +162,9 @@
               </li>
             </ul>
           </div>
+          <div class="win-footer"> <a class="view-all" href="#">View All</a></div>
         </div>
+        <!-- Messages-->
         <div class="float-window main-box" id="messages-window">
           <div class="win-head d-flex justify-content-between align-items-center">
             <p class="head-title mb-0">Messages</p><span class="icon mark-as-read"><i class="fi-rr-eye"> </i></span>
@@ -160,7 +187,9 @@
               </li>
             </ul>
           </div>
+          <div class="win-footer"> <a class="view-all" href="#">View All</a></div>
         </div>
+        <!-- User Options-->
         <div class="float-window main-box user-window" id="user-window">
           <div class="win-body">
             <ul class="notify-list p-0 m-0">
@@ -173,7 +202,9 @@
       <div class="page-header">
         <div class="row">
           <div class="col-12 d-flex align-items-sm-center justify-content-sm-between flex-column flex-sm-row">
+            <!-- Page Title-->
             <div class="page-title text-capitalize">edit user</div>
+            <!-- Breadcrumbs-->
             <div class="page-breadcrumbs d-flex align-items-sm-center justify-content-start justify-content-sm-end">
               <div class="breadcrumbs d-flex justify-content-between align-items-center"><a class="item text-capitalize d-flex justify-content-between align-items-center" href="./index.html"><span class="icon"><i class="fi-rr-apps"> </i></span>dashboard</a><span class="angle"><span class="icon"><i class="fi-rr-angle-double-right"> </i></span></span><a class="item text-capitalize d-flex justify-content-between align-items-center" href="users.html">users</a><span class="angle"><span class="icon"><i class="fi-rr-angle-double-right"> </i></span></span><span class="item text-capitalize d-flex justify-content-between align-items-center">edit</span>
               </div>
@@ -255,25 +286,25 @@
         </div>
         <div class="col-sm-6 col-lg-3 float-end meta-box">
           <div class="main-box box-spaces mb-0">
-            <div class="form-item second justify-content-between mt-2 d-flex justify-content-between align-items-center">
+            <div class="form-item second justify-content-between mt-2 d-flex align-items-sm-center">
               <label class="item-title meta-title">Registered At:</label><span class="ms-2">26/03/2021 14:58</span>
             </div>
-            <div class="form-item second justify-content-between mt-2 d-flex justify-content-between align-items-center">
+            <div class="form-item second justify-content-between mt-2 d-flex align-items-sm-center">
               <label class="item-title meta-title">updated at:</label><span class="ms-2">26/03/2021 14:58</span>
             </div>
-            <div class="form-item second justify-content-between mt-2 d-flex justify-content-between align-items-center">
+            <div class="form-item second justify-content-between mt-2 d-flex align-items-sm-center">
               <label class="item-title meta-title">Last Logged In:</label><span class="ms-2">26/03/2021 14:58</span>
             </div>
-            <div class="form-item second justify-content-between mt-2 d-flex justify-content-between align-items-center">
+            <div class="form-item second justify-content-between mt-2 d-flex align-items-sm-center">
               <label class="item-title meta-title">Device:</label><span class="ms-2">Samsung Galaxy S20</span>
             </div>
-            <div class="form-item second justify-content-between mt-2 d-flex justify-content-between align-items-center">
+            <div class="form-item second justify-content-between mt-2 d-flex align-items-sm-center">
               <label class="item-title meta-title">iP Address:</label><span class="ms-2">216.58.217.164</span>
             </div>
-            <div class="form-item second justify-content-between mt-2 d-flex justify-content-between align-items-center">
+            <div class="form-item second justify-content-between mt-2 d-flex align-items-sm-center">
               <label class="item-title meta-title">iP Country:</label><span class="ms-2">United State</span>
             </div>
-            <div class="form-item second justify-content-between mt-2 d-flex justify-content-between align-items-center">
+            <div class="form-item second justify-content-between mt-2 d-flex align-items-sm-center">
               <label class="item-title meta-title">iP City:</label><span class="ms-2">New York</span>
             </div>
             <div class="btns-holder d-flex justify-content-between mt-4">
@@ -860,11 +891,16 @@
         <div class="copyright">Copyright &copy; 2022</div>
       </div>
     </footer>
+    <!-- jQuery-->
     <script src="assets/js/jquery.min.js" type="text/javascript"></script>
+    <!-- Data Table-->
     <script src="assets/js/datatables.min.js" type="text/javascript"></script>
+    <!-- Date Picker-->
     <script src="assets/js/pickadate/picker.js" type="text/javascript"></script>
     <script src="assets/js/pickadate/picker.date.js" type="text/javascript"></script>
+    <!-- Main Site JS Script-->
     <script src="assets/js/script.js" type="text/javascript"></script>
+    <!-- Gallery Component-->
     <div class="gallery">
       <div class="overlay p-3 p-sm-4">
         <div class="g-holder main-box box-spaces d-flex flex-column">

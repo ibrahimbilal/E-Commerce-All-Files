@@ -1,0 +1,108 @@
+extends ../bases/_base
+block mainContent
+	.page-header
+		.row
+			.col-12.d-flex.align-items-sm-center.justify-content-sm-between.flex-column.flex-sm-row
+				// Page title
+				- var pageTitle = 'Analytics'
+				- var btnType = ''
+				include ./../components/_page-title
+
+				// Breadcrumbs
+				- var breadCrumbsItems = ['analytics']
+				include ./../components/_breadcrumbs
+
+	.row
+		.col-12.d-flex.align-items-sm-center.flex-column.flex-sm-row.mb-2
+			include ./../components/_analytics-filter
+
+		.col-12
+			section.row 
+				.col-12 
+					.sec-title-wrapper 
+						h2.h5 Charts
+						hr
+
+				.col-md-6
+					.main-box.box-spaces
+						#total-sales-chart
+				.col-md-6
+					.main-box.box-spaces
+						#orders-overview-chart
+				.col-md-6
+					.main-box.box-spaces.mb-lg-0
+						#items-sold-chart
+				.col-md-6
+					.main-box.box-spaces.mb-lg-0
+						#total-tax-chart
+		.col-12
+			section.row 
+				.col-12 
+					.sec-title-wrapper 
+						h2.h5 Leaderboards
+						hr
+
+				.col-md-6
+					.main-box.box-spaces.mb-lg-0
+						h2.box-title.text-capitalize Top Categories - Items Sold
+
+						.table-holder.analytics-table
+							.table-responsive
+								table(id="invoices" class="table table-striped")
+									thead
+										tr
+											th.text-uppercase image
+											th.text-uppercase title
+											th.text-uppercase items sold
+											th.text-uppercase net sales
+									tbody
+										tr 
+											td
+												img(src="./assets/images/categories/image-1.png" alt="Category 1")
+											td.item-title Clothes
+											td 400
+											td $159,600
+										tr 
+											td
+												img(src="./assets/images/categories/image-2.png" alt="Category 2")
+											td.item-title Home furniture
+											td 50
+											td $19,950
+										tr 
+											td
+												img(src="./assets/images/categories/image-3.png" alt="Category 3")
+											td.item-title Cakes
+											td 10
+											td $3,990
+				.col-md-6
+					.main-box.box-spaces.mb-lg-0
+						h2.box-title.text-capitalize Top Products - Items Sold
+
+						.table-holder.analytics-table
+							.table-responsive
+								table(id="invoices" class="table table-striped")
+									thead
+										tr
+											th.text-uppercase image
+											th.text-uppercase title
+											th.text-uppercase items sold
+											th.text-uppercase net sales
+									tbody
+										tr 
+											td
+												img(src="./assets/images/products/image-1.png" alt="product 1")
+											td.item-title Apple Watch Series 4 GPS
+											td 400
+											td $159,600
+										tr 
+											td
+												img(src="./assets/images/products/image-2.png" alt="product 1")
+											td.item-title Beats Headphones
+											td 50
+											td $19,950
+										tr 
+											td
+												img(src="./assets/images/products/image-3.png" alt="product 1")
+											td.item-title Apple iPad Pro 64GB
+											td 10
+											td $3,990

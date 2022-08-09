@@ -1,74 +1,80 @@
+// Notifications
 div(id="notify-window" class="float-window main-box")
-    .win-head.d-flex.justify-content-between.align-items-center
-        p.head-title.mb-0 Notifications
-        span.icon.mark-as-read
-            +getRIcon("list-check")
-    .win-body.scrollbar
-        ul.notify-list.p-0.m-0
-            li.notify-item.d-flex.align-items-center
-                .img.me-2.doted
-                    img(class="avatar" width="56" src="./assets/images/avatars/image-02.png")
-                .content
-                    p <b>Vince Fleming</b> has Changed <b>"Austin Wade"</b> Order Status
-                    span.date 5 min ago
-            li.notify-item.d-flex.align-items-center
-                .img.me-2.doted
-                    img(class="avatar" width="56" src="./assets/images/products/image-4.png")
-                .content
-                    p <b>Austin Wade</b> has requested a new order 
-                    span.date 15 min ago
-            li.notify-item.d-flex.align-items-center
-                .img.me-2
-                    img(class="avatar" width="56" src="./assets/images/avatars/image-03.png")
-                .content
-                    p <b>Daniil Lobachev</b> has Published a new product
-                    span.date 25 min ago
-            li.notify-item.d-flex.align-items-center
-                .img.me-2.doted
-                    img(class="avatar" width="56" src="./assets/images/avatars/image-02.png")
-                .content
-                    p <b>Vince Fleming</b> has Changed <b>"Austin Wade"</b> Order Status
-                    span.date 5 min ago
-            li.notify-item.d-flex.align-items-center
-                .img.me-2.doted
-                    img(class="avatar" width="56" src="./assets/images/products/image-4.png")
-                .content
-                    p <b>Austin Wade</b> has requested a new order 
-                    span.date 15 min ago
-            li.notify-item.d-flex.align-items-center
-                .img.me-2
-                    img(class="avatar" width="56" src="./assets/images/avatars/image-03.png")
-                .content
-                    p <b>Daniil Lobachev</b> has Published a new product
-                    span.date 25 min ago
+	.win-head.d-flex.justify-content-between.align-items-center
+		p.head-title.mb-0 Notifications
+		span.icon.mark-as-read
+			+getRIcon("list-check")
+	.win-body.scrollbar
+		ul.notify-list.p-0.m-0
+			li.notify-item.d-flex.align-items-center
+				.img.me-2.doted
+					img(class="avatar" width="56" src="./assets/images/avatars/image-02.png")
+				.content
+					p <b>Vince Fleming</b> has Changed <b>"Austin Wade"</b> Order Status
+					span.date 5 min ago
+			li.notify-item.d-flex.align-items-center
+				.img.me-2.doted
+					img(class="avatar" width="56" src="./assets/images/products/image-4.png")
+				.content
+					p <b>Austin Wade</b> has requested a new order 
+					span.date 15 min ago
+			li.notify-item.d-flex.align-items-center
+				.img.me-2
+					img(class="avatar" width="56" src="./assets/images/avatars/image-03.png")
+				.content
+					p <b>Daniil Lobachev</b> has Published a new product
+					span.date 25 min ago
+			li.notify-item.d-flex.align-items-center
+				.img.me-2.doted
+					img(class="avatar" width="56" src="./assets/images/avatars/image-02.png")
+				.content
+					p <b>Vince Fleming</b> has Changed <b>"Austin Wade"</b> Order Status
+					span.date 5 min ago
+			li.notify-item.d-flex.align-items-center
+				.img.me-2.doted
+					img(class="avatar" width="56" src="./assets/images/products/image-4.png")
+				.content
+					p <b>Austin Wade</b> has requested a new order 
+					span.date 15 min ago
+			li.notify-item.d-flex.align-items-center
+				.img.me-2
+					img(class="avatar" width="56" src="./assets/images/avatars/image-03.png")
+				.content
+					p <b>Daniil Lobachev</b> has Published a new product
+					span.date 25 min ago
+	.win-footer 
+		a.view-all(href="#") View All
 
-
+// Messages
 div(id="messages-window" class="float-window main-box")
-    .win-head.d-flex.justify-content-between.align-items-center
-        p.head-title.mb-0 Messages
-        span.icon.mark-as-read
-            +getRIcon("eye")
-    .win-body.scrollbar
-        ul.notify-list.p-0.m-0
-            li.notify-item.d-flex.align-items-center
-                .img.me-2.doted
-                    img(class="avatar" width="56" src="./assets/images/avatars/image-02.png")
-                .content
-                    .name Vince Fleming
-                    .msg please talk to me
-                    span.date 5 min ago
-            li.notify-item.d-flex.align-items-center
-                .img.me-2
-                    img(class="avatar" width="56" src="./assets/images/avatars/image-03.png")
-                .content
-                    .name Daniil Lobachev
-                    .msg I published the product on the product
-                    span.date 25 min ago
+	.win-head.d-flex.justify-content-between.align-items-center
+		p.head-title.mb-0 Messages
+		span.icon.mark-as-read
+			+getRIcon("eye")
+	.win-body.scrollbar
+		ul.notify-list.p-0.m-0
+			li.notify-item.d-flex.align-items-center
+				.img.me-2.doted
+					img(class="avatar" width="56" src="./assets/images/avatars/image-02.png")
+				.content
+					.name Vince Fleming
+					.msg please talk to me
+					span.date 5 min ago
+			li.notify-item.d-flex.align-items-center
+				.img.me-2
+					img(class="avatar" width="56" src="./assets/images/avatars/image-03.png")
+				.content
+					.name Daniil Lobachev
+					.msg I published the product on the product
+					span.date 25 min ago
+	.win-footer 
+		a.view-all(href="#") View All
 
+// User Options
 div(id="user-window" class="float-window main-box user-window")
-    .win-body
-        ul.notify-list.p-0.m-0
-            li.notify-item.d-flex.align-items-center
-                a(href="#" class="link") My Account
-            li.notify-item.d-flex.align-items-center
-                a(href="#" class="link") Logout
+	.win-body
+		ul.notify-list.p-0.m-0
+			li.notify-item.d-flex.align-items-center
+				a(href="#" class="link") My Account
+			li.notify-item.d-flex.align-items-center
+				a(href="#" class="link") Logout

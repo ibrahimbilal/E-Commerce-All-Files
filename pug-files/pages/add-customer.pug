@@ -1,16 +1,16 @@
 extends ../bases/_base
 block mainContent
-	- var flexClasses = ['d-flex', 'align-items-sm-center']
 	.page-header
 		.row
-			.col-12(class=flexClasses).justify-content-sm-between.flex-column.flex-sm-row
+			.col-12.d-flex.align-items-sm-center.justify-content-sm-between.flex-column.flex-sm-row
+				// Page Title
 				- var pageTitle = 'add customer'
 				- var btnType = ''
 				include ./../components/_page-title
 
-				.page-breadcrumbs(class=flexClasses).justify-content-start.justify-content-sm-end
-					- var breadCrumbsItems = ['customers', 'add']
-					include ./../components/_breadcrumbs
+				// Breadcrubs
+				- var breadCrumbsItems = ['customers', 'add']
+				include ./../components/_breadcrumbs
 
 	form#add-newitem-form.row.clearfix(data-post-type="customer")
 		.col-sm-12.post-box.order-sm-1
@@ -122,35 +122,35 @@ block mainContent
 		.col-sm-6.col-lg-3.meta-box.order-2
 			.main-box.box-spaces.mb-0
 
-				.form-item.second.justify-content-between.mt-2(class=flexClasses)
+				.form-item.second.justify-content-between.mt-2.d-flex.align-items-sm-center
 					label.item-title.meta-title Registered At:
 					span.ms-2 26/03/2021 14:58
 
-				.form-item.second.justify-content-between.mt-2(class=flexClasses)
+				.form-item.second.justify-content-between.mt-2.d-flex.align-items-sm-center
 					label.item-title.meta-title updated at:
 					span.ms-2 26/03/2021 14:58
 
-				.form-item.second.justify-content-between.mt-2(class=flexClasses)
+				.form-item.second.justify-content-between.mt-2.d-flex.align-items-sm-center
 					label.item-title.meta-title ip address:
 					span.ms-2 216.58.217.164
 
-				.form-item.second.justify-content-between.mt-2(class=flexClasses)
+				.form-item.second.justify-content-between.mt-2.d-flex.align-items-sm-center
 					label.item-title.meta-title ip country:
 					span.ms-2 United State
 
-				.form-item.second.justify-content-between.mt-2(class=flexClasses)
+				.form-item.second.justify-content-between.mt-2.d-flex.align-items-sm-center
 					label.item-title.meta-title iP City:
 					span.ms-2 New York
 
-				.form-item.second.justify-content-between.mt-2(class=flexClasses)
+				.form-item.second.justify-content-between.mt-2.d-flex.align-items-sm-center
 					label.item-title.meta-title Device:
 					span.ms-2 Samsung Galaxy S20
 
-				.form-item.second.justify-content-between.mt-2(class=flexClasses)
+				.form-item.second.justify-content-between.mt-2.d-flex.align-items-sm-center
 					label.item-title.meta-title Registered At:
 					span.ms-2 26/03/2021 14:58
 
-				.form-item.second.justify-content-between.mt-2(class=flexClasses)
+				.form-item.second.justify-content-between.mt-2.d-flex.align-items-sm-center
 					label.item-title.meta-title Last Logged In:
 					span.ms-2 26/03/2021 14:58
 

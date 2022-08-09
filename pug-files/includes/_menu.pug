@@ -1,10 +1,13 @@
 - var current_url = filename.split("\\").pop().split('.').slice(0, -1).join('.')
+// Side Menu
 .dashbord-menu.main-box.menu-padding
+	// Menu Header
 	.menu-header
 		a(href="./index.html")
 			+getRIcon("shop")
 			span.title Admin Panel
 
+	// Menu Links
 	.menu-links.d-flex.flex-column
 		ul.menu-list-group
 			li.list-item(class={active: current_url === 'index'} )
@@ -58,10 +61,17 @@
 					span.title invoices
 
 		ul.menu-list-group
-			li.list-item(class={active: current_url === 'analytics' } )
-				a(href="./analytics.html")
+			li.list-item.has-submenu(class={active: current_url === 'analytics' || current_url === 'analytics-overview' } )
+				a(href="./analytics-overview.html")
 					+getRIcon("stats")
 					span.title analytics
+					span.icon
+						+getRIcon("angle-small-down")
+				ul.submenu
+					li.list-item(class={active: current_url === 'analytics-overview'} )
+						a(href="./analytics-overview.html")
+							+getRIcon("circle")
+							span.title overview
 			li.list-item(class={active: current_url === 'marketing' } )
 				a(href="./marketing.html")
 					+getRIcon("megaphone")
@@ -87,7 +97,7 @@
 					+getRIcon("world")
 					span.title languages
 			li.list-item.has-submenu(class={active: current_url === 'general-settings' || current_url === 'theme-settings'|| current_url === 'store-settings' || current_url === 'currencies-settings' || current_url === 'emails-settings' || current_url === 'payment-settings'} )
-				a(href="javascript:void(0)")
+				a(href="./general-settings.html")
 					+getRIcon("settings")
 					span.title settings
 					span.icon
@@ -118,6 +128,7 @@
 							+getRIcon("circle")
 							span.title payment
 
+		// Menu Collaps Button
 		ul.menu-list-group
 			li#collaps.list-item
 				a(href="javascript:void(0)")

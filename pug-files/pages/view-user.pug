@@ -1,16 +1,16 @@
 extends ../bases/_base
 block mainContent
-	- var flexClasses = ['d-flex', 'align-items-sm-center']
 	.page-header
 		.row
-			.col-12(class=flexClasses).justify-content-sm-between.flex-column.flex-sm-row
+			.col-12.d-flex.align-items-sm-center.justify-content-sm-between.flex-column.flex-sm-row
+				// Page Title
 				- var pageTitle = 'user'
 				- var btnType = 'edit'
 				include ./../components/_page-title
 
-				.page-breadcrumbs(class=flexClasses).justify-content-start.justify-content-sm-end
-					- var breadCrumbsItems = ['users', 'view']
-					include ./../components/_breadcrumbs
+				// Breadcrumbs
+				- var breadCrumbsItems = ['users', 'view']
+				include ./../components/_breadcrumbs
 
 	.row
 		.col-12
@@ -25,7 +25,7 @@ block mainContent
 							each row in profileDetailsRows
 								.col-sm-6
 									each detail in row
-										.form-item.second.justify-content-between.mt-2(class=flexClasses)
+										.form-item.second.justify-content-between.mt-2.d-flex.align-items-sm-center
 											.title
 												b= detail.title
 											span.ms-2= detail.value

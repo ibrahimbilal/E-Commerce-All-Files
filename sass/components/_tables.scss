@@ -301,3 +301,15 @@ table.dataTable.table-dark tr.selected th.select-checkbox:after {
                 1px -1px #404040, 
                 -1px 1px #404040;
 }
+
+.analytics-table {
+	img {
+		max-width: 100px;
+		padding: 15px;
+	}
+
+	.item-title {
+		white-space: break-spaces;
+		min-width: 180px;
+	}
+}

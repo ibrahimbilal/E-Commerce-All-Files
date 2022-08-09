@@ -1,16 +1,16 @@
 extends ../bases/_base
 block mainContent
-	- var flexClasses = ['d-flex', 'align-items-sm-center']
 	.page-header
 		.row
-			.col-12(class=flexClasses).justify-content-sm-between.flex-column.flex-sm-row
+			.col-12.d-flex.align-items-sm-center.justify-content-sm-between.flex-column.flex-sm-row
+				// Page Title
 				- var pageTitle = 'add category'
 				- var btnType = ''
 				include ./../components/_page-title
 
-				.page-breadcrumbs(class=flexClasses).justify-content-start.justify-content-sm-end
-					- var breadCrumbsItems = ['categories', 'add']
-					include ./../components/_breadcrumbs
+				// Breadcrubs
+				- var breadCrumbsItems = ['categories', 'add']
+				include ./../components/_breadcrumbs
 
 	form#add-newitem-form.row.d-block.clearfix(data-post-type="Category")
 		.col-sm-12.col-lg-9.float-start.post-box
@@ -30,7 +30,7 @@ block mainContent
 			.row.d-block.clearfix
 				.col-sm-6.col-lg-12.float-end.float-lg-none
 					.main-box.box-spaces
-						.form-item.second.justify-content-between.mb-2(class=flexClasses)
+						.form-item.second.justify-content-between.mb-2.d-flex.align-items-sm-center
 							label.item-title.meta-title(for="newitem-lang") category Lang:
 							include ./../components/_langs-dropdown
 
@@ -40,11 +40,11 @@ block mainContent
 									+getRIcon("info")
 							input#item-slug.form-control.mt-2(name="category_slug" type="text")
 
-						.form-item.second.justify-content-between.mt-2(class=flexClasses)
+						.form-item.second.justify-content-between.mt-2.d-flex.align-items-sm-center
 							label.item-title.meta-title created at: 
 							span.ms-2 26/03/2021 14:58
 
-						.form-item.second.justify-content-between.mt-2(class=flexClasses)
+						.form-item.second.justify-content-between.mt-2.d-flex.align-items-sm-center
 							label.item-title.meta-title updated at:
 							span.ms-2 26/03/2021 14:58
 

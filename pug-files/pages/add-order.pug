@@ -1,16 +1,16 @@
 extends ../bases/_base
 block mainContent
-	- var flexClasses = ['d-flex', 'align-items-sm-center']
 	.page-header
 		.row
-			.col-12(class=flexClasses).justify-content-sm-between.flex-column.flex-sm-row
+			.col-12.d-flex.align-items-sm-center.justify-content-sm-between.flex-column.flex-sm-row
+				// Page Title
 				- var pageTitle = 'add order'
 				- var btnType = ''
 				include ./../components/_page-title
 
-				.page-breadcrumbs(class=flexClasses).justify-content-start.justify-content-sm-end
-					- var breadCrumbsItems = ['orders', 'add']
-					include ./../components/_breadcrumbs
+				// Breadcrubs
+				- var breadCrumbsItems = ['orders', 'add']
+				include ./../components/_breadcrumbs
 
 	form#add-newitem-form.row.clearfix(data-post-type="order")
 		.col-sm-12.float-start.post-box.order-sm-1
@@ -135,15 +135,15 @@ block mainContent
 		.col-sm-6.col-lg-3.float-end.meta-box.order-sm-2
 			.main-box.box-spaces.mb-0
 
-				.form-item.second.justify-content-between(class=flexClasses)
+				.form-item.second.justify-content-between.d-flex.align-items-sm-center
 					label.item-title.meta-title Created At:
 					span.text-end.ms-2 26/03/2021 14:58
 
-				.form-item.second.justify-content-between.mt-3(class=flexClasses)
+				.form-item.second.justify-content-between.mt-3.d-flex.align-items-sm-center
 					label.item-title.meta-title updated at:
 					span.text-end.ms-2 26/03/2021 14:58
 
-				.form-item.second.justify-content-between.mt-3(class=flexClasses)
+				.form-item.second.justify-content-between.mt-3.d-flex.align-items-sm-center
 					label.item-title.meta-title updated By:
 					span.text-end.ms-2 Jayson Hinrichsen
 

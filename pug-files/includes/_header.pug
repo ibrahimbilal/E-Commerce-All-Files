@@ -1,6 +1,8 @@
 - var flexClasses = ['d-flex', 'justify-content-between', 'align-items-center']
 
+// Main Header
 header.main-box(class=flexClasses)
+	// Search Form
 	.search-area(class=flexClasses)
 
 		.action-item(class=flexClasses).me-4.d-lg-none
@@ -16,6 +18,7 @@ header.main-box(class=flexClasses)
 			button(class="submit" type="submit")
 				+getRIcon("search")
 
+	// Mobile Search Form
 	.mobile.search-area.align-items-center
 		span.close
 			+getRIcon("cross")
@@ -25,25 +28,29 @@ header.main-box(class=flexClasses)
 				+getRIcon("search")
 
 	.action-area.flex-row-reverse(class=flexClasses)
-
+		// Full Screen 
 		.action-item(class=flexClasses).d-none.d-sm-flex
 			span(id="expand" class="icon" tooltip="Full Screen" main-tooltip="Full Screen" alt-tooltip="Exit Full Screen" flow="left")
 				+getRIcon("expand")
 
+		// Theme Mode
 		.action-item(class=flexClasses)
 			span(id="theme-mode" class="icon" tooltip="Dark Mode" main-tooltip="Dark Mode" alt-tooltip="Light Mode" flow="left")
 				+getRIcon("moon-stars")
 
+		// Notifications Button
 		.action-item(class=flexClasses).relative
 			span(id="notify" class="icon header-btn" data-window="#notify-window")
 				+getRIcon("bell")
 				span.dot
 
+		// Messages Button
 		.action-item(class=flexClasses)
 			span(id="messages" class="icon header-btn" data-window="#messages-window")
 				+getRIcon("envelope")
 				span.dot
 
+		// User Area
 		#user.header-btn.action-item.user-area.flex-row-reverse(class=flexClasses data-window="#user-window")
 			span.icon
 				+getRIcon("angle-small-down")

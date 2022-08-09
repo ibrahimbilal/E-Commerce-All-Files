@@ -1,19 +1,19 @@
 extends ../bases/_base
 block mainContent
-	- var flexClasses = ['d-flex', 'align-items-sm-center']
 	.page-header
 		.row
-			.col-12(class=flexClasses).justify-content-sm-between.flex-column.flex-sm-row
+			.col-12.d-flex.align-items-sm-center.justify-content-sm-between.flex-column.flex-sm-row
+				// Page Title
 				- var pageTitle = 'category'
 				- var btnType = 'add'
 				include ./../components/_page-title
 
-				.page-breadcrumbs(class=flexClasses).justify-content-start.justify-content-sm-end
-					- var breadCrumbsItems = ['categories']
-					include ./../components/_breadcrumbs
+				// Breadcrumbs
+				- var breadCrumbsItems = ['categories']
+				include ./../components/_breadcrumbs
 
 	.row
-		.col-12(class=flexClasses).justify-content-between.flex-column.flex-sm-row.mb-2
+		.col-12.d-flex.align-items-sm-center.justify-content-between.flex-column.flex-sm-row.mb-2
 			.dash-filters
 				- var filters = ['Published (50)', 'Trashed (99)', 'Active (45)', 'Inactive (675)']
 				each val, index in filters
