@@ -29,14 +29,6 @@ block mainContent
 					input#email.form-control(name="email" type="email")
 
 				.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap.mt-3
-					label.item-title(for="password") password:
-					.with-icon
-						input#password.form-control(name="password" type="password")
-						span.show-pass
-							+getRIcon("eye")
-					button.btn.regular-btn.ms-sm-3.mt-2.mt-sm-0.text-nowrap.generate-password(type="button") generate
-
-				.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap.mt-3
 					label.item-title(for="mobile") mobile:
 					input#mobile.form-control(name="mobile" type="tel")
 				
@@ -81,8 +73,34 @@ block mainContent
 									+getRIcon("trash")
 									span remove
 
+			.main-box.box-spaces
+				.form-item.primary
+					h2.box-title.item-title Change Password
+
+					.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap.mt-3
+						label.item-title(for="current-password") current password:
+						.with-icon
+							input#current-password.form-control(name="current_password" type="password")
+							span.show-pass
+								+getRIcon("eye")
+
+					.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap.mt-3
+						label.item-title(for="new-password") new password:
+						.with-icon
+							input#password.form-control(name="password" type="password")
+							span.show-pass
+								+getRIcon("eye")
+						button.btn.regular-btn.ms-sm-3.mt-2.mt-sm-0.text-nowrap.generate-password(type="button") generate
+
+					.form-item.second.d-flex.align-items-center.flex-wrap.flex-sm-nowrap.mt-3
+						label.item-title(for="confirm-password") confirm password:
+						.with-icon
+							input#confirm-password.form-control(name="confirm_password" type="password")
+							span.show-pass
+								+getRIcon("eye")
+
 		.col-sm-6.col-lg-3.float-end.meta-box
-			.main-box.box-spaces.mb-0
+			.main-box.box-spaces
 
 				.form-item.second.justify-content-between.mt-2.d-flex.align-items-sm-center
 					label.item-title.meta-title Registered At:
@@ -118,7 +136,7 @@ block mainContent
 						span.icon.me-1
 							+getRIcon("trash")
 						| move to trash
-					button.btn.solid-btn(type="submit") create 
+					button.btn.solid-btn(type="submit") update 
 
 		.col-sm-12.col-lg-9.float-start.post-box
 			.main-box.box-spaces

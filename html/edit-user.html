@@ -231,13 +231,6 @@
               <input class="form-control" id="email" name="email" type="email">
             </div>
             <div class="form-item second d-flex align-items-center flex-wrap flex-sm-nowrap mt-3">
-              <label class="item-title" for="password">password:</label>
-              <div class="with-icon">
-                <input class="form-control" id="password" name="password" type="password"><span class="show-pass"><i class="fi-rr-eye"> </i></span>
-              </div>
-              <button class="btn regular-btn ms-sm-3 mt-2 mt-sm-0 text-nowrap generate-password" type="button">generate</button>
-            </div>
-            <div class="form-item second d-flex align-items-center flex-wrap flex-sm-nowrap mt-3">
               <label class="item-title" for="mobile">mobile:</label>
               <input class="form-control" id="mobile" name="mobile" type="tel">
             </div>
@@ -283,9 +276,33 @@
               </div>
             </div>
           </div>
+          <div class="main-box box-spaces">
+            <div class="form-item primary">
+              <h2 class="box-title item-title">Change Password</h2>
+              <div class="form-item second d-flex align-items-center flex-wrap flex-sm-nowrap mt-3">
+                <label class="item-title" for="current-password">current password:</label>
+                <div class="with-icon">
+                  <input class="form-control" id="current-password" name="current_password" type="password"><span class="show-pass"><i class="fi-rr-eye"> </i></span>
+                </div>
+              </div>
+              <div class="form-item second d-flex align-items-center flex-wrap flex-sm-nowrap mt-3">
+                <label class="item-title" for="new-password">new password:</label>
+                <div class="with-icon">
+                  <input class="form-control" id="password" name="password" type="password"><span class="show-pass"><i class="fi-rr-eye"> </i></span>
+                </div>
+                <button class="btn regular-btn ms-sm-3 mt-2 mt-sm-0 text-nowrap generate-password" type="button">generate</button>
+              </div>
+              <div class="form-item second d-flex align-items-center flex-wrap flex-sm-nowrap mt-3">
+                <label class="item-title" for="confirm-password">confirm password:</label>
+                <div class="with-icon">
+                  <input class="form-control" id="confirm-password" name="confirm_password" type="password"><span class="show-pass"><i class="fi-rr-eye"> </i></span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="col-sm-6 col-lg-3 float-end meta-box">
-          <div class="main-box box-spaces mb-0">
+          <div class="main-box box-spaces">
             <div class="form-item second justify-content-between mt-2 d-flex align-items-sm-center">
               <label class="item-title meta-title">Registered At:</label><span class="ms-2">26/03/2021 14:58</span>
             </div>
@@ -309,7 +326,7 @@
             </div>
             <div class="btns-holder d-flex justify-content-between mt-4">
               <button class="btn trans-btn w-100 text-start delete" data-post-type="user"><span class="icon me-1"><i class="fi-rr-trash"> </i></span>move to trash</button>
-              <button class="btn solid-btn" type="submit">create </button>
+              <button class="btn solid-btn" type="submit">update </button>
             </div>
           </div>
         </div>
