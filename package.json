@@ -19,7 +19,7 @@
 	},
 	"scripts": {
 		"pug-w": "pug -w pug-files\\pages -o html -P",
-		"sass-w": "sass --watch sass:.\\html\\assets\\css --style compressed",
+		"sass-w": "sass --watch sass:.\\html\\assets\\css --style expanded",
 		"rtlcss": "rtlcss .\\html\\assets\\css\\style.css .\\html\\assets\\css\\style.rtl.css",
 		"BSrtlcss": "rtlcss .\\html\\assets\\css\\bs.css .\\html\\assets\\css\\bs.rtl.css"
 	}
