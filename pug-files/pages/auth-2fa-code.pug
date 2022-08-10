@@ -1,0 +1,50 @@
+doctype html
+html(dir="ltr" lang="en")
+	head
+		// Meta Tags
+		meta(charset='UTF-8')
+		meta(name='viewport', content='width=device-width, initial-scale=1.0')
+		meta(http-equiv='X-UA-Compatible' content='ie=edge')
+
+		// Icons
+		link(href='assets/css/uicons-regular-rounded.css' rel='stylesheet')
+
+		// Style
+		link(rel="stylesheet" href="assets/css/auth.min.css")
+
+		// Fonts
+		link(href='https://fonts.gstatic.com' rel='preconnect')
+		link(href='https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap' rel='stylesheet')
+
+		title Two Step Verification
+
+		
+		// async scripts
+		script(type="text/javascript" async).
+			// Active Dark Mode On Load Page
+			if (localStorage.getItem("theme_mode") != null) {
+				document.documentElement.classList.add("dark");
+			}
+
+	body(class='body-class')
+
+		include ../bases/_mixins
+
+		.container 
+			.image-wapper(style="background-image: url(assets/images/auth/2fa.jpg)")
+				h1 Welcome Back
+			.form-wapper
+				.form-header
+					h2 Two Step Verification
+					p Please confirm access to your account by entering the authentication code provided by your authenticator application.
+				.form-body
+					form
+						.input-wrapper
+							label(for="code") Code
+							input#code(type="text" name="code")
+						
+						button(type="submit") Sign In
+
+				.form-footer
+					p
+						a.form-link(href="./auth-2fa-recovery.html") Use a recovery code

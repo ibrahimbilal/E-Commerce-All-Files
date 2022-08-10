@@ -2762,21 +2762,56 @@ table.dataTable.table-dark tr.selected th.select-checkbox:after {
   display: -moz-box;
   display: -ms-flexbox;
   display: flex;
+  flex-direction: column;
 }
-.filter-wrapper .inputs-wrapper #filter-analytics-data label {
+@media (min-width: 576px) {
+  .filter-wrapper .inputs-wrapper #filter-analytics-data {
+    flex-direction: row;
+  }
+}
+.filter-wrapper .inputs-wrapper #filter-analytics-data .filter-item {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  height: 40px;
+}
+@media (min-width: 576px) {
+  .filter-wrapper .inputs-wrapper #filter-analytics-data .filter-item {
+    height: auto;
+    display: inline-block;
+  }
+}
+.filter-wrapper .inputs-wrapper #filter-analytics-data .filter-item label {
   background-color: var(--body-background);
   padding: 0.5rem 1rem;
+  flex: 0 0 30%;
 }
-.filter-wrapper .inputs-wrapper #filter-analytics-data select {
+.filter-wrapper .inputs-wrapper #filter-analytics-data .filter-item select {
   height: 100%;
   border: none;
   background-color: var(--box-bg-color);
   color: var(--text-color);
   padding: 0 10px;
+  flex: 1;
+  margin-right: 1rem;
+}
+@media (min-width: 576px) {
+  .filter-wrapper .inputs-wrapper #filter-analytics-data .filter-item select {
+    margin-right: 0;
+  }
 }
 .filter-wrapper .inputs-wrapper #filter-analytics-data .btn {
   border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
+  border-top-right-radius: 0;
+}
+@media (min-width: 576px) {
+  .filter-wrapper .inputs-wrapper #filter-analytics-data .btn {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
 }
 
 input:not([type=range]):focus {

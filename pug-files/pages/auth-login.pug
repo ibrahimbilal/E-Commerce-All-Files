@@ -1,0 +1,73 @@
+doctype html
+html(dir="ltr" lang="en")
+	head
+		// Meta Tags
+		meta(charset='UTF-8')
+		meta(name='viewport', content='width=device-width, initial-scale=1.0')
+		meta(http-equiv='X-UA-Compatible' content='ie=edge')
+
+		// Icons
+		link(href='assets/css/uicons-regular-rounded.css' rel='stylesheet')
+
+		// Style
+		link(rel="stylesheet" href="assets/css/auth.min.css")
+
+		// Fonts
+		link(href='https://fonts.gstatic.com' rel='preconnect')
+		link(href='https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap' rel='stylesheet')
+
+		title Login
+
+		
+		// async scripts
+		script(type="text/javascript" async).
+			// Active Dark Mode On Load Page
+			if (localStorage.getItem("theme_mode") != null) {
+				document.documentElement.classList.add("dark");
+			}
+
+	body(class='body-class')
+
+		include ../bases/_mixins
+
+		.container 
+			.image-wapper(style="background-image: url(assets/images/auth/login.jpg)")
+				h1 Welcome Back
+			.form-wapper
+				.form-header
+					h2 Login
+					p Welcome back! Please login to your account and continue growing your store.
+				.form-body
+					form
+						.input-wrapper
+							label(for="email") Email
+							input#email(type="email" name="email" placeholder="john@example.com")
+						.input-wrapper
+							label(for="password") Password
+							input#password(type="password" name="password" placeholder="**********")
+							span.icon.show-pass
+								+getRIcon('eye')
+						.input-wrapper.more-action
+							label
+								input#remember-me(type="checkbox" name="remember_me")
+								| Remember Me
+							a.form-link(href="./auth-forgot-password.html") Forgot Password?
+						button(type="submit") Sign In
+
+				.form-footer
+					p Don't have an account yet? 
+						a.form-link(href="./auth-register.html") Sign Up
+
+		script(src="assets/js/jquery.min.js" type="text/javascript")
+		script(type="text/javascript").
+			// Show Password
+			$('.show-pass').on('click', function () {
+				var type = $(this).prev('input').attr('type');
+				if (type == 'password') {
+					$(this).prev('input').attr('type', 'text');
+					$(this).find('i').removeClass('fi-rr-eye').addClass('fi-rr-eye-crossed');
+				} else {
+					$(this).prev('input').attr('type', 'password');
+					$(this).find('i').removeClass('fi-rr-eye-crossed').addClass('fi-rr-eye');
+				}
+			});

@@ -103,30 +103,38 @@
 					span.icon
 						+getRIcon("angle-small-down")
 				ul.submenu
-					li.list-item(class={active: current_url === 'general-settings'} )
-						a(href="./general-settings.html")
-							+getRIcon("circle")
-							span.title general
-					li.list-item(class={active: current_url === 'theme-settings'} )
-						a(href="./theme-settings.html")
-							+getRIcon("circle")
-							span.title theme
-					li.list-item(class={active: current_url === 'store-settings'} )
-						a(href="./store-settings.html")
-							+getRIcon("circle")
-							span.title store
-					li.list-item(class={active: current_url === 'currencies-settings'} )
-						a(href="./currencies-settings.html")
-							+getRIcon("circle")
-							span.title currencies
-					li.list-item(class={active: current_url === 'emails-settings'} )
-						a(href="./emails-settings.html")
-							+getRIcon("circle")
-							span.title emails
-					li.list-item(class={active: current_url === 'payment-settings'} )
-						a(href="javascript:void(0)")
-							+getRIcon("circle")
-							span.title payment
+					- var settingsItems = ['general', 'theme', 'store', 'currencies', 'emails', 'payment']
+					each item in settingsItems
+						li.list-item(class={active: current_url === `${item}-settings`} )
+							a(href=`./${item}-settings.html`)
+								+getRIcon("circle")
+								span.title= item
+			li.list-item.has-submenu
+				a(href="javascript:void(0)")
+					+getRIcon("browser")
+					span.title Errors
+					span.icon
+						+getRIcon("angle-small-down")
+				ul.submenu
+					- var settingsItems = ['400', '401', '403', '404', '500', '503']
+					each item in settingsItems
+						li.list-item
+							a(href=`./${item}.html` target="_blank")
+								+getRIcon("circle")
+								span.title= item
+			li.list-item.has-submenu
+				a(href="javascript:void(0)")
+					+getRIcon("browser")
+					span.title auth pages
+					span.icon
+						+getRIcon("angle-small-down")
+				ul.submenu
+					- var settingsItems = ['login', 'register', 'forgot-password', 'reset-password', '2fa-code', '2fa-recovery']
+					each item in settingsItems
+						li.list-item
+							a(href=`./auth-${item}.html` target="_blank")
+								+getRIcon("circle")
+								span.title= item
 
 		// Menu Collaps Button
 		ul.menu-list-group
