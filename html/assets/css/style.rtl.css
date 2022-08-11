@@ -1397,6 +1397,14 @@ table.dataTable.table-dark tr.selected th.select-checkbox:after {
   font-size: 12px;
 }
 
+.bulk-action .bulk-form {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 5px;
+}
 .bulk-action .bulk-form .bulk-select {
   padding: 5px 5px 5px 10px;
   font-size: 14px;
@@ -1522,7 +1530,7 @@ table.dataTable.table-dark tr.selected th.select-checkbox:after {
 
 @media (min-width: 992px) {
   .meta-box {
-    width: 365px;
+    min-width: 365px;
   }
 }
 
@@ -1607,10 +1615,7 @@ table.dataTable.table-dark tr.selected th.select-checkbox:after {
 
 .gallery {
   position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   z-index: 11;
@@ -1626,29 +1631,6 @@ table.dataTable.table-dark tr.selected th.select-checkbox:after {
   flex-direction: column;
 }
 
-.page-content {
-  height: 100vh;
-}
-@media (min-width: 576px) {
-  .page-content {
-    height: 100vh;
-  }
-}
-@media (min-width: 992px) {
-  .page-content {
-    height: 100vh;
-  }
-}
-@media (min-width: 1200px) {
-  .page-content {
-    height: 145vh;
-  }
-}
-@media (min-width: 1400px) {
-  .page-content {
-    height: 100vh;
-  }
-}
 .page-content .meta-box.hide {
   display: none;
 }
@@ -1670,9 +1652,9 @@ table.dataTable.table-dark tr.selected th.select-checkbox:after {
 @media (max-width: 576px) {
   .g-holder .bulk-action .bulk-form {
     display: -webkit-box;
+    display: -webkit-flex;
     display: -moz-box;
     display: -ms-flexbox;
-    display: -webkit-flex;
     display: flex;
   }
   .g-holder .bulk-action .bulk-form .bulk-select {
@@ -1685,89 +1667,33 @@ table.dataTable.table-dark tr.selected th.select-checkbox:after {
   flex: 1 1 100%;
 }
 .g-holder .images .images-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-  grid-template-rows: repeat(auto-fit, 90px);
-  grid-gap: 2% 3%;
-  align-items: flex-start;
   overflow-x: hidden;
   overflow-y: auto;
-  padding-left: 5px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
+  position: static;
+  inset: 0;
+  max-height: 100vh;
 }
 @media (min-width: 576px) {
   .g-holder .images .images-list {
-    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    max-height: 50rem;
   }
 }
 @media (min-width: 992px) {
   .g-holder .images .images-list {
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  }
-}
-@media (min-width: 576px) {
-  .g-holder .images .images-list {
-    grid-template-rows: repeat(auto-fit, 85px);
-  }
-}
-@media (min-width: 992px) {
-  .g-holder .images .images-list {
-    grid-template-rows: repeat(auto-fit, 100px);
-  }
-}
-@media (min-width: 576px) {
-  .g-holder .images .images-list {
-    grid-gap: 3% 2%;
-  }
-}
-@media (min-width: 992px) {
-  .g-holder .images .images-list {
-    grid-gap: 2% 1%;
+    max-height: 150vh;
   }
 }
 @media (min-width: 1400px) {
   .g-holder .images .images-list {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    grid-template-rows: repeat(auto-fit, 150px);
+    max-height: 100vh;
   }
 }
 .g-holder .images .images-list .img-item {
   position: relative;
   display: inline-block;
-  width: 90px;
-  height: 90px;
+  margin: 8px;
   border: 1px solid var(--text-color);
   background-color: var(--body-background);
-}
-@media (min-width: 576px) {
-  .g-holder .images .images-list .img-item {
-    width: 100px;
-  }
-}
-@media (min-width: 992px) {
-  .g-holder .images .images-list .img-item {
-    width: 100px;
-  }
-}
-@media (min-width: 576px) {
-  .g-holder .images .images-list .img-item {
-    height: 100px;
-  }
-}
-@media (min-width: 992px) {
-  .g-holder .images .images-list .img-item {
-    height: 100px;
-  }
-}
-@media (min-width: 1400px) {
-  .g-holder .images .images-list .img-item {
-    width: 150px;
-    height: 150px;
-  }
 }
 .g-holder .images .images-list .img-item label {
   cursor: pointer;
@@ -1777,6 +1703,8 @@ table.dataTable.table-dark tr.selected th.select-checkbox:after {
 }
 .g-holder .images .images-list .img-item label img {
   object-fit: cover;
+  aspect-ratio: 1;
+  width: 100%;
 }
 .g-holder .images .images-list .img-item label input {
   display: none;
@@ -1803,6 +1731,78 @@ table.dataTable.table-dark tr.selected th.select-checkbox:after {
   left: -7px;
   bottom: 0;
   color: var(--main-color);
+}
+
+.gallery-page .page-content .g-holder > div {
+  flex-direction: column-reverse !important;
+  align-items: stretch !important;
+}
+.gallery-page .page-content .g-holder > div .search-holder {
+  margin-bottom: 1rem;
+}
+.gallery-page .page-content .open .g-holder > div {
+  flex-direction: row !important;
+}
+.gallery-page .page-content .open .g-holder > div .search-holder {
+  margin-bottom: 0;
+}
+.gallery-page .page-content .open .images .images-list .img-item {
+  width: calc(33.333333% - 19px);
+}
+@media (min-width: 576px) {
+  .gallery-page .page-content .open .images .images-list .img-item {
+    width: calc(20% - 20px);
+  }
+}
+@media (min-width: 992px) {
+  .gallery-page .page-content .open .images .images-list .img-item {
+    width: calc(16.666% - 20px);
+  }
+}
+@media (min-width: 1400px) {
+  .gallery-page .page-content .open .images .images-list .img-item {
+    width: calc(12% - 15px);
+  }
+}
+.gallery-page .page-content .images .images-list .img-item {
+  width: calc(33.333333% - 19px);
+}
+@media (min-width: 576px) {
+  .gallery-page .page-content .images .images-list .img-item {
+    width: calc(20% - 20px);
+  }
+}
+@media (min-width: 992px) {
+  .gallery-page .page-content .images .images-list .img-item {
+    width: calc(25% - 20px);
+  }
+}
+@media (min-width: 1400px) {
+  .gallery-page .page-content .images .images-list .img-item {
+    width: calc(16% - 15px);
+  }
+}
+
+.overlay .g-holder .images-list {
+  position: absolute;
+}
+.overlay .g-holder .images-list .img-item {
+  width: calc(33.333333% - 19px);
+}
+@media (min-width: 576px) {
+  .overlay .g-holder .images-list .img-item {
+    width: calc(20% - 20px);
+  }
+}
+@media (min-width: 992px) {
+  .overlay .g-holder .images-list .img-item {
+    width: calc(10.666% - 15px);
+  }
+}
+@media (min-width: 1400px) {
+  .overlay .g-holder .images-list .img-item {
+    width: calc(12% - 15px);
+  }
 }
 
 .img-view img {

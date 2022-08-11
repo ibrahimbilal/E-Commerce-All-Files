@@ -1,0 +1,39 @@
+doctype html
+html(dir="ltr" lang="en")
+	head
+		// Meta Tags
+		meta(charset='UTF-8')
+		meta(name='viewport', content='width=device-width, initial-scale=1.0')
+		meta(http-equiv='X-UA-Compatible' content='ie=edge')
+		// Icons
+		link(href='assets/css/uicons-regular-rounded.css' rel='stylesheet')
+
+		include ../includes/_styles
+
+		// Bootstrap
+		link(href='assets/css/bs.min.css' rel='stylesheet')
+		// Main Css File
+		link(href='assets/css/style.min.css' rel='stylesheet')
+		
+		// Fonts
+		link(href='https://fonts.gstatic.com' rel='preconnect')
+		link(href='https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap' rel='stylesheet')
+
+		title E-Commerce Project
+
+		// async scripts
+		script(src="assets/js/async.js" type="text/javascript" async)
+
+	body(class='body-class')
+
+		include ./_mixins
+		aside
+			include ../includes/_menu
+			
+		main
+			include ../includes/_header
+			block mainContent
+
+		include ../includes/_footer
+		include ../includes/_scripts
+		block footer_script

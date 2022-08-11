@@ -1,6 +1,6 @@
 .gallery {
     position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0; 
+    inset: 0;
     width: 100%;
     height: 100%;
     z-index: 11;
@@ -13,14 +13,6 @@
 }
 
 .page-content {
-    @include responsive-property(height, 100vh, 100vh, 100vh);
-    @media ( min-width: $xl ) {
-        height: 145vh;
-    }
-    @media ( min-width: $xxl ) {
-        height: 100vh;
-    }
-
     .meta-box {
         &.hide {
             display: none;
@@ -38,7 +30,6 @@
     background-color: var(--box-bg-color);
     width: 100%;
     height: 100%;
-    // @include responsive-property(height, '100vh', '100vh', '100vh');
 
     .icon {
         cursor: pointer;
@@ -48,11 +39,7 @@
     @media ( max-width: $sm ) {
         .bulk-action {
             .bulk-form {
-				display: -webkit-box; 
-				display: -moz-box;
-				display: -ms-flexbox;
-				display: -webkit-flex; 
-				display: flex;
+				@include prefix(display, flex);
                 .bulk-select {
                     flex: 1;
                     margin-right: .5rem;
@@ -65,32 +52,19 @@
         position: relative;
         flex: 1 1 100%;
         .images-list {
-            display: grid;
-            @include responsive-property(grid-template-columns, repeat(auto-fit, minmax(80px, 1fr)), repeat(auto-fit, minmax(90px, 1fr)), repeat(auto-fit, minmax(100px, 1fr)));
-            @include responsive-property(grid-template-rows, repeat(auto-fit, 90px), repeat(auto-fit, 85px), repeat(auto-fit, 100px));
-            @include responsive-property(grid-gap, 2% 3%, 3% 2%, 2% 1%);
-            @media ( min-width: $xxl ) {
-                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-                grid-template-rows: repeat(auto-fit, 150px);
-            }
-            align-items: flex-start;
             overflow-x: hidden;
             overflow-y: auto;
-            padding-right: 5px;
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0; 
-            // width: 100%;
-            // height: 100%;
+            position: static;
+            inset: 0;
+			@include responsive-property(max-height, 100vh, 50rem, 150vh);
+			@media ( min-width: $xxl ) {
+				max-height: 100vh;
+			}
             @extend .scrollbar;
             .img-item {
                 position: relative;
                 display: inline-block;
-                @include responsive-property(width, 90px, 100px, 100px);
-                @include responsive-property(height, 90px, 100px, 100px);
-                @media ( min-width: $xxl ) {
-                    width: 150px;
-                    height: 150px;
-                }
+				margin: 8px;
                 border: 1px solid var(--text-color);
                 background-color: var(--body-background);
                 label {
@@ -100,6 +74,8 @@
                     overflow: hidden;
                     img {
                         object-fit: cover;
+						aspect-ratio: 1;
+						width: 100%;
                     }
                     input {
                         display: none;
@@ -131,6 +107,66 @@
             }
         }
     }
+}
+
+// Set gallery list item width when the meta box open or not
+.gallery-page {
+	.page-content {
+		.g-holder {
+			> div {
+				flex-direction: column-reverse !important;
+				align-items: stretch !important;
+				.search-holder {
+					margin-bottom: 1rem;
+				}
+			}
+		}
+		.open {
+			.g-holder {
+				> div {
+					flex-direction: row !important;
+					.search-holder {
+						margin-bottom: 0;
+					}
+				}
+			}
+			.images {
+				.images-list {
+					.img-item {
+						@include responsive-property(width, calc(33.333333% - 19px), calc(20% - 20px), calc(16.666% - 20px));
+						@media ( min-width: $xxl ) {
+							width: calc(12% - 15px);
+						}
+					}
+				}
+			}
+		}
+		.images {
+			.images-list {
+				.img-item {
+					@include responsive-property(width, calc(33.333333% - 19px), calc(20% - 20px), calc(25% - 20px));
+					@media ( min-width: $xxl ) {
+						width: calc(16% - 15px);
+					}
+				}
+			}
+		}
+	}
+}
+
+// gallery popup on other pages
+.overlay {
+	.g-holder {
+		.images-list {
+			position: absolute;
+			.img-item {
+				@include responsive-property(width, calc(33.333333% - 19px), calc(20% - 20px), calc(10.666% - 15px));
+				@media ( min-width: $xxl ) {
+					width: calc(12% - 15px);
+				}
+			}
+		}
+	}
 }
 
 .img-view {

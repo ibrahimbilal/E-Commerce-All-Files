@@ -1,5 +1,7 @@
 .bulk-action {
     .bulk-form {
+		@include prefix(display, flex);
+		gap: 5px;
         .bulk-select {
             padding: 5px 10px 5px 5px;
             font-size: 14px;
