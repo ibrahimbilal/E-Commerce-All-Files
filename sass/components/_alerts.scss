@@ -19,13 +19,19 @@
 		color: #FFF;
 		flex: 0 0 50px;
 		width: 50px;
-		height: 50px;
-		font-size: 20px;
-
 	}
+
+	.list {
+		margin: 0;
+		padding-right: 1rem;
+		padding-bottom: 10px;
+		width: 100%;
+		font-size: 14px;
+	}
+
 	.content {
 		margin: 0;
-		padding: 13px;
+		padding: 10px 5px 0;
 	}
 
 	&.success {
@@ -93,5 +99,18 @@
 			content: "\f327";
 			background-color: #777;
 		}
+	}
+}
+
+.errors-list {
+	margin: 0;
+	padding-right: 1rem;
+	padding-bottom: 10px;
+	width: 100%;
+	font-size: 14px;
+	text-align: left;
+	.content {
+		margin: 0;
+		padding: 10px 5px 0;
 	}
 }

@@ -1986,12 +1986,17 @@ table.dataTable.table-dark tr.selected th.select-checkbox:after {
   color: #FFF;
   flex: 0 0 50px;
   width: 50px;
-  height: 50px;
-  font-size: 20px;
+}
+.alerts .list {
+  margin: 0;
+  padding-right: 1rem;
+  padding-bottom: 10px;
+  width: 100%;
+  font-size: 14px;
 }
 .alerts .content {
   margin: 0;
-  padding: 13px;
+  padding: 10px 5px 0;
 }
 .alerts.success {
   background-color: #C4FFCD;
@@ -2052,6 +2057,19 @@ table.dataTable.table-dark tr.selected th.select-checkbox:after {
 .alerts.dark::before {
   content: "";
   background-color: #777;
+}
+
+.errors-list {
+  margin: 0;
+  padding-right: 1rem;
+  padding-bottom: 10px;
+  width: 100%;
+  font-size: 14px;
+  text-align: left;
+}
+.errors-list .content {
+  margin: 0;
+  padding: 10px 5px 0;
 }
 
 .sessions-list .session-item {
@@ -2167,24 +2185,6 @@ table.dataTable.table-dark tr.selected th.select-checkbox:after {
     flex: 0 0 300px;
   }
 }
-.form-item.second select {
-  font-size: 1rem;
-}
-@media (min-width: 576px) {
-  .form-item.second select {
-    font-size: 1rem;
-  }
-}
-@media (min-width: 992px) {
-  .form-item.second select {
-    font-size: 0.9rem;
-  }
-}
-@media (min-width: 1400px) {
-  .form-item.second select {
-    font-size: 1rem;
-  }
-}
 .form-item.second select.normal-dropdown {
   border-color: transparent;
   width: max-content;
@@ -2198,6 +2198,7 @@ table.dataTable.table-dark tr.selected th.select-checkbox:after {
   border-radius: 5px;
   background-color: var(--box-bg-color);
   color: var(--text-color);
+  font-size: 0.9rem;
 }
 .form-item input:not([type=submit]):focus,
 .form-item input:not([type=checkbox]):focus,
