@@ -247,6 +247,11 @@ jQuery(() => {
     // DatePicker.
 	if ( $('[data-toggle="datepicker"]').length > 0 ) {
 		$('[data-toggle="datepicker"]').pickadate({
+			format: 'dd mmm, yyyy',
+			formatSubmit: 'yyyy-mm-dd',
+            showMonthsShort: true,
+            selectMonths: true,
+            selectYears: true,
 			onOpen: function () {
 				// Chenge Datepicker position
 				var pageHeight = $(document).height(); // 1361

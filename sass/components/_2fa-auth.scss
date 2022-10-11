@@ -1,0 +1,15 @@
+.recovery-codes-wrapper {
+	margin: 10px 0;
+	.codes-list {
+		margin: 10px 0 0;
+		background-color: var(--body-background);
+		border-radius: 10px;
+		padding: 1rem;
+		font-size: 14px;
+		.code {
+			&:not(:last-child) {
+				margin-bottom: 10px;
+			}
+		}
+	}
+}

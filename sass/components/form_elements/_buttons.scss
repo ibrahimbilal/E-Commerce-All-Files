@@ -22,6 +22,17 @@
     }
 }
 
+.solid-danger-btn {
+	background-color: var(--danger-color);
+	border-color: var(--danger-color);
+	&:hover {
+        background-color: var(--danger-color-hover);
+        border-color: var(--danger-color-hover);
+        color: #FFF;
+        box-shadow: 2px 2px 6px 0 var(--danger-color-hover);
+    }
+}
+
 .trans-btn {
     background-color: var(--box-bg-color);
     border-color: var(--box-bg-color);

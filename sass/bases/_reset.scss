@@ -9,8 +9,8 @@ html {
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
-    @include responsive-property(padding, 15px !important, 20px !important, 30px !important);
+    font-family: 'Montserrat', 'Noto Kufi Arabic', sans-serif;
+    @include responsive-property(padding, 15px, 20px, 30px);
     background-color: var(--body-background);
     color: var(--text-color);
     @media ( min-width: $lg ) {
