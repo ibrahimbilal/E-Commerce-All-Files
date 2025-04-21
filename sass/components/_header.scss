@@ -1,5 +1,4 @@
 header {
-    grid-area: head;
     position: relative;
     @include responsive-property(padding, 15px, 10px 20px, 15px 30px);
     span.icon {

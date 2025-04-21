@@ -14,12 +14,15 @@ body {
     background-color: var(--body-background);
     color: var(--text-color);
     @media ( min-width: $lg ) {
-        display: grid;
-		grid-template-columns: min-content;
-        grid-gap: 30px;
-        grid-template-areas:
-		"side main"
-		"foot foot";
+		display: flex;
+		flex-wrap: wrap;
+		gap: 30px;
+        // display: grid;
+		// grid-template-columns: min-content;
+        // grid-gap: 30px;
+        // grid-template-areas:
+		// "side main"
+		// "foot foot";
     }
 }
 
@@ -48,12 +51,20 @@ i {
 
 main {
     @media ( min-width: $lg ) {
-        grid-area: main;
+        flex: 1;
 		overflow: hidden;
 		padding: 0 10px 10px 0;
 		margin: 0 -10px -10px 0;
     }
 }
+
+// .collapsed {
+//     main {
+// 		@media ( min-width: $lg ) {
+// 			flex: 0 0 calc(100% - 110px);
+// 		}
+// 	}
+// }
 
 small {
     font-size: 12px;

@@ -1,5 +1,6 @@
 footer {
-    grid-area: foot;
+    flex: 0 0 100%;
+	width: 100%;
     font-size: 12px;
     @media ( max-width: $lg ) {
         @include responsive-property(margin-top, 15px, 20px, 30px);
