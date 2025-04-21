@@ -36,9 +36,7 @@ body {
     background-color: var(--body-background);
     color: var(--text-color);
 	min-height: 100vh;
-	@include prefix(display, flex);
-	justify-content: center;
-	align-items: center;
+	
 }
 
 a {
@@ -53,6 +51,7 @@ a {
 .container {
 	width: 100%;
 	max-width: 800px;
+	margin: 10vh auto;
 	@include prefix(display, flex);
 	background-color: var(--box-bg-color);
 	border-radius: 15px;

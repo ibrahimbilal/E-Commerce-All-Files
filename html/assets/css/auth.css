@@ -96,13 +96,6 @@ body {
   background-color: var(--body-background);
   color: var(--text-color);
   min-height: 100vh;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 @media (min-width: 576px) {
   body {
@@ -126,6 +119,7 @@ a:hover {
 .container {
   width: 100%;
   max-width: 800px;
+  margin: 10vh auto;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
