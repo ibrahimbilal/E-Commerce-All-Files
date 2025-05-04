@@ -1,6 +1,6 @@
 'use strict';
 
-jQuery(() => {
+$(() => {
 
     // Prevent Default Action If Link Equal //#
     $('a[href="#"]').on('click', function (e) {
